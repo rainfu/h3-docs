@@ -4,63 +4,120 @@
 
 ## 主要类和结构体
 
-### SpellCastEnvironment
-法术施放环境类，提供服务器回调接口。
+### 核心施法者类
 
-- 功能：封装法术施放所需的环境信息和服务器操作接口
-- 依赖：[ServerCallback](../../classes/ServerCallback.md), [CMap](../map/CMap.md), [IGameInfoCallback](../callback/IGameInfoCallback.md)
-- 函数注释：
-  - [getMap()](#): 获取地图信息
-  - [getCb()](#): 获取游戏回调接口
-  - [createBoat()](#): 创建船只
-  - [moveHero()](#): 移动英雄
+#### Caster
+施法者接口，定义了施法者的基本属性和方法。
 
-### IBattleCast
-战斗法术施放接口，定义了战斗中法术施放所需的基本方法。
+- 功能：定义施法者的基本接口
+- 依赖：无
+- 相关类：[ProxyCaster](ProxyCaster.md), [ExternalCaster](ExternalCaster.md), [BonusCaster](BonusCaster.md)
 
-- 功能：定义战斗法术施放的基本接口
-- 依赖：[CSpell](../entities/CSpell.md), [Caster](../entities/Caster.md), [CBattleInfoCallback](../battle/CBattleInfoCallback.md)
-- 函数注释：
-  - [getSpell()](#): 获取施放的法术
-  - [getMode()](#): 获取施放模式
-  - [getCaster()](#): 获取施法者
-  - [getBattle()](#): 获取战斗信息
-  - [getEffectPower()](#): 获取效果强度
-  - [getEffectDuration()](#): 获取效果持续时间
+#### ProxyCaster
+代理施法者类，实现代理模式用于转发施法者操作。
 
-### BattleCast
-战斗法术施放类，实现了IBattleCast接口的具体实现。
+- 功能：代理其他施法者的操作，提供统一的接口
+- 依赖：[Caster](Caster.md)
+- 相关类：[ExternalCaster](ExternalCaster.md), [ObstacleCasterProxy](ObstacleCasterProxy.md)
 
-- 功能：封装具体的战斗法术施放参数和行为
-- 依赖：[IBattleCast](#ibattlecast), [CSpell](../entities/CSpell.md), [Caster](../entities/Caster.md)
-- 函数注释：
-  - [cast()](#): 施放法术
-  - [castEval()](#): 评估法术效果
-  - [applyEffects()](#): 应用法术效果
-  - [findPotentialTargets()](#): 查找潜在目标
+#### ExternalCaster
+外部施法者类，用于脚本或事件触发的法术。
 
-### Mechanics
-法术机制类，定义了法术的具体效果和行为。
+- 功能：处理外部施法行为，不消耗法力值
+- 依赖：[ProxyCaster](ProxyCaster.md)
+- 相关类：[ProxyCaster](ProxyCaster.md)
 
-- 功能：定义法术的具体机制和效果
-- 依赖：[effects::Effect](#), [BattleHex](../battle/BattleHex.md), [CStack](../battle/CStack.md)
-- 函数注释：
-  - [canBeCast()](#): 检查是否可以施放
-  - [canBeCastAt()](#): 检查是否可以在指定目标施放
-  - [applyEffects()](#): 应用法术效果
-  - [cast()](#): 施放法术
-  - [isReceptive()](#): 检查目标是否接受法术
-  - [getAffectedStacks()](#): 获取受影响的部队
+#### BonusCaster
+加成施法者类，基于奖励系统计算法术效果。
 
-### BaseMechanics
-基础法术机制类，提供了Mechanics接口的默认实现。
+- 功能：根据奖励系统计算法术强度和效果
+- 依赖：[ProxyCaster](ProxyCaster.md)
+- 相关类：[ProxyCaster](ProxyCaster.md)
 
-- 功能：提供法术机制的通用实现
-- 依赖：[Mechanics](#mechanics), [CSpell](../entities/CSpell.md)
-- 函数注释：
-  - [adjustEffectValue()](#): 调整效果值
-  - [calculateRawEffectValue()](#): 计算原始效果值
-  - [ownerMatches()](#): 检查归属匹配
+#### ObstacleCasterProxy
+障碍物施法者代理，用于法术创建的持续效果。
+
+- 功能：代理障碍物的施法行为，使用障碍物属性
+- 依赖：[SilentCaster](ObstacleCasterProxy.md#silentcaster-类), [ProxyCaster](ProxyCaster.md)
+- 相关类：[ProxyCaster](ProxyCaster.md)
+
+### 法术机制类
+
+#### ISpellMechanics
+法术机制接口，定义了法术效果计算和应用的核心方法。
+
+- 功能：定义法术机制的抽象接口
+- 依赖：[Mechanics](Mechanics.md), [Caster](Caster.md)
+- 相关类：[BaseMechanics](BaseMechanics.md), [BattleSpellMechanics](BattleSpellMechanics.md)
+
+#### BattleSpellMechanics
+战斗法术机制类，实现战斗中法术的具体行为。
+
+- 功能：处理战斗法术的施放逻辑和效果应用
+- 依赖：[ISpellMechanics](ISpellMechanics.md), [Mechanics](Mechanics.md)
+- 相关类：[BaseMechanics](BaseMechanics.md)
+
+#### AbilityCaster
+能力施法者类，处理基于能力的法术施放。
+
+- 功能：根据单位能力计算法术效果
+- 依赖：[ProxyCaster](ProxyCaster.md)
+- 相关类：[ProxyCaster](ProxyCaster.md)
+
+### 法术数据管理
+
+#### CSpellHandler
+法术处理器类，管理所有法术对象的加载和生命周期。
+
+- 功能：加载和管理法术配置数据
+- 依赖：[CHandlerBase](../../classes/CHandlerBase.md), [CSpell](CSpell.md)
+- 相关类：[CSpell](CSpell.md), [SpellSchoolHandler](SpellSchoolHandler.md)
+
+#### SpellSchoolHandler
+法术学派处理器，管理法术学派数据和资源。
+
+- 功能：处理法术学派的配置和本地化
+- 依赖：[IHandlerBase](../../classes/IHandlerBase.md), [SpellSchoolType](SpellSchoolHandler.md#spellschooltype-类)
+- 相关类：[SpellSchoolType](SpellSchoolHandler.md#spellschooltype-类)
+
+### 条件和验证
+
+#### TargetCondition
+目标条件系统，用于检查法术目标的有效性。
+
+- 功能：验证法术是否可以对指定目标生效
+- 依赖：[IReceptiveCheck](../../classes/IReceptiveCheck.md), [TargetConditionItem](TargetCondition.md#targetconditionitem-接口)
+- 相关类：[TargetConditionItemFactory](TargetCondition.md#targetconditionitemfactory-工厂类)
+
+#### Problem
+问题收集系统，用于记录法术施放过程中的问题。
+
+- 功能：收集和报告法术验证问题
+- 依赖：[MetaString](../../classes/MetaString.md)
+- 相关类：[ProblemImpl](Problem.md#problemimpl-实现)
+
+### 辅助结构体
+
+#### ViewSpellInt
+法术视图辅助结构体，定义地图对象的定位信息。
+
+- 功能：存储法术效果可视化所需的定位数据
+- 依赖：[int3](../../classes/int3.md), [Obj](../../constants/Obj.md)
+- 相关类：[ObjectPosInfo](ViewSpellInt.md#objectposinfo-结构体)
+
+## 子目录
+
+### adventure/
+冒险法术相关的类和效果。
+
+- [AdventureSpellMechanics](adventure/AdventureSpellMechanics.md): 冒险法术机制
+- [TownPortalEffect](adventure/TownPortalEffect.md): 城镇传送效果
+- [DimensionDoorEffect](adventure/DimensionDoorEffect.md): 任意门效果
+
+### effects/
+法术效果相关的类。
+
+包含各种战斗法术效果的实现，如伤害、治疗、召唤等。
 
 ## 依赖关系
 
