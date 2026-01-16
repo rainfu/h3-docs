@@ -1,263 +1,214 @@
-# CArtifact
+# CArtifact类
 
-神器类，定义游戏中各种神器的属性和行为。
+CArtifact类是VCMI中神器系统的核心类，用于表示游戏中的各种神器，包括组合神器、卷轴、成长型神器和充能型神器。
 
-## 📋 类概述
+## 类定义
 
-`CArtifact` 是 VCMI 中神器系统的核心类，定义了游戏中所有神器的基本属性和功能。该类继承自多个基类，支持复合神器、法术卷轴、成长神器和充能神器等多种类型。
-
-## 🔧 主要属性
-
-### 基本信息
-- `id`: 神器唯一标识符 (ArtifactID)
-- `identifier`: 神器标识符字符串
-- `modScope`: 模组作用域
-- `iconIndex`: 图标索引
-- `image`: 图像路径
-- `largeImage`: 大图像路径
-- `advMapDef`: 冒险地图定义文件
-
-### 经济属性
-- `price`: 神器价格
-- `warMachine`: 对应的战争机器生物ID
-
-### 装备限制
-- `possibleSlots`: 可能的装备位置映射（承载者类型 -> 位置列表）
-- `aClass`: 神器类别
-- `onlyOnWaterMap`: 仅在水上地图出现
-
-### 奖励系统
-- `instanceBonuses`: 每个实例的奖励列表
-- `scenarioBonus`: 场景奖励
-
-## 🎯 核心方法
-
-### 基本信息查询
 ```cpp
-// 获取索引和ID
-int32_t getIndex() const override;
-ArtifactID getId() const override;
-int32_t getIconIndex() const override;
-std::string getJsonKey() const override;
-std::string getModScope() const override;
+class DLL_LINKAGE CCombinedArtifact
+{
+protected:
+    CCombinedArtifact()
+        : fused(false){};
 
-// 注册图标
-void registerIcons(const IconRegistar & cb) const override;
+    std::vector<const CArtifact *> constituents; // 组合神器由哪些部分组成，或为nullptr
+    std::set<const CArtifact *> partOf; // constituents的反向映射 - 包含此神器的组合神器
+    bool fused;
 
-// 获取本地化文本
-std::string getNameTranslated() const override;
-std::string getDescriptionTranslated() const override;
-std::string getEventTranslated() const override;
+public:
+    bool isCombined() const;
+    const std::vector<const CArtifact *> & getConstituents() const;
+    const std::set<const CArtifact *> & getPartOf() const;
+    void setFused(bool isFused);
+    bool isFused() const;
+    bool hasParts() const;
+};
 
-// 获取文本ID
-std::string getNameTextID() const override;
-std::string getDescriptionTextID() const override;
-std::string getEventTextID() const override;
-std::string getBonusTextID(const std::string & bonusID) const;
-```
+class DLL_LINKAGE CScrollArtifact
+{
+protected:
+    CScrollArtifact() = default;
 
-### 属性查询
-```cpp
-// 获取价格和战争机器
-uint32_t getPrice() const override;
-CreatureID getWarMachine() const override;
+public:
+    bool isScroll() const;
+};
 
-// 检查属性
-bool isBig() const override;        // 是否为大型神器
-bool isTradable() const override;   // 是否可交易
+class DLL_LINKAGE CGrowingArtifact
+{
+protected:
+    CGrowingArtifact() = default;
 
-// 获取类别序号
-int getArtClassSerial() const;
+    std::vector<std::pair<ui16, std::shared_ptr<Bonus>>> bonusesPerLevel; // 每n级给予的奖励
+    std::vector<std::pair<ui16, std::shared_ptr<Bonus>>> thresholdBonuses; // 达到特定等级后一次性添加的奖励
+public:
+    bool isGrowing() const;
 
-// 节点名称
-std::string nodeName() const override;
-```
+    std::vector<std::pair<ui16, std::shared_ptr<Bonus>>> & getBonusesPerLevel();
+    const std::vector<std::pair<ui16, std::shared_ptr<Bonus>>> & getBonusesPerLevel() const;
+    std::vector<std::pair<ui16, std::shared_ptr<Bonus>>> & getThresholdBonuses();
+    const std::vector<std::pair<ui16, std::shared_ptr<Bonus>>> & getThresholdBonuses() const;
+};
 
-### 装备系统
-```cpp
-// 获取可能的装备位置
-const std::map<ArtBearer, std::vector<ArtifactPosition>> & getPossibleSlots() const;
+class DLL_LINKAGE CChargedArtifact
+{
+    DischargeArtifactCondition condition;
+    bool removeOnDepletion;
+    uint16_t defaultStartCharges;
 
-// 检查是否可以装备到指定位置
-virtual bool canBePutAt(const CArtifactSet * artSet, ArtifactPosition slot = ArtifactPosition::FIRST_AVAILABLE, bool assumeDestRemoved = false) const;
-```
+protected:
+    CChargedArtifact();
 
-### 奖励系统
-```cpp
-// 获取奖励承载者
-const IBonusBearer * getBonusBearer() const override;
+public:
+    bool isCharged() const;
 
-// 添加新奖励
-void addNewBonus(const std::shared_ptr<Bonus> & b) override;
+    void setCondition(const DischargeArtifactCondition & dischargeCondition);
+    void setRemoveOnDepletion(const bool remove);
+    void setDefaultStartCharges(const uint16_t charges);
+    uint16_t getDefaultStartCharges() const;
+    DischargeArtifactCondition getDischargeCondition() const;
+    bool getRemoveOnDepletion() const;
+    std::optional<uint16_t> getChargeCost(const SpellID & id) const;
+};
 
-// 获取奖励文本ID
-std::string getBonusTextID(const std::string & bonusID) const;
-```
+// 神器容器。不是实例。
+class DLL_LINKAGE CArtifact final : public Artifact, public CBonusSystemNode,
+        public CCombinedArtifact, public CScrollArtifact, public CGrowingArtifact, public CChargedArtifact
+{
+    ArtifactID id;
+    std::string image;
+    std::string advMapDef; // 用于冒险地图对象
+    std::string modScope;
+    std::string identifier;
+    int32_t iconIndex;
+    uint32_t price;
+    CreatureID warMachine;
+    // 携带者类型 => 神器可以放置的槽位ID
+    std::map<ArtBearer, std::vector<ArtifactPosition>> possibleSlots;
 
-### 数据管理
-```cpp
-// 从JSON更新数据
-void updateFrom(const JsonNode & data);
+public:
+    /// 为神器的每个实例创建的奖励
+    std::vector<std::shared_ptr<Bonus>> instanceBonuses;
 
-// 设置图像（测试用）
-void setImage(int32_t iconIndex, const std::string & image, const std::string & large);
-```
+    std::string scenarioBonus;
 
-## 🔗 依赖关系
+    EArtifactClass aClass = EArtifactClass::ART_SPECIAL;
+    bool onlyOnWaterMap;
 
-### 依赖的类
-- `Artifact`: 神器接口
-- `CBonusSystemNode`: 奖励系统节点
-- `CCombinedArtifact`: 复合神器
-- `CScrollArtifact`: 卷轴神器
-- `CGrowingArtifact`: 成长神器
-- `CChargedArtifact`: 充能神器
-- `ArtBearer`: 神器承载者枚举
+    int32_t getIndex() const override;
+    int32_t getIconIndex() const override;
+    std::string getJsonKey() const override;
+    std::string getModScope() const override;
+    void registerIcons(const IconRegistar & cb) const override;
+    ArtifactID getId() const override;
+    const IBonusBearer * getBonusBearer() const override;
 
-### 被依赖关系
-- 被 `CArtHandler` 用于管理神器数据
-- 被 `CArtifactInstance` 用于创建神器实例
-- 被 `CArtifactSet` 用于装备管理
-- 被奖励系统用于属性计算
+    std::string getDescriptionTranslated() const override;
+    std::string getEventTranslated() const override;
+    std::string getNameTranslated() const override;
 
-## 📝 使用示例
+    std::string getDescriptionTextID() const override;
+    std::string getEventTextID() const override;
+    std::string getNameTextID() const override;
+    std::string getBonusTextID(const std::string & bonusID) const;
 
-### 查询神器信息
-```cpp
-// 获取神器基本信息
-auto name = artifact->getNameTranslated();
-auto description = artifact->getDescriptionTranslated();
-auto price = artifact->getPrice();
-auto artClass = artifact->getArtClassSerial();
+    uint32_t getPrice() const override;
+    CreatureID getWarMachine() const override;
+    bool isBig() const override;
+    bool isTradable() const override;
 
-// 检查神器属性
-if (artifact->isBig()) {
-    // 大型神器处理
-}
-if (artifact->isTradable()) {
-    // 可交易神器
-}
-```
+    int getArtClassSerial() const; //0 - treasure, 1 - minor, 2 - major, 3 - relic, 4 - spell scroll, 5 - other
+    std::string nodeName() const override;
+    void addNewBonus(const std::shared_ptr<Bonus> & b) override;
+    const std::map<ArtBearer, std::vector<ArtifactPosition>> & getPossibleSlots() const;
 
-### 装备位置检查
-```cpp
-// 获取可能的装备位置
-const auto & slots = artifact->getPossibleSlots();
+    virtual bool canBePutAt(const CArtifactSet * artSet, ArtifactPosition slot = ArtifactPosition::FIRST_AVAILABLE, bool assumeDestRemoved = false) const;
+    void updateFrom(const JsonNode & data);
+    // 仅用于测试目的
+    void setImage(int32_t iconIndex, const std::string & image, const std::string & large);
 
-// 检查英雄是否可以装备
-if (artifact->canBePutAt(heroArtifactSet, ArtifactPosition::RIGHT_HAND)) {
-    // 可以装备到右手
-}
+    CArtifact();
+    ~CArtifact();
 
-// 检查所有可能的装备位置
-for (const auto & [bearer, positions] : slots) {
-    for (const auto & pos : positions) {
-        if (artifact->canBePutAt(targetSet, pos)) {
-            // 找到可装备位置
-            return pos;
-        }
-    }
-}
-```
-
-### 奖励系统集成
-```cpp
-// 获取神器奖励
-const auto * bearer = artifact->getBonusBearer();
-auto bonuses = bearer->getAllBonuses();
-
-// 处理实例奖励
-for (const auto & bonus : artifact->instanceBonuses) {
-    // 应用实例奖励
-}
-
-// 添加新奖励
-auto newBonus = std::make_shared<Bonus>(
-    BonusDuration::PERMANENT,
-    BonusType::PRIMARY_SKILL,
-    BonusSource::ARTIFACT,
-    1,
-    BonusSourceID(artifact->getId())
-);
-artifact->addNewBonus(newBonus);
-```
-
-### 复合神器处理
-```cpp
-// 检查是否为复合神器
-if (artifact->isCombined()) {
-    const auto & constituents = artifact->getConstituents();
-    for (const auto * part : constituents) {
-        // 处理组成部分
-    }
-}
-
-// 检查是否为卷轴
-if (artifact->isScroll()) {
-    // 卷轴特殊处理
-}
-
-// 检查是否为成长神器
-if (artifact->isGrowing()) {
-    const auto & bonuses = artifact->getBonusesPerLevel();
-    // 处理等级奖励
-}
-```
-
-## ⚡ 性能特性
-
-- **预编译奖励**: 实例奖励预先计算
-- **缓存机制**: 装备位置检查结果缓存
-- **共享数据**: 神器数据在多个实例间共享
-- **延迟加载**: 本地化文本按需加载
-
-## 🔍 注意事项
-
-1. **装备限制**: 装备前必须检查 `canBePutAt()`
-2. **复合神器**: 组成部分必须先装备才能组成
-3. **充能神器**: 使用次数有限，需要特殊处理
-4. **成长神器**: 奖励随等级变化
-
-## 📊 神器类型
-
-### EArtifactClass 枚举
-```cpp
-enum class EArtifactClass {
-    ART_SPECIAL,     // 特殊神器
-    ART_TREASURE,    // 宝物
-    ART_MINOR,       // 小神器
-    ART_MAJOR,       // 大神器
-    ART_RELIC,       // 遗物
-    ART_SCROLL       // 卷轴
+    friend class CArtHandler;
 };
 ```
 
-### 神器类别序号
-- 0: 宝物 (treasure)
-- 1: 小神器 (minor)
-- 2: 大神器 (major)
-- 3: 遗物 (relic)
-- 4: 法术卷轴 (spell scroll)
-- 5: 其他 (other)
+## 功能说明
 
-## 🔧 特殊神器类型
+CArtifact是VCMI神器系统的核心类，代表游戏中的各种神器。它继承自Artifact接口和CBonusSystemNode，支持奖励系统。该类支持多种神器类型：组合神器（由多个部分组成）、卷轴（带有法术）、成长型神器（随等级提升增强）和充能型神器（具有使用次数）。CArtifact还定义了神器在不同携带者身上的可用插槽位置。
 
-### 复合神器 (CCombinedArtifact)
-- 由多个基础神器组合而成
-- 具有独立的奖励效果
-- 可以分解为组成部分
+## 依赖关系
 
-### 卷轴神器 (CScrollArtifact)
-- 包含法术的特殊神器
-- 可以使用法术但会消耗卷轴
-- 不可重复使用
+- [Artifact](./Artifact.md): 神器接口
+- [CBonusSystemNode](../bonuses/CBonusSystemNode.md): 奖励系统节点
+- [CArtifactSet](./CArtifactSet.md): 神器集合
+- [CCombinedArtifact](./CCombinedArtifact.md): 组合神器
+- [CScrollArtifact](./CScrollArtifact.md): 卷轴神器
+- [CGrowingArtifact](./CGrowingArtifact.md): 成长型神器
+- [CChargedArtifact](./CChargedArtifact.md): 充能型神器
+- [Bonus](../bonuses/Bonus.md): 奖励类
+- [ArtifactID](./ArtifactID.md): 神器ID
+- [CreatureID](./CreatureID.md): 生物ID
+- [ArtBearer](./ArtBearer.md): 神器携带者
+- [ArtifactPosition](./ArtifactPosition.md): 神器位置
+- [EArtifactClass](./EArtifactClass.md): 神器类别
+- [DischargeArtifactCondition](./DischargeArtifactCondition.md): 充电条件
+- [SpellID](../spells/SpellID.md): 法术ID
+- [IconRegistar](./IconRegistar.md): 图标注册器
+- STL库: vector, map, shared_ptr, optional等
 
-### 成长神器 (CGrowingArtifact)
-- 奖励随英雄等级增长
-- 支持等级阈值奖励
-- 动态奖励计算
+## 函数注释
 
-### 充能神器 (CChargedArtifact)
-- 具有使用次数限制
-- 支持自定义消耗条件
-- 用尽后可选择是否移除
+### CCombinedArtifact类
+
+- `isCombined()`: 检查是否为组合神器
+- `getConstituents()`: 获取构成组件
+- `getPartOf()`: 获取此神器所属的组合神器
+- `setFused(bool)`: 设置融合状态
+- `isFused()`: 检查是否已融合
+- `hasParts()`: 检查是否有组成部分
+
+### CScrollArtifact类
+
+- `isScroll()`: 检查是否为卷轴
+
+### CGrowingArtifact类
+
+- `isGrowing()`: 检查是否为成长型神器
+- `getBonusesPerLevel()`: 获取每级奖励
+- `getThresholdBonuses()`: 获取阈值奖励
+
+### CChargedArtifact类
+
+- `isCharged()`: 检查是否为充能型神器
+- `setCondition(condition)`: 设置充能条件
+- `setRemoveOnDepletion(remove)`: 设置耗尽时是否移除
+- `setDefaultStartCharges(charges)`: 设置默认起始充能
+- `getDefaultStartCharges()`: 获取默认起始充能
+- `getDischargeCondition()`: 获取放电条件
+- `getRemoveOnDepletion()`: 获取耗尽时是否移除
+- `getChargeCost(spellID)`: 获取法术的充能消耗
+
+### CArtifact类
+
+- `CArtifact()`: 构造函数
+- `~CArtifact()`: 析构函数
+- `getIndex()`: 获取索引
+- `getIconIndex()`: 获取图标索引
+- `getJsonKey()`: 获取JSON键
+- `getModScope()`: 获取模组作用域
+- `registerIcons(cb)`: 注册图标
+- `getId()`: 获取神器ID
+- `getBonusBearer()`: 获取奖励承载者
+- `getDescriptionTranslated()`: 获取翻译后的描述
+- `getNameTranslated()`: 获取翻译后的名称
+- `getPrice()`: 获取价格
+- `getWarMachine()`: 获取战争机器
+- `isBig()`: 检查是否为大型神器
+- `isTradable()`: 检查是否可交易
+- `getArtClassSerial()`: 获取神器类别序列
+- `addNewBonus(b)`: 添加新奖励
+- `getPossibleSlots()`: 获取可能的插槽
+- `canBePutAt(artSet, slot, assumeDestRemoved)`: 检查是否可以放置在指定位置
+- `updateFrom(data)`: 从数据更新
+- `setImage(iconIndex, image, large)`: 设置图像（仅用于测试）

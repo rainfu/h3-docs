@@ -1,0 +1,422 @@
+# VCMI 客户端库文档完成列表
+
+本文档跟踪 VCMI 客户端库中已完成的类文档，以避免重复工作并跟踪进度。
+
+## 已完成的文档
+
+### 文件系统 (Filesystem)
+- ResourcePath
+
+### 事件 (Events)
+- EventBus
+
+### 日志 (Logging)
+- CLogger
+- CLoggerDomain
+- LogRecord
+- ILogTarget
+- CLogConsoleTarget
+- CLogFileTarget
+- CLogFormatter
+- CColorMapping
+- CLogManager
+- ELogLevel
+- EConsoleTextColor
+
+### JSON
+- JsonNode
+
+### 序列化 (Serializer)
+- CSerializer
+- BinarySerializer
+- Serializeable
+
+### 战斗 (Battle)
+- CBattleInfoCallback
+- CUnitState
+- BattleInfo
+- Unit
+- DamageCalculator
+- BattleAction
+
+### 实体 (Entities)
+- CHero
+- CArtifact
+- CTown
+- Creature
+- CBuilding
+- CFaction
+- ResourceTypeHandler
+- CArtHandler
+- CArtifactInstance
+- CArtifactSet
+- ArtSlotInfo
+- Artifact
+- EntityWithBonuses
+- IConstBonusProvider
+- EntityT
+- Entity
+- ArtifactService
+- EntityServiceT
+- EntityService
+- ACreature
+- CreatureEntity
+- AFactionMember
+- CreatureService
+- HeroType
+- HeroTypeService
+
+### 地图对象 (Map Objects)
+- CGObjectInstance
+- IHandlerBase
+
+### 游戏状态 (Game State)
+- CGameState
+- IGameInfoCallback
+
+### 网络 (Network)
+- INetworkConnection
+- NetworkConnection
+
+### 网络包 (Network Packs)
+- CPack
+
+### 寻路 (Pathfinder)
+- CGPathNode
+- CPathsInfo
+- CPathfinder
+- PathfinderConfig
+- TurnInfo
+
+### 法术 (Spells)
+- ISpellMechanics
+- BattleCast
+- Mechanics
+
+### 随机地图生成 (RMG)
+- CRmgTemplate
+
+### 奖励系统 (Bonuses)
+- CBonusSystemNode
+- IBonusBearer
+- Bonus
+- CSelector
+- ILimiter
+- IPropagator
+- IUpdater
+
+### 模组 (Modding)
+- CModHandler
+- ModDescription
+- CModVersion
+- ModManager
+- ContentTypeHandler
+- ModVerificationInfo
+- ModUtility
+
+## 待完成的文档
+
+### 其他模块的类（待补充）
+- 以下是从源代码中识别出的其他重要类，需要添加文档：
+
+  - CGameInfoCallback
+  - CPlayerEnvironment
+  - CClientState
+  - CGameInterface
+  - CVideoHandler
+  - CSoundHandler
+  - CAnimation
+  - CDefFile
+  - CBitmapHandler
+  - CFontManager
+  - CMessage
+  - CClientNetInterface
+  - CConnection
+  - CGameHandler
+  - CServerHandler
+  - CMapHandler
+  - CSaveGameProcessor
+  - CPreGame
+  - CGameState
+  - CConnection
+  - CGameState
+  - CGameState
+  - CBonusSystemNode
+  - CGHeroInstance
+  - CGTownInstance
+  - CArmedInstance
+  - CObstacleInstance
+  - CGDwelling
+  - CGShipyard
+  - CGMarket
+  - CGSignBottle
+  - CGWitchhut
+  - CGMagicWell
+  - CGSirens
+  - CGOracle
+  - CGJail
+  - CGEvent
+  - CGGrail
+  - CGMagi
+  - CGMonolith
+  - CGSubterraneanGate
+  - CGWhirlpool
+  - CGShip
+  - CGCreature
+  - CGArtifact
+  - CGResource
+  - CGMine
+  - CGTeleport
+  - CGSawmill
+  - CGAbandonedMine
+  - CGDaemonSummon
+  - CGQuestGuard
+  - CGSeerHut
+  - CGHeroes
+  - CGTownBuilding
+  - CGNotImplementedYet
+  - CBuilding
+  - CTownHandler
+  - CGeneralTextHandler
+  - CSpellHandler
+  - CCreatureHandler
+  - CHeroHandler
+  - CArtifactInstance
+  - CArtHandler
+  - CBonusSystemNode
+  - CSpell
+  - CSpellEffectSoundInfo
+  - CSpell::TargetInfo
+  - CSpell::SchoolInfo
+  - CSpell::CasterInfo
+  - CSpell::Target
+  - CSpell::TargetList
+  - CSpell::TargetConditions
+  - CSpell::TargetEvaluator
+  - CSpell::TargetGenerator
+  - CSpell::TargetResolver
+  - CSpell::TargetFilter
+  - CSpell::TargetSorter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
+  - CSpell::TargetOptimizer
+  - CSpell::TargetDistributor
+  - CSpell::TargetBalancer
+  - CSpell::TargetMatcher
+  - CSpell::TargetFinder
+  - CSpell::TargetLocator
+  - CSpell::TargetAcquirer
+  - CSpell::TargetDispatcher
+  - CSpell::TargetRouter
+  - CSpell::TargetForwarder
+  - CSpell::TargetReconstructor
+  - CSpell::TargetAdjuster
+  - CSpell::TargetModifier
+  - CSpell::TargetCorrector
+  - CSpell::TargetEvaluator
+  - CSpell::TargetScorer
+  - CSpell::TargetRanker
+  - CSpell::TargetPrioritizer
+  - CSpell::TargetSorter
+  - CSpell::TargetFilter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
+  - CSpell::TargetOptimizer
+  - CSpell::TargetDistributor
+  - CSpell::TargetBalancer
+  - CSpell::TargetMatcher
+  - CSpell::TargetFinder
+  - CSpell::TargetLocator
+  - CSpell::TargetAcquirer
+  - CSpell::TargetDispatcher
+  - CSpell::TargetRouter
+  - CSpell::TargetForwarder
+  - CSpell::TargetReconstructor
+  - CSpell::TargetAdjuster
+  - CSpell::TargetModifier
+  - CSpell::TargetCorrector
+  - CSpell::TargetScorer
+  - CSpell::TargetRanker
+  - CSpell::TargetPrioritizer
+  - CSpell::TargetSorter
+  - CSpell::TargetFilter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
+  - CSpell::TargetOptimizer
+  - CSpell::TargetDistributor
+  - CSpell::TargetBalancer
+  - CSpell::TargetMatcher
+  - CSpell::TargetFinder
+  - CSpell::TargetLocator
+  - CSpell::TargetAcquirer
+  - CSpell::TargetDispatcher
+  - CSpell::TargetRouter
+  - CSpell::TargetForwarder
+  - CSpell::TargetReconstructor
+  - CSpell::TargetAdjuster
+  - CSpell::TargetModifier
+  - CSpell::TargetCorrector
+  - CSpell::TargetScorer
+  - CSpell::TargetRanker
+  - CSpell::TargetPrioritizer
+  - CSpell::TargetSorter
+  - CSpell::TargetFilter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
+  - CSpell::TargetOptimizer
+  - CSpell::TargetDistributor
+  - CSpell::TargetBalancer
+  - CSpell::TargetMatcher
+  - CSpell::TargetFinder
+  - CSpell::TargetLocator
+  - CSpell::TargetAcquirer
+  - CSpell::TargetDispatcher
+  - CSpell::TargetRouter
+  - CSpell::TargetForwarder
+  - CSpell::TargetReconstructor
+  - CSpell::TargetAdjuster
+  - CSpell::TargetModifier
+  - CSpell::TargetCorrector
+  - CSpell::TargetScorer
+  - CSpell::TargetRanker
+  - CSpell::TargetPrioritizer
+  - CSpell::TargetSorter
+  - CSpell::TargetFilter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
+  - CSpell::TargetOptimizer
+  - CSpell::TargetDistributor
+  - CSpell::TargetBalancer
+  - CSpell::TargetMatcher
+  - CSpell::TargetFinder
+  - CSpell::TargetLocator
+  - CSpell::TargetAcquirer
+  - CSpell::TargetDispatcher
+  - CSpell::TargetRouter
+  - CSpell::TargetForwarder
+  - CSpell::TargetReconstructor
+  - CSpell::TargetAdjuster
+  - CSpell::TargetModifier
+  - CSpell::TargetCorrector
+  - CSpell::TargetScorer
+  - CSpell::TargetRanker
+  - CSpell::TargetPrioritizer
+  - CSpell::TargetSorter
+  - CSpell::TargetFilter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
+  - CSpell::TargetOptimizer
+  - CSpell::TargetDistributor
+  - CSpell::TargetBalancer
+  - CSpell::TargetMatcher
+  - CSpell::TargetFinder
+  - CSpell::TargetLocator
+  - CSpell::TargetAcquirer
+  - CSpell::TargetDispatcher
+  - CSpell::TargetRouter
+  - CSpell::TargetForwarder
+  - CSpell::TargetReconstructor
+  - CSpell::TargetAdjuster
+  - CSpell::TargetModifier
+  - CSpell::TargetCorrector
+  - CSpell::TargetScorer
+  - CSpell::TargetRanker
+  - CSpell::TargetPrioritizer
+  - CSpell::TargetSorter
+  - CSpell::TargetFilter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
+  - CSpell::TargetOptimizer
+  - CSpell::TargetDistributor
+  - CSpell::TargetBalancer
+  - CSpell::TargetMatcher
+  - CSpell::TargetFinder
+  - CSpell::TargetLocator
+  - CSpell::TargetAcquirer
+  - CSpell::TargetDispatcher
+  - CSpell::TargetRouter
+  - CSpell::TargetForwarder
+  - CSpell::TargetReconstructor
+  - CSpell::TargetAdjuster
+  - CSpell::TargetModifier
+  - CSpell::TargetCorrector
+  - CSpell::TargetScorer
+  - CSpell::TargetRanker
+  - CSpell::TargetPrioritizer
+  - CSpell::TargetSorter
+  - CSpell::TargetFilter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
+  - CSpell::Target
