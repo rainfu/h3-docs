@@ -103,6 +103,14 @@
 ### 文本系统 (texts/)
 - 管理游戏文本和字符串资源
 - 提供多语言支持和文本处理功能
+- 核心类：
+  - [CGeneralTextHandler](./classes/texts/CGeneralTextHandler.md) - 通用文本处理器
+  - [MetaString](./classes/texts/MetaString.md) - 元字符串类，支持本地化和占位符
+  - [Languages](./classes/texts/Languages.md) - 语言定义和复数形式规则
+  - [TextIdentifier](./classes/texts/TextIdentifier.md) - 文本标识符构建工具
+  - [TextLocalizationContainer](./classes/texts/TextLocalizationContainer.md) - 本地化文本容器
+  - [TextOperations](./classes/texts/TextOperations.md) - Unicode文本操作工具
+  - [CLegacyConfigParser](./classes/texts/CLegacyConfigParser.md) - 遗留配置解析器
 
 ### 标准库扩展 (vstd/)
 - 提供标准库功能的扩展

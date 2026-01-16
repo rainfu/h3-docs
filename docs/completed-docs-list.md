@@ -47,7 +47,14 @@
 - CMemorySerializer
 - CTypeList
 - RegisterTypes
-
+### 文本 (Texts)
+- CGeneralTextHandler
+- MetaString
+- Languages
+- TextIdentifier
+- TextLocalizationContainer
+- TextOperations
+- CLegacyConfigParser
 ### 回调 (Callback)
 - CAdventureAI
 - CBattleCallback

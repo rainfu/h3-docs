@@ -23,6 +23,13 @@
 - CInputStream [✓] 2026-01-17 16:55
 - COutputStream [✓] 2026-01-17 17:00
 - ISimpleResourceLoader [✓] 2026-01-17 17:05
+- CGeneralTextHandler [✓] 2026-01-17 17:10
+- MetaString [✓] 2026-01-17 17:15
+- Languages [✓] 2026-01-17 17:20
+- TextIdentifier [✓] 2026-01-17 17:25
+- TextLocalizationContainer [✓] 2026-01-17 17:30
+- TextOperations [✓] 2026-01-17 17:35
+- CLegacyConfigParser [✓] 2026-01-17 17:40
 
 ## 任务清单（按模块分类）
 
@@ -65,6 +72,15 @@
 - CMemorySerializer [✓] 2026-01-17 06:00
 - CTypeList [✓] 2026-01-17 06:00
 - RegisterTypes [✓] 2026-01-17 06:00
+
+### 文本 (Texts)
+- CGeneralTextHandler [✓] 2026-01-17 17:10
+- MetaString [✓] 2026-01-17 17:15
+- Languages [✓] 2026-01-17 17:20
+- TextIdentifier [✓] 2026-01-17 17:25
+- TextLocalizationContainer [✓] 2026-01-17 17:30
+- TextOperations [✓] 2026-01-17 17:35
+- CLegacyConfigParser [✓] 2026-01-17 17:40
 
 ### 战斗 (Battle)
 - CBattleInfoCallback [✓] 2026-01-17 06:00
