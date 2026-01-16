@@ -109,6 +109,14 @@
 ### 地图对象 (Map Objects)
 - CGObjectInstance [✓] 2026-01-17 06:00
 - IHandlerBase [✓] 2026-01-17 06:00
+- IObjectInterface [✓] 2026-01-17 16:15
+- ObjectTemplate [✓] 2026-01-17 16:15
+- CGHeroInstance [✓] 2026-01-17 16:15
+- CGTownInstance [✓] 2026-01-17 16:15
+- CGCreature [✓] 2026-01-17 16:15
+- CGDwelling [✓] 2026-01-17 16:15
+- CGMarket [✓] 2026-01-17 16:15
+- CQuest [✓] 2026-01-17 16:15
 
 ### 游戏状态 (Game State)
 - CGameState [✓] 2026-01-17 06:00

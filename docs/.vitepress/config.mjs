@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-export default defineConfig({ 
+export default defineConfig({
   base: '/h3/',
   title: 'VCMI Lib 文档',
   description: 'VCMI 客户端核心库 API 文档',
@@ -64,14 +64,17 @@ export default defineConfig({
             { text: 'CArtifactSet', link: '/classes/entities/CArtifactSet' },
             { text: 'ArtSlotInfo', link: '/classes/entities/ArtSlotInfo' },
             { text: 'CBuilding', link: '/classes/entities/CBuilding' },
+            { text: 'CCreature', link: '/classes/entities/CCreature' },
             { text: 'CFaction', link: '/classes/entities/faction/CFaction' },
-            { text: 'CHero', link: '/classes/entities/hero/CHero' }
+            { text: 'CHero', link: '/classes/entities/hero/CHero' },
+            { text: 'CTown', link: '/classes/entities/CTown' }
           ]
         },
         {
           text: '奖励系统 (bonuses/)',
           items: [
             { text: 'Bonus', link: '/classes/bonuses/Bonus' },
+            { text: 'BonusList', link: '/classes/bonuses/BonusList' },
             { text: 'CBonusSystemNode', link: '/classes/bonuses/CBonusSystemNode' },
             { text: 'IBonusBearer', link: '/classes/bonuses/IBonusBearer' },
             { text: 'CSelector', link: '/classes/bonuses/CSelector' },
@@ -111,13 +114,45 @@ export default defineConfig({
           text: '地图对象 (mapObjects/)',
           items: [
             { text: 'CGObjectInstance', link: '/classes/mapObjects/CGObjectInstance' },
-            { text: 'IHandlerBase', link: '/classes/mapObjects/IHandlerBase' }
+            { text: 'IHandlerBase', link: '/classes/mapObjects/IHandlerBase' },
+            { text: 'IObjectInterface', link: '/classes/mapObjects/IObjectInterface' },
+            { text: 'ObjectTemplate', link: '/classes/mapObjects/ObjectTemplate' },
+            { text: 'CGHeroInstance', link: '/classes/mapObjects/CGHeroInstance' },
+            { text: 'CGTownInstance', link: '/classes/mapObjects/CGTownInstance' },
+            { text: 'CGCreature', link: '/classes/mapObjects/CGCreature' },
+            { text: 'CGDwelling', link: '/classes/mapObjects/CGDwelling' },
+            { text: 'CGMarket', link: '/classes/mapObjects/CGMarket' },
+            { text: 'CQuest', link: '/classes/mapObjects/CQuest' }
+          ]
+        },
+        {
+          text: '映射系统 (mapping/)',
+          items: [
+            { text: 'CMapHeader', link: '/classes/mapping/CMapHeader' }
           ]
         },
         {
           text: '游戏状态 (GameState)',
           items: [
-            { text: 'CGameState', link: '/classes/gameState/CGameState' }
+            { text: 'CGameState', link: '/classes/gameState/CGameState' },
+            { text: 'CGameStateCampaign', link: '/classes/gameState/CGameStateCampaign' },
+            { text: 'CPlayerState', link: '/classes/gameState/CPlayerState' },
+            { text: 'IGameInfoCallback', link: '/classes/gameState/IGameInfoCallback' },
+            { text: 'TerrainTile', link: '/classes/gameState/TerrainTile' },
+            { text: 'GameStatistics', link: '/classes/gameState/GameStatistics' },
+            { text: 'InfoAboutArmy', link: '/classes/gameState/InfoAboutArmy' },
+            { text: 'QuestInfo', link: '/classes/gameState/QuestInfo' },
+            { text: 'RumorState', link: '/classes/gameState/RumorState' },
+            { text: 'TavernHeroesPool', link: '/classes/gameState/TavernHeroesPool' },
+            { text: 'UpgradeInfo', link: '/classes/gameState/UpgradeInfo' },
+            { text: 'HighScore', link: '/classes/gameState/HighScore' },
+            { text: 'SThievesGuildInfo', link: '/classes/gameState/SThievesGuildInfo' }
+          ]
+        },
+        {
+          text: '游戏启动',
+          items: [
+            { text: 'StartInfo', link: '/classes/StartInfo' }
           ]
         },
         {
@@ -241,6 +276,12 @@ export default defineConfig({
           ]
         },
         {
+          text: '文本系统 (texts/)',
+          items: [
+            { text: 'MetaString', link: '/classes/texts/MetaString' }
+          ]
+        },
+        {
           text: '模组系统 (modding/)',
           items: [
             { text: 'CModHandler', link: '/classes/modding/CModHandler' },
@@ -273,6 +314,12 @@ export default defineConfig({
           ]
         },
         {
+          text: '设置系统',
+          items: [
+            { text: 'IGameSettings', link: '/classes/IGameSettings' }
+          ]
+        },
+        {
           text: '英雄系统 (heroes/)',
           items: [
             { text: 'HeroClass', link: '/classes/heroes/HeroClass' }
@@ -293,7 +340,13 @@ export default defineConfig({
         {
           text: '服务器系统 (server/)',
           items: [
-            { text: 'ServerCallback', link: '/classes/server/ServerCallback' }
+            { text: 'ServerCallback', link: '/classes/server/ServerCallback' },
+            { text: 'CGameHandler', link: '/classes/server/CGameHandler' },
+            { text: 'CVCMIServer', link: '/classes/server/CVCMIServer' },
+            { text: 'IGameServer', link: '/classes/server/IGameServer' },
+            { text: 'TurnTimerHandler', link: '/classes/server/TurnTimerHandler' },
+            { text: 'GlobalLobbyProcessor', link: '/classes/server/GlobalLobbyProcessor' },
+            { text: 'ServerSpellCastEnvironment', link: '/classes/server/ServerSpellCastEnvironment' }
           ]
         },
         {
@@ -326,7 +379,8 @@ export default defineConfig({
             { text: 'CGameInterface', link: '/classes/callback/CGameInterface' },
             { text: 'CGlobalAI', link: '/classes/callback/CGlobalAI' },
             { text: 'CNonConstInfoCallback', link: '/classes/callback/CNonConstInfoCallback' },
-            { text: 'CPlayerSpecificInfoCallback', link: '/classes/callback/CPlayerSpecificInfoCallback' }
+            { text: 'CPlayerSpecificInfoCallback', link: '/classes/callback/CPlayerSpecificInfoCallback' },
+            { text: 'IGameInfoCallback', link: '/classes/gameState/IGameInfoCallback' }
           ]
         },
         {

@@ -110,6 +110,14 @@
 ### 地图对象 (Map Objects)
 - CGObjectInstance
 - IHandlerBase
+- IObjectInterface
+- ObjectTemplate
+- CGHeroInstance
+- CGTownInstance
+- CGCreature
+- CGDwelling
+- CGMarket
+- CQuest
 
 ### 游戏状态 (Game State)
 - CGameState
