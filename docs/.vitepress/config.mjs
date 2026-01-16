@@ -32,7 +32,9 @@ export default defineConfig({
             { text: 'CHero', link: '/classes/entities/CHero' },
             { text: 'CArtifact', link: '/classes/entities/CArtifact' },
             { text: 'CTown', link: '/classes/entities/CTown' },
-            { text: 'CCreature', link: '/classes/entities/CCreature' }
+            { text: 'CCreature', link: '/classes/entities/Creature' },
+            { text: 'CBuilding', link: '/classes/entities/CBuilding' },
+            { text: 'CFaction', link: '/classes/entities/CFaction' }
           ]
         },
         {
@@ -67,30 +69,31 @@ export default defineConfig({
         {
           text: '路径查找系统 (pathfinder/)',
           items: [
-            { text: 'CGPathNode', link: '/classes/pathfinder/' },
-            { text: 'CPathsInfo', link: '/classes/pathfinder/' }
+            { text: 'CGPathNode', link: '/classes/pathfinder/CGPathNode' },
+            { text: 'CPathsInfo', link: '/classes/pathfinder/CPathsInfo' }
           ]
         },
         {
           text: '法术系统 (spells/)',
           items: [
-            { text: 'ISpellMechanics', link: '/classes/spells/' },
-            { text: 'BattleCast', link: '/classes/spells/' },
-            { text: 'Mechanics', link: '/classes/spells/' }
+            { text: 'ISpellMechanics', link: '/classes/spells/ISpellMechanics' },
+            { text: 'BattleCast', link: '/classes/spells/BattleCast' },
+            { text: 'Mechanics', link: '/classes/spells/Mechanics' }
           ]
         },
         {
           text: 'RMG系统 (rmg/)',
           items: [
-            { text: 'CRmgTemplate', link: '/classes/rmg/' },
-            { text: 'Zone', link: '/classes/rmg/' },
-            { text: 'CRandomMapGenerator', link: '/classes/rmg/' }
+            { text: 'CRmgTemplate', link: '/classes/rmg/CRmgTemplate' },
+            { text: 'Zone', link: '/classes/rmg/Zone' },
+            { text: 'CRandomMapGenerator', link: '/classes/rmg/CRandomMapGenerator' }
           ]
         },
         {
           text: '网络系统 (network/)',
           items: [
             { text: 'INetworkConnection', link: '/classes/network/INetworkConnection' },
+            { text: 'NetworkConnection', link: '/classes/network/NetworkConnection' },
             { text: 'CConnection', link: '/classes/network/' },
             { text: 'Pack', link: '/classes/network/' }
           ]
@@ -98,8 +101,8 @@ export default defineConfig({
         {
           text: '网络包系统 (networkPacks/)',
           items: [
-            { text: 'CPack', link: '/classes/networkPacks/' },
-            { text: 'CPackForServer', link: '/classes/networkPacks/' }
+            { text: 'CPack', link: '/classes/networkPacks/CPack' },
+            { text: 'CPackForServer', link: '/classes/networkPacks/CPackForServer' }
           ]
         },
         {
@@ -118,13 +121,22 @@ export default defineConfig({
           text: '日志系统 (logging/)',
           items: [
             { text: 'CLogger', link: '/classes/logging/CLogger' },
-            { text: 'CLoggerDomain', link: '/classes/logging/' }
+            { text: 'CLoggerDomain', link: '/classes/logging/CLoggerDomain' },
+            { text: 'CLogManager', link: '/classes/logging/CLogManager' },
+            { text: 'LogRecord', link: '/classes/logging/LogRecord' },
+            { text: 'CLogFormatter', link: '/classes/logging/CLogFormatter' },
+            { text: 'ILogTarget', link: '/classes/logging/ILogTarget' },
+            { text: 'CLogConsoleTarget', link: '/classes/logging/CLogConsoleTarget' },
+            { text: 'CLogFileTarget', link: '/classes/logging/CLogFileTarget' },
+            { text: 'CColorMapping', link: '/classes/logging/CColorMapping' },
+            { text: 'ELogLevel', link: '/classes/logging/ELogLevel' },
+            { text: 'EConsoleTextColor', link: '/classes/logging/EConsoleTextColor' }
           ]
         },
         {
           text: 'JSON系统 (json/)',
           items: [
-            { text: 'JsonNode', link: '/classes/json/' }
+            { text: 'JsonNode', link: '/classes/json/JsonNode' }
           ]
         }
       ],
