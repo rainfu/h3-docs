@@ -1,81 +1,66 @@
 # AccessibilityInfo类
 
-AccessibilityInfo类是VCMI中可访问性信息的表示，用于跟踪战斗场上各格子的可访问性状态。
+AccessibilityInfo类是VCMI战斗系统中可访问性信息的表示类，用于跟踪战斗地图中各个格子的可访问性状态。
 
 ## 类定义
-
-虽然完整的定义没有在我们查看的文件中显示，但根据其在CBattleInfoCallback中的使用方式，我们可以推断其结构如下：
 
 ```cpp
 class DLL_LINKAGE AccessibilityInfo
 {
+    std::array<si8, GameConstants::BFIELD_SIZE> accessibility; // 战场格子可访问性数组
+    std::array<si8, GameConstants::BFIELD_SIZE> accessibilityOwner; // 战场格子拥有者数组
+
 public:
-    // 可访问性状态枚举
-    enum class AccessibilityStatus
-    {
-        ACCESSIBLE,      // 可访问
-        BLOCKED,         // 被阻挡
-        IMPASSABLE,      // 无法通行
-        ENEMY_OCCUPIED,  // 被敌方占据
-        FRIENDLY_OCCUPIED, // 被友方占据
-        OBSTACLE         // 障碍物
-    };
+    AccessibilityInfo();                                      // 默认构造函数
+    void reset();                                             // 重置可访问性信息
 
-    // 获取指定格子的可访问性状态
-    AccessibilityStatus getAccessibility(const BattleHex & hex) const;
+    si8 getAccessibility(BattleHex hex) const;                // 获取指定格子的可访问性
+    si8 getOwner(BattleHex hex) const;                        // 获取指定格子的拥有者
+    bool accessible(BattleHex hex) const;                     // 判断格子是否可访问
+    bool accessible(BattleHex hex, ui8 side) const;           // 判断格子是否被指定阵营可访问
+    bool occupied(BattleHex hex) const;                       // 判断格子是否被占用
+    bool free(BattleHex hex) const;                           // 判断格子是否自由
+    bool free(BattleHex hex, ui8 side) const;                 // 判断格子是否对指定阵营自由
 
-    // 检查指定格子是否可访问
-    bool isAccessible(const BattleHex & hex) const;
-
-    // 检查指定格子是否可通行
-    bool isPassable(const BattleHex & hex) const;
-
-    // 获取所有可访问的格子
-    BattleHexArray getAccessibleHexes() const;
-
-    // 获取所有可通行的格子
-    BattleHexArray getPassableHexes() const;
-
-    // 获取指定单位可占用的格子
-    BattleHexArray getOccupiableHexes(const battle::Unit * unit) const;
-
-    // 从可达性信息构建可访问性信息
-    static AccessibilityInfo fromReachability(const ReachabilityInfo & reachability);
+    void setAccessible(BattleHex hex, ui8 side);              // 设置格子为指定阵营可访问
+    void setOccupied(BattleHex hex, ui8 side);                // 设置格子为指定阵营占用
+    void setBlocked(BattleHex hex);                           // 设置格子为阻塞
+    void setUnblocked(BattleHex hex);                         // 设置格子为非阻塞
 
 private:
-    std::map<BattleHex, AccessibilityStatus> accessibilityMap;
+    void updateNeighbours(BattleHex hex);                     // 更新相邻格子的可访问性
 };
 ```
 
 ## 功能说明
 
-AccessibilityInfo是VCMI战斗系统中用于跟踪战场格子可访问性状态的类。它提供了关于战场各格子是否可访问、可通行或被阻挡的信息，这对于单位移动、攻击范围计算和路径寻找至关重要。该类封装了格子可访问性的复杂逻辑，为战斗系统提供了一个清晰的接口。
+AccessibilityInfo是VCMI战斗系统中用于管理战场格子可访问性的类。它跟踪战场上每个格子的可访问状态和拥有者信息，这对于寻路算法、单位移动和战斗策略制定至关重要。这个类维护了两个数组，一个表示可访问性，另一个表示拥有者。
 
-## 依赖关系
+## 构造函数
 
-- [BattleHex](./BattleHex.md): 战斗格子
-- [BattleHexArray](./BattleHexArray.md): 战斗格子数组
-- [ReachabilityInfo](./ReachabilityInfo.md): 可达性信息
-- [battle::Unit](./Unit.md): 战斗单位
-
-## 成员变量
-
-- `accessibilityMap`: 存储每个格子及其可访问性状态的映射表
+- `AccessibilityInfo()`: 默认构造函数，初始化所有格子为不可访问状态
 
 ## 函数注释
 
-- `getAccessibility(hex)`: 返回指定格子的可访问性状态
-- `isAccessible(hex)`: 检查指定格子是否可访问
-- `isPassable(hex)`: 检查指定格子是否可通行
-- `getAccessibleHexes()`: 获取所有可访问的格子
-- `getPassableHexes()`: 获取所有可通行的格子
-- `getOccupiableHexes(unit)`: 获取指定单位可占用的格子
-- `fromReachability(reachability)`: 从可达性信息构建可访问性信息的静态方法
+- `reset()`: 重置所有格子的可访问性信息为默认状态
+- `getAccessibility(hex)`: 获取指定格子的可访问性值
+- `getOwner(hex)`: 获取指定格子的拥有者信息
+- `accessible(hex)`: 判断指定格子是否可访问
+- `accessible(hex, side)`: 判断指定格子是否对特定阵营可访问
+- `occupied(hex)`: 判断指定格子是否被占用
+- `free(hex)`: 判断指定格子是否自由（未被占用且可访问）
+- `free(hex, side)`: 判断指定格子是否对特定阵营自由
+- `setAccessible(hex, side)`: 设置指定格子对特定阵营可访问
+- `setOccupied(hex, side)`: 设置指定格子被特定阵营占用
+- `setBlocked(hex)`: 设置指定格子为阻塞状态
+- `setUnblocked(hex)`: 设置指定格子为非阻塞状态
+- `updateNeighbours(hex)`: 更新指定格子周围相邻格子的可访问性
+
+## 成员变量
+
+- `accessibility`: 战场格子可访问性数组，索引为格子ID，值表示可访问性状态
+- `accessibilityOwner`: 战场格子拥有者数组，索引为格子ID，值表示拥有者阵营
 
 ## 设计说明
 
-AccessibilityInfo类采用了专门化的设计，专注于处理战场格子的可访问性状态。它将复杂的可访问性逻辑封装在一个独立的类中，使战斗系统的其他部分能够轻松查询格子的可访问性状态。
-
-该类的接口设计简洁明了，提供了查询特定格子状态的方法和获取符合条件的所有格子的方法。这种双重接口设计既支持精确查询，也支持批量操作，满足了战斗系统中的不同需求。
-
-通过使用枚举类型表示可访问性状态，该类提供了类型安全的状态管理，避免了使用整数或布尔值可能引起的混淆。
+AccessibilityInfo类是战斗系统中可访问性管理的重要组成部分。通过精确跟踪每个格子的可访问性状态，游戏可以正确处理单位移动、攻击范围计算和战术规划。这个类对于AI决策和玩家界面显示都非常重要。

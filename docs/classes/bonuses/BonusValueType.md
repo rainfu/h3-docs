@@ -1,28 +1,32 @@
-# Bonus::valueType枚举
+# BonusValueType枚举
 
-Bonus::valueType枚举是VCMI中奖励值类型的定义，用于区分奖励值的计算方式。
+BonusValueType枚举是VCMI奖励系统中奖励值类型的定义，用于区分不同类型的奖励值计算方式。
 
 ## 类定义
 
 ```cpp
-enum class DLL_LINKAGE Bonus::ValueType
+enum class DLL_LINKAGE BonusValueType
 {
-    ADDITIVE_VALUE,  // 加法值：直接相加
-    PERCENT_TO_BASE, // 基础百分比：基于基础值的百分比
-    PERCENT_TO_ALL,  // 全部百分比：基于全部值的百分比
-    INDEPENDENT_MAX, // 独立最大值：取最大值而不叠加
-    INDEPENDENT_MIN  // 独立最小值：取最小值而不叠加
+    ADDITIVE,      // 加法值：简单的数值相加
+    PERCENT_TO_BASE, // 百分比到基础值：按基础值的百分比计算
+    PERCENT_TO_ALL,  // 百分比到全部：按总值的百分比计算
+    BOOLEAN,         // 布尔值：开关类型的奖励
+    INDEPENDENT        // 独立值：不与其他奖励累加的独立值
 };
 ```
 
 ## 功能说明
 
-Bonus::valueType是VCMI奖励系统中用于定义奖励值如何计算和应用的枚举。它决定了奖励值如何与基础值和其他奖励相互作用，对最终效果的计算方式有重要影响。
+BonusValueType是VCMI奖励系统中用于区分奖励值计算方式的枚举。不同的奖励类型需要不同的计算方法，例如某些奖励需要直接相加，某些需要按百分比计算，还有一些只是简单的开关效果。这个枚举定义了这些不同的计算方式，以便奖励系统能够正确处理各种类型的奖励。
 
 ## 枚举值
 
-- `ADDITIVE_VALUE`: 加法值，奖励值直接相加到基础值或其他奖励值上
-- `PERCENT_TO_BASE`: 基础百分比，奖励值作为基础值的百分比计算
-- `PERCENT_TO_ALL`: 全部百分比，奖励值作为全部值（基础+奖励）的百分比计算
-- `INDEPENDENT_MAX`: 独立最大值，多个同类型奖励中取最大值，不叠加
-- `INDEPENDENT_MIN`: 独立最小值，多个同类型奖励中取最小值，不叠加
+- `ADDITIVE`: 加法值，这种类型的奖励会与其他同类型奖励直接相加，是最常见的奖励类型
+- `PERCENT_TO_BASE`: 百分比到基础值，这种类型的奖励按基础值的百分比增加，常用于属性增强
+- `PERCENT_TO_ALL`: 百分比到全部，这种类型的奖励按当前总值的百分比增加
+- `BOOLEAN`: 布尔值，这种类型的奖励只有开启/关闭两种状态，没有数值概念
+- `INDEPENDENT`: 独立值，这种类型的奖励不与其他奖励累加，而是作为一个独立的值存在
+
+## 设计说明
+
+BonusValueType枚举在VCMI的奖励系统中扮演着核心角色，它确保了不同类型的奖励能够以正确的方式被计算和应用。通过明确定义奖励值的类型，系统可以避免错误的计算方式，确保游戏平衡性。

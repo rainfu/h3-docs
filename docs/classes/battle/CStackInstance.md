@@ -1,3 +1,69 @@
+# CStackInstance类 CStackInstance类
+
+CStackInstance类是VCMI战斗系统中堆栈实例的表示类，用于表示战斗中特定的生物堆栈实例。
+
+## 类定义
+
+```cpp
+class DLL_LINKAGE CStackInstance : public CUnitInfo, public CBonusSystemNode
+{
+    // 继承自 CUnitInfo 和 CBonusSystemNode
+    // 包含生物实例的具体信息和奖励系统节点功能
+
+    uint32_t count;                    // 生物数量
+    SlotID slot;                      // 在军队中的槽位ID
+    std::shared_ptr<CArtifactInstance> warMachine; // 战争机器（如弩车、攻城塔等）
+
+    CStackInstance();                 // 默认构造函数
+    CStackInstance(CreatureID creatureId, uint32_t count, SlotID slot); // 带参数构造函数
+
+    uint32_t getCount() const;        // 获取生物数量
+    void setCount(uint32_t newCount); // 设置生物数量
+    SlotID getSlot() const;           // 获取槽位ID
+    CreatureID getCreatureId() const; // 获取生物ID
+    bool isEmpty() const;             // 检查堆栈是否为空
+    bool isAlive() const;             // 检查堆栈是否存活
+
+    void addBonus(const std::shared_ptr<Bonus>& bonus); // 添加奖励
+    void removeBonus(const std::shared_ptr<Bonus>& bonus); // 移除奖励
+    std::vector<Bonus*> getAllBonuses() const;          // 获取所有奖励
+
+    template<typename Handler> void serialize(Handler & h); // 序列化函数
+};
+```
+
+## 功能说明
+
+CStackInstance是VCMI战斗系统中用于表示战斗中特定生物堆栈实例的类。它不仅包含生物的数量信息，还实现了奖励系统节点功能，可以携带各种战斗相关的奖励效果。这个类是战斗逻辑的核心组件之一，用于跟踪战斗中每个生物堆栈的状态。
+
+## 构造函数
+
+- `CStackInstance()`: 默认构造函数，初始化堆栈实例
+- `CStackInstance(creatureId, count, slot)`: 带参数的构造函数，设置生物ID、数量和槽位
+
+## 函数注释
+
+- `getCount()`: 获取生物堆栈的数量
+- `setCount(newCount)`: 设置生物堆栈的新数量
+- `getSlot()`: 获取生物在军队中的槽位ID
+- `getCreatureId()`: 获取生物的ID
+- `isEmpty()`: 检查堆栈是否为空（数量为0）
+- `isAlive()`: 检查堆栈是否存活（数量大于0）
+- `addBonus(bonus)`: 向堆栈添加一个奖励
+- `removeBonus(bonus)`: 从堆栈移除一个奖励
+- `getAllBonuses()`: 获取堆栈的所有奖励
+- `serialize(h)`: 序列化函数，用于保存/加载堆栈状态
+
+## 成员变量
+
+- `count`: 生物数量，表示该堆栈中生物的实际数量
+- `slot`: 槽位ID，标识该堆栈在军队中的位置
+- `warMachine`: 战争机器，指向附加到该堆栈的战争机器（如果有的话）
+
+## 设计说明
+
+CStackInstance类是战斗系统中重要的组成部分，它结合了生物信息和奖励系统节点功能，允许在战斗中动态修改生物的属性。通过继承CBonusSystemNode，它可以参与奖励系统的计算，使生物能够受到各种战斗效果的影响。
+
 # CStackInstance
 
 栈实例类，表示游戏中的生物单位栈。
