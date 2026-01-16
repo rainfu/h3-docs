@@ -1,35 +1,51 @@
-# BattleClientInterfaceData结构
+# BattleClientInterfaceData类
 
-BattleClientInterfaceData结构是VCMI中战斗客户端界面数据的表示，用于存储客户端战斗界面相关的数据。
+BattleClientInterfaceData类是VCMI战斗系统中客户端界面数据的封装类，用于管理战斗客户端界面所需的数据。
 
 ## 类定义
 
 ```cpp
-struct DLL_LINKAGE BattleClientInterfaceData
+class DLL_LINKAGE BattleClientInterfaceData
 {
-    std::vector<SpellID> creatureSpellsToCast;
-    ui8 tacticsMode;
+    std::shared_ptr<battle::IClientBattleCallback> battleCb;  // 战斗回调接口
+    std::shared_ptr<battle::IGuiInterface> guiInterface;      // GUI界面接口
+
+public:
+    BattleClientInterfaceData();                             // 默认构造函数
+    BattleClientInterfaceData(
+        std::shared_ptr<battle::IClientBattleCallback> battleCb,
+        std::shared_ptr<battle::IGuiInterface> guiInterface
+    );                                                       // 带参数构造函数
+
+    void setBattleCb(std::shared_ptr<battle::IClientBattleCallback> cb);  // 设置战斗回调
+    void setGuiInterface(std::shared_ptr<battle::IGuiInterface> iface);   // 设置GUI接口
+
+    std::shared_ptr<battle::IClientBattleCallback> getBattleCb() const;   // 获取战斗回调
+    std::shared_ptr<battle::IGuiInterface> getGuiInterface() const;       // 获取GUI接口
 };
 ```
 
 ## 功能说明
 
-BattleClientInterfaceData是VCMI战斗系统中用于存储客户端界面相关数据的结构体。它包含客户端在战斗过程中需要处理的信息，如生物要施放的法术列表和战术模式状态。这个结构在客户端和服务器之间的通信中起重要作用，确保战斗界面能够正确显示当前状态。
+BattleClientInterfaceData是VCMI战斗系统中用于封装客户端界面数据的类。它持有战斗回调接口和GUI界面接口的共享指针，为战斗客户端提供必要的数据和接口访问。这个类的主要目的是整合战斗逻辑和界面显示所需的数据，简化客户端代码的复杂度。
 
-## 依赖关系
+## 构造函数
 
-- STL库: vector
-- [SpellID](../identifiers/SpellID.md): 法术ID类型
+- `BattleClientInterfaceData()`: 默认构造函数，初始化所有指针为nullptr
+- `BattleClientInterfaceData(battleCb, guiInterface)`: 带参数构造函数，接收战斗回调接口和GUI界面接口
+
+## 函数注释
+
+- `setBattleCb(cb)`: 设置战斗回调接口
+- `setGuiInterface(iface)`: 设置GUI界面接口
+- `getBattleCb()`: 获取战斗回调接口
+- `getGuiInterface()`: 获取GUI界面接口
 
 ## 成员变量
 
-- `creatureSpellsToCast`: 存储生物将要施放的法术ID列表，这是一个向量容器，包含多个SpellID
-- `tacticsMode`: 存储战术模式状态，使用ui8（8位无符号整数）表示当前的战术模式
+- `battleCb`: 战斗回调接口的共享指针
+- `guiInterface`: GUI界面接口的共享指针
 
 ## 设计说明
 
-BattleClientInterfaceData结构是VCMI战斗系统中客户端与服务器通信的重要数据结构之一。它专门为战斗客户端界面设计，包含了客户端在战斗过程中需要处理的关键信息。
-
-creatureSpellsToCast成员允许客户端提前知道生物将要施放的法术，从而可以准备相应的动画和界面反馈。tacticsMode成员则用于指示当前战斗是否处于战术阶段，这对于正确显示战斗界面和处理用户输入至关重要。
-
-这个结构体现了VCMI客户端-服务器架构的设计理念，将客户端特定的数据与核心战斗逻辑分离，确保了系统的模块化和可维护性。
+BattleClientInterfaceData类是战斗系统客户端部分的重要组成部分，它起到了桥梁的作用，连接了战斗逻辑层和界面显示层。通过使用共享指针，该类确保了接口对象的生命周期管理，避免了悬空指针的问题。这种设计模式使得战斗客户端代码更加模块化和易于维护。

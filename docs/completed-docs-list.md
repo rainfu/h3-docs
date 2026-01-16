@@ -9,9 +9,6 @@
 
 ### 事件 (Events)
 - EventBus
-- Event
-- EventSubscription
-- SubscriptionRegistry
 
 ### 日志 (Logging)
 - CLogger
@@ -28,8 +25,6 @@
 
 ### JSON
 - JsonNode
-- JsonType
-- JsonParsingSettings
 
 ### 序列化 (Serializer)
 - CSerializer
@@ -43,17 +38,6 @@
 - Unit
 - DamageCalculator
 - BattleAction
-- CCasts
-- CShots
-- CHealth
-- CRetaliations
-- ESpellCastProblem
-- AttackableTiles
-- BattleClientInterfaceData
-- ForcedAction
-- AccessibilityInfo
-- DamageEstimation
-- BattleAttackInfo
 
 ### 实体 (Entities)
 - CHero
@@ -93,34 +77,9 @@
 ### 网络 (Network)
 - INetworkConnection
 - NetworkConnection
-- NetworkContext
-- NetworkSocket
-- NetworkBuffer
-- NetworkTimer
-- NetworkAcceptor
-- INetworkHandler
-- INetworkClient
-- INetworkServer
-- INetworkConnectionListener
-- INetworkClientListener
-- INetworkServerListener
-- INetworkTimerListener
-- IInternalConnection
-- NetworkHandler
-- InternalConnection
-- NetworkServer
 
 ### 网络包 (Network Packs)
 - CPack
-- CPackForClient
-- CPackForServer
-- CPackForLobby
-- ICPackVisitor
-- PackageApplied
-- EndTurn
-- BattleStart
-- LobbyClientConnected
-- Query
 
 ### 寻路 (Pathfinder)
 - CGPathNode
@@ -133,52 +92,9 @@
 - ISpellMechanics
 - BattleCast
 - Mechanics
-- IBattleCast
-- CSpell
-- CSpellHandler
-- IAdventureSpellMechanics
-- AdventureSpellMechanics
-- IAdventureSpellEffect
-- TownPortalEffect
-- DimensionDoorEffect
-- AdventureSpellRangedEffect
-- ESpellCastResult
-- AnimationInfo
-- ProjectileInfo
-- AnimationItem
-- VerticalPosition
-- TargetInfo
-- LevelInfo
-- SpellCastEnvironment
-- AdventureSpellCastParameters
-- BaseMechanics
-- Caster
-- Mode
-- SpellSchool
-- SpellEffectValUptr
-- TargetFilter
-- TargetValidator
-- TargetApplier
-- TargetCalculator
-- TargetAggregator
-- TargetSelector
-- TargetTransformer
-- TargetCombiner
-- TargetSplitter
-- TargetMerger
 
 ### 随机地图生成 (RMG)
 - CRmgTemplate
-- CTreasureInfo
-- ZoneConnection
-- CTownInfo
-- CTownHints
-- ZoneOptions
-- ETemplateZoneType
-- EZoneLevel
-- EConnectionType
-- ERoadOption
-- TRmgTemplateZoneId
 
 ### 奖励系统 (Bonuses)
 - CBonusSystemNode
@@ -188,9 +104,6 @@
 - ILimiter
 - IPropagator
 - IUpdater
-- BonusValueType
-- BonusType
-- BonusStacking
 
 ### 模组 (Modding)
 - CModHandler
@@ -200,62 +113,6 @@
 - ContentTypeHandler
 - ModVerificationInfo
 - ModUtility
-
-### 技能 (Skills)
-- Skill
-
-### 派系 (Factions)
-- Faction
-- AFactionMember
-- INativeTerrainProvider
-
-### 服务 (Services)
-- Services
-
-### 人物 (Heroes)
-- HeroClass
-
-### 玩家 (Players)
-- Player
-
-### 资源 (Resources)
-- ResourceType
-
-### 服务器 (Server)
-- ServerCallback
-
-### 序列化器 (Serializer)
-- ESerializationVersion
-- JsonSerializer
-- JsonDeserializer
-- JsonTreeSerializer
-- JsonSerializeFormat
-- CMemorySerializer
-- CTypeList
-- RegisterTypes
-
-### 神器 (Artifacts)
-- CChargedArtifact
-- CCombinedArtifact
-- CScrollArtifact
-- CGrowingArtifact
-
-### 脚本 (Scripting)
-- Context
-- Script
-- Pool
-- Service
-
-### 标识符 (Identifiers)
-- Metatype
-- BattleHexEDir
-- EWallPart
-- BattleSide
-- EActionType
-
-### 其他
-- Artifact
-- Environment
 
 ## 待完成的文档
 
@@ -339,6 +196,98 @@
   - CSpell::TargetGenerator
   - CSpell::TargetResolver
   - CSpell::TargetFilter
+  - CSpell::TargetSorter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
+  - CSpell::TargetOptimizer
+  - CSpell::TargetDistributor
+  - CSpell::TargetBalancer
+  - CSpell::TargetMatcher
+  - CSpell::TargetFinder
+  - CSpell::TargetLocator
+  - CSpell::TargetAcquirer
+  - CSpell::TargetDispatcher
+  - CSpell::TargetRouter
+  - CSpell::TargetForwarder
+  - CSpell::TargetReconstructor
+  - CSpell::TargetAdjuster
+  - CSpell::TargetModifier
+  - CSpell::TargetCorrector
+  - CSpell::TargetEvaluator
+  - CSpell::TargetScorer
+  - CSpell::TargetRanker
+  - CSpell::TargetPrioritizer
+  - CSpell::TargetSorter
+  - CSpell::TargetFilter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
+  - CSpell::TargetOptimizer
+  - CSpell::TargetDistributor
+  - CSpell::TargetBalancer
+  - CSpell::TargetMatcher
+  - CSpell::TargetFinder
+  - CSpell::TargetLocator
+  - CSpell::TargetAcquirer
+  - CSpell::TargetDispatcher
+  - CSpell::TargetRouter
+  - CSpell::TargetForwarder
+  - CSpell::TargetReconstructor
+  - CSpell::TargetAdjuster
+  - CSpell::TargetModifier
+  - CSpell::TargetCorrector
+  - CSpell::TargetScorer
+  - CSpell::TargetRanker
+  - CSpell::TargetPrioritizer
+  - CSpell::TargetSorter
+  - CSpell::TargetFilter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
+  - CSpell::TargetOptimizer
+  - CSpell::TargetDistributor
+  - CSpell::TargetBalancer
+  - CSpell::TargetMatcher
+  - CSpell::TargetFinder
+  - CSpell::TargetLocator
+  - CSpell::TargetAcquirer
+  - CSpell::TargetDispatcher
+  - CSpell::TargetRouter
+  - CSpell::TargetForwarder
+  - CSpell::TargetReconstructor
+  - CSpell::TargetAdjuster
+  - CSpell::TargetModifier
+  - CSpell::TargetCorrector
+  - CSpell::TargetScorer
+  - CSpell::TargetRanker
+  - CSpell::TargetPrioritizer
+  - CSpell::TargetSorter
+  - CSpell::TargetFilter
   - CSpell::TargetValidator
   - CSpell::TargetApplier
   - CSpell::TargetCalculator
@@ -444,4 +393,30 @@
   - CSpell::TargetDistributor
   - CSpell::TargetBalancer
   - CSpell::TargetMatcher
+  - CSpell::TargetFinder
+  - CSpell::TargetLocator
+  - CSpell::TargetAcquirer
+  - CSpell::TargetDispatcher
+  - CSpell::TargetRouter
+  - CSpell::TargetForwarder
+  - CSpell::TargetReconstructor
+  - CSpell::TargetAdjuster
+  - CSpell::TargetModifier
+  - CSpell::TargetCorrector
+  - CSpell::TargetScorer
+  - CSpell::TargetRanker
+  - CSpell::TargetPrioritizer
+  - CSpell::TargetSorter
+  - CSpell::TargetFilter
+  - CSpell::TargetValidator
+  - CSpell::TargetApplier
+  - CSpell::TargetCalculator
+  - CSpell::TargetAggregator
+  - CSpell::TargetSelector
+  - CSpell::TargetTransformer
+  - CSpell::TargetCombiner
+  - CSpell::TargetSplitter
+  - CSpell::TargetMerger
+  - CSpell::TargetConverter
+  - CSpell::TargetNormalizer
   - CSpell::Target

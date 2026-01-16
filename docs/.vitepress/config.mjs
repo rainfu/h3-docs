@@ -23,7 +23,18 @@ export default defineConfig({
             { text: 'DamageCalculator', link: '/classes/battle/DamageCalculator' },
             { text: 'BattleAction', link: '/classes/battle/BattleAction' },
             { text: 'CUnitState', link: '/classes/battle/CUnitState' },
-            { text: 'CBattleInfoCallback', link: '/classes/battle/CBattleInfoCallback' }
+            { text: 'CBattleInfoCallback', link: '/classes/battle/CBattleInfoCallback' },
+            { text: 'CCasts', link: '/classes/battle/CCasts' },
+            { text: 'CShots', link: '/classes/battle/CShots' },
+            { text: 'CHealth', link: '/classes/battle/CHealth' },
+            { text: 'CRetaliations', link: '/classes/battle/CRetaliations' },
+            { text: 'ESpellCastProblem', link: '/classes/battle/ESpellCastProblem' },
+            { text: 'AttackableTiles', link: '/classes/battle/AttackableTiles' },
+            { text: 'BattleClientInterfaceData', link: '/classes/battle/BattleClientInterfaceData' },
+            { text: 'ForcedAction', link: '/classes/battle/ForcedAction' },
+            { text: 'AccessibilityInfo', link: '/classes/battle/AccessibilityInfo' },
+            { text: 'DamageEstimation', link: '/classes/battle/DamageEstimation' },
+            { text: 'BattleAttackInfo', link: '/classes/battle/BattleAttackInfo' }
           ]
         },
         {
@@ -34,7 +45,26 @@ export default defineConfig({
             { text: 'CTown', link: '/classes/entities/CTown' },
             { text: 'Creature', link: '/classes/entities/Creature' },
             { text: 'CBuilding', link: '/classes/entities/CBuilding' },
-            { text: 'CFaction', link: '/classes/entities/CFaction' }
+            { text: 'CFaction', link: '/classes/entities/CFaction' },
+            { text: 'ResourceTypeHandler', link: '/classes/entities/ResourceTypeHandler' },
+            { text: 'CArtHandler', link: '/classes/entities/CArtHandler' },
+            { text: 'CArtifactInstance', link: '/classes/entities/CArtifactInstance' },
+            { text: 'CArtifactSet', link: '/classes/entities/CArtifactSet' },
+            { text: 'ArtSlotInfo', link: '/classes/entities/ArtSlotInfo' },
+            { text: 'Artifact', link: '/classes/entities/Artifact' },
+            { text: 'EntityWithBonuses', link: '/classes/entities/EntityWithBonuses' },
+            { text: 'IConstBonusProvider', link: '/classes/entities/IConstBonusProvider' },
+            { text: 'EntityT', link: '/classes/entities/EntityT' },
+            { text: 'Entity', link: '/classes/entities/Entity' },
+            { text: 'ArtifactService', link: '/classes/entities/ArtifactService' },
+            { text: 'EntityServiceT', link: '/classes/entities/EntityServiceT' },
+            { text: 'EntityService', link: '/classes/entities/EntityService' },
+            { text: 'ACreature', link: '/classes/entities/ACreature' },
+            { text: 'CreatureEntity', link: '/classes/entities/CreatureEntity' },
+            { text: 'AFactionMember', link: '/classes/entities/AFactionMember' },
+            { text: 'CreatureService', link: '/classes/entities/CreatureService' },
+            { text: 'HeroType', link: '/classes/entities/HeroType' },
+            { text: 'HeroTypeService', link: '/classes/entities/HeroTypeService' }
           ]
         },
         {
@@ -46,7 +76,11 @@ export default defineConfig({
             { text: 'CSelector', link: '/classes/bonuses/CSelector' },
             { text: 'ILimiter', link: '/classes/bonuses/ILimiter' },
             { text: 'IPropagator', link: '/classes/bonuses/IPropagator' },
-            { text: 'IUpdater', link: '/classes/bonuses/IUpdater' }
+            { text: 'IUpdater', link: '/classes/bonuses/IUpdater' },
+            { text: 'BonusValueType', link: '/classes/bonuses/BonusValueType' },
+            { text: 'BonusType', link: '/classes/bonuses/BonusType' },
+            { text: 'BonusStacking', link: '/classes/bonuses/BonusStacking' },
+            { text: 'CPropagatorNodeType', link: '/classes/bonuses/CPropagatorNodeType' }
           ]
         },
         {
@@ -54,7 +88,15 @@ export default defineConfig({
           items: [
             { text: 'Serializeable', link: '/classes/serializer/Serializeable' },
             { text: 'BinarySerializer', link: '/classes/serializer/BinarySerializer' },
-            { text: 'CSerializer', link: '/classes/serializer/CSerializer' }
+            { text: 'CSerializer', link: '/classes/serializer/CSerializer' },
+            { text: 'ESerializationVersion', link: '/classes/serializer/ESerializationVersion' },
+            { text: 'JsonSerializer', link: '/classes/serializer/JsonSerializer' },
+            { text: 'JsonDeserializer', link: '/classes/serializer/JsonDeserializer' },
+            { text: 'JsonTreeSerializer', link: '/classes/serializer/JsonTreeSerializer' },
+            { text: 'JsonSerializeFormat', link: '/classes/serializer/JsonSerializeFormat' },
+            { text: 'CMemorySerializer', link: '/classes/serializer/CMemorySerializer' },
+            { text: 'CTypeList', link: '/classes/serializer/CTypeList' },
+            { text: 'RegisterTypes', link: '/classes/serializer/RegisterTypes' }
           ]
         },
         {
@@ -105,13 +147,37 @@ export default defineConfig({
             { text: 'LevelInfo', link: '/classes/spells/LevelInfo' },
             { text: 'SpellCastEnvironment', link: '/classes/spells/SpellCastEnvironment' },
             { text: 'AdventureSpellCastParameters', link: '/classes/spells/AdventureSpellCastParameters' },
-            { text: 'BaseMechanics', link: '/classes/spells/BaseMechanics' }
+            { text: 'BaseMechanics', link: '/classes/spells/BaseMechanics' },
+            { text: 'Caster', link: '/classes/spells/Caster' },
+            { text: 'Mode', link: '/classes/spells/Mode' },
+            { text: 'SpellSchool', link: '/classes/spells/SpellSchool' },
+            { text: 'SpellEffectValUptr', link: '/classes/spells/SpellEffectValUptr' },
+            { text: 'TargetFilter', link: '/classes/spells/TargetFilter' },
+            { text: 'TargetValidator', link: '/classes/spells/TargetValidator' },
+            { text: 'TargetApplier', link: '/classes/spells/TargetApplier' },
+            { text: 'TargetCalculator', link: '/classes/spells/TargetCalculator' },
+            { text: 'TargetAggregator', link: '/classes/spells/TargetAggregator' },
+            { text: 'TargetSelector', link: '/classes/spells/TargetSelector' },
+            { text: 'TargetTransformer', link: '/classes/spells/TargetTransformer' },
+            { text: 'TargetCombiner', link: '/classes/spells/TargetCombiner' },
+            { text: 'TargetSplitter', link: '/classes/spells/TargetSplitter' },
+            { text: 'TargetMerger', link: '/classes/spells/TargetMerger' }
           ]
         },
         {
           text: 'RMG系统 (rmg/)',
           items: [
-            { text: 'CRmgTemplate', link: '/classes/rmg/CRmgTemplate' }
+            { text: 'CRmgTemplate', link: '/classes/rmg/CRmgTemplate' },
+            { text: 'CTreasureInfo', link: '/classes/rmg/CTreasureInfo' },
+            { text: 'ZoneConnection', link: '/classes/rmg/ZoneConnection' },
+            { text: 'CTownInfo', link: '/classes/rmg/CTownInfo' },
+            { text: 'CTownHints', link: '/classes/rmg/CTownHints' },
+            { text: 'ZoneOptions', link: '/classes/rmg/ZoneOptions' },
+            { text: 'ETemplateZoneType', link: '/classes/rmg/ETemplateZoneType' },
+            { text: 'EZoneLevel', link: '/classes/rmg/EZoneLevel' },
+            { text: 'EConnectionType', link: '/classes/rmg/EConnectionType' },
+            { text: 'ERoadOption', link: '/classes/rmg/ERoadOption' },
+            { text: 'TRmgTemplateZoneId', link: '/classes/rmg/TRmgTemplateZoneId' }
           ]
         },
         {
@@ -161,7 +227,10 @@ export default defineConfig({
         {
           text: '事件系统 (events/)',
           items: [
-            { text: 'EventBus', link: '/classes/events/EventBus' }
+            { text: 'EventBus', link: '/classes/events/EventBus' },
+            { text: 'Event', link: '/classes/events/Event' },
+            { text: 'EventSubscription', link: '/classes/events/EventSubscription' },
+            { text: 'SubscriptionRegistry', link: '/classes/events/SubscriptionRegistry' }
           ]
         },
         {
@@ -183,7 +252,9 @@ export default defineConfig({
         {
           text: 'JSON系统 (json/)',
           items: [
-            { text: 'JsonNode', link: '/classes/json/JsonNode' }
+            { text: 'JsonNode', link: '/classes/json/JsonNode' },
+            { text: 'JsonType', link: '/classes/json/JsonType' },
+            { text: 'JsonParsingSettings', link: '/classes/json/JsonParsingSettings' }
           ]
         },
         {
@@ -196,6 +267,85 @@ export default defineConfig({
             { text: 'ContentTypeHandler', link: '/classes/modding/ContentTypeHandler' },
             { text: 'ModVerificationInfo', link: '/classes/modding/ModVerificationInfo' },
             { text: 'ModUtility', link: '/classes/modding/ModUtility' }
+          ]
+        },
+        {
+          text: '技能系统 (skills/)',
+          items: [
+            { text: 'Skill', link: '/classes/skills/Skill' }
+          ]
+        },
+        {
+          text: '派系系统 (factions/)',
+          items: [
+            { text: 'Faction', link: '/classes/factions/Faction' },
+            { text: 'AFactionMember', link: '/classes/factions/AFactionMember' },
+            { text: 'INativeTerrainProvider', link: '/classes/factions/INativeTerrainProvider' }
+          ]
+        },
+        {
+          text: '服务系统 (services/)',
+          items: [
+            { text: 'Services', link: '/classes/services/Services' }
+          ]
+        },
+        {
+          text: '英雄系统 (heroes/)',
+          items: [
+            { text: 'HeroClass', link: '/classes/heroes/HeroClass' }
+          ]
+        },
+        {
+          text: '玩家系统 (players/)',
+          items: [
+            { text: 'Player', link: '/classes/players/Player' }
+          ]
+        },
+        {
+          text: '资源系统 (resources/)',
+          items: [
+            { text: 'ResourceType', link: '/classes/resources/ResourceType' }
+          ]
+        },
+        {
+          text: '服务器系统 (server/)',
+          items: [
+            { text: 'ServerCallback', link: '/classes/server/ServerCallback' }
+          ]
+        },
+        {
+          text: '神器系统 (artifacts/)',
+          items: [
+            { text: 'Artifact', link: '/classes/artifacts/Artifact' },
+            { text: 'CChargedArtifact', link: '/classes/artifacts/CChargedArtifact' },
+            { text: 'CCombinedArtifact', link: '/classes/artifacts/CCombinedArtifact' },
+            { text: 'CScrollArtifact', link: '/classes/artifacts/CScrollArtifact' },
+            { text: 'CGrowingArtifact', link: '/classes/artifacts/CGrowingArtifact' }
+          ]
+        },
+        {
+          text: '脚本系统 (scripting/)',
+          items: [
+            { text: 'Context', link: '/classes/scripting/Context' },
+            { text: 'Script', link: '/classes/scripting/Script' },
+            { text: 'Pool', link: '/classes/scripting/Pool' },
+            { text: 'Service', link: '/classes/scripting/Service' }
+          ]
+        },
+        {
+          text: '标识符系统 (identifiers/)',
+          items: [
+            { text: 'Metatype', link: '/classes/identifiers/Metatype' },
+            { text: 'BattleHexEDir', link: '/classes/battle/BattleHexEDir' },
+            { text: 'EWallPart', link: '/classes/battle/EWallPart' },
+            { text: 'BattleSide', link: '/classes/battle/BattleSide' },
+            { text: 'EActionType', link: '/classes/identifiers/EActionType' }
+          ]
+        },
+        {
+          text: '环境系统 (environment/)',
+          items: [
+            { text: 'Environment', link: '/classes/environment/Environment' }
           ]
         }
       ],

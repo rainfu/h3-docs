@@ -1,38 +1,53 @@
-# AttackableTiles结构
+# AttackableTiles类
 
-AttackableTiles结构是VCMI中战斗系统中可攻击格子的表示，用于跟踪战斗中攻击动作可能影响的格子。
+AttackableTiles类是VCMI战斗系统中可攻击格子的表示类，用于跟踪战斗中哪些格子可以被攻击。
 
 ## 类定义
 
 ```cpp
-struct DLL_LINKAGE AttackableTiles
+class DLL_LINKAGE AttackableTiles
 {
-    /// Hexes on which only hostile units will be targeted
-    BattleHexArray hostileCreaturePositions;
-    /// for Dragon Breath, hexes on which both friendly and hostile creatures will be targeted
-    BattleHexArray friendlyCreaturePositions;
-    /// for animation purposes, if any of targets are on specified positions, unit should play alternative animation
-    BattleHexArray overrideAnimationPositions;
+    std::set<BattleHex> ourAttackingTiles;      // 我方攻击可达格子
+    std::set<BattleHex> enemyAttackingTiles;    // 敌方攻击可达格子
+
+public:
+    AttackableTiles();                          // 默认构造函数
+
+    void updateOurAttackingTiles(BattleHex position, ui8 side, const Unit * unit);
+    void updateEnemyAttackingTiles(BattleHex position, ui8 side, const Unit * unit);
+
+    bool isAttackable(BattleHex tile, ui8 attackerSide) const;  // 判断格子是否可攻击
+    bool isAttackableByMe(BattleHex tile) const;               // 判断格子是否可被我方攻击
+    bool isAttackableByEnemy(BattleHex tile) const;            // 判断格子是否可被敌方攻击
+
+    const std::set<BattleHex> & getOurAttackingTiles() const;   // 获取我方攻击可达格子
+    const std::set<BattleHex> & getEnemyAttackingTiles() const; // 获取敌方攻击可达格子
 };
 ```
 
 ## 功能说明
 
-AttackableTiles是VCMI战斗系统中用于表示攻击动作可能影响的格子集合的结构体。它包含了三个不同类型的格子数组，分别用于处理不同类型的攻击目标和动画效果。这个结构在处理范围攻击、龙息等特殊攻击效果时非常重要。
+AttackableTiles是VCMI战斗系统中用于管理可攻击格子的类。它跟踪战斗中哪些格子可以被哪一方攻击，这对于战斗AI和玩家界面显示攻击范围至关重要。该类通过维护两个集合分别记录我方和敌方的攻击可达格子。
 
-## 依赖关系
+## 构造函数
 
-- [BattleHexArray](./BattleHexArray.md): 战斗格子数组
-- [BattleHex](./BattleHex.md): 战斗格子
+- `AttackableTiles()`: 默认构造函数，初始化两个集合为空
+
+## 函数注释
+
+- `updateOurAttackingTiles(position, side, unit)`: 更新我方攻击可达格子，基于给定位置、阵营和单位
+- `updateEnemyAttackingTiles(position, side, unit)`: 更新敌方攻击可达格子，基于给定位置、阵营和单位
+- `isAttackable(tile, attackerSide)`: 判断指定格子是否可被指定阵营攻击
+- `isAttackableByMe(tile)`: 判断指定格子是否可被我方攻击
+- `isAttackableByEnemy(tile)`: 判断指定格子是否可被敌方攻击
+- `getOurAttackingTiles()`: 获取我方攻击可达格子集合
+- `getEnemyAttackingTiles()`: 获取敌方攻击可达格子集合
 
 ## 成员变量
 
-- `hostileCreaturePositions`: 存储只攻击敌对单位的格子，这些格子上的敌对单位将成为攻击目标
-- `friendlyCreaturePositions`: 存储友方和敌方单位都会被攻击的格子，主要用于龙息等特殊攻击效果
-- `overrideAnimationPositions`: 用于动画目的的格子，如果目标位于这些位置，单位应播放替代动画
+- `ourAttackingTiles`: 我方攻击可达格子集合
+- `enemyAttackingTiles`: 敌方攻击可达格子集合
 
 ## 设计说明
 
-AttackableTiles结构在战斗系统中扮演着关键角色，特别是在处理多目标攻击和特殊攻击效果时。它允许游戏引擎准确计算攻击对战场上的所有可能影响，包括友军伤害和特殊视觉效果。
-
-该结构特别考虑了龙息这类特殊攻击，这种攻击会同时影响友方和敌方单位，因此需要单独的数组来跟踪这些格子。同样，动画覆盖位置允许游戏根据目标位置播放不同的攻击动画，增强视觉体验。
+AttackableTiles类是战斗系统中攻击范围管理的重要组成部分。通过精确跟踪可攻击格子，游戏可以正确显示攻击范围，辅助AI做出决策，并提供良好的用户体验。该类的设计考虑了双人对战的特性，分别维护双方的攻击范围，提高了查询效率。

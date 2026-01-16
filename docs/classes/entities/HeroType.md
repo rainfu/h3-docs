@@ -21,7 +21,7 @@ class DLL_LINKAGE HeroType : public EntityT<HeroTypeID>
 
 ## 功能说明
 
-HeroType是VCMI英雄系统的基础接口，定义了游戏中所有英雄类型的通用功能。它继承自EntityT<HeroTypeID>，因此具备基本实体功能。这个接口主要关注英雄的背景故事和专长技能信息，这些是区分不同英雄的关键特征。
+HeroType是VCMI英雄系统的基础接口，定义了游戏中所有英雄类型的通用功能。它继承自 `EntityT<HeroTypeID>`，因此具备基本实体功能。这个接口主要关注英雄的背景故事和专长技能信息，这些是区分不同英雄的关键特征。
 
 ## 依赖关系
 
