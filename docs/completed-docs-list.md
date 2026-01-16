@@ -25,6 +25,7 @@
 
 ### JSON
 - JsonNode
+- JsonType
 
 ### 序列化 (Serializer)
 - CSerializer
@@ -38,6 +39,11 @@
 - Unit
 - DamageCalculator
 - BattleAction
+- CCasts
+- CShots
+- CHealth
+- CRetaliations
+- ESpellCastProblem
 
 ### 实体 (Entities)
 - CHero
@@ -136,9 +142,22 @@
 - SpellCastEnvironment
 - AdventureSpellCastParameters
 - BaseMechanics
+- Caster
+- Mode
+- SpellSchool
 
 ### 随机地图生成 (RMG)
 - CRmgTemplate
+- CTreasureInfo
+- ZoneConnection
+- CTownInfo
+- CTownHints
+- ZoneOptions
+- ETemplateZoneType
+- EZoneLevel
+- EConnectionType
+- ERoadOption
+- TRmgTemplateZoneId
 
 ### 奖励系统 (Bonuses)
 - CBonusSystemNode
@@ -148,6 +167,9 @@
 - ILimiter
 - IPropagator
 - IUpdater
+- BonusValueType
+- BonusType
+- BonusStacking
 
 ### 模组 (Modding)
 - CModHandler
@@ -190,6 +212,15 @@
 - CMemorySerializer
 - CTypeList
 - RegisterTypes
+
+### 神器 (Artifacts)
+- CChargedArtifact
+- CCombinedArtifact
+- CScrollArtifact
+- CGrowingArtifact
+
+### JSON解析设置
+- JsonParsingSettings
 
 ## 待完成的文档
 
@@ -273,7 +304,6 @@
   - CSpell::TargetGenerator
   - CSpell::TargetResolver
   - CSpell::TargetFilter
-  - CSpell::TargetSorter
   - CSpell::TargetValidator
   - CSpell::TargetApplier
   - CSpell::TargetCalculator
@@ -469,5 +499,4 @@
   - CSpell::TargetDistributor
   - CSpell::TargetBalancer
   - CSpell::TargetMatcher
-  - CSpell::TargetFinder
-  - CSpell::TargetLocator
+  - CSpell::Target

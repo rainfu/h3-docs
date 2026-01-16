@@ -7,13 +7,13 @@ JsonNode::JsonType枚举是VCMI中JSON节点类型的定义，用于标识JSON�
 ```cpp
 enum class JsonNode::JsonType
 {
-    DATA_NULL,
-    DATA_BOOL,
-    DATA_FLOAT,
-    DATA_STRING,
-    DATA_VECTOR,
-    DATA_STRUCT,
-    DATA_INTEGER
+    DATA_NULL,    // 空值类型
+    DATA_BOOL,    // 布尔类型
+    DATA_FLOAT,   // 浮点类型
+    DATA_STRING,  // 字符串类型
+    DATA_VECTOR,  // 向量类型（数组）
+    DATA_STRUCT,  // 结构类型（对象）
+    DATA_INTEGER  // 整数类型
 };
 ```
 
