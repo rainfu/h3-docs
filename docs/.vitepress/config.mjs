@@ -118,13 +118,38 @@ export default defineConfig({
           text: '网络系统 (network/)',
           items: [
             { text: 'INetworkConnection', link: '/classes/network/INetworkConnection' },
-            { text: 'NetworkConnection', link: '/classes/network/NetworkConnection' }
+            { text: 'NetworkConnection', link: '/classes/network/NetworkConnection' },
+            { text: 'IInternalConnection', link: '/classes/network/IInternalConnection' },
+            { text: 'INetworkClient', link: '/classes/network/INetworkClient' },
+            { text: 'INetworkServer', link: '/classes/network/INetworkServer' },
+            { text: 'INetworkConnectionListener', link: '/classes/network/INetworkConnectionListener' },
+            { text: 'INetworkClientListener', link: '/classes/network/INetworkClientListener' },
+            { text: 'INetworkServerListener', link: '/classes/network/INetworkServerListener' },
+            { text: 'INetworkTimerListener', link: '/classes/network/INetworkTimerListener' },
+            { text: 'INetworkHandler', link: '/classes/network/INetworkHandler' },
+            { text: 'InternalConnection', link: '/classes/network/InternalConnection' },
+            { text: 'NetworkServer', link: '/classes/network/NetworkServer' },
+            { text: 'NetworkHandler', link: '/classes/network/NetworkHandler' },
+            { text: 'NetworkContext', link: '/classes/network/NetworkContext' },
+            { text: 'NetworkSocket', link: '/classes/network/NetworkSocket' },
+            { text: 'NetworkAcceptor', link: '/classes/network/NetworkAcceptor' },
+            { text: 'NetworkBuffer', link: '/classes/network/NetworkBuffer' },
+            { text: 'NetworkTimer', link: '/classes/network/NetworkTimer' }
           ]
         },
         {
           text: '网络包系统 (networkPacks/)',
           items: [
-            { text: 'CPack', link: '/classes/networkPacks/CPack' }
+            { text: 'CPack', link: '/classes/networkPacks/CPack' },
+            { text: 'CPackForClient', link: '/classes/networkPacks/CPackForClient' },
+            { text: 'CPackForServer', link: '/classes/networkPacks/CPackForServer' },
+            { text: 'CPackForLobby', link: '/classes/networkPacks/CPackForLobby' },
+            { text: 'ICPackVisitor', link: '/classes/networkPacks/ICPackVisitor' },
+            { text: 'PackageApplied', link: '/classes/networkPacks/PackageApplied' },
+            { text: 'EndTurn', link: '/classes/networkPacks/EndTurn' },
+            { text: 'BattleStart', link: '/classes/networkPacks/BattleStart' },
+            { text: 'LobbyClientConnected', link: '/classes/networkPacks/LobbyClientConnected' },
+            { text: 'Query', link: '/classes/networkPacks/Query' }
           ]
         },
         {
