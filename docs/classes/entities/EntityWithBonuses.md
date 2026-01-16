@@ -1,6 +1,6 @@
-# EntityWithBonuses类
+# EntityWithBonuses模板类
 
-EntityWithBonuses类是VCMI中带奖励的实体基类，为具有奖励系统的实体提供通用接口。
+EntityWithBonuses模板类是VCMI中带奖励的实体类，继承自EntityT和IConstBonusProvider。
 
 ## 类定义
 
@@ -13,21 +13,21 @@ class DLL_LINKAGE EntityWithBonuses : public EntityT<IdType>, public IConstBonus
 
 ## 功能说明
 
-EntityWithBonuses是VCMI实体系统的一个模板基类，用于表示具有奖励系统的实体类型。它继承自EntityT<IdType>和IConstBonusProvider，为实体提供访问奖励系统的能力。这种设计模式允许实体（如神器、生物、英雄等）既具备基本实体属性，又能参与游戏的奖励计算系统。
+EntityWithBonuses是VCMI中带有奖励系统的实体类，结合了类型化实体的ID管理和常量奖励提供功能。这个模板类将EntityT的类型化实体特性与IConstBonusProvider的奖励访问能力结合起来，使得实体既具有唯一标识，又能提供奖励信息。许多游戏中的实体类（如英雄、生物、物品等）都会继承自这个类。
+
+## 模板参数
+
+- `IdType`: 实体ID的类型，通常是某种枚举或强类型ID
 
 ## 依赖关系
 
-- [EntityT](./EntityT.md): 带ID的实体基类
-- [IConstBonusProvider](./IConstBonusProvider.md): 常量奖励提供者接口
-- [IBonusBearer](../bonuses/IBonusBearer.md): 奖励承载者接口
-- [IdType](./IdType.md): 实体ID类型
+- [EntityT](./EntityT.md): 通用实体基类
+- [IConstBonusProvider](../bonuses/IConstBonusProvider.md): 常量奖励提供者接口
 
-## 函数注释
+## 功能特点
 
-EntityWithBonuses是一个模板类，本身没有特定的成员函数，而是通过继承组合了EntityT和IConstBonusProvider的功能：
+EntityWithBonuses是一个空的模板类，它通过多重继承结合了两个重要的功能：
+1. 通过EntityT获得类型化实体的能力（ID、名称等）
+2. 通过IConstBonusProvider获得奖励系统的访问能力
 
-- 从EntityT继承基本实体功能（索引、图标索引、JSON键、模块范围、名称等）
-- 从IConstBonusProvider继承奖励系统访问功能（通过getBonusBearer方法）
-- 提供了IdentifierType类型别名，用于表示实体的ID类型
-
-这个类的典型用法是作为Artifact、Creature、HeroType等实体类型的基类，使这些实体能够拥有奖励系统功能。
+这使得继承自这个类的实体能够参与VCMI的奖励计算系统，这是游戏平衡和玩法多样性的关键组成部分。
