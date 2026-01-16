@@ -86,7 +86,26 @@ export default defineConfig({
           items: [
             { text: 'ISpellMechanics', link: '/classes/spells/ISpellMechanics' },
             { text: 'BattleCast', link: '/classes/spells/BattleCast' },
-            { text: 'Mechanics', link: '/classes/spells/Mechanics' }
+            { text: 'Mechanics', link: '/classes/spells/Mechanics' },
+            { text: 'IBattleCast', link: '/classes/spells/IBattleCast' },
+            { text: 'CSpell', link: '/classes/spells/CSpell' },
+            { text: 'CSpellHandler', link: '/classes/spells/CSpellHandler' },
+            { text: 'IAdventureSpellMechanics', link: '/classes/spells/IAdventureSpellMechanics' },
+            { text: 'AdventureSpellMechanics', link: '/classes/spells/AdventureSpellMechanics' },
+            { text: 'IAdventureSpellEffect', link: '/classes/spells/IAdventureSpellEffect' },
+            { text: 'TownPortalEffect', link: '/classes/spells/TownPortalEffect' },
+            { text: 'DimensionDoorEffect', link: '/classes/spells/DimensionDoorEffect' },
+            { text: 'AdventureSpellRangedEffect', link: '/classes/spells/AdventureSpellRangedEffect' },
+            { text: 'ESpellCastResult', link: '/classes/spells/ESpellCastResult' },
+            { text: 'AnimationInfo', link: '/classes/spells/AnimationInfo' },
+            { text: 'ProjectileInfo', link: '/classes/spells/ProjectileInfo' },
+            { text: 'AnimationItem', link: '/classes/spells/AnimationItem' },
+            { text: 'VerticalPosition', link: '/classes/spells/VerticalPosition' },
+            { text: 'TargetInfo', link: '/classes/spells/TargetInfo' },
+            { text: 'LevelInfo', link: '/classes/spells/LevelInfo' },
+            { text: 'SpellCastEnvironment', link: '/classes/spells/SpellCastEnvironment' },
+            { text: 'AdventureSpellCastParameters', link: '/classes/spells/AdventureSpellCastParameters' },
+            { text: 'BaseMechanics', link: '/classes/spells/BaseMechanics' }
           ]
         },
         {
