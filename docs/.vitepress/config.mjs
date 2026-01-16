@@ -115,10 +115,9 @@ export default defineConfig({
           ]
         },
         {
-          text: '游戏状态系统 (gameState/)',
+          text: '游戏状态 (GameState)',
           items: [
-            { text: 'CGameState', link: '/classes/gameState/CGameState' },
-            { text: 'IGameInfoCallback', link: '/classes/gameState/IGameInfoCallback' }
+            { text: 'CGameState', link: '/classes/gameState/CGameState' }
           ]
         },
         {
@@ -189,26 +188,12 @@ export default defineConfig({
           ]
         },
         {
-          text: '网络系统 (network/)',
+          text: '网络 (Network)',
           items: [
-            { text: 'INetworkConnection', link: '/classes/network/INetworkConnection' },
-            { text: 'NetworkConnection', link: '/classes/network/NetworkConnection' },
-            { text: 'IInternalConnection', link: '/classes/network/IInternalConnection' },
-            { text: 'INetworkClient', link: '/classes/network/INetworkClient' },
-            { text: 'INetworkServer', link: '/classes/network/INetworkServer' },
-            { text: 'INetworkConnectionListener', link: '/classes/network/INetworkConnectionListener' },
-            { text: 'INetworkClientListener', link: '/classes/network/INetworkClientListener' },
-            { text: 'INetworkServerListener', link: '/classes/network/INetworkServerListener' },
-            { text: 'INetworkTimerListener', link: '/classes/network/INetworkTimerListener' },
-            { text: 'INetworkHandler', link: '/classes/network/INetworkHandler' },
-            { text: 'InternalConnection', link: '/classes/network/InternalConnection' },
-            { text: 'NetworkServer', link: '/classes/network/NetworkServer' },
+            { text: 'NetworkInterface', link: '/classes/network/NetworkInterface' },
             { text: 'NetworkHandler', link: '/classes/network/NetworkHandler' },
-            { text: 'NetworkContext', link: '/classes/network/NetworkContext' },
-            { text: 'NetworkSocket', link: '/classes/network/NetworkSocket' },
-            { text: 'NetworkAcceptor', link: '/classes/network/NetworkAcceptor' },
-            { text: 'NetworkBuffer', link: '/classes/network/NetworkBuffer' },
-            { text: 'NetworkTimer', link: '/classes/network/NetworkTimer' }
+            { text: 'NetworkConnection', link: '/classes/network/NetworkConnection' },
+            { text: 'NetworkServer', link: '/classes/network/NetworkServer' }
           ]
         },
         {
@@ -242,19 +227,9 @@ export default defineConfig({
           ]
         },
         {
-          text: '日志系统 (logging/)',
+          text: '日志 (Logging)',
           items: [
-            { text: 'CLogger', link: '/classes/logging/CLogger' },
-            { text: 'CLoggerDomain', link: '/classes/logging/CLoggerDomain' },
-            { text: 'CLogManager', link: '/classes/logging/CLogManager' },
-            { text: 'LogRecord', link: '/classes/logging/LogRecord' },
-            { text: 'CLogFormatter', link: '/classes/logging/CLogFormatter' },
-            { text: 'ILogTarget', link: '/classes/logging/ILogTarget' },
-            { text: 'CLogConsoleTarget', link: '/classes/logging/CLogConsoleTarget' },
-            { text: 'CLogFileTarget', link: '/classes/logging/CLogFileTarget' },
-            { text: 'CColorMapping', link: '/classes/logging/CColorMapping' },
-            { text: 'ELogLevel', link: '/classes/logging/ELogLevel' },
-            { text: 'EConsoleTextColor', link: '/classes/logging/EConsoleTextColor' }
+            { text: 'CLogger', link: '/classes/logging/CLogger' }
           ]
         },
         {
