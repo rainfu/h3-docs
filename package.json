@@ -1,0 +1,24 @@
+{
+  "name": "vcmi-lod-extractor",
+  "version": "1.0.0",
+  "description": "VCMI LOD resource extractor for Cocos Creator",
+  "main": "vcmi-lod-extractor.ts",
+  "scripts": {
+    "extract": "ts-node vcmi-lod-extractor.ts",
+    "extract-client": "ts-node extract-client.ts",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "@types/pcx-js": "^1.1.0",
+    "pcx-js": "^1.1.1",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0",
+    "vitepress": "^1.0.0"
+  }
+}
