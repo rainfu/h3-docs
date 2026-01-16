@@ -1,12 +1,10 @@
-# ILogTarget类
+# ILogTarget接口
 
-ILogTarget类是VCMI日志系统中的日志目标接口，定义了所有日志目标实现类应该实现的方法。
+ILogTarget接口是VCMI日志系统中日志输出目标的基接口，定义了所有日志输出目标必须实现的方法。
 
 ## 类定义
 
 ```cpp
-/// 接口ILogTarget被所有日志目标实现类使用。它包含
-/// 抽象方法write，子类应该实现该方法。
 class DLL_LINKAGE ILogTarget : public boost::noncopyable
 {
 public:
@@ -17,14 +15,14 @@ public:
 
 ## 功能说明
 
-ILogTarget是VCMI日志系统中的一个接口类，作为所有日志输出目标的基类。它定义了一个纯虚函数write，所有具体的日志输出实现类（如控制台输出、文件输出等）都需要实现这个接口。这使得日志系统可以灵活地支持多种不同的输出方式。
+ILogTarget是VCMI日志系统中所有日志输出目标的基接口。它定义了日志系统与不同输出目标（如控制台、文件等）之间的契约，使得日志消息可以被写入到不同的目标。所有具体的日志输出实现都必须继承此接口并实现write方法。
 
 ## 依赖关系
 
 - [LogRecord](./LogRecord.md): 日志记录结构
-- boost::noncopyable: 防拷贝基类
+- Boost库: noncopyable
 
 ## 函数注释
 
-- `virtual ~ILogTarget()`: 虚析构函数，确保派生类能够正确析构
-- `write(record)`: 纯虚函数，写入日志记录到目标输出设备，所有派生类必须实现此方法
+- `~ILogTarget()`: 虚析构函数，确保派生类正确销毁
+- `write(record)`: 纯虚函数，将日志记录写入目标，必须由派生类实现

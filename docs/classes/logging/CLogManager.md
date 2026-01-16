@@ -1,18 +1,17 @@
 # CLogManager类
 
-CLogManager类是VCMI日志系统中的日志管理器，作为日志记录器的全局存储。
+CLogManager类是VCMI日志系统中的日志管理器，负责管理所有日志记录器的生命周期和注册。
 
 ## 类定义
 
 ```cpp
-/// 类CLogManager是日志记录器的全局存储。
 class DLL_LINKAGE CLogManager : public boost::noncopyable
 {
 public:
     static CLogManager & get();
 
     void addLogger(CLogger * logger);
-    CLogger * getLogger(const CLoggerDomain & domain); /// 返回日志器或如果给定域没有注册则返回nullptr。
+    CLogger * getLogger(const CLoggerDomain & domain);
     std::vector<std::string> getRegisteredDomains() const;
 
 private:
@@ -27,18 +26,24 @@ private:
 
 ## 功能说明
 
-CLogManager是VCMI日志系统的全局管理器，负责维护所有日志记录器的注册表。它提供了单例模式的访问方式，允许在整个应用程序中注册和获取日志记录器实例。该类是线程安全的，可以在多线程环境中使用。
+CLogManager是VCMI日志系统的核心管理类，使用单例模式提供对所有日志记录器的集中管理。它负责创建、注册和检索日志记录器实例，并确保线程安全的访问。该类不允许拷贝，确保只存在一个实例。
 
 ## 依赖关系
 
 - [CLogger](./CLogger.md): 日志记录器类
 - [CLoggerDomain](./CLoggerDomain.md): 日志域类
-- boost::noncopyable: 防拷贝基类
-- STL库: map, vector, mutex等
+- Boost库: noncopyable
+- STL库: map, vector, mutex
 
 ## 函数注释
 
-- `get()`: 获取CLogManager单例实例
-- `addLogger(logger)`: 向管理器添加日志记录器
-- `getLogger(domain)`: 获取指定域的日志记录器，如果未注册则返回nullptr
-- `getRegisteredDomains()`: 获取所有已注册的域名称列表
+- `get()`: 获取日志管理器的单例实例
+- `addLogger(logger)`: 添加一个新的日志记录器到管理器
+- `getLogger(domain)`: 根据域获取日志记录器，如果不存在则返回nullptr
+- `getRegisteredDomains()`: 获取所有已注册域的列表
+
+## 成员变量
+
+- `loggers`: 存储日志记录器的映射，键为域名称
+- `mx`: 用于线程安全的互斥锁
+- `smx`: 静态互斥锁，用于保护单例访问
