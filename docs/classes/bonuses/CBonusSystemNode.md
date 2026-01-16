@@ -1,265 +1,176 @@
-# CBonusSystemNode
+# CBonusSystemNode类
 
-奖励系统节点类，实现奖励树状结构的节点。
+CBonusSystemNode类是VCMI中奖励系统的核心节点类，用于处理游戏中各种奖励效果的传播和管理。
 
-## 📋 类概述
+## 类定义
 
-`CBonusSystemNode` 是 VCMI 奖励系统的核心节点类，实现了一个复杂的树状奖励传播系统。该类管理奖励的继承、传播和缓存，支持父子节点关系和复杂的奖励计算逻辑。
-
-## 🔧 主要属性
-
-### 奖励存储
-- `bonuses`: 影响此节点的所有奖励（本地和继承的）
-- `exportedBonuses`: 从此节点导出的奖励
-- `cachedBonuses`: 缓存的奖励列表
-- `cachedRequests`: 缓存的查询请求
-
-### 节点关系
-- `parentsToInherit`: 继承奖励的父节点
-- `parentsToPropagate`: 传播奖励的父节点
-- `children`: 子节点列表
-
-### 节点状态
-- `nodeType`: 节点类型
-- `isHypotheticNode`: 是否为假设节点
-- `nodeChanged`: 节点变更计数器
-- `cachedLast`: 最后缓存版本
-
-## 🎯 核心方法
-
-### 构造函数
 ```cpp
-// 指定类型和假设状态
-CBonusSystemNode(BonusNodeType nodeType, bool isHypotetic);
+using TNodes = std::set<CBonusSystemNode *>;
+using TCNodes = std::set<const CBonusSystemNode *>;
+using TNodesVector = std::vector<CBonusSystemNode *>;
+using TCNodesVector = std::vector<const CBonusSystemNode *>;
 
-// 仅指定类型
-CBonusSystemNode(BonusNodeType nodeType);
-```
+class DLL_LINKAGE CBonusSystemNode : public virtual IBonusBearer, public virtual Serializeable, public boost::noncopyable
+{
+public:
+    struct HashStringCompare {
+        static size_t hash(const std::string& data)
+        {
+            std::hash<std::string> hasher;
+            return hasher(data);
+        }
+        static bool equal(const std::string& x, const std::string& y)
+        {
+            return x == y;
+        }
+    };
 
-### 奖励查询
-```cpp
-// 获取所有符合条件的奖励
-TConstBonusListPtr getAllBonuses(const CSelector &selector, const std::string &cachingStr = "") const override;
+private:
+    /// 影响此节点的奖励列表，无论是本地的还是传播到此节点的
+    BonusList bonuses;
 
-// 获取第一个符合条件的奖励
-std::shared_ptr<const Bonus> getFirstBonus(const CSelector & selector) const;
+    /// 来自此节点的奖励列表
+    /// 还包括从此节点传播出去的节点，可能不影响此节点本身
+    BonusList exportedBonuses;
 
-// 获取本地奖励（可写）
-std::shared_ptr<Bonus> getLocalBonus(const CSelector & selector);
-```
+    TCNodesVector parentsToInherit; // 我们从中继承奖励
+    TNodesVector parentsToPropagate; // 我们可以将我们的奖励附加到它们上
+    TNodesVector children;
 
-### 节点关系管理
-```cpp
-// 连接到父节点
-void attachTo(CBonusSystemNode & parent);
-void attachToSource(const CBonusSystemNode & parent);
+    BonusNodeType nodeType;
+    bool isHypotheticNode;
 
-// 从父节点断开
-void detachFrom(CBonusSystemNode & parent);
-void detachFromSource(const CBonusSystemNode & parent);
-void detachFromAll();
+    mutable BonusList cachedBonuses;
+    mutable int32_t cachedLast;
+    std::atomic<int32_t> nodeChanged;
 
-// 获取父节点
-void getDirectParents(TCNodes &out) const;
-const TCNodesVector & getParentNodes() const;
-```
+    void invalidateChildrenNodes(int32_t changeCounter);
 
-### 奖励管理
-```cpp
-// 添加新奖励
-virtual void addNewBonus(const std::shared_ptr<Bonus>& b);
+    // 在获取任何奖励之前设置缓存字符串会将结果缓存以供后续请求使用
+    // 此字符串需要是唯一的，这就是为什么它必须以下面的方式设置：
+    // [属性键]_[值] => 仅用于选择器
+    using RequestsMap = tbb::concurrent_hash_map<std::string, std::pair<int32_t, TBonusListPtr>, HashStringCompare>;
+    mutable RequestsMap cachedRequests;
+    mutable std::shared_mutex sync;
 
-// 累积奖励（合并相同类型）
-void accumulateBonus(const std::shared_ptr<Bonus>& b);
+    void getAllBonusesRec(BonusList &out) const;
+    TConstBonusListPtr getAllBonusesWithoutCaching(const CSelector &selector) const;
+    std::shared_ptr<Bonus> getUpdatedBonus(const std::shared_ptr<Bonus> & b, const TUpdaterPtr & updater) const;
+    void limitBonuses(const BonusList &allBonuses, BonusList &out) const; // out将填充不受限制的奖励
 
-// 移除奖励
-void removeBonus(const std::shared_ptr<Bonus>& b);
-void removeBonuses(const CSelector & selector);
-void removeBonusesRecursive(const CSelector & s);
-```
+    void getRedParents(TCNodes &out) const;  //检索红色父节点列表（奖励传播的节点）
+    void getRedAncestors(TCNodes &out) const;
+    void getRedChildren(TNodes &out);
 
-### 奖励持续时间
-```cpp
-// 减少奖励持续时间
-void reduceBonusDurations(const CSelector &s);
-```
+    void propagateBonus(const std::shared_ptr<Bonus> & b, const CBonusSystemNode & source);
+    void unpropagateBonus(const std::shared_ptr<Bonus> & b);
+    bool actsAsBonusSourceOnly() const;
 
-### 缓存管理
-```cpp
-// 标记节点已变更
-void nodeHasChanged();
+    void newRedDescendant(CBonusSystemNode & descendant) const; //需要传播
+    void removedRedDescendant(CBonusSystemNode & descendant) const; //需要取消传播
 
-// 获取树版本
-int32_t getTreeVersion() const override;
-```
+    std::string nodeShortInfo() const;
 
-### 导出奖励
-```cpp
-// 获取导出的奖励列表
-BonusList & getExportedBonusList();
-const BonusList & getExportedBonusList() const;
-```
+    void exportBonus(const std::shared_ptr<Bonus> & b);
 
-## 🔗 依赖关系
+protected:
+    bool isIndependentNode() const; //当节点没有父节点也没有子节点时，它是独立的
+    void exportBonuses();
 
-### 依赖的类
-- `IBonusBearer`: 奖励承载者接口
-- `BonusList`: 奖励列表
-- `CSelector`: 奖励选择器
-- `BonusNodeType`: 节点类型枚举
+public:
+    explicit CBonusSystemNode(BonusNodeType nodeType, bool isHypotetic);
+    explicit CBonusSystemNode(BonusNodeType nodeType);
+    virtual ~CBonusSystemNode();
 
-### 被依赖关系
-- 被所有游戏实体继承实现奖励系统
-- 被 `CStackInstance`、`CHero` 等类使用
-- 被奖励传播算法使用
+    TConstBonusListPtr getAllBonuses(const CSelector &selector, const std::string &cachingStr = "") const override;
+    void getDirectParents(TCNodes &out) const;  //检索父节点列表（从中继承奖励的节点）
 
-## 📝 使用示例
+    /// 返回第一个匹配选择器的奖励
+    std::shared_ptr<const Bonus> getFirstBonus(const CSelector & selector) const;
 
-### 创建和配置节点
-```cpp
-// 创建英雄节点
-CBonusSystemNode heroNode(BonusNodeType::HERO);
+    /// 提供对来自此节点的第一个匹配选择器的奖励的写访问权限
+    std::shared_ptr<Bonus> getLocalBonus(const CSelector & selector);
 
-// 创建神器节点
-CBonusSystemNode artifactNode(BonusNodeType::ARTIFACT);
+    void attachTo(CBonusSystemNode & parent);
+    void attachToSource(const CBonusSystemNode & parent);
+    void detachFrom(CBonusSystemNode & parent);
+    void detachFromSource(const CBonusSystemNode & parent);
+    void detachFromAll();
+    virtual void addNewBonus(const std::shared_ptr<Bonus>& b);
+    void accumulateBonus(const std::shared_ptr<Bonus>& b); //添加相同类型/子类型的奖励值或创建新奖励
 
-// 将神器附加到英雄
-artifactNode.attachTo(heroNode);
-```
+    void removeBonus(const std::shared_ptr<Bonus>& b);
+    void removeBonuses(const CSelector & selector);
+    void removeBonusesRecursive(const CSelector & s);
 
-### 添加和管理奖励
-```cpp
-// 添加攻击力奖励
-auto attackBonus = std::make_shared<Bonus>(
-    BonusDuration::PERMANENT,
-    BonusType::PRIMARY_SKILL,
-    BonusSource::ARTIFACT,
-    2,
-    BonusSourceID(swordId),
-    BonusSubtypeID(PrimarySkill::ATTACK)
-);
-artifactNode.addNewBonus(attackBonus);
+    ///更新剩余回合数并删除过时的奖励
+    void reduceBonusDurations(const CSelector &s);
+    virtual std::string bonusToString(const std::shared_ptr<Bonus>& bonus) const {return "";}; //奖励描述或名称
+    virtual std::string nodeName() const;
+    bool isHypothetic() const { return isHypotheticNode; }
 
-// 累积奖励（相同类型会合并）
-auto anotherAttackBonus = std::make_shared<Bonus>(
-    BonusDuration::PERMANENT,
-    BonusType::PRIMARY_SKILL,
-    BonusSource::ARTIFACT,
-    1,
-    BonusSourceID(shieldId),
-    BonusSubtypeID(PrimarySkill::ATTACK)
-);
-artifactNode.accumulateBonus(anotherAttackBonus);  // 总共+3攻击
-```
+    BonusList & getExportedBonusList();
+    const BonusList & getExportedBonusList() const;
+    BonusNodeType getNodeType() const;
+    const TCNodesVector & getParentNodes() const;
 
-### 查询奖励
-```cpp
-// 查询所有攻击奖励
-auto attackBonuses = heroNode.getAllBonuses(
-    Selector::type()(BonusType::PRIMARY_SKILL)
-           .And(Selector::subtype()(PrimarySkill::ATTACK))
-);
+    void nodeHasChanged();
 
-// 获取第一个幸运奖励
-auto luckBonus = heroNode.getFirstBonus(Selector::type()(BonusType::LUCK));
+    int32_t getTreeVersion() const override;
 
-// 使用缓存查询
-auto cachedResult = heroNode.getAllBonuses(
-    Selector::sourceType()(BonusSource::ARTIFACT),
-    "artifact_bonuses"  // 缓存键
-);
-```
+    virtual PlayerColor getOwner() const
+    {
+        return PlayerColor::NEUTRAL;
+    }
 
-### 奖励传播
-```cpp
-// 神器奖励会自动传播到英雄
-// 查询英雄的所有奖励（包括继承的）
-auto allHeroBonuses = heroNode.getAllBonuses(Selector::all());
+    template <typename Handler> void serialize(Handler &h)
+    {
+        h & nodeType;
+        h & exportedBonuses;
 
-// 奖励传播到子节点
-CBonusSystemNode unitNode(BonusNodeType::STACK_BATTLE);
-unitNode.attachTo(heroNode);  // 英雄奖励传播到单位
+        if(!h.saving && h.loadingGamestate)
+            exportBonuses();
+    }
 
-auto unitAttack = unitNode.getAllBonuses(
-    Selector::type()(BonusType::PRIMARY_SKILL)
-           .And(Selector::subtype()(PrimarySkill::ATTACK))
-);
-```
-
-### 奖励生命周期管理
-```cpp
-// 减少临时奖励持续时间
-heroNode.reduceBonusDurations(Selector::duration()(BonusDuration::N_TURNS));
-
-// 移除特定奖励
-heroNode.removeBonuses(Selector::sourceType()(BonusSource::SPELL));
-
-// 递归移除（包括子节点）
-heroNode.removeBonusesRecursive(Selector::type()(BonusType::MORALE));
-```
-
-### 节点关系查询
-```cpp
-// 获取直接父节点
-TCNodes parents;
-heroNode.getDirectParents(parents);
-
-// 检查节点类型
-if (heroNode.getNodeType() == BonusNodeType::HERO) {
-    // 这是英雄节点
-}
-
-// 获取树版本（用于缓存验证）
-int32_t version = heroNode.getTreeVersion();
-```
-
-## ⚡ 性能特性
-
-- **智能缓存**: 多级缓存系统提高查询性能
-- **并发安全**: 使用读写锁支持并发访问
-- **懒加载**: 奖励计算按需进行
-- **版本控制**: 变更计数器确保缓存一致性
-
-## 🔍 注意事项
-
-1. **树状结构**: 节点关系形成复杂的树状结构
-2. **传播机制**: 奖励沿树结构传播，方向可配置
-3. **缓存一致性**: 节点变更时需要更新缓存
-4. **内存管理**: 奖励使用共享指针管理生命周期
-
-## 📊 节点类型
-
-### BonusNodeType 枚举
-```cpp
-enum class BonusNodeType {
-    HERO,           // 英雄
-    ARTIFACT,       // 神器
-    STACK_BATTLE,   // 战斗单位
-    CREATURE,       // 生物
-    PLAYER,         // 玩家
-    TEAM,           // 队伍
-    GLOBAL          // 全局
+    friend class CBonusProxy;
 };
 ```
 
-### 关系类型
-- **继承关系**: 从父节点继承奖励（`parentsToInherit`）
-- **传播关系**: 向父节点传播奖励（`parentsToPropagate`）
-- **父子关系**: 标准的树状结构（`children`）
+## 功能说明
 
-## 🔧 高级特性
+CBonusSystemNode是VCMI奖励系统的核心组件，用于管理游戏中的各种奖励效果。它可以处理奖励的传播、缓存和管理，支持复杂的奖励系统，如英雄能力、神器效果、地形奖励等。该节点可以作为奖励的来源或接收者，并能够处理奖励的继承和传播。
 
-### 奖励传播算法
-- **红色路径**: 奖励传播的路径
-- **限制器**: 控制奖励生效条件
-- **更新器**: 修改奖励属性
-- **传播更新器**: 控制传播行为
+## 依赖关系
 
-### 缓存策略
-- **请求缓存**: 基于选择器的查询结果缓存
-- **版本控制**: 通过变更计数器验证缓存有效性
-- **并发访问**: 支持多线程并发查询
+- [IBonusBearer](./IBonusBearer.md): 奖励承载者接口
+- [Serializeable](../serializer/Serializeable.md): 可序列化接口
+- [BonusList](./BonusList.md): 奖励列表
+- [Bonus](./Bonus.md): 奖励类
+- [CSelector](./CSelector.md): 奖励选择器
+- boost::noncopyable: 防拷贝基类
+- tbb::concurrent_hash_map: 并发哈希映射
+- STL库: set, vector, atomic, shared_mutex等
 
-### 调试支持
-- **节点信息**: `nodeName()` 和 `nodeShortInfo()` 提供调试信息
-- **奖励描述**: `bonusToString()` 生成奖励描述
+## 函数注释
+
+- `CBonusSystemNode(nodeType, isHypotetic)`: 构造函数，创建具有指定类型和假想状态的奖励系统节点
+- `CBonusSystemNode(nodeType)`: 构造函数，创建具有指定类型的奖励系统节点
+- `~CBonusSystemNode()`: 析构函数，清理奖励系统节点资源
+- `getAllBonuses(selector, cachingStr)`: 获取所有匹配选择器的奖励，可选地使用缓存
+- `getFirstBonus(selector)`: 获取第一个匹配选择器的奖励
+- `getLocalBonus(selector)`: 获取本地匹配选择器的奖励并提供写访问
+- `attachTo(parent)`: 将此节点附加到父节点
+- `attachToSource(parent)`: 将此节点附加到源父节点
+- `detachFrom(parent)`: 从此节点分离父节点
+- `addNewBonus(b)`: 添加新的奖励到节点
+- `accumulateBonus(b)`: 累积奖励值或创建新奖励
+- `removeBonus(b)`: 从此节点移除奖励
+- `removeBonuses(selector)`: 移除匹配选择器的所有奖励
+- `reduceBonusDurations(s)`: 更新剩余回合数并删除过时的奖励
+- `bonusToString(bonus)`: 将奖励转换为字符串表示
+- `nodeName()`: 获取节点名称
+- `isHypothetic()`: 检查节点是否为假想节点
+- `getNodeType()`: 获取节点类型
+- `nodeHasChanged()`: 标记节点已更改
+- `getTreeVersion()`: 获取树版本号
+- `getOwner()`: 获取节点拥有者
