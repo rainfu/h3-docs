@@ -242,6 +242,24 @@
 - TargetSplitter
 - TargetMerger
 
+### 效果 (Effects)
+- Effect
+- UnitEffect
+- LocationEffect
+- Damage
+- Heal
+- Summon
+- Teleport
+- Clone
+- Dispel
+- Catapult
+- DemonSummon
+- Moat
+- Obstacle
+- RemoveObstacle
+- Sacrifice
+- Registry
+
 ### 随机地图生成 (RMG)
 - CRmgTemplate
 - CTreasureInfo

@@ -271,23 +271,23 @@
 - adventure/SummonBoatEffect.h
 - adventure/TownPortalEffect.h
 - adventure/ViewWorldEffect.h
-- effects/Catapult.h
-- effects/Clone.h
-- effects/Damage.h
-- effects/DemonSummon.h
-- effects/Dispel.h
-- effects/Effect.h
+- effects/Catapult.h [✓] 2026-01-17 19:00
+- effects/Clone.h [✓] 2026-01-17 18:40
+- effects/Damage.h [✓] 2026-01-17 18:00
+- effects/DemonSummon.h [✓] 2026-01-17 19:10
+- effects/Dispel.h [✓] 2026-01-17 18:50
+- effects/Effect.h [✓] 2026-01-17 17:50
 - effects/Effects.h
 - effects/EffectsFwd.h
-- effects/Heal.h
-- effects/LocationEffect.h
-- effects/Moat.h
-- effects/Obstacle.h
-- effects/Registry.h
-- effects/RemoveObstacle.h
-- effects/Sacrifice.h
-- effects/Summon.h
-- effects/Teleport.h
+- effects/Heal.h [✓] 2026-01-17 18:10
+- effects/LocationEffect.h [✓] 2026-01-17 19:20
+- effects/Moat.h [✓] 2026-01-17 19:30
+- effects/Obstacle.h [✓] 2026-01-17 19:40
+- effects/Registry.h [✓] 2026-01-17 20:10
+- effects/RemoveObstacle.h [✓] 2026-01-17 19:50
+- effects/Sacrifice.h [✓] 2026-01-17 20:00
+- effects/Summon.h [✓] 2026-01-17 18:20
+- effects/Teleport.h [✓] 2026-01-17 18:30
 - effects/Timed.h
 - effects/UnitEffect.h
 - AbilityCaster.h
