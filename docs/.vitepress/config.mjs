@@ -59,15 +59,63 @@ export default defineConfig({
         {
           text: '实体 (Entities)',
           items: [
-            { text: 'CArtifact', link: '/classes/entities/CArtifact' },
-            { text: 'CArtifactInstance', link: '/classes/entities/CArtifactInstance' },
-            { text: 'CArtifactSet', link: '/classes/entities/CArtifactSet' },
-            { text: 'ArtSlotInfo', link: '/classes/entities/ArtSlotInfo' },
-            { text: 'CBuilding', link: '/classes/entities/CBuilding' },
-            { text: 'CCreature', link: '/classes/entities/CCreature' },
-            { text: 'CFaction', link: '/classes/entities/faction/CFaction' },
-            { text: 'CHero', link: '/classes/entities/hero/CHero' },
-            { text: 'CTown', link: '/classes/entities/CTown' }
+            {
+              text: '神器系统 (artifact/)',
+              items: [
+                { text: 'CArtifact', link: '/classes/entities/CArtifact' },
+                { text: 'CArtifactInstance', link: '/classes/entities/CArtifactInstance' },
+                { text: 'CArtifactSet', link: '/classes/entities/CArtifactSet' },
+                { text: 'CArtifactFittingSet', link: '/classes/entities/CArtifactFittingSet' },
+                { text: 'ArtSlotInfo', link: '/classes/entities/ArtSlotInfo' },
+                { text: 'CArtHandler', link: '/classes/entities/CArtHandler' },
+                { text: 'ArtBearer', link: '/classes/entities/ArtBearer' },
+                { text: 'ArtifactUtils', link: '/classes/entities/ArtifactUtils' },
+                { text: 'EArtifactClass', link: '/classes/entities/EArtifactClass' }
+              ]
+            },
+            {
+              text: '建筑系统 (building/)',
+              items: [
+                { text: 'CBuilding', link: '/classes/entities/CBuilding' },
+                { text: 'TownFortifications', link: '/classes/entities/TownFortifications' }
+              ]
+            },
+            {
+              text: '派系系统 (faction/)',
+              items: [
+                { text: 'CFaction', link: '/classes/entities/faction/CFaction' },
+                { text: 'CTown', link: '/classes/entities/CTown' },
+                { text: 'CTownHandler', link: '/classes/entities/CTownHandler' }
+              ]
+            },
+            {
+              text: '英雄系统 (hero/)',
+              items: [
+                { text: 'CHero', link: '/classes/entities/hero/CHero' },
+                { text: 'CHeroClass', link: '/classes/entities/CHeroClass' },
+                { text: 'CHeroClassHandler', link: '/classes/entities/CHeroClassHandler' },
+                { text: 'CHeroHandler', link: '/classes/entities/CHeroHandler' },
+                { text: 'EHeroGender', link: '/classes/entities/EHeroGender' }
+              ]
+            },
+            {
+              text: '生物系统 (creature/)',
+              items: [
+                { text: 'CCreature', link: '/classes/entities/CCreature' }
+              ]
+            },
+            {
+              text: '基础实体',
+              items: [
+                { text: 'Entity', link: '/classes/entities/Entity' },
+                { text: 'EntityService', link: '/classes/entities/EntityService' },
+                { text: 'EntityServiceT', link: '/classes/entities/EntityServiceT' },
+                { text: 'EntityT', link: '/classes/entities/EntityT' },
+                { text: 'EntityWithBonuses', link: '/classes/entities/EntityWithBonuses' },
+                { text: 'IConstBonusProvider', link: '/classes/entities/IConstBonusProvider' },
+                { text: 'ResourceTypeHandler', link: '/classes/entities/ResourceTypeHandler' }
+              ]
+            }
           ]
         },
         {

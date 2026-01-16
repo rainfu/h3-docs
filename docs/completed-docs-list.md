@@ -6,6 +6,10 @@
 
 ### 文件系统 (Filesystem)
 - ResourcePath
+- Filesystem
+- CInputStream
+- COutputStream
+- ISimpleResourceLoader
 
 ### 事件 (Events)
 - EventBus
@@ -43,6 +47,20 @@
 - CMemorySerializer
 - CTypeList
 - RegisterTypes
+
+### 回调 (Callback)
+- CAdventureAI
+- CBattleCallback
+- CBattleGameInterface
+- CCallback
+- CDynLibHandler
+- CGameInfoCallback
+- CGameInterface
+- CGlobalAI
+- CNonConstInfoCallback
+- CPlayerSpecificInfoCallback
+- EditorCallback
+- GameCallbackHolder
 
 ### 战斗 (Battle)
 - CBattleInfoCallback

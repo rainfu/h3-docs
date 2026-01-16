@@ -37,6 +37,12 @@
   - `CArtifact.h` - 神器实体（依赖：CBonusSystemNode.h, ArtifactLocation.h, Artifact.h）
   - `CTown.h` - 城镇实体（依赖：building/, Point.h, constants/, filesystem/, int3.h）
   - `CCreature` - 生物实体（依赖：bonuses/, constants/，原始代码中定义）
+  - `CHeroHandler.h` - 英雄处理器（依赖：HeroTypeService.h, entities/hero/, bonuses/）
+  - `CHeroClassHandler.h` - 英雄职业处理器（依赖：HeroClassService.h, entities/hero/）
+  - `CTownHandler.h` - 城镇处理器（依赖：FactionService.h, entities/faction/）
+  - `CArtHandler.h` - 神器处理器（依赖：ArtifactService.h, entities/artifact/）
+  - `CArtifactFittingSet.h` - 神器装备测试类（依赖：entities/artifact/, bonuses/）
+  - `TownFortifications.h` - 城镇防御配置（依赖：constants/）
 
 ### 战斗层模块 (Level 5)
 实现战斗逻辑，依赖实体层：
@@ -112,6 +118,42 @@ CCreature (原始代码)
 ├── bonuses/ (CBonusSystemNode)
 ├── constants/ (EntityIdentifiers)
 └── vcmi/ (Creature 基类)
+
+CHeroHandler
+├── vcmi/ (HeroTypeService)
+├── entities/hero/ (CHero, EHeroGender)
+├── bonuses/ (Bonus)
+├── constants/ (GameConstants)
+└── filesystem/ (ResourcePath)
+
+CHeroClassHandler
+├── vcmi/ (HeroClassService)
+├── entities/hero/ (CHeroClass)
+├── constants/ (GameConstants)
+└── filesystem/ (ResourcePath)
+
+CTownHandler
+├── vcmi/ (FactionService)
+├── entities/faction/ (CTown, CFaction)
+├── entities/building/ (TownFortifications)
+├── constants/ (GameConstants)
+└── filesystem/ (ResourcePath)
+
+CArtHandler
+├── vcmi/ (ArtifactService)
+├── entities/artifact/ (CArtifact, ArtBearer, EArtifactClass, ArtifactUtils)
+├── bonuses/ (Bonus)
+├── constants/ (GameConstants)
+└── filesystem/ (ResourcePath)
+
+CArtifactFittingSet
+├── entities/artifact/ (CArtifactSet, ArtSlotInfo)
+├── bonuses/ (Bonus)
+└── constants/ (GameConstants)
+
+TownFortifications
+├── constants/ (GameConstants)
+└── filesystem/ (ResourcePath)
 ```
 
 ### 奖励系统依赖关系
@@ -234,7 +276,7 @@ CPack → CPackForServer → SetResource/NewStructures/YourTurn...
 
 本分析基于以下头文件的实际 `#include` 语句：
 - **战斗系统**：`BattleInfo.h`, `Unit.h`, `DamageCalculator.h`, `BattleAction.h`, `CStackInstance.h`
-- **实体系统**：`CHero.h`, `CArtifact.h`, `CTown.h` (CCreature 在原始代码中)
+- **实体系统**：`CHero.h`, `CArtifact.h`, `CTown.h`, `CHeroHandler.h`, `CHeroClassHandler.h`, `CTownHandler.h`, `CArtHandler.h`, `CArtifactFittingSet.h`, `TownFortifications.h` (CCreature 在原始代码中)
 - **奖励系统**：`Bonus.h`, `BonusList.h`, `CBonusSystemNode.h`
 - **游戏状态**：`CGameState.h`, `CPlayerState.h`
 - **序列化系统**：`Serializeable.h`, `CSerializer.h`
@@ -272,6 +314,27 @@ graph TD
     B --> E[Bonus]
     C --> F[CBonusSystemNode]
     D --> G[Bonus]
+    
+    H[CHeroHandler] --> I[CHero]
+    H --> J[HeroTypeService]
+    H --> K[EHeroGender]
+    
+    L[CHeroClassHandler] --> M[CHeroClass]
+    L --> N[HeroClassService]
+    
+    O[CTownHandler] --> P[CTown]
+    O --> Q[CFaction]
+    O --> R[FactionService]
+    O --> S[TownFortifications]
+    
+    T[CArtHandler] --> U[CArtifact]
+    T --> V[ArtifactService]
+    T --> W[ArtBearer]
+    T --> X[EArtifactClass]
+    T --> Y[ArtifactUtils]
+    
+    Z[CArtifactFittingSet] --> AA[CArtifactSet]
+    Z --> BB[ArtSlotInfo]
 ```
 
 ### 奖励系统依赖关系

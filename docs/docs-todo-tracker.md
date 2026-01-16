@@ -16,6 +16,13 @@
 - CStackInstance [✓] 2026-01-17 06:20
 - Metatype [✓] 2026-01-17 06:22
 - Environment [✓] 2026-01-17 06:24
+- GameCallbackHolder [✓] 2026-01-17 16:35
+- EditorCallback [✓] 2026-01-17 16:40
+- CGameInfoCallback [✓] 2026-01-17 16:45
+- Filesystem [✓] 2026-01-17 16:50
+- CInputStream [✓] 2026-01-17 16:55
+- COutputStream [✓] 2026-01-17 17:00
+- ISimpleResourceLoader [✓] 2026-01-17 17:05
 
 ## 任务清单（按模块分类）
 
