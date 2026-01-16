@@ -117,6 +117,22 @@
 - CGDwelling [✓] 2026-01-17 16:15
 - CGMarket [✓] 2026-01-17 16:15
 - CQuest [✓] 2026-01-17 16:15
+- CGPandoraBox [✓] 2026-01-17 16:15
+- CGResource [✓] 2026-01-17 16:15
+- CRewardableObject [✓] 2026-01-17 16:15
+- FlaggableMapObject [✓] 2026-01-17 16:15
+- IMarket [✓] 2026-01-17 16:15
+- IOwnableObject [✓] 2026-01-17 16:15
+- MapObjects [✓] 2026-01-17 16:15
+- MiscObjects [✓] 2026-01-17 16:15
+- ObstacleSetHandler [✓] 2026-01-17 16:15
+- TownBuildingInstance [✓] 2026-01-17 16:15
+- CArmedInstance [✓] 2026-01-17 16:15
+- CCreatureSet [✓] 2026-01-17 16:15
+- CStackBasicDescriptor [✓] 2026-01-17 16:15
+- CCommanderInstance [✓] 2026-01-17 16:15
+- CSimpleArmy [✓] 2026-01-17 16:15
+- CStackInstance [✓] 2026-01-17 16:15
 
 ### 游戏状态 (Game State)
 - CGameState [✓] 2026-01-17 06:00

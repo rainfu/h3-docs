@@ -122,7 +122,28 @@ export default defineConfig({
             { text: 'CGCreature', link: '/classes/mapObjects/CGCreature' },
             { text: 'CGDwelling', link: '/classes/mapObjects/CGDwelling' },
             { text: 'CGMarket', link: '/classes/mapObjects/CGMarket' },
-            { text: 'CQuest', link: '/classes/mapObjects/CQuest' }
+            { text: 'CQuest', link: '/classes/mapObjects/CQuest' },
+            { text: 'CGPandoraBox', link: '/classes/mapObjects/CGPandoraBox' },
+            { text: 'CGResource', link: '/classes/mapObjects/CGResource' },
+            { text: 'CRewardableObject', link: '/classes/mapObjects/CRewardableObject' },
+            { text: 'FlaggableMapObject', link: '/classes/mapObjects/FlaggableMapObject' },
+            { text: 'IMarket', link: '/classes/mapObjects/IMarket' },
+            { text: 'IOwnableObject', link: '/classes/mapObjects/IOwnableObject' },
+            { text: 'MapObjects', link: '/classes/mapObjects/MapObjects' },
+            { text: 'MiscObjects', link: '/classes/mapObjects/MiscObjects' },
+            { text: 'ObstacleSetHandler', link: '/classes/mapObjects/ObstacleSetHandler' },
+            { text: 'TownBuildingInstance', link: '/classes/mapObjects/TownBuildingInstance' },
+            {
+              text: '军队系统 (army/)',
+              items: [
+                { text: 'CArmedInstance', link: '/classes/mapObjects/army/CArmedInstance' },
+                { text: 'CCreatureSet', link: '/classes/mapObjects/army/CCreatureSet' },
+                { text: 'CStackBasicDescriptor', link: '/classes/mapObjects/army/CStackBasicDescriptor' },
+                { text: 'CCommanderInstance', link: '/classes/mapObjects/army/CCommanderInstance' },
+                { text: 'CSimpleArmy', link: '/classes/mapObjects/army/CSimpleArmy' },
+                { text: 'CStackInstance', link: '/classes/mapObjects/army/CStackInstance' }
+              ]
+            }
           ]
         },
         {

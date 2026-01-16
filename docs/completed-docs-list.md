@@ -118,6 +118,22 @@
 - CGDwelling
 - CGMarket
 - CQuest
+- CGPandoraBox
+- CGResource
+- CRewardableObject
+- FlaggableMapObject
+- IMarket
+- IOwnableObject
+- MapObjects
+- MiscObjects
+- ObstacleSetHandler
+- TownBuildingInstance
+- CArmedInstance
+- CCreatureSet
+- CStackBasicDescriptor
+- CCommanderInstance
+- CSimpleArmy
+- CStackInstance
 
 ### 游戏状态 (Game State)
 - CGameState
