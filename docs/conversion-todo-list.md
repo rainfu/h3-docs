@@ -41,15 +41,17 @@
 - Updaters.h
 
 ### 回调 (Callback)
-- CAdventureAI.h
-- CBattleCallback.h
-- CBattleGameInterface.h
-- CCallback.h
-- CDynLibHandler.h
-- CGameInterface.h
-- CGlobalAI.h
-- CNonConstInfoCallback.h
-- CPlayerSpecificInfoCallback.h
+- CAdventureAI.h [✓] 2026-01-17 09:00
+- CBattleCallback.h [✓] 2026-01-17 09:05
+- CBattleGameInterface.h [✓] 2026-01-17 09:10
+- CCallback.h [✓] 2026-01-17 09:15
+- CDynLibHandler.h [✓] 2026-01-17 09:20
+- CGameInterface.h [✓] 2026-01-17 09:25
+- CGlobalAI.h [✓] 2026-01-17 09:30
+- CNonConstInfoCallback.h [✓] 2026-01-17 09:35
+- CPlayerSpecificInfoCallback.h [✓] 2026-01-17 09:40
+- CShipyard.h
+- CShipyardManager.h
 - EditorCallback.h
 - GameCallbackHolder.h
 - IGameInfoCallback.h

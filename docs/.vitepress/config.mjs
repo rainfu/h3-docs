@@ -34,7 +34,26 @@ export default defineConfig({
             { text: 'ForcedAction', link: '/classes/battle/ForcedAction' },
             { text: 'AccessibilityInfo', link: '/classes/battle/AccessibilityInfo' },
             { text: 'DamageEstimation', link: '/classes/battle/DamageEstimation' },
-            { text: 'BattleAttackInfo', link: '/classes/battle/BattleAttackInfo' }
+            { text: 'BattleAttackInfo', link: '/classes/battle/BattleAttackInfo' },
+            { text: 'CStackInstance', link: '/classes/battle/CStackInstance' },
+            { text: 'AutocombatPreferences', link: '/classes/battle/AutocombatPreferences' },
+            { text: 'BattleHex', link: '/classes/battle/BattleHex' },
+            { text: 'BattleHexArray', link: '/classes/battle/BattleHexArray' },
+            { text: 'BattleLayout', link: '/classes/battle/BattleLayout' },
+            { text: 'BattleProxy', link: '/classes/battle/BattleProxy' },
+            { text: 'BattleStateInfoForRetreat', link: '/classes/battle/BattleStateInfoForRetreat' },
+            { text: 'BattleUnitTurnReason', link: '/classes/battle/BattleUnitTurnReason' },
+            { text: 'CBattleInfoEssentials', link: '/classes/battle/CBattleInfoEssentials' },
+            { text: 'CObstacleInstance', link: '/classes/battle/CObstacleInstance' },
+            { text: 'CPlayerBattleCallback', link: '/classes/battle/CPlayerBattleCallback' },
+            { text: 'Destination', link: '/classes/battle/Destination' },
+            { text: 'IBattleInfoCallback', link: '/classes/battle/IBattleInfoCallback' },
+            { text: 'IBattleState', link: '/classes/battle/IBattleState' },
+            { text: 'IUnitInfo', link: '/classes/battle/IUnitInfo' },
+            { text: 'PossiblePlayerBattleAction', link: '/classes/battle/PossiblePlayerBattleAction' },
+            { text: 'ReachabilityInfo', link: '/classes/battle/ReachabilityInfo' },
+            { text: 'SiegeInfo', link: '/classes/battle/SiegeInfo' },
+            { text: 'SideInBattle', link: '/classes/battle/SideInBattle' }
           ]
         },
         {
@@ -80,7 +99,14 @@ export default defineConfig({
             { text: 'BonusValueType', link: '/classes/bonuses/BonusValueType' },
             { text: 'BonusType', link: '/classes/bonuses/BonusType' },
             { text: 'BonusStacking', link: '/classes/bonuses/BonusStacking' },
-            { text: 'CPropagatorNodeType', link: '/classes/bonuses/CPropagatorNodeType' }
+            { text: 'CPropagatorNodeType', link: '/classes/bonuses/CPropagatorNodeType' },
+            { text: 'BonusCache', link: '/classes/bonuses/BonusCache' },
+            { text: 'BonusCustomTypes', link: '/classes/bonuses/BonusCustomTypes' },
+            { text: 'BonusEnum', link: '/classes/bonuses/BonusEnum' },
+            { text: 'BonusSelector', link: '/classes/bonuses/BonusSelector' },
+            { text: 'Limiters', link: '/classes/bonuses/Limiters' },
+            { text: 'Propagators', link: '/classes/bonuses/Propagators' },
+            { text: 'Updaters', link: '/classes/bonuses/Updaters' }
           ]
         },
         {
@@ -330,6 +356,20 @@ export default defineConfig({
             { text: 'Script', link: '/classes/scripting/Script' },
             { text: 'Pool', link: '/classes/scripting/Pool' },
             { text: 'Service', link: '/classes/scripting/Service' }
+          ]
+        },
+        {
+          text: '回调 (Callback)',
+          items: [
+            { text: 'CAdventureAI', link: '/classes/callback/CAdventureAI' },
+            { text: 'CBattleCallback', link: '/classes/callback/CBattleCallback' },
+            { text: 'CBattleGameInterface', link: '/classes/callback/CBattleGameInterface' },
+            { text: 'CCallback', link: '/classes/callback/CCallback' },
+            { text: 'CDynLibHandler', link: '/classes/callback/CDynLibHandler' },
+            { text: 'CGameInterface', link: '/classes/callback/CGameInterface' },
+            { text: 'CGlobalAI', link: '/classes/callback/CGlobalAI' },
+            { text: 'CNonConstInfoCallback', link: '/classes/callback/CNonConstInfoCallback' },
+            { text: 'CPlayerSpecificInfoCallback', link: '/classes/callback/CPlayerSpecificInfoCallback' }
           ]
         },
         {
