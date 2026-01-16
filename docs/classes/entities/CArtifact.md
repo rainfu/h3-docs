@@ -9,16 +9,17 @@
 ## 🔧 主要属性
 
 ### 基本信息
-- `id`: 神器唯一标识符
+- `id`: 神器唯一标识符 (ArtifactID)
 - `identifier`: 神器标识符字符串
 - `modScope`: 模组作用域
 - `iconIndex`: 图标索引
 - `image`: 图像路径
+- `largeImage`: 大图像路径
 - `advMapDef`: 冒险地图定义文件
 
 ### 经济属性
 - `price`: 神器价格
-- `warMachine`: 对应的战争机器（如果适用）
+- `warMachine`: 对应的战争机器生物ID
 
 ### 装备限制
 - `possibleSlots`: 可能的装备位置映射（承载者类型 -> 位置列表）
@@ -36,6 +37,12 @@
 // 获取索引和ID
 int32_t getIndex() const override;
 ArtifactID getId() const override;
+int32_t getIconIndex() const override;
+std::string getJsonKey() const override;
+std::string getModScope() const override;
+
+// 注册图标
+void registerIcons(const IconRegistar & cb) const override;
 
 // 获取本地化文本
 std::string getNameTranslated() const override;
@@ -46,6 +53,7 @@ std::string getEventTranslated() const override;
 std::string getNameTextID() const override;
 std::string getDescriptionTextID() const override;
 std::string getEventTextID() const override;
+std::string getBonusTextID(const std::string & bonusID) const;
 ```
 
 ### 属性查询
@@ -60,6 +68,9 @@ bool isTradable() const override;   // 是否可交易
 
 // 获取类别序号
 int getArtClassSerial() const;
+
+// 节点名称
+std::string nodeName() const override;
 ```
 
 ### 装备系统

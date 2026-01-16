@@ -4,6 +4,7 @@ export default defineConfig({
   base: '/h3/',
   title: 'VCMI Lib 文档',
   description: 'VCMI 客户端核心库 API 文档',
+  ignoreDeadLinks: true,
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
@@ -21,7 +22,7 @@ export default defineConfig({
             { text: 'Unit', link: '/classes/battle/Unit' },
             { text: 'DamageCalculator', link: '/classes/battle/DamageCalculator' },
             { text: 'BattleAction', link: '/classes/battle/BattleAction' },
-            { text: 'CStackInstance', link: '/classes/battle/CStackInstance' },
+            { text: 'CUnitState', link: '/classes/battle/CUnitState' },
             { text: 'CBattleInfoCallback', link: '/classes/battle/CBattleInfoCallback' }
           ]
         },
@@ -39,13 +40,15 @@ export default defineConfig({
           items: [
             { text: 'Bonus', link: '/classes/bonuses/Bonus' },
             { text: 'BonusList', link: '/classes/bonuses/BonusList' },
-            { text: 'CBonusSystemNode', link: '/classes/bonuses/CBonusSystemNode' }
+            { text: 'CBonusSystemNode', link: '/classes/bonuses/CBonusSystemNode' },
+            { text: 'IBonusBearer', link: '/classes/bonuses/IBonusBearer' }
           ]
         },
         {
           text: '序列化系统 (serializer/)',
           items: [
             { text: 'Serializeable', link: '/classes/serializer/Serializeable' },
+            { text: 'BinarySerializer', link: '/classes/serializer/BinarySerializer' },
             { text: 'CSerializer', link: '/classes/serializer/CSerializer' }
           ]
         },
@@ -114,7 +117,7 @@ export default defineConfig({
         {
           text: '日志系统 (logging/)',
           items: [
-            { text: 'CLogger', link: '/classes/logging/' },
+            { text: 'CLogger', link: '/classes/logging/CLogger' },
             { text: 'CLoggerDomain', link: '/classes/logging/' }
           ]
         },

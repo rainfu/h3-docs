@@ -1,6 +1,128 @@
-# CTown
+# CTown类
 
-城镇类，定义游戏中各种城镇的属性和建筑。
+CTown类是VCMI中城镇类型的实现类，定义了游戏中城镇的基本属性和功能。
+
+## 类定义
+
+```cpp
+struct DLL_LINKAGE CStructure
+{
+    const CBuilding * building;  // 基础建筑，如果为null，则此结构将始终显示在屏幕上
+    const CBuilding * buildable; // 用于确定建造建筑和可见成本的建筑，通常与"building"相同
+
+    int3 pos;
+    AnimationPath defName;
+    ImagePath borderName;
+    ImagePath campaignBonus;
+    ImagePath areaName;
+    std::string identifier;
+
+    bool hiddenUpgrade; // 仅当"building"是升级时使用，如果为true - 城镇屏幕上的结构将表现得完全像父级（鼠标点击、悬停文本等）
+};
+
+class DLL_LINKAGE CTown : boost::noncopyable
+{
+    friend class CTownHandler;
+    size_t namesCount = 0;
+
+public:
+    CTown();
+    ~CTown();
+
+    std::string getBuildingScope() const;
+    std::set<si32> getAllBuildings() const;
+    const CBuilding * getSpecialBuilding(BuildingSubID::EBuildingSubID subID) const;
+    BuildingID getBuildingType(BuildingSubID::EBuildingSubID subID) const;
+
+    std::string getRandomNameTextID(size_t index) const;
+    size_t getRandomNamesCount() const;
+
+    CFaction * faction;
+
+    /// 等级 -> 此等级生物列表
+    std::vector<std::vector<CreatureID> > creatures;
+
+    std::map<BuildingID, std::unique_ptr<const CBuilding>> buildings;
+
+    std::vector<std::string> dwellings; // 冒险地图生物栖息地的defs，[0]表示1级生物等
+    std::vector<std::string> dwellingNames;
+
+    // 应该从配置中移除以支持自动检测
+    std::map<int,int> hordeLvl; //[0] - 第一部落建筑生物等级; [1] - 第二部落建筑（如果不支持则为-1）
+    ui32 mageLevel; // 最大可用法师公会等级
+    GameResID primaryRes;
+    CreatureID warMachineDeprecated;
+
+    /// 空城的堡垒基础状态
+    /// 用于定义射手单位和护城河法术ID
+    TownFortifications fortifications;
+
+    // 默认酒馆英雄出现几率，如果未设置"tavern"字段
+    // 结果几率 = sqrt(town.chance * heroClass.chance)
+    ui32 defaultTavernChance;
+
+    // 仅客户端数据，应从lib中移出
+    struct ClientInfo
+    {
+        // 图标 [有堡垒?][达到建筑限制?] -> def文件中的图标索引
+        int icons[2][2];
+        std::string iconSmall[2][2]; /// 加载期间使用的图标名
+        std::string iconLarge[2][2];
+        VideoPath tavernVideo;
+        std::vector<AudioPath> musicTheme;
+        ImagePath townBackground;
+        std::vector<ImagePath> guildBackground;
+        std::vector<ImagePath> guildWindow;
+        Point guildWindowPosition;
+        std::vector<std::vector<Point>> guildSpellPositions;
+        AnimationPath buildingsIcons;
+        ImagePath hallBackground;
+        /// vector[row][column] = 此槽位的建筑列表
+        std::vector< std::vector< std::vector<BuildingID> > > hallSlots;
+
+        /// 城镇屏幕结构列表
+        /// 注意：向量中的索引无意义，使用向量代替列表是为了稍快的访问
+        std::vector<std::unique_ptr<const CStructure>> structures;
+
+        std::string siegePrefix;
+        std::vector<Point> siegePositions;
+        std::string towerIconSmall;
+        std::string towerIconLarge;
+
+    } clientInfo;
+};
+```
+
+## 功能说明
+
+CTown是VCMI中城镇类型的实现类，定义了游戏中每个城镇类型的基本属性、生物栖息地、建筑物、法术公会等级等特征。它包含客户端专用的信息，如界面图标、背景图片、音乐主题等，也包含游戏逻辑相关的信息，如生物列表、建筑物定义等。
+
+## 依赖关系
+
+- [CFaction](./CFaction.md): 派系类
+- [CBuilding](./CBuilding.md): 建筑类
+- [CreatureID](../constants/CreatureID.md): 生物ID
+- [BuildingID](../constants/BuildingID.md): 建筑ID
+- [BuildingSubID](../constants/BuildingSubID.md): 建筑子ID
+- [GameResID](../constants/GameResID.md): 游戏资源ID
+- [TownFortifications](./TownFortifications.md): 城镇堡垒
+- [CStructure](./CStructure.md): 城镇结构
+- [AnimationPath](../filesystem/ResourcePath.md): 动画路径
+- [ImagePath](../filesystem/ResourcePath.md): 图片路径
+- [VideoPath](../filesystem/ResourcePath.md): 视频路径
+- [AudioPath](../filesystem/ResourcePath.md): 音频路径
+- [Point](../Point.md): 点坐标
+
+## 函数注释
+
+- `CTown()`: 构造函数，创建城镇对象
+- `getBuildingScope()`: 获取建筑作用域
+- `getAllBuildings()`: 获取所有建筑ID
+- `getSpecialBuilding(subID)`: 根据子ID获取特殊建筑
+- `getBuildingType(subID)`: 根据子ID获取建筑类型
+- `getRandomNameTextID(index)`: 获取指定索引的随机名称文本ID
+- `getRandomNamesCount()`: 获取随机名称的数量
+- `~CTown()`: 析构函数
 
 ## 📋 类概述
 
@@ -71,7 +193,7 @@ std::string getRandomNameTextID(size_t index) const;
 ## 📝 使用示例
 
 ### 查询城镇建筑
-```cpp
+```
 // 获取城镇的所有建筑
 auto allBuildings = town->getAllBuildings();
 for (auto buildingId : allBuildings) {
@@ -229,4 +351,3 @@ struct ClientInfo {
     "musicTheme": ["castle-theme.mp3"]
   }
 }
-```

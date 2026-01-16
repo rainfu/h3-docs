@@ -67,26 +67,47 @@ public:
     PossiblePlayerBattleAction getCasterAction(const CSpell * spell, const spells::Caster * caster, spells::Mode mode) const;
     bool isInTacticRange(const BattleHex & dest) const;
     si8 battleGetTacticDist() const;
-    AttackableTiles getPotentiallyAttackableHexes(const battle::Unit* attacker, const battle::Unit* defender, BattleHex destinationTile, BattleHex attackerPos, BattleHex defenderPos) const;
-    AttackableTiles getPotentiallyAttackableHexes(const battle::Unit * attacker, BattleHex destinationTile, BattleHex attackerPos) const;
-    AttackableTiles getPotentiallyShootableHexes(const battle::Unit* attacker, const BattleHex & destinationTile, const BattleHex & attackerPos) const;
-    battle::Units getAttackedBattleUnits(const battle::Unit* attacker, const battle::Unit * defender, BattleHex destinationTile, bool rangedAttack, BattleHex attackerPos = BattleHex::INVALID, BattleHex defenderPos = BattleHex::INVALID) const;
-    std::pair<std::set<const CStack*>, bool> getAttackedCreatures(const CStack* attacker, const BattleHex & destinationTile, bool rangedAttack, BattleHex attackerPos = BattleHex::INVALID) const;
-    bool isToReverse(const battle::Unit * attacker, const battle::Unit * defender, BattleHex attackerHex = BattleHex::INVALID, BattleHex defenderHex = BattleHex::INVALID) const;
+    AttackableTiles getPotentiallyAttackableHexes(
+        const  battle::Unit* attacker,
+        const  battle::Unit* defender,
+        BattleHex destinationTile,
+        BattleHex attackerPos,
+        BattleHex defenderPos) const; //TODO: apply rotation to two-hex attacker
+
+    AttackableTiles getPotentiallyAttackableHexes(
+        const  battle::Unit * attacker,
+        BattleHex destinationTile,
+        BattleHex attackerPos) const;
+
+    AttackableTiles getPotentiallyShootableHexes(const  battle::Unit* attacker, const BattleHex & destinationTile, const BattleHex & attackerPos) const;
+
+    battle::Units getAttackedBattleUnits(
+        const battle::Unit* attacker,
+        const  battle::Unit * defender,
+        BattleHex destinationTile,
+        bool rangedAttack,
+        BattleHex attackerPos = BattleHex::INVALID,
+        BattleHex defenderPos = BattleHex::INVALID) const; //calculates range of multi-hex attacks
+    
+    std::pair<std::set<const CStack*>, bool> getAttackedCreatures(const CStack* attacker, const BattleHex & destinationTile, bool rangedAttack, BattleHex attackerPos = BattleHex::INVALID) const; //calculates range of multi-hex attacks
+    bool isToReverse(const battle::Unit * attacker, const battle::Unit * defender, BattleHex attackerHex = BattleHex::INVALID, BattleHex defenderHex = BattleHex::INVALID) const; //determines if attacker standing at attackerHex should reverse in order to attack defender
+
     ReachabilityInfo getReachability(const battle::Unit * unit) const;
     ReachabilityInfo getReachability(const ReachabilityInfo::Parameters & params) const;
     AccessibilityInfo getAccessibility() const;
-    AccessibilityInfo getAccessibility(const battle::Unit * stack) const;
-    AccessibilityInfo getAccessibility(const BattleHexArray & accessibleHexes) const;
+    AccessibilityInfo getAccessibility(const battle::Unit * stack) const; //Hexes occupied by stack will be marked as accessible.
+    AccessibilityInfo getAccessibility(const BattleHexArray & accessibleHexes) const; //given hexes will be marked as accessible
     ForcedAction getBerserkForcedAction(const battle::Unit * berserker) const;
-    BattleHex getAvailableHex(const CreatureID & creID, BattleSide side, int initialPos = -1) const;
 
+    BattleHex getAvailableHex(const CreatureID & creID, BattleSide side, int initialPos = -1) const; //find place for adding new stack
 protected:
     ReachabilityInfo getFlyingReachability(const ReachabilityInfo::Parameters & params) const;
     ReachabilityInfo makeBFS(const AccessibilityInfo & accessibility, const ReachabilityInfo::Parameters & params) const;
     bool isInObstacle(const BattleHex & hex, const BattleHexArray & obstacles, const ReachabilityInfo::Parameters & params) const;
-    BattleHexArray getStoppers(BattleSide whichSidePerspective) const;
+    BattleHexArray getStoppers(BattleSide whichSidePerspective) const; //get hexes with stopping obstacles (quicksands)
 };
+
+VCMI_LIB_NAMESPACE_END
 ```
 
 ## 功能说明

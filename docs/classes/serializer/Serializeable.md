@@ -1,6 +1,29 @@
-# Serializeable
+# Serializeable类
 
-序列化基类，所有可序列化类的基类。
+Serializeable类是VCMI中所有可序列化类的基类标签。
+
+## 类定义
+
+```cpp
+// Tag class that acts as base for all classes that can be serialized by pointer
+class Serializeable
+{
+public:
+    virtual ~Serializeable() = default;
+};
+```
+
+## 功能说明
+
+Serializeable是一个标签类，作为所有可以通过指针序列化的类的基类。它不包含任何成员变量或虚函数，仅作为一个类型标识符，表明派生类支持序列化功能。这个类是VCMI序列化系统的基础，使得系统能够识别和处理可序列化的对象。
+
+## 依赖关系
+
+- 无直接依赖
+
+## 函数注释
+
+- `virtual ~Serializeable()`: 虚析构函数，确保派生类能够正确析构
 
 ## 📋 类概述
 
@@ -25,7 +48,7 @@ virtual ~Serializeable() = default;
 
 ## 💡 使用示例
 
-```cpp
+```
 // 继承自 Serializeable 的类示例
 class MyClass : public Serializeable
 {
