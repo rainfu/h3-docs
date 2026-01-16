@@ -1,104 +1,115 @@
 # CArtifactInstance类
 
-CArtifactInstance类是VCMI中神器实例类，代表游戏中实际存在的神器实例，可以装备在英雄或其他单位上。
+CArtifactInstance类是VCMI系统中的神器实例类，用于表示游戏中具体的神器实例。它不仅包含了神器实例的基本属性，还集成了多种特殊功能，如组合、滚动、成长和充能等。
 
 ## 类定义
 
 ```cpp
+struct ArtifactLocation;
+class CGameState;
+class CArtifactSet;
+
+// 组合神器实例类
 class DLL_LINKAGE CCombinedArtifactInstance : public GameCallbackHolder
 {
 protected:
     using GameCallbackHolder::GameCallbackHolder;
 
 public:
-    using ArtPlacementMap = std::map<const CArtifactInstance *, ArtifactPosition>;
+    using ArtPlacementMap = std::map<const CArtifactInstance *, ArtifactPosition>; // 神器放置映射
 
     struct PartInfo
     {
     private:
-        const CArtifactInstance * artifactPtr = nullptr;
-        ArtifactInstanceID artifactID;
+        const CArtifactInstance * artifactPtr = nullptr;  // 神器实例指针
+        ArtifactInstanceID artifactID;                    // 神器实例ID
     public:
-
         PartInfo() = default;
-        PartInfo(const CArtifactInstance * artifact, ArtifactPosition slot);
+        PartInfo(const CArtifactInstance * artifact, ArtifactPosition slot); // 构造函数
 
-        ArtifactPosition slot;
+        ArtifactPosition slot;                            // 槽位
 
-        const CArtifactInstance * getArtifact() const;
-        ArtifactInstanceID getArtifactID() const;
+        const CArtifactInstance * getArtifact() const;    // 获取神器实例
+        ArtifactInstanceID getArtifactID() const;        // 获取神器实例ID
 
         template <typename Handler>
-        void serialize(Handler & h);
+        void serialize(Handler & h);                     // 序列化
     };
-    void addPart(const CArtifactInstance * art, const ArtifactPosition & slot);
-    // 检查假定的部分实例是否是这个组合神器实例的一部分
-    bool isPart(const CArtifactInstance * supposedPart) const;
-    bool hasParts() const;
-    const std::vector<PartInfo> & getPartsInfo() const;
-    void addPlacementMap(const ArtPlacementMap & placementMap);
 
-    template <typename Handler> void serialize(Handler & h)
+    void addPart(const CArtifactInstance * art, const ArtifactPosition & slot); // 添加部件
+    bool isPart(const CArtifactInstance * supposedPart) const;                 // 检查是否为部件
+    bool hasParts() const;                                                      // 检查是否有部件
+    const std::vector<PartInfo> & getPartsInfo() const;                        // 获取部件信息
+    void addPlacementMap(const ArtPlacementMap & placementMap);                 // 添加放置映射
+
+    template <typename Handler> void serialize(Handler & h)                     // 序列化
     {
         h & partsInfo;
     }
 protected:
-    std::vector<PartInfo> partsInfo;
+    std::vector<PartInfo> partsInfo;                                            // 部件信息
 };
 
+// 滚动神器实例类
 class DLL_LINKAGE CScrollArtifactInstance
 {
 protected:
     CScrollArtifactInstance() = default;
+
 public:
-    SpellID getScrollSpellID() const;
+    SpellID getScrollSpellID() const;                                         // 获取滚动法术ID
 };
 
+// 成长神器实例类
 class DLL_LINKAGE CGrowingArtifactInstance
 {
 protected:
     CGrowingArtifactInstance() = default;
+
 public:
-    void growingUp();
+    void growingUp();                                                         // 成长
 };
 
+// 充电神器实例类
 class DLL_LINKAGE CChargedArtifactInstance
 {
 protected:
     CChargedArtifactInstance() = default;
+
 public:
-    void discharge(const uint16_t charges);
-    void addCharges(const uint16_t charges);
-    uint16_t getCharges() const;
+    void discharge(const uint16_t charges);                                  // 放电
+    void addCharges(const uint16_t charges);                                 // 添加充能
+    uint16_t getCharges() const;                                             // 获取充能
 };
 
+// 神器实例类
 class DLL_LINKAGE CArtifactInstance final
     : public CBonusSystemNode, public CCombinedArtifactInstance, public CScrollArtifactInstance, public CGrowingArtifactInstance, public CChargedArtifactInstance
 {
-    ArtifactInstanceID id;
-    ArtifactID artTypeID;
+    ArtifactInstanceID id;                                                    // 实例ID
+    ArtifactID artTypeID;                                                     // 类型ID
 
-    void init();
+    void init();                                                             // 初始化
 
 public:
-    CArtifactInstance(IGameInfoCallback *cb, const CArtifact * art);
-    CArtifactInstance(IGameInfoCallback *cb);
-    std::string nodeName() const override;
-    ArtifactID getTypeId() const;
-    const CArtifact * getType() const;
-    ArtifactInstanceID getId() const;
-    void setId(ArtifactInstanceID id);
+    CArtifactInstance(IGameInfoCallback *cb, const CArtifact * art);        // 构造函数
+    CArtifactInstance(IGameInfoCallback *cb);                               // 构造函数
+    std::string nodeName() const override;                                   // 节点名称
+    ArtifactID getTypeId() const;                                            // 获取类型ID
+    const CArtifact * getType() const;                                       // 获取类型
+    ArtifactInstanceID getId() const;                                        // 获取实例ID
+    void setId(ArtifactInstanceID id);                                       // 设置实例ID
 
-    static void saveCompatibilityFixArtifactID(std::shared_ptr<CArtifactInstance> self);
+    static void saveCompatibilityFixArtifactID(std::shared_ptr<CArtifactInstance> self); // 保存兼容性修复
 
     bool canBePutAt(const CArtifactSet * artSet, ArtifactPosition slot = ArtifactPosition::FIRST_AVAILABLE,
-        bool assumeDestRemoved = false) const;
-    bool isCombined() const;
-    bool isScroll() const;
+        bool assumeDestRemoved = false) const;                               // 检查是否可以放置
+    bool isCombined() const;                                                 // 检查是否为组合神器
+    bool isScroll() const;                                                   // 检查是否为滚动神器
     
-    void attachToBonusSystem(CGameState & gs);
+    void attachToBonusSystem(CGameState & gs);                              // 附加到奖励系统
 
-    template <typename Handler> void serialize(Handler & h)
+    template <typename Handler> void serialize(Handler & h)                  // 序列化
     {
         h & static_cast<CBonusSystemNode&>(*this);
         h & static_cast<CCombinedArtifactInstance&>(*this);
@@ -113,7 +124,7 @@ public:
 };
 
 template <typename Handler>
-void CCombinedArtifactInstance::PartInfo::serialize(Handler & h)
+void CCombinedArtifactInstance::PartInfo::serialize(Handler & h)             // PartInfo序列化
 {
     if (h.saving || h.hasFeature(Handler::Version::NO_RAW_POINTERS_IN_SERIALIZER))
     {
@@ -133,62 +144,46 @@ void CCombinedArtifactInstance::PartInfo::serialize(Handler & h)
 
 ## 功能说明
 
-CArtifactInstance是VCMI神器系统中代表实际存在的神器实例的类，与CArtifact（定义神器类型）相对应。它可以是普通神器、组合神器、卷轴、成长型神器或充能型神器的实例。该类继承自CBonusSystemNode，因此可以参与奖励系统的计算，并实现与奖励系统的交互。
+CArtifactInstance类是VCMI系统中表示具体神器实例的核心类，它不仅包含了神器实例的基本属性（如ID、类型等），还集成了多种特殊功能，使其能够表示不同类型的神器实例：
 
-## 依赖关系
+1. **组合神器实例**（CCombinedArtifactInstance）：支持由多个部件组成的复合神器实例
+2. **滚动神器实例**（CScrollArtifactInstance）：可以包含法术卷轴的神器实例
+3. **成长神器实例**（CGrowingArtifactInstance）：随等级提升而增强的神器实例
+4. **充能神器实例**（CChargedArtifactInstance）：具有充能机制的神器实例
 
-- [CBonusSystemNode](../bonuses/CBonusSystemNode.md): 奖励系统节点
-- [CGameState](../gameState/CGameState.md): 游戏状态
-- [CArtifactSet](./CArtifactSet.md): 神器集合
-- [CArtifact](./CArtifact.md): 神器类
-- [ArtifactID](./ArtifactID.md): 神器ID
-- [ArtifactInstanceID](./ArtifactInstanceID.md): 神器实例ID
-- [ArtifactPosition](./ArtifactPosition.md): 神器位置
-- [SpellID](../spells/SpellID.md): 法术ID
-- [IGameInfoCallback](../gameState/IGameInfoCallback.md): 游戏信息回调接口
-- [GameCallbackHolder](./GameCallbackHolder.md): 游戏回调持有者
-- STL库: vector, map等
+## 重要方法
 
-## 函数注释
+### 基本属性访问
+- `getId()`：获取实例ID
+- `getTypeId()`：获取类型ID
+- `getType()`：获取神器类型
+- `setId()`：设置实例ID
 
-### CCombinedArtifactInstance类
+### 特殊功能
+- `isCombined()`：检查是否为组合神器实例
+- `isScroll()`：检查是否为滚动神器实例
+- `getScrollSpellID()`：获取滚动法术ID
+- `growingUp()`：成长操作
+- `discharge()`：放电操作
+- `addCharges()`：添加充能
+- `getCharges()`：获取充能
 
-- `addPart(art, slot)`: 添加部分到组合神器
-- `isPart(supposedPart)`: 检查指定实例是否为此组合神器的一部分
-- `hasParts()`: 检查是否包含部分
-- `getPartsInfo()`: 获取部件信息列表
-- `addPlacementMap(placementMap)`: 添加放置映射
+### 组合神器功能
+- `addPart()`：添加部件
+- `isPart()`：检查是否为部件
+- `getPartsInfo()`：获取部件信息
+- `hasParts()`：检查是否有部件
 
-#### PartInfo结构
+### 槽位管理
+- `canBePutAt()`：检查神器是否可以放在指定位置
 
-- `PartInfo(artifact, slot)`: 构造函数
-- `getArtifact()`: 获取神器指针
-- `getArtifactID()`: 获取神器ID
+### 系统集成
+- `attachToBonusSystem()`：附加到奖励系统
 
-### CScrollArtifactInstance类
+## 设计说明
 
-- `getScrollSpellID()`: 获取卷轴法术ID
+CArtifactInstance类采用了多重继承的设计模式，将不同类型神器实例的特有功能封装在单独的基类中。这种设计使得单一类可以同时具备多种特性，同时也保持了各功能模块的独立性。
 
-### CGrowingArtifactInstance类
+该类继承自CBonusSystemNode，使其能够参与奖励系统。通过CCombinedArtifactInstance，它可以作为组合神器的容器；通过CScrollArtifactInstance，它可以作为法术卷轴的载体；通过CGrowingArtifactInstance，它具有成长能力；通过CChargedArtifactInstance，它具有充能机制。
 
-- `growingUp()`: 成长升级
-
-### CChargedArtifactInstance类
-
-- `discharge(charges)`: 消耗指定充能
-- `addCharges(charges)`: 增加充能
-- `getCharges()`: 获取当前充能
-
-### CArtifactInstance类
-
-- `CArtifactInstance(cb, art)`: 构造函数，使用回调和原型创建实例
-- `CArtifactInstance(cb)`: 构造函数，仅使用回调创建实例
-- `getTypeId()`: 获取类型ID
-- `getType()`: 获取神器类型
-- `getId()`: 获取实例ID
-- `setId(id)`: 设置实例ID
-- `canBePutAt(artSet, slot, assumeDestRemoved)`: 检查是否可以放置在指定位置
-- `isCombined()`: 检查是否为组合神器
-- `isScroll()`: 检查是否为卷轴
-- `attachToBonusSystem(gs)`: 附加到奖励系统
-- `nodeName()`: 获取节点名称
+CArtifactInstance类还集成了序列化功能，支持保存和加载，这对于游戏状态的持久化至关重要。

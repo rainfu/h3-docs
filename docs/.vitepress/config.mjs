@@ -57,33 +57,15 @@ export default defineConfig({
           ]
         },
         {
-          text: '实体系统 (entities/)',
+          text: '实体 (Entities)',
           items: [
-            { text: 'CHero', link: '/classes/entities/CHero' },
             { text: 'CArtifact', link: '/classes/entities/CArtifact' },
-            { text: 'CTown', link: '/classes/entities/CTown' },
-            { text: 'Creature', link: '/classes/entities/Creature' },
-            { text: 'CBuilding', link: '/classes/entities/CBuilding' },
-            { text: 'CFaction', link: '/classes/entities/CFaction' },
-            { text: 'ResourceTypeHandler', link: '/classes/entities/ResourceTypeHandler' },
-            { text: 'CArtHandler', link: '/classes/entities/CArtHandler' },
             { text: 'CArtifactInstance', link: '/classes/entities/CArtifactInstance' },
             { text: 'CArtifactSet', link: '/classes/entities/CArtifactSet' },
             { text: 'ArtSlotInfo', link: '/classes/entities/ArtSlotInfo' },
-            { text: 'Artifact', link: '/classes/entities/Artifact' },
-            { text: 'EntityWithBonuses', link: '/classes/entities/EntityWithBonuses' },
-            { text: 'IConstBonusProvider', link: '/classes/entities/IConstBonusProvider' },
-            { text: 'EntityT', link: '/classes/entities/EntityT' },
-            { text: 'Entity', link: '/classes/entities/Entity' },
-            { text: 'ArtifactService', link: '/classes/entities/ArtifactService' },
-            { text: 'EntityServiceT', link: '/classes/entities/EntityServiceT' },
-            { text: 'EntityService', link: '/classes/entities/EntityService' },
-            { text: 'ACreature', link: '/classes/entities/ACreature' },
-            { text: 'CreatureEntity', link: '/classes/entities/CreatureEntity' },
-            { text: 'AFactionMember', link: '/classes/entities/AFactionMember' },
-            { text: 'CreatureService', link: '/classes/entities/CreatureService' },
-            { text: 'HeroType', link: '/classes/entities/HeroType' },
-            { text: 'HeroTypeService', link: '/classes/entities/HeroTypeService' }
+            { text: 'CBuilding', link: '/classes/entities/CBuilding' },
+            { text: 'CFaction', link: '/classes/entities/faction/CFaction' },
+            { text: 'CHero', link: '/classes/entities/hero/CHero' }
           ]
         },
         {
@@ -380,6 +362,14 @@ export default defineConfig({
             { text: 'EWallPart', link: '/classes/battle/EWallPart' },
             { text: 'BattleSide', link: '/classes/battle/BattleSide' },
             { text: 'EActionType', link: '/classes/identifiers/EActionType' }
+          ]
+        },
+        {
+          text: '常量 (Constants)',
+          items: [
+            { text: 'Enumerations', link: '/classes/constants/Enumerations' },
+            { text: 'NumericConstants', link: '/classes/constants/NumericConstants' },
+            { text: 'StringConstants', link: '/classes/constants/StringConstants' }
           ]
         },
         {

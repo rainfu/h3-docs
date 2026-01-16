@@ -59,15 +59,25 @@
 - IShipyard.h
 
 ### 常量 (Constants)
-- CArtifactInstanceConsts.h
-- CStackInstanceConsts.h
-- GameConstants.h
-- Global_consts.h
-- Heroes.h
-- ObjProperty.h
-- PlayerStatus.h
+- Enumerations.h [✓] 2026-01-17 10:00
+- NumericConstants.h [✓] 2026-01-17 10:05
+- StringConstants.h [✓] 2026-01-17 10:10
+- IdentifierBase.h
+- VariantIdentifier.h
 
 ### 实体 (Entities)
+- CArtifact.h [✓] 2026-01-17 10:30
+- CArtifactInstance.h [✓] 2026-01-17 10:35
+- CArtifactSet.h [✓] 2026-01-17 10:40
+- ArtSlotInfo.h [✓] 2026-01-17 10:45
+- CBuilding.h [✓] 2026-01-17 10:50
+- CFaction.h [✓] 2026-01-17 10:55
+- CHero.h [✓] 2026-01-17 11:00
+- CHeroClass.h
+- CHeroHandler.h
+- EHeroGender.h
+- CSpell.h
+- CSpellHandler.h
 - CStackInstance.h
 - Entity.h
 - EntityIdentifiers.h

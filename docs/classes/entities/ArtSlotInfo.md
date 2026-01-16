@@ -1,23 +1,23 @@
 # ArtSlotInfo类
 
-ArtSlotInfo类是VCMI中神器槽位信息结构，用于存储神器槽位的相关信息，包括神器实例ID和锁定状态。
+ArtSlotInfo类是VCMI系统中的神器槽位信息类，用于描述神器装备槽位的状态，包括槽位中神器的ID和槽位是否被锁定。
 
 ## 类定义
 
 ```cpp
 struct DLL_LINKAGE ArtSlotInfo : public GameCallbackHolder
 {
-    ArtifactInstanceID artifactID;
-    bool locked = false; //如果锁定，则神器指向组合神器
+    ArtifactInstanceID artifactID;        // 神器实例ID
+    bool locked = false;                 // 是否锁定，若锁定则artifact指向组合神器
 
-    explicit ArtSlotInfo(IGameInfoCallback * cb);
-    ArtSlotInfo(const CArtifactInstance * artifact, bool locked);
+    explicit ArtSlotInfo(IGameInfoCallback * cb);                        // 构造函数
+    ArtSlotInfo(const CArtifactInstance * artifact, bool locked);       // 构造函数
 
-    const CArtifactInstance * getArt() const;
-    ArtifactInstanceID getID() const;
+    const CArtifactInstance * getArt() const;                           // 获取神器实例
+    ArtifactInstanceID getID() const;                                   // 获取ID
 
     template<typename Handler>
-    void serialize(Handler & h)
+    void serialize(Handler & h)                                         // 序列化
     {
         if(h.saving || h.hasFeature(Handler::Version::NO_RAW_POINTERS_IN_SERIALIZER))
         {
@@ -38,20 +38,29 @@ struct DLL_LINKAGE ArtSlotInfo : public GameCallbackHolder
 
 ## 功能说明
 
-ArtSlotInfo是VCMI神器系统中表示神器槽位信息的结构体，用于存储单个神器槽位的相关信息。它包含神器实例ID和锁定状态，其中锁定状态用于标识该槽位是否被锁定（通常是因为该槽位是某个组合神器的一部分）。该结构体继承自GameCallbackHolder，以便能够访问游戏回调系统。
+ArtSlotInfo结构体用于描述神器装备槽位的状态信息，它存储了槽位中神器的ID和槽位的锁定状态。当槽位被锁定时，意味着该槽位属于一个组合神器，不能单独移除其中的部件。
 
-## 依赖关系
+ArtSlotInfo继承自GameCallbackHolder，使其能够参与游戏的回调机制，这对于处理游戏状态变化和同步是必要的。
 
-- [GameCallbackHolder](./GameCallbackHolder.md): 游戏回调持有者
-- [CArtifactInstance](./CArtifactInstance.md): 神器实例
-- [ArtifactInstanceID](./ArtifactInstanceID.md): 神器实例ID
-- [IGameInfoCallback](../gameState/IGameInfoCallback.md): 游戏信息回调接口
-- STL库: shared_ptr等
+## 重要方法
 
-## 函数注释
+### 构造函数
+- `ArtSlotInfo(IGameInfoCallback * cb)`：使用回调接口构造实例
+- `ArtSlotInfo(const CArtifactInstance * artifact, bool locked)`：使用神器实例和锁定状态构造实例
 
-- `ArtSlotInfo(cb)`: 构造函数，使用游戏回调创建槽位信息
-- `ArtSlotInfo(artifact, locked)`: 构造函数，使用神器实例和锁定状态创建槽位信息
-- `getArt()`: 获取神器实例
-- `getID()`: 获取神器实例ID
-- `serialize(h)`: 序列化方法，处理向后兼容性，确保在新旧版本间的兼容
+### 数据访问
+- `getArt()`：获取槽位中的神器实例
+- `getID()`：获取神器实例ID
+
+### 序列化
+- `serialize()`：支持槽位信息的序列化，包括向后兼容性处理
+
+## 设计说明
+
+ArtSlotInfo类设计为一个简单的数据结构，但包含了必要的功能来处理复杂的神器系统：
+
+1. **锁定机制**：locked标志位用于处理组合神器的情况，当槽位被锁定时，不能单独移除其中的神器
+2. **序列化兼容性**：在序列化时处理了旧版本兼容性问题，确保游戏存档的向前兼容
+3. **回调机制**：继承自GameCallbackHolder，允许槽位信息参与到游戏状态的更新中
+
+该结构体是CArtifactSet类的基础组件，用于表示神器装备槽位的详细信息，是神器系统中不可或缺的一部分。

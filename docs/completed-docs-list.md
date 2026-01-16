@@ -1,8 +1,8 @@
-# VCMI 客户端库文档完成列表
+# VCMI 客户端库已完成文档列表
 
-本文档跟踪 VCMI 客户端库中已完成的类文档，以避免重复工作并跟踪进度。
+此文件记录了已经生成文档的 VCMI 客户端库头文件。
 
-## 已完成的文档
+## 按模块分类
 
 ### 文件系统 (Filesystem)
 - ResourcePath
@@ -83,18 +83,16 @@
 - SideInBattle
 
 ### 实体 (Entities)
-- CHero
 - CArtifact
-- CTown
-- Creature
-- CBuilding
-- CFaction
-- ResourceTypeHandler
-- CArtHandler
 - CArtifactInstance
 - CArtifactSet
 - ArtSlotInfo
-- Artifact
+- CBuilding
+- CFaction
+- CHero
+- Creature
+- ResourceTypeHandler
+- CArtHandler
 - EntityWithBonuses
 - IConstBonusProvider
 - EntityT
@@ -208,12 +206,9 @@
 - TRmgTemplateZoneId
 
 ### 奖励系统 (Bonuses)
-- BonusCache
-- BonusCustomTypes
-- BonusEnum
-- BonusSelector
-- IBonusBearer
 - Bonus
+- CBonusSystemNode
+- IBonusBearer
 - CSelector
 - ILimiter
 - IPropagator
@@ -222,6 +217,13 @@
 - BonusType
 - BonusStacking
 - CPropagatorNodeType
+- BonusCache
+- BonusCustomTypes
+- BonusEnum
+- BonusSelector
+- Limiters
+- Propagators
+- Updaters
 
 ### 模组 (Modding)
 - CModHandler
@@ -280,13 +282,23 @@
 
 ## 待完成的文档
 
+### 回调 (Callback)
+- CAdventureAI
+- CBattleCallback
+- CBattleGameInterface
+- CCallback
+- CDynLibHandler
+- CGameInterface
+- CGlobalAI
+- CNonConstInfoCallback
+- CPlayerSpecificInfoCallback
+
 ### 其他模块的类（待补充）
 - 以下是从源代码中识别出的其他重要类，需要添加文档：
 
   - CGameInfoCallback
   - CPlayerEnvironment
   - CClientState
-  - CGameInterface
   - CVideoHandler
   - CSoundHandler
   - CAnimation
@@ -305,11 +317,9 @@
   - CConnection
   - CGameState
   - CGameState
-  - CBonusSystemNode
   - CGHeroInstance
   - CGTownInstance
   - CArmedInstance
-  - CObstacleInstance
   - CGDwelling
   - CGShipyard
   - CGMarket
@@ -342,12 +352,8 @@
   - CBuilding
   - CTownHandler
   - CGeneralTextHandler
-  - CSpellHandler
   - CCreatureHandler
   - CHeroHandler
-  - CArtifactInstance
-  - CArtHandler
-  - CBonusSystemNode
   - CSpell
   - CSpellEffectSoundInfo
   - CSpell::TargetInfo
