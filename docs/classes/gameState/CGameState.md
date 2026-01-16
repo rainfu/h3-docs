@@ -1,15 +1,15 @@
 # CGameState
 
-游戏状态管理类，维护整个游戏的全局状态。
+游戏状态管理类，维护整个游戏世界的状态。
 
 ## 📋 类概述
 
-`CGameState` 是 VCMI 游戏引擎的核心类，负责管理游戏的全局状态和所有游戏实体的生命周期。该类继承自：
+`CGameState` 是 VCMI 游戏引擎的核心类，作为游戏状态的中央管理器，负责维护整个游戏世界的完整状态。该类继承自：
 
 - `CNonConstInfoCallback`: 非常量信息回调接口
 - `Serializeable`: 序列化接口
 
-此类是游戏状态的中央管理器，包含地图、玩家、英雄、神器、战斗等所有游戏数据。
+此类管理着地图、玩家、队伍、部队、英雄、战役、战斗等所有游戏元素，是游戏逻辑处理、状态查询和序列化的中心枢纽。它不仅存储了游戏的静态数据，还负责动态的游戏进程管理，如回合控制、胜利/失败条件检查和路径计算。
 
 ## 🔧 主要属性
 
@@ -39,13 +39,13 @@
 
 ### 初始化方法
 ```cpp
-// 预初始化
+// 预初始化服务
 void preInit(Services * services);
 
-// 初始化新游戏
+// 完整初始化新游戏（加载地图、设置玩家、初始化英雄等）
 void init(const IMapService * mapService, StartInfo * si, IGameRandomizer & gameRandomizer, Load::ProgressAccumulator &, bool allowSavingRandomMap = true);
 
-// 加载游戏后更新
+// 从存档加载后更新游戏状态
 void updateOnLoad(const StartInfo & si);
 ```
 
@@ -126,14 +126,16 @@ void loadGame(CLoadFile & file);
 ## 🔗 依赖关系
 
 ### 依赖的类
-- `CNonConstInfoCallback`: 非常量信息回调
-- `GameCallbackHolder`: 游戏回调持有者
-- `CBonusSystemNode`: 奖励系统节点
-- `CMap`: 游戏地图
-- `BattleInfo`: 战斗信息
-- `TavernHeroesPool`: 酒馆英雄池
-- `RumorState`: 谣言状态
-- `GameStatistics`: 游戏统计
+- `CNonConstInfoCallback`: 提供非常量信息回调
+- `CMap`: 管理游戏地图和地形
+- `PlayerState`: 存储每个玩家的资源、城镇和英雄
+- `TeamState`: 管理队伍联盟和共享视野
+- `CBonusSystemNode`: 实现游戏内奖励和增益效果系统
+- `BattleInfo`: 表示正在进行的战斗实例
+- `TavernHeroesPool`: 管理酒馆中可招募的英雄
+- `StartInfo`: 包含游戏开始时的配置和设置
+- `CArtifactInstance`: 表示游戏中的神器物品实例
+- `CGHeroInstance`: 表示游戏中的英雄实例
 
 ### 被依赖关系
 - 被 `CGameHandler` 用于游戏逻辑处理
@@ -267,16 +269,16 @@ enum class PlayerRelations {
 ## 🔧 私有方法
 
 ### 初始化相关
-- `initNewGame()`: 初始化新游戏
-- `initGlobalBonuses()`: 初始化全局奖励
-- `initHeroes()`: 初始化英雄
-- `initTowns()`: 初始化城镇
-- `initMapObjects()`: 初始化地图对象
+- `initNewGame()`: 执行新游戏的主要初始化流程
+- `initGlobalBonuses()`: 设置全局增益效果
+- `initHeroes()`: 初始化所有英雄数据
+- `initTowns()`: 初始化所有城镇数据
+- `initMapObjects()`: 初始化地图上的所有对象
 
 ### 奖励系统
-- `buildBonusSystemTree()`: 构建奖励系统树
-- `restoreBonusSystemTree()`: 恢复奖励系统树
+- `buildBonusSystemTree()`: 构建用于计算属性加成的奖励系统树
+- `restoreBonusSystemTree()`: 从存档恢复奖励系统树
 
 ### 辅助方法
-- `getUsedHero()`: 获取已使用的英雄
-- `pickUnusedHeroTypeRandomly()`: 随机选择未使用的英雄类型
+- `getUsedHero()`: 查询已被占用的英雄
+- `pickUnusedHeroTypeRandomly()`: 从未被使用过的英雄类型中随机挑选

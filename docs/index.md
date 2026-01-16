@@ -8,6 +8,7 @@ VCMI (Vampire's Curse Might & Magic Interface) 客户端核心库的完整API文
 
 - **类帮助文档**: 详细介绍每个核心类的功能、依赖关系和重要函数
 - **依赖关系分析**: 分析类和模块之间的依赖层级和关系图
+- **模块功能概览**: 介绍各子目录的功能和作用
 
 ## 🎯 核心模块
 
@@ -48,6 +49,7 @@ VCMI (Vampire's Curse Might & Magic Interface) 客户端核心库的完整API文
 
 - [**类帮助**](./classes/) - 查看具体类的详细文档
 - [**依赖关系**](./dependencies/) - 了解模块间的依赖关系
+- [**模块概览**](./modules-overview/) - 了解各模块功能
 
 ## 🔗 相关链接
 

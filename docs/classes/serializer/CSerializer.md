@@ -1,6 +1,68 @@
-# CSerializer
+# CSerializer类
 
-序列化器基类和相关工具类。
+CSerializer是VCMI序列化系统的基类，提供了一套完整的序列化/反序列化框架。
+
+## 类定义
+
+```cpp
+class CSerializer
+{
+public:
+    template<typename T>
+    void operator&(T & data);
+    
+    template<typename T>
+    void serialize(const T & data);
+    
+    virtual int64_t saveSimple(const T & data);
+    virtual int64_t loadSimple(T & data);
+    
+    template<typename T>
+    static si64 saveTo(std::vector<std::byte> & dest, T & data);
+    
+    template<typename T>
+    static si64 loadFrom(const std::vector<std::byte> & src, T & data);
+    
+    virtual void reportState(ISerializationReport * handler) = 0;
+    
+protected:
+    virtual void registerPtr(const void * ptr, si64 id) = 0;
+    virtual si64 getId(const void * ptr) const = 0;
+    virtual const void * getPtr(si64 id) const = 0;
+    virtual bool isNullPtrRegistered() const = 0;
+    virtual void setPtrRegistered(const void * ptr) = 0;
+    virtual bool isPtrBeingSerialized(const void * ptr) const = 0;
+    virtual void setPtrBeingSerialized(const void * ptr) = 0;
+    virtual void finishSerialization(const void * ptr) = 0;
+};
+```
+
+## 功能说明
+
+CSerializer是VCMI序列化系统的基类，它定义了序列化和反序列化的通用接口。这个类主要用于保存和加载游戏状态，包括地图、英雄、部队等对象。
+
+## 依赖关系
+
+- [ISerializationReport](./ISerializationReport.md): 用于报告序列化状态
+- STL库: `<vector>`, `<memory>`, `<type_traits>`
+
+## 函数注释
+
+- `operator&(T & data)`: 序列化操作符，用于序列化数据
+- `serialize(const T & data)`: 序列化数据
+- `saveSimple(const T & data)`: 保存简单数据
+- `loadSimple(T & data)`: 加载简单数据
+- `saveTo(std::vector<std::byte> & dest, T & data)`: 将数据序列化到字节向量
+- `loadFrom(const std::vector<std::byte> & src, T & data)`: 从字节向量反序列化数据
+- `reportState(ISerializationReport * handler)`: 报告序列化状态
+- `registerPtr(const void * ptr, si64 id)`: 注册指针与ID的映射
+- `getId(const void * ptr) const`: 获取指针的ID
+- `getPtr(si64 id) const`: 根据ID获取指针
+- `isNullPtrRegistered() const`: 检查空指针是否已注册
+- `setPtrRegistered(const void * ptr)`: 设置指针已注册
+- `isPtrBeingSerialized(const void * ptr) const`: 检查指针是否正在被序列化
+- `setPtrBeingSerialized(const void * ptr)`: 设置指针正在被序列化
+- `finishSerialization(const void * ptr)`: 完成指针的序列化
 
 ## 📋 类概述
 

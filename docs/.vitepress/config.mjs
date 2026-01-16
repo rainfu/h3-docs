@@ -1,11 +1,13 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/h3/',
   title: 'VCMI Lib 文档',
   description: 'VCMI 客户端核心库 API 文档',
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
+      { text: '模块概览', link: '/modules-overview' },
       { text: '类帮助', link: '/classes/' },
       { text: '依赖关系', link: '/dependencies/' }
     ],
@@ -19,7 +21,8 @@ export default defineConfig({
             { text: 'Unit', link: '/classes/battle/Unit' },
             { text: 'DamageCalculator', link: '/classes/battle/DamageCalculator' },
             { text: 'BattleAction', link: '/classes/battle/BattleAction' },
-            { text: 'CStackInstance', link: '/classes/battle/CStackInstance' }
+            { text: 'CStackInstance', link: '/classes/battle/CStackInstance' },
+            { text: 'CBattleInfoCallback', link: '/classes/battle/CBattleInfoCallback' }
           ]
         },
         {
@@ -50,6 +53,75 @@ export default defineConfig({
           text: '地图对象 (mapObjects/)',
           items: [
             { text: 'CGObjectInstance', link: '/classes/mapObjects/CGObjectInstance' }
+          ]
+        },
+        {
+          text: '游戏状态系统 (gameState/)',
+          items: [
+            { text: 'CGameState', link: '/classes/gameState/CGameState' }
+          ]
+        },
+        {
+          text: '路径查找系统 (pathfinder/)',
+          items: [
+            { text: 'CGPathNode', link: '/classes/pathfinder/' },
+            { text: 'CPathsInfo', link: '/classes/pathfinder/' }
+          ]
+        },
+        {
+          text: '法术系统 (spells/)',
+          items: [
+            { text: 'ISpellMechanics', link: '/classes/spells/' },
+            { text: 'BattleCast', link: '/classes/spells/' },
+            { text: 'Mechanics', link: '/classes/spells/' }
+          ]
+        },
+        {
+          text: 'RMG系统 (rmg/)',
+          items: [
+            { text: 'CRmgTemplate', link: '/classes/rmg/' },
+            { text: 'Zone', link: '/classes/rmg/' },
+            { text: 'CRandomMapGenerator', link: '/classes/rmg/' }
+          ]
+        },
+        {
+          text: '网络系统 (network/)',
+          items: [
+            { text: 'INetworkConnection', link: '/classes/network/INetworkConnection' },
+            { text: 'CConnection', link: '/classes/network/' },
+            { text: 'Pack', link: '/classes/network/' }
+          ]
+        },
+        {
+          text: '网络包系统 (networkPacks/)',
+          items: [
+            { text: 'CPack', link: '/classes/networkPacks/' },
+            { text: 'CPackForServer', link: '/classes/networkPacks/' }
+          ]
+        },
+        {
+          text: '文件系统 (filesystem/)',
+          items: [
+            { text: 'ResourcePath', link: '/classes/filesystem/' }
+          ]
+        },
+        {
+          text: '事件系统 (events/)',
+          items: [
+            { text: 'CApplyDamage', link: '/classes/events/' }
+          ]
+        },
+        {
+          text: '日志系统 (logging/)',
+          items: [
+            { text: 'CLogger', link: '/classes/logging/' },
+            { text: 'CLoggerDomain', link: '/classes/logging/' }
+          ]
+        },
+        {
+          text: 'JSON系统 (json/)',
+          items: [
+            { text: 'JsonNode', link: '/classes/json/' }
           ]
         }
       ],

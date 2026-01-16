@@ -198,10 +198,37 @@ Serializeable → Bonus → BonusList → CBonusSystemNode → 所有实体类�
 - **filesystem/**: 主要被实体类使用
 - **texts/**: 主要被 Bonus 类使用
 
-### 建议的架构改进
-1. **减少循环依赖**：battle/ 和 entities/ 之间的双向依赖可以优化
-2. **接口分离**：将 IBonusBearer 等接口提取到独立模块
-3. **依赖注入**：减少直接的头文件包含，增加接口依赖
+## 🆕 新增模块依赖关系分析
+
+### 路径查找系统 (pathfinder/)
+路径查找系统依赖以下模块：
+```
+GameConstants → int3 → EPathfindingLayer → CGPathNode → CPathsInfo
+```
+
+### 法术系统 (spells/)
+法术系统依赖以下模块：
+```
+GameConstants → bonuses/ → CSpell → ISpellMechanics → BattleCast
+```
+
+### RMG系统 (rmg/)
+RMG系统依赖以下模块：
+```
+int3 → constants/ → CTownHandler → CRmgTemplate → CRandomMapGenerator
+```
+
+### 网络系统 (network/)
+网络系统依赖以下模块：
+```
+serializer/ → CConnection → Pack
+```
+
+### 网络包系统 (networkPacks/)
+网络包系统依赖以下模块：
+```
+CPack → CPackForServer → SetResource/NewStructures/YourTurn...
+```
 
 ## 🛠️ 依赖关系验证
 
@@ -212,6 +239,11 @@ Serializeable → Bonus → BonusList → CBonusSystemNode → 所有实体类�
 - **游戏状态**：`CGameState.h`, `CPlayerState.h`
 - **序列化系统**：`Serializeable.h`, `CSerializer.h`
 - **地图对象**：`CGObjectInstance.h`
+- **路径查找系统**：`CGPathNode.h`, `CPathsInfo.h`
+- **法术系统**：`ISpellMechanics.h`, `BattleCast.h`, `Mechanics.h`
+- **RMG系统**：`CRmgTemplate.h`, `Zone.h`, `CRandomMapGenerator.h`
+- **网络系统**：`CConnection.h`, `Pack.h`
+- **网络包系统**：`CPack.h`, `CPackForServer.h`
 
 依赖关系图会随着代码重构而变化，建议定期更新此分析。
 
