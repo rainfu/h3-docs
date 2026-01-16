@@ -1,6 +1,6 @@
-# SubscriptionRegistry类
+# SubscriptionRegistry模板类
 
-SubscriptionRegistry类是VCMI中事件订阅注册表的模板类，用于管理事件处理器的注册和执行。
+SubscriptionRegistry模板类是VCMI中事件订阅注册表的实现，用于管理事件处理器的注册和执行。
 
 ## 类定义
 
@@ -14,54 +14,10 @@ public:
     using PostHandler = std::function<void(const E &)>;
     using BusTag = const void *;
 
-    std::unique_ptr<EventSubscription> subscribeBefore(BusTag tag, PreHandler && handler)
-    {
-        std::unique_lock<std::shared_mutex> lock(mutex);
-
-        auto storage = std::make_shared<PreHandlerStorage>(std::move(handler));
-        preHandlers[tag].push_back(storage);
-        return std::make_unique<PreSubscription>(tag, storage);
-    }
-
-    std::unique_ptr<EventSubscription> subscribeAfter(BusTag tag, PostHandler && handler)
-    {
-        std::unique_lock<std::shared_mutex> lock(mutex);
-
-        auto storage = std::make_shared<PostHandlerStorage>(std::move(handler));
-        postHandlers[tag].push_back(storage);
-        return std::make_unique<PostSubscription>(tag, storage);
-    }
-
-    void executeEvent(const EventBus * bus, E & event, const ExecHandler & execHandler)
-    {
-        std::shared_lock<std::shared_mutex> lock(mutex);
-        {
-            auto it = preHandlers.find(bus);
-
-            if(it != std::end(preHandlers))
-            {
-                for(auto & h : it->second)
-                    (*h)(event);
-            }
-        }
-
-        if(event.isEnabled())
-        {
-            if(execHandler)
-                execHandler(event);
-
-            auto it = postHandlers.find(bus);
-
-            if(it != std::end(postHandlers))
-            {
-                for(auto & h : it->second)
-                    (*h)(event);
-            }
-        }
-    }
+    std::unique_ptr<EventSubscription> subscribeBefore(BusTag tag, PreHandler && handler);
+    void executeEvent(const EventBus * bus, E & event, const ExecHandler & execHandler);
 
 private:
-
     template <typename T>
     class HandlerStorage
     {
@@ -148,30 +104,29 @@ private:
 
 ## 功能说明
 
-SubscriptionRegistry是VCMI事件系统的核心组件之一，用于管理特定事件类型E的处理器注册表。它维护了事件执行前和执行后的处理器列表，并提供注册和执行机制。该类使用线程安全的互斥锁来保护多线程环境下的访问。
+SubscriptionRegistry是VCMI事件系统中的核心组件，负责管理特定事件类型的处理器注册和执行。它实现了事件的前置处理器（pre-handler）、执行处理器（exec-handler）和后置处理器（post-handler）的调度机制。该类使用模板参数E来指定它管理的事件类型。
 
 ## 依赖关系
 
-- [EventBus](./EventBus.md): 事件总线
-- [EventSubscription](./EventSubscription.md): 事件订阅
+- STL库: function, unique_ptr, shared_ptr, map, vector
 - Boost库: noncopyable
-- STL库: function, map, vector, shared_mutex, shared_ptr, unique_ptr
+- [EventBus](./EventBus.md): 事件总线
+- [EventSubscription](./EventSubscription.md): 事件订阅基类
 
 ## 类型别名
 
-- `PreHandler`: 事件执行前的处理器类型
-- `ExecHandler`: 事件执行时的处理器类型
-- `PostHandler`: 事件执行后的处理器类型
-- `BusTag`: 事件总线标签类型，为const void指针
+- `PreHandler`: 前置处理器类型，接受事件的引用作为参数
+- `ExecHandler`: 执行处理器类型，接受事件的引用作为参数
+- `PostHandler`: 后置处理器类型，接受事件的常量引用作为参数
+- `BusTag`: 事件总线标签类型，用于标识不同的事件总线
 
 ## 函数注释
 
-- `subscribeBefore(tag, handler)`: 注册事件执行前的处理器，返回订阅对象的唯一指针
-- `subscribeAfter(tag, handler)`: 注册事件执行后的处理器，返回订阅对象的唯一指针
-- `executeEvent(bus, event, execHandler)`: 在指定的事件总线上执行事件，按顺序调用前置处理器、执行处理器和后置处理器
+- `subscribeBefore(tag, handler)`: 注册一个前置处理器，当事件发生前执行。返回一个EventSubscription的智能指针，用于管理订阅的生命周期。
+- `executeEvent(bus, event, execHandler)`: 执行事件处理流程，依次执行前置处理器、执行处理器和后置处理器。
 
-## 内部类说明
+## 设计说明
 
-- `HandlerStorage`: 用于存储处理器函数的内部模板类
-- `PreSubscription`: 用于管理前置处理器订阅的内部类
-- `PostSubscription`: 用于管理后置处理器订阅的内部类
+SubscriptionRegistry采用观察者模式，允许代码注册对特定事件的兴趣，并在事件发生时接收通知。它使用线程安全的共享互斥锁（shared_mutex）来保护内部数据结构，允许多个线程同时读取处理器列表，但在修改时进行独占锁定。
+
+该类的实现还包括自动清理机制，当订阅对象被销毁时，对应的处理器会自动从注册表中移除。这避免了手动管理订阅生命周期的复杂性，并防止了内存泄漏。
