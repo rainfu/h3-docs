@@ -12,19 +12,19 @@ class DLL_LINKAGE CCasts
     sint32 totalCasts;         // 总施法次数
 
 public:
-    CCasts();                 // 默认构造函数
-    CCasts(sint32 perRound, sint32 remaining); // 带参数的构造函数
+    CCasts();                                    // 默认构造函数
+    CCasts(sint32 perRound, sint32 remaining);  // 带参数的构造函数
 
-    sint32 getCurrentlyCasting() const; // 当前正在施放的次数
-    sint32 getRemainingCasts() const;   // 剩余施法次数
-    sint32 getPerRound() const;         // 每回合施法次数
-    sint32 getTotalCasts() const;       // 总施法次数
+    sint32 getCurrentlyCasting() const;         // 当前正在施放的次数
+    sint32 getRemainingCasts() const;           // 剩余施法次数
+    sint32 getPerRound() const;                 // 每回合施法次数
+    sint32 getTotalCasts() const;               // 总施法次数
 
-    void reset();                       // 重置施法次数
-    void setCastsPerRound(sint32 value); // 设置每回合施法次数
-    void setRemainingCasts(sint32 value); // 设置剩余施法次数
-    void use();                         // 使用一次施法机会
-    void use(const CUnitState * caster); // 使用施法机会，基于施法者属性
+    void reset();                               // 重置施法次数
+    void setCastsPerRound(sint32 value);        // 设置每回合施法次数
+    void setRemainingCasts(sint32 value);       // 设置剩余施法次数
+    void use();                                 // 使用一次施法机会
+    void use(const CUnitState * caster);        // 使用施法机会，基于施法者属性
 };
 ```
 
@@ -54,3 +54,7 @@ CCasts是VCMI战斗系统中用于跟踪单位法术施放次数的类。它管�
 - `castsRemaining`: 剩余施法次数
 - `castsPerRound`: 每回合施法次数
 - `totalCasts`: 总施法次数
+
+## 设计说明
+
+CCasts类是战斗系统中法术资源管理的重要组成部分。通过跟踪施法次数，游戏可以确保单位不会超过其法术施放限制，从而平衡战斗中的法术使用。该类的重置功能允许在每个回合开始时恢复单位的施法能力，符合《英雄无敌》系列的游戏机制。

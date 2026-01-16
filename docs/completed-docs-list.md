@@ -156,6 +156,16 @@
 - Mode
 - SpellSchool
 - SpellEffectValUptr
+- TargetFilter
+- TargetValidator
+- TargetApplier
+- TargetCalculator
+- TargetAggregator
+- TargetSelector
+- TargetTransformer
+- TargetCombiner
+- TargetSplitter
+- TargetMerger
 
 ### 随机地图生成 (RMG)
 - CRmgTemplate
@@ -328,36 +338,6 @@
   - CSpell::TargetEvaluator
   - CSpell::TargetGenerator
   - CSpell::TargetResolver
-  - CSpell::TargetFilter
-  - CSpell::TargetValidator
-  - CSpell::TargetApplier
-  - CSpell::TargetCalculator
-  - CSpell::TargetAggregator
-  - CSpell::TargetSelector
-  - CSpell::TargetTransformer
-  - CSpell::TargetCombiner
-  - CSpell::TargetSplitter
-  - CSpell::TargetMerger
-  - CSpell::TargetConverter
-  - CSpell::TargetNormalizer
-  - CSpell::TargetOptimizer
-  - CSpell::TargetDistributor
-  - CSpell::TargetBalancer
-  - CSpell::TargetMatcher
-  - CSpell::TargetFinder
-  - CSpell::TargetLocator
-  - CSpell::TargetAcquirer
-  - CSpell::TargetDispatcher
-  - CSpell::TargetRouter
-  - CSpell::TargetForwarder
-  - CSpell::TargetReconstructor
-  - CSpell::TargetAdjuster
-  - CSpell::TargetModifier
-  - CSpell::TargetCorrector
-  - CSpell::TargetScorer
-  - CSpell::TargetRanker
-  - CSpell::TargetPrioritizer
-  - CSpell::TargetSorter
   - CSpell::TargetFilter
   - CSpell::TargetValidator
   - CSpell::TargetApplier

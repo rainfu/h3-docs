@@ -8,23 +8,23 @@ CShots类是VCMI战斗系统中射击次数的表示类，用于跟踪单位在�
 class DLL_LINKAGE CShots
 {
     sint32 shotsRemaining;      // 剩余射击次数
-    sint32 shotsPerRound;      // 每回合射击次数
-    sint32 totalShots;         // 总射击次数
+    sint32 shotsPerRound;       // 每回合射击次数
+    sint32 totalShots;          // 总射击次数
 
 public:
-    CShots();                 // 默认构造函数
+    CShots();                                  // 默认构造函数
     CShots(sint32 perRound, sint32 remaining); // 带参数的构造函数
 
-    sint32 getCurrentlyUsed() const; // 当前已使用的射击次数
-    sint32 getRemainingShots() const; // 剩余射击次数
-    sint32 getPerRound() const;       // 每回合射击次数
-    sint32 getTotalShots() const;     // 总射击次数
+    sint32 getCurrentlyUsed() const;            // 当前已使用的射击次数
+    sint32 getRemainingShots() const;          // 剩余射击次数
+    sint32 getPerRound() const;                // 每回合射击次数
+    sint32 getTotalShots() const;              // 总射击次数
 
-    void reset();                     // 重置射击次数
-    void setShotsPerRound(sint32 value); // 设置每回合射击次数
-    void setRemainingShots(sint32 value); // 设置剩余射击次数
-    void use();                       // 使用一次射击机会
-    void use(const CUnitState * shooter); // 使用射击机会，基于射手属性
+    void reset();                              // 重置射击次数
+    void setShotsPerRound(sint32 value);        // 设置每回合射击次数
+    void setRemainingShots(sint32 value);       // 设置剩余射击次数
+    void use();                                // 使用一次射击机会
+    void use(const CUnitState * shooter);       // 使用射击机会，基于射手属性
 };
 ```
 
@@ -54,3 +54,7 @@ CShots是VCMI战斗系统中用于跟踪单位射击次数的类。它管理单�
 - `shotsRemaining`: 剩余射击次数
 - `shotsPerRound`: 每回合射击次数
 - `totalShots`: 总射击次数
+
+## 设计说明
+
+CShots类是战斗系统中远程攻击资源管理的重要组成部分。通过跟踪射击次数，游戏可以确保远程单位不会超过其射击限制，同时提供合理的资源管理机制。该类的重置功能允许在每个回合开始时恢复单位的射击能力，符合《英雄无敌》系列的游戏机制。

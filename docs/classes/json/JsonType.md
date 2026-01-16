@@ -30,3 +30,7 @@ JsonNode::JsonType是VCMI JSON系统中用于标识JSON节点数据类型的枚�
 - `DATA_VECTOR`: 向量类型，表示数组或列表数据
 - `DATA_STRUCT`: 结构类型，表示对象或映射数据
 - `DATA_INTEGER`: 整数类型，表示整数值
+
+## 设计说明
+
+JsonNode::JsonType枚举为VCMI的JSON系统提供了类型安全性。通过明确标识JSON节点的数据类型，系统可以确保在访问节点数据时使用正确的类型转换，避免类型不匹配导致的错误。这种设计使得JSON处理更加健壮和可靠，同时仍保持了JSON格式的灵活性。

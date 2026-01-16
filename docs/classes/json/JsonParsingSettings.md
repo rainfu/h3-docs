@@ -9,9 +9,9 @@ struct DLL_LINKAGE JsonParsingSettings
 {
     enum class JsonFormatMode
     {
-        JSON, // 严格实现的json格式
-        JSONC, // 允许以'//'开头的注释的json格式
-        JSON5 // 部分支持'json5'格式
+        JSON,    // 严格实现的json格式
+        JSONC,   // 允许以'//'开头的注释的json格式
+        JSON5    // 部分支持'json5'格式
     };
 
     JsonFormatMode mode = JsonFormatMode::JSON5;
@@ -43,3 +43,9 @@ JsonParsingSettings是VCMI中用于配置JSON解析器行为的结构体。它�
 - `mode`: JSON解析格式模式，默认为JSON5
 - `maxDepth`: 最大嵌套深度，默认为30层，防止过度嵌套导致的性能问题
 - `strict`: 严格模式开关，默认为false，如果为true则在遇到错误时抛出异常
+
+## 设计说明
+
+JsonParsingSettings结构为VCMI的JSON解析系统提供了灵活性，使其能够处理不同格式的JSON数据。通过支持JSON、JSONC和JSON5三种模式，它可以兼容带有注释或更宽松语法的JSON文件，这对游戏配置文件尤其有用，因为开发者可以在配置文件中添加注释以提高可读性。
+
+最大嵌套深度限制有助于防止恶意或错误的JSON文件导致栈溢出或性能问题。严格模式允许在开发和调试过程中快速识别和修复JSON格式问题。
