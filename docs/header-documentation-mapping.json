@@ -1,1272 +1,1847 @@
 ﻿{
-    "mappings":  [
-                     {
-                         "baseName":  "BattleSpellMechanics",
-                         "header":  "spells\\BattleSpellMechanics.h",
-                         "documentation":  "classes\\spells\\BattleSpellMechanics.md"
-                     },
-                     {
-                         "baseName":  "Damage",
-                         "header":  "spells\\effects\\Damage.h",
-                         "documentation":  "classes\\spells\\effects\\Damage.md"
-                     },
-                     {
-                         "baseName":  "CQuest",
-                         "header":  "mapObjects\\CQuest.h",
-                         "documentation":  "classes\\mapObjects\\CQuest.md"
-                     },
-                     {
-                         "baseName":  "CArtifact",
-                         "header":  "entities\\artifact\\CArtifact.h",
-                         "documentation":  [
-                                               "classes\\entities\\CArtifact.md",
-                                               "classes\\entities\\artifact\\CArtifact.md"
-                                           ]
-                     },
-                     {
-                         "baseName":  "JsonTreeSerializer",
-                         "header":  "serializer\\JsonTreeSerializer.h",
-                         "documentation":  "classes\\serializer\\JsonTreeSerializer.md"
-                     },
-                     {
-                         "baseName":  "QuestInfo",
-                         "header":  "gameState\\QuestInfo.h",
-                         "documentation":  "classes\\gameState\\QuestInfo.md"
-                     },
-                     {
-                         "baseName":  "CModVersion",
-                         "header":  "modding\\CModVersion.h",
-                         "documentation":  "classes\\modding\\CModVersion.md"
-                     },
-                     {
-                         "baseName":  "IUnitInfo",
-                         "header":  "battle\\IUnitInfo.h",
-                         "documentation":  "classes\\battle\\IUnitInfo.md"
-                     },
-                     {
-                         "baseName":  "CCallback",
-                         "header":  "callback\\CCallback.h",
-                         "documentation":  "classes\\callback\\CCallback.md"
-                     },
-                     {
-                         "baseName":  "DemonSummon",
-                         "header":  "spells\\effects\\DemonSummon.h",
-                         "documentation":  "classes\\spells\\effects\\DemonSummon.md"
-                     },
-                     {
-                         "baseName":  "CCastleEvent",
-                         "header":  "mapping\\CCastleEvent.h",
-                         "documentation":  "classes\\mapping\\CCastleEvent.md"
-                     },
-                     {
-                         "baseName":  "CBattleCallback",
-                         "header":  "callback\\CBattleCallback.h",
-                         "documentation":  "classes\\callback\\CBattleCallback.md"
-                     },
-                     {
-                         "baseName":  "AbilityCaster",
-                         "header":  "spells\\AbilityCaster.h",
-                         "documentation":  "classes\\spells\\AbilityCaster.md"
-                     },
-                     {
-                         "baseName":  "Problem",
-                         "header":  "spells\\Problem.h",
-                         "documentation":  "classes\\spells\\Problem.md"
-                     },
-                     {
-                         "baseName":  "GameCallbackHolder",
-                         "header":  "callback\\GameCallbackHolder.h",
-                         "documentation":  "classes\\callback\\GameCallbackHolder.md"
-                     },
-                     {
-                         "baseName":  "Heal",
-                         "header":  "spells\\effects\\Heal.h",
-                         "documentation":  "classes\\spells\\effects\\Heal.md"
-                     },
-                     {
-                         "baseName":  "CGameStateCampaign",
-                         "header":  "gameState\\CGameStateCampaign.h",
-                         "documentation":  "classes\\gameState\\CGameStateCampaign.md"
-                     },
-                     {
-                         "baseName":  "NetworkConnection",
-                         "header":  "network\\NetworkConnection.h",
-                         "documentation":  "classes\\network\\NetworkConnection.md"
-                     },
-                     {
-                         "baseName":  "FlaggableMapObject",
-                         "header":  "mapObjects\\FlaggableMapObject.h",
-                         "documentation":  "classes\\mapObjects\\FlaggableMapObject.md"
-                     },
-                     {
-                         "baseName":  "Teleport",
-                         "header":  "spells\\effects\\Teleport.h",
-                         "documentation":  "classes\\spells\\effects\\Teleport.md"
-                     },
-                     {
-                         "baseName":  "MetaString",
-                         "header":  "texts\\MetaString.h",
-                         "documentation":  "classes\\texts\\MetaString.md"
-                     },
-                     {
-                         "baseName":  "CHeroClass",
-                         "header":  "entities\\hero\\CHeroClass.h",
-                         "documentation":  "classes\\entities\\hero\\CHeroClass.md"
-                     },
-                     {
-                         "baseName":  "CUnitState",
-                         "header":  "battle\\CUnitState.h",
-                         "documentation":  "classes\\battle\\CUnitState.md"
-                     },
-                     {
-                         "baseName":  "HighScore",
-                         "header":  "gameState\\HighScore.h",
-                         "documentation":  "classes\\gameState\\HighScore.md"
-                     },
-                     {
-                         "baseName":  "Filesystem",
-                         "header":  "filesystem\\Filesystem.h",
-                         "documentation":  "classes\\filesystem\\Filesystem.md"
-                     },
-                     {
-                         "baseName":  "ReachabilityInfo",
-                         "header":  "battle\\ReachabilityInfo.h",
-                         "documentation":  "classes\\battle\\ReachabilityInfo.md"
-                     },
-                     {
-                         "baseName":  "IObjectInterface",
-                         "header":  "mapObjects\\IObjectInterface.h",
-                         "documentation":  "classes\\mapObjects\\IObjectInterface.md"
-                     },
-                     {
-                         "baseName":  "CSpellHandler",
-                         "header":  "spells\\CSpellHandler.h",
-                         "documentation":  "classes\\spells\\CSpellHandler.md"
-                     },
-                     {
-                         "baseName":  "MapFormatH3M",
-                         "header":  "mapping\\MapFormatH3M.h",
-                         "documentation":  "classes\\mapping\\MapFormatH3M.md"
-                     },
-                     {
-                         "baseName":  "ModUtility",
-                         "header":  "modding\\ModUtility.h",
-                         "documentation":  "classes\\modding\\ModUtility.md"
-                     },
-                     {
-                         "baseName":  "MapFormatJson",
-                         "header":  "mapping\\MapFormatJson.h",
-                         "documentation":  "classes\\mapping\\MapFormatJson.md"
-                     },
-                     {
-                         "baseName":  "CLogger",
-                         "header":  "logging\\CLogger.h",
-                         "documentation":  "classes\\logging\\CLogger.md"
-                     },
-                     {
-                         "baseName":  "CMapInfo",
-                         "header":  "mapping\\CMapInfo.h",
-                         "documentation":  "classes\\mapping\\CMapInfo.md"
-                     },
-                     {
-                         "baseName":  "BonusSelector",
-                         "header":  "bonuses\\BonusSelector.h",
-                         "documentation":  "classes\\bonuses\\BonusSelector.md"
-                     },
-                     {
-                         "baseName":  "Summon",
-                         "header":  "spells\\effects\\Summon.h",
-                         "documentation":  "classes\\spells\\effects\\Summon.md"
-                     },
-                     {
-                         "baseName":  "JsonSerializeFormat",
-                         "header":  "serializer\\JsonSerializeFormat.h",
-                         "documentation":  "classes\\serializer\\JsonSerializeFormat.md"
-                     },
-                     {
-                         "baseName":  "CHeroHandler",
-                         "header":  "entities\\hero\\CHeroHandler.h",
-                         "documentation":  "classes\\entities\\hero\\CHeroHandler.md"
-                     },
-                     {
-                         "baseName":  "AdventureSpellMechanics",
-                         "header":  "spells\\adventure\\AdventureSpellMechanics.h",
-                         "documentation":  "classes\\spells\\adventure\\AdventureSpellMechanics.md"
-                     },
-                     {
-                         "baseName":  "IOwnableObject",
-                         "header":  "mapObjects\\IOwnableObject.h",
-                         "documentation":  "classes\\mapObjects\\IOwnableObject.md"
-                     },
-                     {
-                         "baseName":  "Languages",
-                         "header":  "texts\\Languages.h",
-                         "documentation":  "classes\\texts\\Languages.md"
-                     },
-                     {
-                         "baseName":  "CCreatureSet",
-                         "header":  "mapObjects\\army\\CCreatureSet.h",
-                         "documentation":  "classes\\mapObjects\\army\\CCreatureSet.md"
-                     },
-                     {
-                         "baseName":  "DimensionDoorEffect",
-                         "header":  "spells\\adventure\\DimensionDoorEffect.h",
-                         "documentation":  "classes\\spells\\adventure\\DimensionDoorEffect.md"
-                     },
-                     {
-                         "baseName":  "Registry",
-                         "header":  "spells\\effects\\Registry.h",
-                         "documentation":  "classes\\spells\\effects\\Registry.md"
-                     },
-                     {
-                         "baseName":  "CPathfinder",
-                         "header":  "pathfinder\\CPathfinder.h",
-                         "documentation":  "classes\\pathfinder\\CPathfinder.md"
-                     },
-                     {
-                         "baseName":  "RumorState",
-                         "header":  "gameState\\RumorState.h",
-                         "documentation":  "classes\\gameState\\RumorState.md"
-                     },
-                     {
-                         "baseName":  "ModVerificationInfo",
-                         "header":  "modding\\ModVerificationInfo.h",
-                         "documentation":  "classes\\modding\\ModVerificationInfo.md"
-                     },
-                     {
-                         "baseName":  "CArtifactSet",
-                         "header":  "entities\\artifact\\CArtifactSet.h",
-                         "documentation":  "classes\\entities\\artifact\\CArtifactSet.md"
-                     },
-                     {
-                         "baseName":  "CGPathNode",
-                         "header":  "pathfinder\\CGPathNode.h",
-                         "documentation":  "classes\\pathfinder\\CGPathNode.md"
-                     },
-                     {
-                         "baseName":  "Obstacle",
-                         "header":  "spells\\effects\\Obstacle.h",
-                         "documentation":  "classes\\spells\\effects\\Obstacle.md"
-                     },
-                     {
-                         "baseName":  "CPlayerSpecificInfoCallback",
-                         "header":  "callback\\CPlayerSpecificInfoCallback.h",
-                         "documentation":  "classes\\callback\\CPlayerSpecificInfoCallback.md"
-                     },
-                     {
-                         "baseName":  "CHero",
-                         "header":  "entities\\hero\\CHero.h",
-                         "documentation":  [
-                                               "classes\\entities\\CHero.md",
-                                               "classes\\entities\\hero\\CHero.md"
-                                           ]
-                     },
-                     {
-                         "baseName":  "BattleUnitTurnReason",
-                         "header":  "battle\\BattleUnitTurnReason.h",
-                         "documentation":  "classes\\battle\\BattleUnitTurnReason.md"
-                     },
-                     {
-                         "baseName":  "MapReaderH3M",
-                         "header":  "mapping\\MapReaderH3M.h",
-                         "documentation":  "classes\\mapping\\MapReaderH3M.md"
-                     },
-                     {
-                         "baseName":  "MapFeaturesH3M",
-                         "header":  "mapping\\MapFeaturesH3M.h",
-                         "documentation":  "classes\\mapping\\MapFeaturesH3M.md"
-                     },
-                     {
-                         "baseName":  "IBonusBearer",
-                         "header":  "bonuses\\IBonusBearer.h",
-                         "documentation":  "classes\\bonuses\\IBonusBearer.md"
-                     },
-                     {
-                         "baseName":  "CMapOperation",
-                         "header":  "mapping\\CMapOperation.h",
-                         "documentation":  "classes\\mapping\\CMapOperation.md"
-                     },
-                     {
-                         "baseName":  "CMapService",
-                         "header":  "mapping\\CMapService.h",
-                         "documentation":  "classes\\mapping\\CMapService.md"
-                     },
-                     {
-                         "baseName":  "MapObjects",
-                         "header":  "mapObjects\\MapObjects.h",
-                         "documentation":  "classes\\mapObjects\\MapObjects.md"
-                     },
-                     {
-                         "baseName":  "CGeneralTextHandler",
-                         "header":  "texts\\CGeneralTextHandler.h",
-                         "documentation":  "classes\\texts\\CGeneralTextHandler.md"
-                     },
-                     {
-                         "baseName":  "CStackBasicDescriptor",
-                         "header":  "mapObjects\\army\\CStackBasicDescriptor.h",
-                         "documentation":  "classes\\mapObjects\\army\\CStackBasicDescriptor.md"
-                     },
-                     {
-                         "baseName":  "CSimpleArmy",
-                         "header":  "mapObjects\\army\\CSimpleArmy.h",
-                         "documentation":  "classes\\mapObjects\\army\\CSimpleArmy.md"
-                     },
-                     {
-                         "baseName":  "CArtHandler",
-                         "header":  "entities\\artifact\\CArtHandler.h",
-                         "documentation":  "classes\\entities\\artifact\\CArtHandler.md"
-                     },
-                     {
-                         "baseName":  "Limiters",
-                         "header":  "bonuses\\Limiters.h",
-                         "documentation":  "classes\\bonuses\\Limiters.md"
-                     },
-                     {
-                         "baseName":  "CBattleInfoCallback",
-                         "header":  "battle\\CBattleInfoCallback.h",
-                         "documentation":  "classes\\battle\\CBattleInfoCallback.md"
-                     },
-                     {
-                         "baseName":  "IBattleInfoCallback",
-                         "header":  "battle\\IBattleInfoCallback.h",
-                         "documentation":  "classes\\battle\\IBattleInfoCallback.md"
-                     },
-                     {
-                         "baseName":  "BonusCustomTypes",
-                         "header":  "bonuses\\BonusCustomTypes.h",
-                         "documentation":  "classes\\bonuses\\BonusCustomTypes.md"
-                     },
-                     {
-                         "baseName":  "IGameSettings",
-                         "header":  "IGameSettings.h",
-                         "documentation":  "classes\\IGameSettings.md"
-                     },
-                     {
-                         "baseName":  "Serializeable",
-                         "header":  "serializer\\Serializeable.h",
-                         "documentation":  "classes\\serializer\\Serializeable.md"
-                     },
-                     {
-                         "baseName":  "BattleHexArray",
-                         "header":  "battle\\BattleHexArray.h",
-                         "documentation":  "classes\\battle\\BattleHexArray.md"
-                     },
-                     {
-                         "baseName":  "JsonSerializer",
-                         "header":  "serializer\\JsonSerializer.h",
-                         "documentation":  "classes\\serializer\\JsonSerializer.md"
-                     },
-                     {
-                         "baseName":  "Propagators",
-                         "header":  "bonuses\\Propagators.h",
-                         "documentation":  "classes\\bonuses\\Propagators.md"
-                     },
-                     {
-                         "baseName":  "CGlobalAI",
-                         "header":  "callback\\CGlobalAI.h",
-                         "documentation":  "classes\\callback\\CGlobalAI.md"
-                     },
-                     {
-                         "baseName":  "SpellSchoolHandler",
-                         "header":  "spells\\SpellSchoolHandler.h",
-                         "documentation":  "classes\\spells\\SpellSchoolHandler.md"
-                     },
-                     {
-                         "baseName":  "CGPandoraBox",
-                         "header":  "mapObjects\\CGPandoraBox.h",
-                         "documentation":  "classes\\mapObjects\\CGPandoraBox.md"
-                     },
-                     {
-                         "baseName":  "Zone",
-                         "header":  "rmg\\Zone.h",
-                         "documentation":  "classes\\rmg\\Zone.md"
-                     },
-                     {
-                         "baseName":  "Destination",
-                         "header":  "battle\\Destination.h",
-                         "documentation":  "classes\\battle\\Destination.md"
-                     },
-                     {
-                         "baseName":  "TargetCondition",
-                         "header":  "spells\\TargetCondition.h",
-                         "documentation":  "classes\\spells\\TargetCondition.md"
-                     },
-                     {
-                         "baseName":  "MapIdentifiersH3M",
-                         "header":  "mapping\\MapIdentifiersH3M.h",
-                         "documentation":  "classes\\mapping\\MapIdentifiersH3M.md"
-                     },
-                     {
-                         "baseName":  "CGHeroInstance",
-                         "header":  "mapObjects\\CGHeroInstance.h",
-                         "documentation":  "classes\\mapObjects\\CGHeroInstance.md"
-                     },
-                     {
-                         "baseName":  "BattleProxy",
-                         "header":  "battle\\BattleProxy.h",
-                         "documentation":  "classes\\battle\\BattleProxy.md"
-                     },
-                     {
-                         "baseName":  "PossiblePlayerBattleAction",
-                         "header":  "battle\\PossiblePlayerBattleAction.h",
-                         "documentation":  "classes\\battle\\PossiblePlayerBattleAction.md"
-                     },
-                     {
-                         "baseName":  "CMapGenerator",
-                         "header":  "rmg\\CMapGenerator.h",
-                         "documentation":  "classes\\rmg\\CMapGenerator.md"
-                     },
-                     {
-                         "baseName":  "BonusEnum",
-                         "header":  "bonuses\\BonusEnum.h",
-                         "documentation":  "classes\\bonuses\\BonusEnum.md"
-                     },
-                     {
-                         "baseName":  "CBuilding",
-                         "header":  "entities\\building\\CBuilding.h",
-                         "documentation":  "classes\\entities\\building\\CBuilding.md"
-                     },
-                     {
-                         "baseName":  "CTownHandler",
-                         "header":  "entities\\faction\\CTownHandler.h",
-                         "documentation":  "classes\\entities\\faction\\CTownHandler.md"
-                     },
-                     {
-                         "baseName":  "BattleAttackInfo",
-                         "header":  "battle\\BattleAttackInfo.h",
-                         "documentation":  "classes\\battle\\BattleAttackInfo.md"
-                     },
-                     {
-                         "baseName":  "BonusCache",
-                         "header":  "bonuses\\BonusCache.h",
-                         "documentation":  "classes\\bonuses\\BonusCache.md"
-                     },
-                     {
-                         "baseName":  "EffectsFwd",
-                         "header":  "spells\\effects\\EffectsFwd.h",
-                         "documentation":  "classes\\spells\\effects\\EffectsFwd.md"
-                     },
-                     {
-                         "baseName":  "CDrawRoadsOperation",
-                         "header":  "mapping\\CDrawRoadsOperation.h",
-                         "documentation":  "classes\\mapping\\CDrawRoadsOperation.md"
-                     },
-                     {
-                         "baseName":  "MapFormatSettings",
-                         "header":  "mapping\\MapFormatSettings.h",
-                         "documentation":  "classes\\mapping\\MapFormatSettings.md"
-                     },
-                     {
-                         "baseName":  "CRmgTemplate",
-                         "header":  "rmg\\CRmgTemplate.h",
-                         "documentation":  [
-                                               "classes\\rmg\\CRmgTemplate.md",
-                                               "client\\rmg\\CRmgTemplate.md"
-                                           ]
-                     },
-                     {
-                         "baseName":  "Bonus",
-                         "header":  "bonuses\\Bonus.h",
-                         "documentation":  "classes\\bonuses\\Bonus.md"
-                     },
-                     {
-                         "baseName":  "CMapGenOptions",
-                         "header":  "rmg\\CMapGenOptions.h",
-                         "documentation":  "classes\\rmg\\CMapGenOptions.md"
-                     },
-                     {
-                         "baseName":  "DamageCalculator",
-                         "header":  "battle\\DamageCalculator.h",
-                         "documentation":  "classes\\battle\\DamageCalculator.md"
-                     },
-                     {
-                         "baseName":  "AccessibilityInfo",
-                         "header":  "battle\\AccessibilityInfo.h",
-                         "documentation":  "classes\\battle\\AccessibilityInfo.md"
-                     },
-                     {
-                         "baseName":  "TownFortifications",
-                         "header":  "entities\\building\\TownFortifications.h",
-                         "documentation":  "classes\\entities\\building\\TownFortifications.md"
-                     },
-                     {
-                         "baseName":  "ArtifactUtils",
-                         "header":  "entities\\artifact\\ArtifactUtils.h",
-                         "documentation":  "classes\\entities\\artifact\\ArtifactUtils.md"
-                     },
-                     {
-                         "baseName":  "CBattleGameInterface",
-                         "header":  "callback\\CBattleGameInterface.h",
-                         "documentation":  "classes\\callback\\CBattleGameInterface.md"
-                     },
-                     {
-                         "baseName":  "CArmedInstance",
-                         "header":  "mapObjects\\army\\CArmedInstance.h",
-                         "documentation":  "classes\\mapObjects\\army\\CArmedInstance.md"
-                     },
-                     {
-                         "baseName":  "JsonDeserializer",
-                         "header":  "serializer\\JsonDeserializer.h",
-                         "documentation":  "classes\\serializer\\JsonDeserializer.md"
-                     },
-                     {
-                         "baseName":  "Effect",
-                         "header":  "spells\\effects\\Effect.h",
-                         "documentation":  "classes\\spells\\effects\\Effect.md"
-                     },
-                     {
-                         "baseName":  "CGameState",
-                         "header":  "gameState\\CGameState.h",
-                         "documentation":  "classes\\gameState\\CGameState.md"
-                     },
-                     {
-                         "baseName":  "CPlayerState",
-                         "header":  "CPlayerState.h",
-                         "documentation":  [
-                                               "classes\\CPlayerState.md",
-                                               "classes\\gameState\\CPlayerState.md"
-                                           ]
-                     },
-                     {
-                         "baseName":  "CObstacleInstance",
-                         "header":  "battle\\CObstacleInstance.h",
-                         "documentation":  "classes\\battle\\CObstacleInstance.md"
-                     },
-                     {
-                         "baseName":  "CRewardableObject",
-                         "header":  "mapObjects\\CRewardableObject.h",
-                         "documentation":  "classes\\mapObjects\\CRewardableObject.md"
-                     },
-                     {
-                         "baseName":  "IHandlerBase",
-                         "header":  "IHandlerBase.h",
-                         "documentation":  "classes\\IHandlerBase.md"
-                     },
-                     {
-                         "baseName":  "SThievesGuildInfo",
-                         "header":  "gameState\\SThievesGuildInfo.h",
-                         "documentation":  "classes\\gameState\\SThievesGuildInfo.md"
-                     },
-                     {
-                         "baseName":  "CPlayerBattleCallback",
-                         "header":  "battle\\CPlayerBattleCallback.h",
-                         "documentation":  "classes\\battle\\CPlayerBattleCallback.md"
-                     },
-                     {
-                         "baseName":  "InfoAboutArmy",
-                         "header":  "gameState\\InfoAboutArmy.h",
-                         "documentation":  "classes\\gameState\\InfoAboutArmy.md"
-                     },
-                     {
-                         "baseName":  "ISpellMechanics",
-                         "header":  "spells\\ISpellMechanics.h",
-                         "documentation":  "classes\\spells\\ISpellMechanics.md"
-                     },
-                     {
-                         "baseName":  "EHeroGender",
-                         "header":  "entities\\hero\\EHeroGender.h",
-                         "documentation":  "classes\\entities\\hero\\EHeroGender.md"
-                     },
-                     {
-                         "baseName":  "CMapEvent",
-                         "header":  "mapping\\CMapEvent.h",
-                         "documentation":  "classes\\mapping\\CMapEvent.md"
-                     },
-                     {
-                         "baseName":  "BattleLayout",
-                         "header":  "battle\\BattleLayout.h",
-                         "documentation":  "classes\\battle\\BattleLayout.md"
-                     },
-                     {
-                         "baseName":  "CAdventureAI",
-                         "header":  "callback\\CAdventureAI.h",
-                         "documentation":  "classes\\callback\\CAdventureAI.md"
-                     },
-                     {
-                         "baseName":  "IGameInfoCallback",
-                         "header":  "callback\\IGameInfoCallback.h",
-                         "documentation":  [
-                                               "classes\\callback\\IGameInfoCallback.md",
-                                               "classes\\gameState\\IGameInfoCallback.md"
-                                           ]
-                     },
-                     {
-                         "baseName":  "CMapHeader",
-                         "header":  "mapping\\CMapHeader.h",
-                         "documentation":  "classes\\mapping\\CMapHeader.md"
-                     },
-                     {
-                         "baseName":  "RmgArea",
-                         "header":  "rmg\\RmgArea.h",
-                         "documentation":  "classes\\rmg\\RmgArea.md"
-                     },
-                     {
-                         "baseName":  "CGameInterface",
-                         "header":  "callback\\CGameInterface.h",
-                         "documentation":  "classes\\callback\\CGameInterface.md"
-                     },
-                     {
-                         "baseName":  "TextIdentifier",
-                         "header":  "texts\\TextIdentifier.h",
-                         "documentation":  "classes\\texts\\TextIdentifier.md"
-                     },
-                     {
-                         "baseName":  "ObstacleProxy",
-                         "header":  "mapping\\ObstacleProxy.h",
-                         "documentation":  "classes\\mapping\\ObstacleProxy.md"
-                     },
-                     {
-                         "baseName":  "CTown",
-                         "header":  "entities\\faction\\CTown.h",
-                         "documentation":  [
-                                               "classes\\entities\\CTown.md",
-                                               "classes\\entities\\faction\\CTown.md"
-                                           ]
-                     },
-                     {
-                         "baseName":  "StartInfo",
-                         "header":  "StartInfo.h",
-                         "documentation":  "classes\\StartInfo.md"
-                     },
-                     {
-                         "baseName":  "NumericConstants",
-                         "header":  "constants\\NumericConstants.h",
-                         "documentation":  "classes\\constants\\NumericConstants.md"
-                     },
-                     {
-                         "baseName":  "CModHandler",
-                         "header":  "modding\\CModHandler.h",
-                         "documentation":  "classes\\modding\\CModHandler.md"
-                     },
-                     {
-                         "baseName":  "CMemorySerializer",
-                         "header":  "serializer\\CMemorySerializer.h",
-                         "documentation":  "classes\\serializer\\CMemorySerializer.md"
-                     },
-                     {
-                         "baseName":  "ObjectTemplate",
-                         "header":  "mapObjects\\ObjectTemplate.h",
-                         "documentation":  "classes\\mapObjects\\ObjectTemplate.md"
-                     },
-                     {
-                         "baseName":  "ExternalCaster",
-                         "header":  "spells\\ExternalCaster.h",
-                         "documentation":  "classes\\spells\\ExternalCaster.md"
-                     },
-                     {
-                         "baseName":  "BonusCaster",
-                         "header":  "spells\\BonusCaster.h",
-                         "documentation":  "classes\\spells\\BonusCaster.md"
-                     },
-                     {
-                         "baseName":  "NetworkHandler",
-                         "header":  "network\\NetworkHandler.h",
-                         "documentation":  "classes\\network\\NetworkHandler.md"
-                     },
-                     {
-                         "baseName":  "IMarket",
-                         "header":  "mapObjects\\IMarket.h",
-                         "documentation":  "classes\\mapObjects\\IMarket.md"
-                     },
-                     {
-                         "baseName":  "CMapEditManager",
-                         "header":  "mapping\\CMapEditManager.h",
-                         "documentation":  "classes\\mapping\\CMapEditManager.md"
-                     },
-                     {
-                         "baseName":  "LocationEffect",
-                         "header":  "spells\\effects\\LocationEffect.h",
-                         "documentation":  "classes\\spells\\effects\\LocationEffect.md"
-                     },
-                     {
-                         "baseName":  "TextOperations",
-                         "header":  "texts\\TextOperations.h",
-                         "documentation":  "classes\\texts\\TextOperations.md"
-                     },
-                     {
-                         "baseName":  "EditorCallback",
-                         "header":  "callback\\EditorCallback.h",
-                         "documentation":  "classes\\callback\\EditorCallback.md"
-                     },
-                     {
-                         "baseName":  "CGResource",
-                         "header":  "mapObjects\\CGResource.h",
-                         "documentation":  "classes\\mapObjects\\CGResource.md"
-                     },
-                     {
-                         "baseName":  "CInputStream",
-                         "header":  "filesystem\\CInputStream.h",
-                         "documentation":  "classes\\filesystem\\CInputStream.md"
-                     },
-                     {
-                         "baseName":  "CArtifactInstance",
-                         "header":  "entities\\artifact\\CArtifactInstance.h",
-                         "documentation":  [
-                                               "classes\\entities\\CArtifactInstance.md",
-                                               "classes\\entities\\artifact\\CArtifactInstance.md"
-                                           ]
-                     },
-                     {
-                         "baseName":  "CBattleInfoEssentials",
-                         "header":  "battle\\CBattleInfoEssentials.h",
-                         "documentation":  "classes\\battle\\CBattleInfoEssentials.md"
-                     },
-                     {
-                         "baseName":  "SiegeInfo",
-                         "header":  "battle\\SiegeInfo.h",
-                         "documentation":  "classes\\battle\\SiegeInfo.md"
-                     },
-                     {
-                         "baseName":  "BattleAction",
-                         "header":  "battle\\BattleAction.h",
-                         "documentation":  "classes\\battle\\BattleAction.md"
-                     },
-                     {
-                         "baseName":  "ObstacleCasterProxy",
-                         "header":  "spells\\ObstacleCasterProxy.h",
-                         "documentation":  "classes\\spells\\ObstacleCasterProxy.md"
-                     },
-                     {
-                         "baseName":  "ProxyCaster",
-                         "header":  "spells\\ProxyCaster.h",
-                         "documentation":  "classes\\spells\\ProxyCaster.md"
-                     },
-                     {
-                         "baseName":  "Updaters",
-                         "header":  "bonuses\\Updaters.h",
-                         "documentation":  "classes\\bonuses\\Updaters.md"
-                     },
-                     {
-                         "baseName":  "StringConstants",
-                         "header":  "constants\\StringConstants.h",
-                         "documentation":  "classes\\constants\\StringConstants.md"
-                     },
-                     {
-                         "baseName":  "Sacrifice",
-                         "header":  "spells\\effects\\Sacrifice.h",
-                         "documentation":  "classes\\spells\\effects\\Sacrifice.md"
-                     },
-                     {
-                         "baseName":  "CGameInfoCallback",
-                         "header":  "callback\\CGameInfoCallback.h",
-                         "documentation":  "classes\\callback\\CGameInfoCallback.md"
-                     },
-                     {
-                         "baseName":  "CFaction",
-                         "header":  "entities\\faction\\CFaction.h",
-                         "documentation":  [
-                                               "classes\\entities\\CFaction.md",
-                                               "classes\\entities\\faction\\CFaction.md"
-                                           ]
-                     },
-                     {
-                         "baseName":  "Dispel",
-                         "header":  "spells\\effects\\Dispel.h",
-                         "documentation":  "classes\\spells\\effects\\Dispel.md"
-                     },
-                     {
-                         "baseName":  "BattleInfo",
-                         "header":  "battle\\BattleInfo.h",
-                         "documentation":  "classes\\battle\\BattleInfo.md"
-                     },
-                     {
-                         "baseName":  "IBattleState",
-                         "header":  "battle\\IBattleState.h",
-                         "documentation":  "classes\\battle\\IBattleState.md"
-                     },
-                     {
-                         "baseName":  "ESerializationVersion",
-                         "header":  "serializer\\ESerializationVersion.h",
-                         "documentation":  "classes\\serializer\\ESerializationVersion.md"
-                     },
-                     {
-                         "baseName":  "CGTownInstance",
-                         "header":  "mapObjects\\CGTownInstance.h",
-                         "documentation":  "classes\\mapObjects\\CGTownInstance.md"
-                     },
-                     {
-                         "baseName":  "MapFormat",
-                         "header":  "mapping\\MapFormat.h",
-                         "documentation":  [
-                                               "classes\\mapping\\MapFormat.md",
-                                               "client\\mapping\\MapFormat.md"
-                                           ]
-                     },
-                     {
-                         "baseName":  "CStackInstance",
-                         "header":  "mapObjects\\army\\CStackInstance.h",
-                         "documentation":  [
-                                               "classes\\battle\\CStackInstance.md",
-                                               "classes\\mapObjects\\army\\CStackInstance.md"
-                                           ]
-                     },
-                     {
-                         "baseName":  "ISimpleResourceLoader",
-                         "header":  "filesystem\\ISimpleResourceLoader.h",
-                         "documentation":  "classes\\filesystem\\ISimpleResourceLoader.md"
-                     },
-                     {
-                         "baseName":  "Unit",
-                         "header":  "battle\\Unit.h",
-                         "documentation":  "classes\\battle\\Unit.md"
-                     },
-                     {
-                         "baseName":  "CLegacyConfigParser",
-                         "header":  "texts\\CLegacyConfigParser.h",
-                         "documentation":  "classes\\texts\\CLegacyConfigParser.md"
-                     },
-                     {
-                         "baseName":  "ViewSpellInt",
-                         "header":  "spells\\ViewSpellInt.h",
-                         "documentation":  "classes\\spells\\ViewSpellInt.md"
-                     },
-                     {
-                         "baseName":  "CHeroClassHandler",
-                         "header":  "entities\\hero\\CHeroClassHandler.h",
-                         "documentation":  "classes\\entities\\hero\\CHeroClassHandler.md"
-                     },
-                     {
-                         "baseName":  "Catapult",
-                         "header":  "spells\\effects\\Catapult.h",
-                         "documentation":  "classes\\spells\\effects\\Catapult.md"
-                     },
-                     {
-                         "baseName":  "CArtifactFittingSet",
-                         "header":  "entities\\artifact\\CArtifactFittingSet.h",
-                         "documentation":  "classes\\entities\\artifact\\CArtifactFittingSet.md"
-                     },
-                     {
-                         "baseName":  "BattleStateInfoForRetreat",
-                         "header":  "battle\\BattleStateInfoForRetreat.h",
-                         "documentation":  "classes\\battle\\BattleStateInfoForRetreat.md"
-                     },
-                     {
-                         "baseName":  "RegisterTypes",
-                         "header":  "serializer\\RegisterTypes.h",
-                         "documentation":  "classes\\serializer\\RegisterTypes.md"
-                     },
-                     {
-                         "baseName":  "EArtifactClass",
-                         "header":  "entities\\artifact\\EArtifactClass.h",
-                         "documentation":  "classes\\entities\\artifact\\EArtifactClass.md"
-                     },
-                     {
-                         "baseName":  "ArtSlotInfo",
-                         "header":  "entities\\artifact\\ArtSlotInfo.h",
-                         "documentation":  "classes\\entities\\artifact\\ArtSlotInfo.md"
-                     },
-                     {
-                         "baseName":  "NetworkInterface",
-                         "header":  "network\\NetworkInterface.h",
-                         "documentation":  "classes\\network\\NetworkInterface.md"
-                     },
-                     {
-                         "baseName":  "CDynLibHandler",
-                         "header":  "callback\\CDynLibHandler.h",
-                         "documentation":  "classes\\callback\\CDynLibHandler.md"
-                     },
-                     {
-                         "baseName":  "CGDwelling",
-                         "header":  "mapObjects\\CGDwelling.h",
-                         "documentation":  "classes\\mapObjects\\CGDwelling.md"
-                     },
-                     {
-                         "baseName":  "ObstacleSetHandler",
-                         "header":  "mapObjects\\ObstacleSetHandler.h",
-                         "documentation":  "classes\\mapObjects\\ObstacleSetHandler.md"
-                     },
-                     {
-                         "baseName":  "GameStatistics",
-                         "header":  "gameState\\GameStatistics.h",
-                         "documentation":  "classes\\gameState\\GameStatistics.md"
-                     },
-                     {
-                         "baseName":  "SideInBattle",
-                         "header":  "battle\\SideInBattle.h",
-                         "documentation":  "classes\\battle\\SideInBattle.md"
-                     },
-                     {
-                         "baseName":  "CGMarket",
-                         "header":  "mapObjects\\CGMarket.h",
-                         "documentation":  "classes\\mapObjects\\CGMarket.md"
-                     },
-                     {
-                         "baseName":  "CZonePlacer",
-                         "header":  "rmg\\CZonePlacer.h",
-                         "documentation":  "classes\\rmg\\CZonePlacer.md"
-                     },
-                     {
-                         "baseName":  "CGObjectInstance",
-                         "header":  "mapObjects\\CGObjectInstance.h",
-                         "documentation":  "classes\\mapObjects\\CGObjectInstance.md"
-                     },
-                     {
-                         "baseName":  "Effects",
-                         "header":  "spells\\effects\\Effects.h",
-                         "documentation":  "classes\\spells\\effects\\Effects.md"
-                     },
-                     {
-                         "baseName":  "RmgObject",
-                         "header":  "rmg\\RmgObject.h",
-                         "documentation":  "classes\\rmg\\RmgObject.md"
-                     },
-                     {
-                         "baseName":  "JsonNode",
-                         "header":  "json\\JsonNode.h",
-                         "documentation":  "classes\\json\\JsonNode.md"
-                     },
-                     {
-                         "baseName":  "ResourceTypeHandler",
-                         "header":  "entities\\ResourceTypeHandler.h",
-                         "documentation":  "classes\\entities\\ResourceTypeHandler.md"
-                     },
-                     {
-                         "baseName":  "TownBuildingInstance",
-                         "header":  "mapObjects\\TownBuildingInstance.h",
-                         "documentation":  "classes\\mapObjects\\TownBuildingInstance.md"
-                     },
-                     {
-                         "baseName":  "CGCreature",
-                         "header":  "mapObjects\\CGCreature.h",
-                         "documentation":  "classes\\mapObjects\\CGCreature.md"
-                     },
-                     {
-                         "baseName":  "MiscObjects",
-                         "header":  "mapObjects\\MiscObjects.h",
-                         "documentation":  "classes\\mapObjects\\MiscObjects.md"
-                     },
-                     {
-                         "baseName":  "BonusList",
-                         "header":  "bonuses\\BonusList.h",
-                         "documentation":  "classes\\bonuses\\BonusList.md"
-                     },
-                     {
-                         "baseName":  "ArtBearer",
-                         "header":  "entities\\artifact\\ArtBearer.h",
-                         "documentation":  "classes\\entities\\artifact\\ArtBearer.md"
-                     },
-                     {
-                         "baseName":  "CBonusSystemNode",
-                         "header":  "bonuses\\CBonusSystemNode.h",
-                         "documentation":  "classes\\bonuses\\CBonusSystemNode.md"
-                     },
-                     {
-                         "baseName":  "BattleSide",
-                         "header":  "battle\\BattleSide.h",
-                         "documentation":  "classes\\battle\\BattleSide.md"
-                     },
-                     {
-                         "baseName":  "CSerializer",
-                         "header":  "serializer\\CSerializer.h",
-                         "documentation":  "classes\\serializer\\CSerializer.md"
-                     },
-                     {
-                         "baseName":  "CNonConstInfoCallback",
-                         "header":  "callback\\CNonConstInfoCallback.h",
-                         "documentation":  "classes\\callback\\CNonConstInfoCallback.md"
-                     },
-                     {
-                         "baseName":  "ContentTypeHandler",
-                         "header":  "modding\\ContentTypeHandler.h",
-                         "documentation":  "classes\\modding\\ContentTypeHandler.md"
-                     },
-                     {
-                         "baseName":  "Clone",
-                         "header":  "spells\\effects\\Clone.h",
-                         "documentation":  "classes\\spells\\effects\\Clone.md"
-                     },
-                     {
-                         "baseName":  "RemoveObstacle",
-                         "header":  "spells\\effects\\RemoveObstacle.h",
-                         "documentation":  "classes\\spells\\effects\\RemoveObstacle.md"
-                     },
-                     {
-                         "baseName":  "CMap",
-                         "header":  "mapping\\CMap.h",
-                         "documentation":  "classes\\mapping\\CMap.md"
-                     },
-                     {
-                         "baseName":  "BinarySerializer",
-                         "header":  "serializer\\BinarySerializer.h",
-                         "documentation":  "classes\\serializer\\BinarySerializer.md"
-                     },
-                     {
-                         "baseName":  "ModManager",
-                         "header":  "modding\\ModManager.h",
-                         "documentation":  "classes\\modding\\ModManager.md"
-                     },
-                     {
-                         "baseName":  "TurnInfo",
-                         "header":  "pathfinder\\TurnInfo.h",
-                         "documentation":  "classes\\pathfinder\\TurnInfo.md"
-                     },
-                     {
-                         "baseName":  "COutputStream",
-                         "header":  "filesystem\\COutputStream.h",
-                         "documentation":  "classes\\filesystem\\COutputStream.md"
-                     },
-                     {
-                         "baseName":  "ModDescription",
-                         "header":  "modding\\ModDescription.h",
-                         "documentation":  "classes\\modding\\ModDescription.md"
-                     },
-                     {
-                         "baseName":  "TerrainTile",
-                         "header":  "mapping\\TerrainTile.h",
-                         "documentation":  [
-                                               "classes\\gameState\\TerrainTile.md",
-                                               "classes\\mapping\\TerrainTile.md",
-                                               "client\\mapping\\TerrainTile.md"
-                                           ]
-                     },
-                     {
-                         "baseName":  "BattleHex",
-                         "header":  "battle\\BattleHex.h",
-                         "documentation":  "classes\\battle\\BattleHex.md"
-                     },
-                     {
-                         "baseName":  "TavernHeroesPool",
-                         "header":  "gameState\\TavernHeroesPool.h",
-                         "documentation":  "classes\\gameState\\TavernHeroesPool.md"
-                     },
-                     {
-                         "baseName":  "Enumerations",
-                         "header":  "constants\\Enumerations.h",
-                         "documentation":  "classes\\constants\\Enumerations.md"
-                     },
-                     {
-                         "baseName":  "TextLocalizationContainer",
-                         "header":  "texts\\TextLocalizationContainer.h",
-                         "documentation":  "classes\\texts\\TextLocalizationContainer.md"
-                     },
-                     {
-                         "baseName":  "CCommanderInstance",
-                         "header":  "mapObjects\\army\\CCommanderInstance.h",
-                         "documentation":  "classes\\mapObjects\\army\\CCommanderInstance.md"
-                     },
-                     {
-                         "baseName":  "NetworkServer",
-                         "header":  "network\\NetworkServer.h",
-                         "documentation":  "classes\\network\\NetworkServer.md"
-                     },
-                     {
-                         "baseName":  "TownPortalEffect",
-                         "header":  "spells\\adventure\\TownPortalEffect.h",
-                         "documentation":  "classes\\spells\\adventure\\TownPortalEffect.md"
-                     },
-                     {
-                         "baseName":  "CTypeList",
-                         "header":  "serializer\\CTypeList.h",
-                         "documentation":  "classes\\serializer\\CTypeList.md"
-                     },
-                     {
-                         "baseName":  "UpgradeInfo",
-                         "header":  "gameState\\UpgradeInfo.h",
-                         "documentation":  "classes\\gameState\\UpgradeInfo.md"
-                     },
-                     {
-                         "baseName":  "MapEditUtils",
-                         "header":  "mapping\\MapEditUtils.h",
-                         "documentation":  "classes\\mapping\\MapEditUtils.md"
-                     },
-                     {
-                         "baseName":  "Moat",
-                         "header":  "spells\\effects\\Moat.h",
-                         "documentation":  "classes\\spells\\effects\\Moat.md"
-                     },
-                     {
-                         "baseName":  "AutocombatPreferences",
-                         "header":  "battle\\AutocombatPreferences.h",
-                         "documentation":  "classes\\battle\\AutocombatPreferences.md"
-                     }
-                 ],
-    "missingHeaders":  183,
-    "generatedAt":  "2026-01-17 17:58:11",
-    "missingDocumentation":  [
-                                 "AsyncRunner.h",
-                                 "BattleFieldHandler.h",
-                                 "CAndroidVMHelper.h",
-                                 "CBonusTypeHandler.h",
-                                 "CConfigHandler.h",
-                                 "CConsoleHandler.h",
-                                 "CCreatureHandler.h",
-                                 "Color.h",
-                                 "ConditionalWait.h",
-                                 "CRandomGenerator.h",
-                                 "CScriptingModule.h",
-                                 "CSkillHandler.h",
-                                 "CSoundBase.h",
-                                 "CStack.h",
-                                 "CStopWatch.h",
-                                 "CThreadHelper.h",
-                                 "ExceptionsCommon.h",
-                                 "ExtraOptionsInfo.h",
-                                 "FunctionList.h",
-                                 "GameConstants.h",
-                                 "GameLibrary.h",
-                                 "GameSettings.h",
-                                 "IBonusTypeHandler.h",
-                                 "int3.h",
-                                 "LoadProgress.h",
-                                 "LogicalExpression.h",
-                                 "ObstacleHandler.h",
-                                 "Point.h",
-                                 "Rect.h",
-                                 "ResourceSet.h",
-                                 "RiverHandler.h",
-                                 "RoadHandler.h",
-                                 "ScopeGuard.h",
-                                 "ScriptHandler.h",
-                                 "StdInc.h",
-                                 "TerrainHandler.h",
-                                 "TurnTimerInfo.h",
-                                 "UnlockGuard.h",
-                                 "VCMIDirs.h",
-                                 "vcmi_endian.h",
-                                 "callback\\GameRandomizer.h",
-                                 "callback\\IBattleCallback.h",
-                                 "callback\\IBattleEventsReceiver.h",
-                                 "callback\\IClient.h",
-                                 "callback\\IGameActionCallback.h",
-                                 "callback\\IGameEventCallback.h",
-                                 "callback\\IGameEventsReceiver.h",
-                                 "callback\\IGameRandomizer.h",
-                                 "callback\\MapInfoCallback.h",
-                                 "campaign\\CampaignBonus.h",
-                                 "campaign\\CampaignConstants.h",
-                                 "campaign\\CampaignHandler.h",
-                                 "campaign\\CampaignRegions.h",
-                                 "campaign\\CampaignRegionsHandler.h",
-                                 "campaign\\CampaignScenarioPrologEpilog.h",
-                                 "campaign\\CampaignState.h",
-                                 "constants\\EntityIdentifiers.h",
-                                 "constants\\IdentifierBase.h",
-                                 "constants\\VariantIdentifier.h",
-                                 "events\\ApplyDamage.h",
-                                 "events\\GameResumed.h",
-                                 "events\\ObjectVisitEnded.h",
-                                 "events\\ObjectVisitStarted.h",
-                                 "events\\PlayerGotTurn.h",
-                                 "events\\TurnStarted.h",
-                                 "filesystem\\AdapterLoaders.h",
-                                 "filesystem\\CArchiveLoader.h",
-                                 "filesystem\\CBinaryReader.h",
-                                 "filesystem\\CCompressedStream.h",
-                                 "filesystem\\CFileInputStream.h",
-                                 "filesystem\\CFilesystemLoader.h",
-                                 "filesystem\\CInputOutputStream.h",
-                                 "filesystem\\CMemoryBuffer.h",
-                                 "filesystem\\CMemoryStream.h",
-                                 "filesystem\\CStream.h",
-                                 "filesystem\\CZipLoader.h",
-                                 "filesystem\\CZipSaver.h",
-                                 "filesystem\\FileInfo.h",
-                                 "filesystem\\MinizipExtensions.h",
-                                 "filesystem\\ResourcePath.h",
-                                 "gameState\\EVictoryLossCheckResult.h",
-                                 "gameState\\GameStatePackVisitor.h",
-                                 "gameState\\TavernSlot.h",
-                                 "json\\JsonBonus.h",
-                                 "json\\JsonFormatException.h",
-                                 "json\\JsonParser.h",
-                                 "json\\JsonRandom.h",
-                                 "json\\JsonUtils.h",
-                                 "json\\JsonValidator.h",
-                                 "json\\JsonWriter.h",
-                                 "logging\\CBasicLogConfigurator.h",
-                                 "logging\\VisualLogger.h",
-                                 "mapObjectConstructors\\AObjectTypeHandler.h",
-                                 "mapObjectConstructors\\CDefaultObjectTypeHandler.h",
-                                 "mapObjectConstructors\\CObjectClassesHandler.h",
-                                 "mapObjectConstructors\\CommonConstructors.h",
-                                 "mapObjectConstructors\\CRewardableConstructor.h",
-                                 "mapObjectConstructors\\DwellingInstanceConstructor.h",
-                                 "mapObjectConstructors\\FlaggableInstanceConstructor.h",
-                                 "mapObjectConstructors\\HillFortInstanceConstructor.h",
-                                 "mapObjectConstructors\\IObjectInfo.h",
-                                 "mapObjectConstructors\\MarketInstanceConstructor.h",
-                                 "mapObjectConstructors\\RandomMapInfo.h",
-                                 "mapObjectConstructors\\ShipyardInstanceConstructor.h",
-                                 "mapObjectConstructors\\SObjectSounds.h",
-                                 "mapObjects\\CompoundMapObjectID.h",
-                                 "modding\\ActiveModsInSaveList.h",
-                                 "modding\\IdentifierStorage.h",
-                                 "modding\\ModIncompatibility.h",
-                                 "modding\\ModScope.h",
-                                 "network\\NetworkDefines.h",
-                                 "networkPacks\\ArtifactLocation.h",
-                                 "networkPacks\\BattleChanges.h",
-                                 "networkPacks\\Component.h",
-                                 "networkPacks\\EInfoWindowMode.h",
-                                 "networkPacks\\EntityChanges.h",
-                                 "networkPacks\\EOpenWindowMode.h",
-                                 "networkPacks\\NetPacksBase.h",
-                                 "networkPacks\\NetPackVisitor.h",
-                                 "networkPacks\\ObjProperty.h",
-                                 "networkPacks\\PacksForClient.h",
-                                 "networkPacks\\PacksForClientBattle.h",
-                                 "networkPacks\\PacksForLobby.h",
-                                 "networkPacks\\PacksForServer.h",
-                                 "networkPacks\\SaveLocalState.h",
-                                 "networkPacks\\SetRewardableConfiguration.h",
-                                 "networkPacks\\SetStackEffect.h",
-                                 "networkPacks\\StackLocation.h",
-                                 "networkPacks\\TradeItem.h",
-                                 "pathfinder\\INodeStorage.h",
-                                 "pathfinder\\NodeStorage.h",
-                                 "pathfinder\\PathfinderCache.h",
-                                 "pathfinder\\PathfinderOptions.h",
-                                 "pathfinder\\PathfinderUtil.h",
-                                 "pathfinder\\PathfindingRules.h",
-                                 "rewardable\\Configuration.h",
-                                 "rewardable\\Info.h",
-                                 "rewardable\\Interface.h",
-                                 "rewardable\\Limiter.h",
-                                 "rewardable\\Reward.h",
-                                 "rmg\\CRmgTemplateStorage.h",
-                                 "rmg\\CRoadRandomizer.h",
-                                 "rmg\\float3.h",
-                                 "rmg\\Functions.h",
-                                 "rmg\\MapProxy.h",
-                                 "rmg\\ObjectConfig.h",
-                                 "rmg\\ObjectInfo.h",
-                                 "rmg\\PenroseTiling.h",
-                                 "rmg\\RmgMap.h",
-                                 "rmg\\RmgPath.h",
-                                 "rmg\\TileInfo.h",
-                                 "rmg\\modificators\\ConnectionsPlacer.h",
-                                 "rmg\\modificators\\MinePlacer.h",
-                                 "rmg\\modificators\\Modificator.h",
-                                 "rmg\\modificators\\ObjectDistributor.h",
-                                 "rmg\\modificators\\ObjectManager.h",
-                                 "rmg\\modificators\\ObstaclePlacer.h",
-                                 "rmg\\modificators\\PrisonHeroPlacer.h",
-                                 "rmg\\modificators\\QuestArtifactPlacer.h",
-                                 "rmg\\modificators\\RiverPlacer.h",
-                                 "rmg\\modificators\\RoadPlacer.h",
-                                 "rmg\\modificators\\RockFiller.h",
-                                 "rmg\\modificators\\RockPlacer.h",
-                                 "rmg\\modificators\\TerrainPainter.h",
-                                 "rmg\\modificators\\TownPlacer.h",
-                                 "rmg\\modificators\\TreasurePlacer.h",
-                                 "rmg\\modificators\\WaterAdopter.h",
-                                 "rmg\\modificators\\WaterProxy.h",
-                                 "rmg\\modificators\\WaterRoutes.h",
-                                 "serializer\\BinaryDeserializer.h",
-                                 "serializer\\CLoadFile.h",
-                                 "serializer\\CSaveFile.h",
-                                 "serializer\\GameConnection.h",
-                                 "serializer\\GameConnectionID.h",
-                                 "serializer\\JsonUpdater.h",
-                                 "serializer\\PlayerConnectionID.h",
-                                 "serializer\\SerializerReflection.h",
-                                 "spells\\adventure\\AdventureSpellEffect.h",
-                                 "spells\\adventure\\RemoveObjectEffect.h",
-                                 "spells\\adventure\\SummonBoatEffect.h",
-                                 "spells\\adventure\\ViewWorldEffect.h",
-                                 "spells\\effects\\Timed.h",
-                                 "spells\\effects\\UnitEffect.h"
-                             ],
-    "documentedHeaders":  209,
-    "totalHeaders":  392
+    "callback\\CGameInterface.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\CGameInterface.h",
+                                       "documentation":  "classes\\callback\\CGameInterface.md"
+                                   },
+    "battle\\IUnitInfo.h":  {
+                                "status":  "documented",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\IUnitInfo.h",
+                                "documentation":  "classes\\battle\\IUnitInfo.md"
+                            },
+    "filesystem\\Filesystem.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\Filesystem.h",
+                                     "documentation":  "classes\\filesystem\\Filesystem.md"
+                                 },
+    "events\\ObjectVisitStarted.h":  {
+                                         "status":  "missing",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\events\\ObjectVisitStarted.h",
+                                         "documentation":  null
+                                     },
+    "entities\\hero\\CHero.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\hero\\CHero.h",
+                                    "documentation":  "classes\\entities\\hero\\CHero.md"
+                                },
+    "mapping\\MapFeaturesH3M.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\MapFeaturesH3M.h",
+                                      "documentation":  "classes\\mapping\\MapFeaturesH3M.md"
+                                  },
+    "filesystem\\CStream.h":  {
+                                  "status":  "missing",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CStream.h",
+                                  "documentation":  null
+                              },
+    "callback\\CDynLibHandler.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\CDynLibHandler.h",
+                                       "documentation":  "classes\\callback\\CDynLibHandler.md"
+                                   },
+    "callback\\CNonConstInfoCallback.h":  {
+                                              "status":  "documented",
+                                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\CNonConstInfoCallback.h",
+                                              "documentation":  "classes\\callback\\CNonConstInfoCallback.md"
+                                          },
+    "events\\GameResumed.h":  {
+                                  "status":  "missing",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\events\\GameResumed.h",
+                                  "documentation":  null
+                              },
+    "spells\\effects\\Teleport.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Teleport.h",
+                                        "documentation":  "classes\\spells\\effects\\Teleport.md"
+                                    },
+    "mapObjectConstructors\\RandomMapInfo.h":  {
+                                                   "status":  "missing",
+                                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\RandomMapInfo.h",
+                                                   "documentation":  null
+                                               },
+    "mapObjects\\army\\CCommanderInstance.h":  {
+                                                   "status":  "documented",
+                                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\army\\CCommanderInstance.h",
+                                                   "documentation":  "classes\\mapObjects\\army\\CCommanderInstance.md"
+                                               },
+    "mapObjects\\ObstacleSetHandler.h":  {
+                                             "status":  "documented",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\ObstacleSetHandler.h",
+                                             "documentation":  "classes\\mapObjects\\ObstacleSetHandler.md"
+                                         },
+    "pathfinder\\CGPathNode.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\pathfinder\\CGPathNode.h",
+                                     "documentation":  "classes\\pathfinder\\CGPathNode.md"
+                                 },
+    "filesystem\\CInputOutputStream.h":  {
+                                             "status":  "missing",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CInputOutputStream.h",
+                                             "documentation":  null
+                                         },
+    "ExtraOptionsInfo.h":  {
+                               "status":  "missing",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\ExtraOptionsInfo.h",
+                               "documentation":  null
+                           },
+    "mapObjectConstructors\\FlaggableInstanceConstructor.h":  {
+                                                                  "status":  "missing",
+                                                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\FlaggableInstanceConstructor.h",
+                                                                  "documentation":  null
+                                                              },
+    "gameState\\EVictoryLossCheckResult.h":  {
+                                                 "status":  "missing",
+                                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\EVictoryLossCheckResult.h",
+                                                 "documentation":  null
+                                             },
+    "mapObjectConstructors\\ShipyardInstanceConstructor.h":  {
+                                                                 "status":  "missing",
+                                                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\ShipyardInstanceConstructor.h",
+                                                                 "documentation":  null
+                                                             },
+    "texts\\MetaString.h":  {
+                                "status":  "documented",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\texts\\MetaString.h",
+                                "documentation":  "classes\\texts\\MetaString.md"
+                            },
+    "json\\JsonWriter.h":  {
+                               "status":  "missing",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\json\\JsonWriter.h",
+                               "documentation":  null
+                           },
+    "campaign\\CampaignHandler.h":  {
+                                        "status":  "missing",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\campaign\\CampaignHandler.h",
+                                        "documentation":  null
+                                    },
+    "GameConstants.h":  {
+                            "status":  "missing",
+                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\GameConstants.h",
+                            "documentation":  null
+                        },
+    "rmg\\RmgObject.h":  {
+                             "status":  "documented",
+                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\RmgObject.h",
+                             "documentation":  "classes\\rmg\\RmgObject.md"
+                         },
+    "serializer\\JsonUpdater.h":  {
+                                      "status":  "missing",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\JsonUpdater.h",
+                                      "documentation":  null
+                                  },
+    "rmg\\RmgMap.h":  {
+                          "status":  "missing",
+                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\RmgMap.h",
+                          "documentation":  null
+                      },
+    "mapObjects\\CRewardableObject.h":  {
+                                            "status":  "documented",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\CRewardableObject.h",
+                                            "documentation":  "classes\\mapObjects\\CRewardableObject.md"
+                                        },
+    "mapObjects\\CQuest.h":  {
+                                 "status":  "documented",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\CQuest.h",
+                                 "documentation":  "classes\\mapObjects\\CQuest.md"
+                             },
+    "campaign\\CampaignRegions.h":  {
+                                        "status":  "missing",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\campaign\\CampaignRegions.h",
+                                        "documentation":  null
+                                    },
+    "entities\\hero\\CHeroClassHandler.h":  {
+                                                "status":  "documented",
+                                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\hero\\CHeroClassHandler.h",
+                                                "documentation":  "classes\\entities\\hero\\CHeroClassHandler.md"
+                                            },
+    "AsyncRunner.h":  {
+                          "status":  "missing",
+                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\AsyncRunner.h",
+                          "documentation":  null
+                      },
+    "battle\\Unit.h":  {
+                           "status":  "documented",
+                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\Unit.h",
+                           "documentation":  "classes\\battle\\Unit.md"
+                       },
+    "battle\\CUnitState.h":  {
+                                 "status":  "documented",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\CUnitState.h",
+                                 "documentation":  "classes\\battle\\CUnitState.md"
+                             },
+    "spells\\effects\\RemoveObstacle.h":  {
+                                              "status":  "documented",
+                                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\RemoveObstacle.h",
+                                              "documentation":  "classes\\spells\\effects\\RemoveObstacle.md"
+                                          },
+    "modding\\ActiveModsInSaveList.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\modding\\ActiveModsInSaveList.h",
+                                            "documentation":  null
+                                        },
+    "texts\\TextLocalizationContainer.h":  {
+                                               "status":  "documented",
+                                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\texts\\TextLocalizationContainer.h",
+                                               "documentation":  "classes\\texts\\TextLocalizationContainer.md"
+                                           },
+    "mapping\\CMapService.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\CMapService.h",
+                                   "documentation":  "classes\\mapping\\CMapService.md"
+                               },
+    "events\\ApplyDamage.h":  {
+                                  "status":  "missing",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\events\\ApplyDamage.h",
+                                  "documentation":  null
+                              },
+    "CBonusTypeHandler.h":  {
+                                "status":  "missing",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\CBonusTypeHandler.h",
+                                "documentation":  null
+                            },
+    "battle\\CPlayerBattleCallback.h":  {
+                                            "status":  "documented",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\CPlayerBattleCallback.h",
+                                            "documentation":  "classes\\battle\\CPlayerBattleCallback.md"
+                                        },
+    "serializer\\JsonTreeSerializer.h":  {
+                                             "status":  "documented",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\JsonTreeSerializer.h",
+                                             "documentation":  "classes\\serializer\\JsonTreeSerializer.md"
+                                         },
+    "ScopeGuard.h":  {
+                         "status":  "missing",
+                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\ScopeGuard.h",
+                         "documentation":  null
+                     },
+    "vcmi_endian.h":  {
+                          "status":  "missing",
+                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\vcmi_endian.h",
+                          "documentation":  null
+                      },
+    "modding\\IdentifierStorage.h":  {
+                                         "status":  "missing",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\modding\\IdentifierStorage.h",
+                                         "documentation":  null
+                                     },
+    "serializer\\BinarySerializer.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\BinarySerializer.h",
+                                           "documentation":  "classes\\serializer\\BinarySerializer.md"
+                                       },
+    "mapObjectConstructors\\SObjectSounds.h":  {
+                                                   "status":  "missing",
+                                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\SObjectSounds.h",
+                                                   "documentation":  null
+                                               },
+    "filesystem\\CCompressedStream.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CCompressedStream.h",
+                                            "documentation":  null
+                                        },
+    "battle\\BattleLayout.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\BattleLayout.h",
+                                   "documentation":  "classes\\battle\\BattleLayout.md"
+                               },
+    "json\\JsonRandom.h":  {
+                               "status":  "missing",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\json\\JsonRandom.h",
+                               "documentation":  null
+                           },
+    "json\\JsonUtils.h":  {
+                              "status":  "missing",
+                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\json\\JsonUtils.h",
+                              "documentation":  null
+                          },
+    "spells\\ObstacleCasterProxy.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\ObstacleCasterProxy.h",
+                                          "documentation":  "classes\\spells\\ObstacleCasterProxy.md"
+                                      },
+    "campaign\\CampaignConstants.h":  {
+                                          "status":  "missing",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\campaign\\CampaignConstants.h",
+                                          "documentation":  null
+                                      },
+    "callback\\CPlayerSpecificInfoCallback.h":  {
+                                                    "status":  "documented",
+                                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\CPlayerSpecificInfoCallback.h",
+                                                    "documentation":  "classes\\callback\\CPlayerSpecificInfoCallback.md"
+                                                },
+    "entities\\artifact\\CArtifactSet.h":  {
+                                               "status":  "documented",
+                                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\artifact\\CArtifactSet.h",
+                                               "documentation":  "classes\\entities\\artifact\\CArtifactSet.md"
+                                           },
+    "spells\\SpellSchoolHandler.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\SpellSchoolHandler.h",
+                                         "documentation":  "classes\\spells\\SpellSchoolHandler.md"
+                                     },
+    "mapObjects\\CGCreature.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\CGCreature.h",
+                                     "documentation":  "classes\\mapObjects\\CGCreature.md"
+                                 },
+    "mapObjects\\army\\CStackInstance.h":  {
+                                               "status":  "documented",
+                                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\army\\CStackInstance.h",
+                                               "documentation":  "classes\\mapObjects\\army\\CStackInstance.md"
+                                           },
+    "spells\\effects\\Effects.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Effects.h",
+                                       "documentation":  "classes\\spells\\effects\\Effects.md"
+                                   },
+    "mapping\\ObstacleProxy.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\ObstacleProxy.h",
+                                     "documentation":  "classes\\mapping\\ObstacleProxy.md"
+                                 },
+    "LoadProgress.h":  {
+                           "status":  "missing",
+                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\LoadProgress.h",
+                           "documentation":  null
+                       },
+    "campaign\\CampaignRegionsHandler.h":  {
+                                               "status":  "missing",
+                                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\campaign\\CampaignRegionsHandler.h",
+                                               "documentation":  null
+                                           },
+    "constants\\NumericConstants.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\constants\\NumericConstants.h",
+                                          "documentation":  "classes\\constants\\NumericConstants.md"
+                                      },
+    "callback\\IClient.h":  {
+                                "status":  "missing",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\IClient.h",
+                                "documentation":  null
+                            },
+    "texts\\CLegacyConfigParser.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\texts\\CLegacyConfigParser.h",
+                                         "documentation":  "classes\\texts\\CLegacyConfigParser.md"
+                                     },
+    "modding\\ModUtility.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\modding\\ModUtility.h",
+                                  "documentation":  "classes\\modding\\ModUtility.md"
+                              },
+    "spells\\effects\\Summon.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Summon.h",
+                                      "documentation":  "classes\\spells\\effects\\Summon.md"
+                                  },
+    "spells\\effects\\Catapult.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Catapult.h",
+                                        "documentation":  "classes\\spells\\effects\\Catapult.md"
+                                    },
+    "constants\\Enumerations.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\constants\\Enumerations.h",
+                                      "documentation":  "classes\\constants\\Enumerations.md"
+                                  },
+    "spells\\effects\\DemonSummon.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\DemonSummon.h",
+                                           "documentation":  "classes\\spells\\effects\\DemonSummon.md"
+                                       },
+    "serializer\\GameConnection.h":  {
+                                         "status":  "missing",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\GameConnection.h",
+                                         "documentation":  null
+                                     },
+    "mapping\\CDrawRoadsOperation.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\CDrawRoadsOperation.h",
+                                           "documentation":  "classes\\mapping\\CDrawRoadsOperation.md"
+                                       },
+    "pathfinder\\INodeStorage.h":  {
+                                       "status":  "missing",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\pathfinder\\INodeStorage.h",
+                                       "documentation":  null
+                                   },
+    "battle\\IBattleState.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\IBattleState.h",
+                                   "documentation":  "classes\\battle\\IBattleState.md"
+                               },
+    "gameState\\GameStatistics.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\GameStatistics.h",
+                                        "documentation":  "classes\\gameState\\GameStatistics.md"
+                                    },
+    "entities\\faction\\CTownHandler.h":  {
+                                              "status":  "documented",
+                                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\faction\\CTownHandler.h",
+                                              "documentation":  "classes\\entities\\faction\\CTownHandler.md"
+                                          },
+    "spells\\BattleSpellMechanics.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\BattleSpellMechanics.h",
+                                           "documentation":  "classes\\spells\\BattleSpellMechanics.md"
+                                       },
+    "filesystem\\CZipSaver.h":  {
+                                    "status":  "missing",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CZipSaver.h",
+                                    "documentation":  null
+                                },
+    "rewardable\\Configuration.h":  {
+                                        "status":  "missing",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\rewardable\\Configuration.h",
+                                        "documentation":  null
+                                    },
+    "callback\\GameRandomizer.h":  {
+                                       "status":  "missing",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\GameRandomizer.h",
+                                       "documentation":  null
+                                   },
+    "battle\\PossiblePlayerBattleAction.h":  {
+                                                 "status":  "documented",
+                                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\PossiblePlayerBattleAction.h",
+                                                 "documentation":  "classes\\battle\\PossiblePlayerBattleAction.md"
+                                             },
+    "bonuses\\BonusList.h":  {
+                                 "status":  "documented",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\bonuses\\BonusList.h",
+                                 "documentation":  "classes\\bonuses\\BonusList.md"
+                             },
+    "campaign\\CampaignScenarioPrologEpilog.h":  {
+                                                     "status":  "missing",
+                                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\campaign\\CampaignScenarioPrologEpilog.h",
+                                                     "documentation":  null
+                                                 },
+    "logging\\CLogger.h":  {
+                               "status":  "documented",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\logging\\CLogger.h",
+                               "documentation":  "classes\\logging\\CLogger.md"
+                           },
+    "CCreatureHandler.h":  {
+                               "status":  "missing",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\CCreatureHandler.h",
+                               "documentation":  null
+                           },
+    "mapObjects\\CompoundMapObjectID.h":  {
+                                              "status":  "missing",
+                                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\CompoundMapObjectID.h",
+                                              "documentation":  null
+                                          },
+    "ScriptHandler.h":  {
+                            "status":  "missing",
+                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\ScriptHandler.h",
+                            "documentation":  null
+                        },
+    "spells\\effects\\Effect.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Effect.h",
+                                      "documentation":  "classes\\spells\\effects\\Effect.md"
+                                  },
+    "battle\\DamageCalculator.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\DamageCalculator.h",
+                                       "documentation":  "classes\\battle\\DamageCalculator.md"
+                                   },
+    "filesystem\\MinizipExtensions.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\MinizipExtensions.h",
+                                            "documentation":  null
+                                        },
+    "constants\\EntityIdentifiers.h":  {
+                                           "status":  "missing",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\constants\\EntityIdentifiers.h",
+                                           "documentation":  null
+                                       },
+    "mapObjects\\IOwnableObject.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\IOwnableObject.h",
+                                         "documentation":  "classes\\mapObjects\\IOwnableObject.md"
+                                     },
+    "bonuses\\BonusEnum.h":  {
+                                 "status":  "documented",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\bonuses\\BonusEnum.h",
+                                 "documentation":  "classes\\bonuses\\BonusEnum.md"
+                             },
+    "int3.h":  {
+                   "status":  "missing",
+                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\int3.h",
+                   "documentation":  null
+               },
+    "battle\\IBattleInfoCallback.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\IBattleInfoCallback.h",
+                                          "documentation":  "classes\\battle\\IBattleInfoCallback.md"
+                                      },
+    "CPlayerState.h":  {
+                           "status":  "documented",
+                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\CPlayerState.h",
+                           "documentation":  "classes\\CPlayerState.md"
+                       },
+    "rmg\\CRmgTemplate.h":  {
+                                "status":  "documented",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\CRmgTemplate.h",
+                                "documentation":  "classes\\rmg\\CRmgTemplate.md"
+                            },
+    "mapping\\CMapEditManager.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\CMapEditManager.h",
+                                       "documentation":  "classes\\mapping\\CMapEditManager.md"
+                                   },
+    "entities\\artifact\\CArtifactInstance.h":  {
+                                                    "status":  "documented",
+                                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\artifact\\CArtifactInstance.h",
+                                                    "documentation":  "classes\\entities\\artifact\\CArtifactInstance.md"
+                                                },
+    "entities\\building\\TownFortifications.h":  {
+                                                     "status":  "documented",
+                                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\building\\TownFortifications.h",
+                                                     "documentation":  "classes\\entities\\building\\TownFortifications.md"
+                                                 },
+    "mapObjectConstructors\\IObjectInfo.h":  {
+                                                 "status":  "missing",
+                                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\IObjectInfo.h",
+                                                 "documentation":  null
+                                             },
+    "modding\\ModManager.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\modding\\ModManager.h",
+                                  "documentation":  "classes\\modding\\ModManager.md"
+                              },
+    "rmg\\float3.h":  {
+                          "status":  "missing",
+                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\float3.h",
+                          "documentation":  null
+                      },
+    "rmg\\MapProxy.h":  {
+                            "status":  "missing",
+                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\MapProxy.h",
+                            "documentation":  null
+                        },
+    "spells\\effects\\Damage.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Damage.h",
+                                      "documentation":  "classes\\spells\\effects\\Damage.md"
+                                  },
+    "filesystem\\ResourcePath.h":  {
+                                       "status":  "missing",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\ResourcePath.h",
+                                       "documentation":  null
+                                   },
+    "modding\\CModVersion.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\modding\\CModVersion.h",
+                                   "documentation":  "classes\\modding\\CModVersion.md"
+                               },
+    "rmg\\CMapGenerator.h":  {
+                                 "status":  "documented",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\CMapGenerator.h",
+                                 "documentation":  "classes\\rmg\\CMapGenerator.md"
+                             },
+    "bonuses\\CBonusSystemNode.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\bonuses\\CBonusSystemNode.h",
+                                        "documentation":  "classes\\bonuses\\CBonusSystemNode.md"
+                                    },
+    "gameState\\TavernSlot.h":  {
+                                    "status":  "missing",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\TavernSlot.h",
+                                    "documentation":  null
+                                },
+    "UnlockGuard.h":  {
+                          "status":  "missing",
+                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\UnlockGuard.h",
+                          "documentation":  null
+                      },
+    "filesystem\\COutputStream.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\COutputStream.h",
+                                        "documentation":  "classes\\filesystem\\COutputStream.md"
+                                    },
+    "rmg\\RmgArea.h":  {
+                           "status":  "documented",
+                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\RmgArea.h",
+                           "documentation":  "classes\\rmg\\RmgArea.md"
+                       },
+    "mapping\\MapReaderH3M.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\MapReaderH3M.h",
+                                    "documentation":  "classes\\mapping\\MapReaderH3M.md"
+                                },
+    "battle\\SideInBattle.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\SideInBattle.h",
+                                   "documentation":  "classes\\battle\\SideInBattle.md"
+                               },
+    "callback\\IBattleEventsReceiver.h":  {
+                                              "status":  "missing",
+                                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\IBattleEventsReceiver.h",
+                                              "documentation":  null
+                                          },
+    "StdInc.h":  {
+                     "status":  "missing",
+                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\StdInc.h",
+                     "documentation":  null
+                 },
+    "filesystem\\FileInfo.h":  {
+                                   "status":  "missing",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\FileInfo.h",
+                                   "documentation":  null
+                               },
+    "mapObjects\\IObjectInterface.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\IObjectInterface.h",
+                                           "documentation":  "classes\\mapObjects\\IObjectInterface.md"
+                                       },
+    "modding\\ModVerificationInfo.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\modding\\ModVerificationInfo.h",
+                                           "documentation":  "classes\\modding\\ModVerificationInfo.md"
+                                       },
+    "bonuses\\Propagators.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\bonuses\\Propagators.h",
+                                   "documentation":  "classes\\bonuses\\Propagators.md"
+                               },
+    "gameState\\CGameState.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\CGameState.h",
+                                    "documentation":  "classes\\gameState\\CGameState.md"
+                                },
+    "mapObjects\\MapObjects.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\MapObjects.h",
+                                     "documentation":  "classes\\mapObjects\\MapObjects.md"
+                                 },
+    "battle\\BattleAttackInfo.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\BattleAttackInfo.h",
+                                       "documentation":  "classes\\battle\\BattleAttackInfo.md"
+                                   },
+    "IGameSettings.h":  {
+                            "status":  "documented",
+                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\IGameSettings.h",
+                            "documentation":  "classes\\IGameSettings.md"
+                        },
+    "spells\\effects\\Registry.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Registry.h",
+                                        "documentation":  "classes\\spells\\effects\\Registry.md"
+                                    },
+    "Color.h":  {
+                    "status":  "missing",
+                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\Color.h",
+                    "documentation":  null
+                },
+    "mapObjectConstructors\\CommonConstructors.h":  {
+                                                        "status":  "missing",
+                                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\CommonConstructors.h",
+                                                        "documentation":  null
+                                                    },
+    "serializer\\JsonDeserializer.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\JsonDeserializer.h",
+                                           "documentation":  "classes\\serializer\\JsonDeserializer.md"
+                                       },
+    "entities\\artifact\\ArtSlotInfo.h":  {
+                                              "status":  "documented",
+                                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\artifact\\ArtSlotInfo.h",
+                                              "documentation":  "classes\\entities\\artifact\\ArtSlotInfo.md"
+                                          },
+    "spells\\effects\\EffectsFwd.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\EffectsFwd.h",
+                                          "documentation":  "classes\\spells\\effects\\EffectsFwd.md"
+                                      },
+    "entities\\artifact\\CArtifact.h":  {
+                                            "status":  "documented",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\artifact\\CArtifact.h",
+                                            "documentation":  "classes\\entities\\artifact\\CArtifact.md"
+                                        },
+    "mapObjects\\CGDwelling.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\CGDwelling.h",
+                                     "documentation":  "classes\\mapObjects\\CGDwelling.md"
+                                 },
+    "callback\\CBattleGameInterface.h":  {
+                                             "status":  "documented",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\CBattleGameInterface.h",
+                                             "documentation":  "classes\\callback\\CBattleGameInterface.md"
+                                         },
+    "pathfinder\\TurnInfo.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\pathfinder\\TurnInfo.h",
+                                   "documentation":  "classes\\pathfinder\\TurnInfo.md"
+                               },
+    "callback\\IGameActionCallback.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\IGameActionCallback.h",
+                                            "documentation":  null
+                                        },
+    "LogicalExpression.h":  {
+                                "status":  "missing",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\LogicalExpression.h",
+                                "documentation":  null
+                            },
+    "spells\\effects\\Sacrifice.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Sacrifice.h",
+                                         "documentation":  "classes\\spells\\effects\\Sacrifice.md"
+                                     },
+    "events\\TurnStarted.h":  {
+                                  "status":  "missing",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\events\\TurnStarted.h",
+                                  "documentation":  null
+                              },
+    "gameState\\InfoAboutArmy.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\InfoAboutArmy.h",
+                                       "documentation":  "classes\\gameState\\InfoAboutArmy.md"
+                                   },
+    "serializer\\CSerializer.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\CSerializer.h",
+                                      "documentation":  "classes\\serializer\\CSerializer.md"
+                                  },
+    "BattleFieldHandler.h":  {
+                                 "status":  "missing",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\BattleFieldHandler.h",
+                                 "documentation":  null
+                             },
+    "gameState\\TavernHeroesPool.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\TavernHeroesPool.h",
+                                          "documentation":  "classes\\gameState\\TavernHeroesPool.md"
+                                      },
+    "CSkillHandler.h":  {
+                            "status":  "missing",
+                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\CSkillHandler.h",
+                            "documentation":  null
+                        },
+    "spells\\ProxyCaster.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\ProxyCaster.h",
+                                  "documentation":  "classes\\spells\\ProxyCaster.md"
+                              },
+    "rmg\\CRoadRandomizer.h":  {
+                                   "status":  "missing",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\CRoadRandomizer.h",
+                                   "documentation":  null
+                               },
+    "serializer\\BinaryDeserializer.h":  {
+                                             "status":  "missing",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\BinaryDeserializer.h",
+                                             "documentation":  null
+                                         },
+    "battle\\BattleHex.h":  {
+                                "status":  "documented",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\BattleHex.h",
+                                "documentation":  "classes\\battle\\BattleHex.md"
+                            },
+    "mapObjects\\ObjectTemplate.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\ObjectTemplate.h",
+                                         "documentation":  "classes\\mapObjects\\ObjectTemplate.md"
+                                     },
+    "modding\\ModScope.h":  {
+                                "status":  "missing",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\modding\\ModScope.h",
+                                "documentation":  null
+                            },
+    "mapObjects\\CGObjectInstance.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\CGObjectInstance.h",
+                                           "documentation":  "classes\\mapObjects\\CGObjectInstance.md"
+                                       },
+    "rmg\\CZonePlacer.h":  {
+                               "status":  "documented",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\CZonePlacer.h",
+                               "documentation":  "classes\\rmg\\CZonePlacer.md"
+                           },
+    "mapObjects\\MiscObjects.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\MiscObjects.h",
+                                      "documentation":  "classes\\mapObjects\\MiscObjects.md"
+                                  },
+    "mapObjectConstructors\\CRewardableConstructor.h":  {
+                                                            "status":  "missing",
+                                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\CRewardableConstructor.h",
+                                                            "documentation":  null
+                                                        },
+    "entities\\faction\\CFaction.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\faction\\CFaction.h",
+                                          "documentation":  "classes\\entities\\faction\\CFaction.md"
+                                      },
+    "battle\\CBattleInfoEssentials.h":  {
+                                            "status":  "documented",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\CBattleInfoEssentials.h",
+                                            "documentation":  "classes\\battle\\CBattleInfoEssentials.md"
+                                        },
+    "spells\\adventure\\TownPortalEffect.h":  {
+                                                  "status":  "documented",
+                                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\adventure\\TownPortalEffect.h",
+                                                  "documentation":  "classes\\spells\\adventure\\TownPortalEffect.md"
+                                              },
+    "Rect.h":  {
+                   "status":  "missing",
+                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\Rect.h",
+                   "documentation":  null
+               },
+    "modding\\CModHandler.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\modding\\CModHandler.h",
+                                   "documentation":  "classes\\modding\\CModHandler.md"
+                               },
+    "serializer\\ESerializationVersion.h":  {
+                                                "status":  "documented",
+                                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\ESerializationVersion.h",
+                                                "documentation":  "classes\\serializer\\ESerializationVersion.md"
+                                            },
+    "mapping\\CMapHeader.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\CMapHeader.h",
+                                  "documentation":  "classes\\mapping\\CMapHeader.md"
+                              },
+    "rewardable\\Info.h":  {
+                               "status":  "missing",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\rewardable\\Info.h",
+                               "documentation":  null
+                           },
+    "rmg\\modificators\\WaterAdopter.h":  {
+                                              "status":  "missing",
+                                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\WaterAdopter.h",
+                                              "documentation":  null
+                                          },
+    "battle\\BattleInfo.h":  {
+                                 "status":  "documented",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\BattleInfo.h",
+                                 "documentation":  "classes\\battle\\BattleInfo.md"
+                             },
+    "campaign\\CampaignBonus.h":  {
+                                      "status":  "missing",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\campaign\\CampaignBonus.h",
+                                      "documentation":  null
+                                  },
+    "serializer\\CSaveFile.h":  {
+                                    "status":  "missing",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\CSaveFile.h",
+                                    "documentation":  null
+                                },
+    "rmg\\modificators\\RoadPlacer.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\RoadPlacer.h",
+                                            "documentation":  null
+                                        },
+    "battle\\CObstacleInstance.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\CObstacleInstance.h",
+                                        "documentation":  "classes\\battle\\CObstacleInstance.md"
+                                    },
+    "rmg\\RmgPath.h":  {
+                           "status":  "missing",
+                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\RmgPath.h",
+                           "documentation":  null
+                       },
+    "filesystem\\CFilesystemLoader.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CFilesystemLoader.h",
+                                            "documentation":  null
+                                        },
+    "CScriptingModule.h":  {
+                               "status":  "missing",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\CScriptingModule.h",
+                               "documentation":  null
+                           },
+    "serializer\\JsonSerializer.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\JsonSerializer.h",
+                                         "documentation":  "classes\\serializer\\JsonSerializer.md"
+                                     },
+    "spells\\TargetCondition.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\TargetCondition.h",
+                                      "documentation":  "classes\\spells\\TargetCondition.md"
+                                  },
+    "serializer\\CLoadFile.h":  {
+                                    "status":  "missing",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\CLoadFile.h",
+                                    "documentation":  null
+                                },
+    "VCMIDirs.h":  {
+                       "status":  "missing",
+                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\VCMIDirs.h",
+                       "documentation":  null
+                   },
+    "gameState\\RumorState.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\RumorState.h",
+                                    "documentation":  "classes\\gameState\\RumorState.md"
+                                },
+    "filesystem\\CBinaryReader.h":  {
+                                        "status":  "missing",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CBinaryReader.h",
+                                        "documentation":  null
+                                    },
+    "pathfinder\\CPathfinder.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\pathfinder\\CPathfinder.h",
+                                      "documentation":  "classes\\pathfinder\\CPathfinder.md"
+                                  },
+    "mapping\\CMapOperation.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\CMapOperation.h",
+                                     "documentation":  "classes\\mapping\\CMapOperation.md"
+                                 },
+    "gameState\\GameStatePackVisitor.h":  {
+                                              "status":  "missing",
+                                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\GameStatePackVisitor.h",
+                                              "documentation":  null
+                                          },
+    "mapping\\MapFormat.h":  {
+                                 "status":  "documented",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\MapFormat.h",
+                                 "documentation":  "classes\\mapping\\MapFormat.md"
+                             },
+    "texts\\CGeneralTextHandler.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\texts\\CGeneralTextHandler.h",
+                                         "documentation":  "classes\\texts\\CGeneralTextHandler.md"
+                                     },
+    "modding\\ModIncompatibility.h":  {
+                                          "status":  "missing",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\modding\\ModIncompatibility.h",
+                                          "documentation":  null
+                                      },
+    "rewardable\\Limiter.h":  {
+                                  "status":  "missing",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\rewardable\\Limiter.h",
+                                  "documentation":  null
+                              },
+    "campaign\\CampaignState.h":  {
+                                      "status":  "missing",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\campaign\\CampaignState.h",
+                                      "documentation":  null
+                                  },
+    "gameState\\UpgradeInfo.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\UpgradeInfo.h",
+                                     "documentation":  "classes\\gameState\\UpgradeInfo.md"
+                                 },
+    "spells\\CSpellHandler.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\CSpellHandler.h",
+                                    "documentation":  "classes\\spells\\CSpellHandler.md"
+                                },
+    "mapObjects\\army\\CStackBasicDescriptor.h":  {
+                                                      "status":  "documented",
+                                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\army\\CStackBasicDescriptor.h",
+                                                      "documentation":  "classes\\mapObjects\\army\\CStackBasicDescriptor.md"
+                                                  },
+    "bonuses\\Updaters.h":  {
+                                "status":  "documented",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\bonuses\\Updaters.h",
+                                "documentation":  "classes\\bonuses\\Updaters.md"
+                            },
+    "spells\\ISpellMechanics.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\ISpellMechanics.h",
+                                      "documentation":  "classes\\spells\\ISpellMechanics.md"
+                                  },
+    "entities\\artifact\\CArtifactFittingSet.h":  {
+                                                      "status":  "documented",
+                                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\artifact\\CArtifactFittingSet.h",
+                                                      "documentation":  "classes\\entities\\artifact\\CArtifactFittingSet.md"
+                                                  },
+    "battle\\AccessibilityInfo.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\AccessibilityInfo.h",
+                                        "documentation":  "classes\\battle\\AccessibilityInfo.md"
+                                    },
+    "rmg\\modificators\\TerrainPainter.h":  {
+                                                "status":  "missing",
+                                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\TerrainPainter.h",
+                                                "documentation":  null
+                                            },
+    "filesystem\\CMemoryStream.h":  {
+                                        "status":  "missing",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CMemoryStream.h",
+                                        "documentation":  null
+                                    },
+    "json\\JsonNode.h":  {
+                             "status":  "documented",
+                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\json\\JsonNode.h",
+                             "documentation":  "classes\\json\\JsonNode.md"
+                         },
+    "CThreadHelper.h":  {
+                            "status":  "missing",
+                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\CThreadHelper.h",
+                            "documentation":  null
+                        },
+    "pathfinder\\PathfinderCache.h":  {
+                                          "status":  "missing",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\pathfinder\\PathfinderCache.h",
+                                          "documentation":  null
+                                      },
+    "gameState\\HighScore.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\HighScore.h",
+                                   "documentation":  "classes\\gameState\\HighScore.md"
+                               },
+    "entities\\artifact\\CArtHandler.h":  {
+                                              "status":  "documented",
+                                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\artifact\\CArtHandler.h",
+                                              "documentation":  "classes\\entities\\artifact\\CArtHandler.md"
+                                          },
+    "callback\\GameCallbackHolder.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\GameCallbackHolder.h",
+                                           "documentation":  "classes\\callback\\GameCallbackHolder.md"
+                                       },
+    "spells\\adventure\\AdventureSpellMechanics.h":  {
+                                                         "status":  "documented",
+                                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\adventure\\AdventureSpellMechanics.h",
+                                                         "documentation":  "classes\\spells\\adventure\\AdventureSpellMechanics.md"
+                                                     },
+    "serializer\\PlayerConnectionID.h":  {
+                                             "status":  "missing",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\PlayerConnectionID.h",
+                                             "documentation":  null
+                                         },
+    "callback\\CGameInfoCallback.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\CGameInfoCallback.h",
+                                          "documentation":  "classes\\callback\\CGameInfoCallback.md"
+                                      },
+    "serializer\\CTypeList.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\CTypeList.h",
+                                    "documentation":  "classes\\serializer\\CTypeList.md"
+                                },
+    "pathfinder\\NodeStorage.h":  {
+                                      "status":  "missing",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\pathfinder\\NodeStorage.h",
+                                      "documentation":  null
+                                  },
+    "rmg\\modificators\\WaterProxy.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\WaterProxy.h",
+                                            "documentation":  null
+                                        },
+    "callback\\CAdventureAI.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\CAdventureAI.h",
+                                     "documentation":  "classes\\callback\\CAdventureAI.md"
+                                 },
+    "battle\\AutocombatPreferences.h":  {
+                                            "status":  "documented",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\AutocombatPreferences.h",
+                                            "documentation":  "classes\\battle\\AutocombatPreferences.md"
+                                        },
+    "filesystem\\ISimpleResourceLoader.h":  {
+                                                "status":  "documented",
+                                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\ISimpleResourceLoader.h",
+                                                "documentation":  "classes\\filesystem\\ISimpleResourceLoader.md"
+                                            },
+    "bonuses\\BonusCache.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\bonuses\\BonusCache.h",
+                                  "documentation":  "classes\\bonuses\\BonusCache.md"
+                              },
+    "gameState\\SThievesGuildInfo.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\SThievesGuildInfo.h",
+                                           "documentation":  "classes\\gameState\\SThievesGuildInfo.md"
+                                       },
+    "mapping\\TerrainTile.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\TerrainTile.h",
+                                   "documentation":  "classes\\mapping\\TerrainTile.md"
+                               },
+    "events\\ObjectVisitEnded.h":  {
+                                       "status":  "missing",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\events\\ObjectVisitEnded.h",
+                                       "documentation":  null
+                                   },
+    "json\\JsonBonus.h":  {
+                              "status":  "missing",
+                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\json\\JsonBonus.h",
+                              "documentation":  null
+                          },
+    "CConsoleHandler.h":  {
+                              "status":  "missing",
+                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\CConsoleHandler.h",
+                              "documentation":  null
+                          },
+    "mapObjectConstructors\\AObjectTypeHandler.h":  {
+                                                        "status":  "missing",
+                                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\AObjectTypeHandler.h",
+                                                        "documentation":  null
+                                                    },
+    "battle\\CBattleInfoCallback.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\CBattleInfoCallback.h",
+                                          "documentation":  "classes\\battle\\CBattleInfoCallback.md"
+                                      },
+    "rewardable\\Reward.h":  {
+                                 "status":  "missing",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\rewardable\\Reward.h",
+                                 "documentation":  null
+                             },
+    "entities\\artifact\\ArtBearer.h":  {
+                                            "status":  "documented",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\artifact\\ArtBearer.h",
+                                            "documentation":  "classes\\entities\\artifact\\ArtBearer.md"
+                                        },
+    "IBonusTypeHandler.h":  {
+                                "status":  "missing",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\IBonusTypeHandler.h",
+                                "documentation":  null
+                            },
+    "mapping\\CMapInfo.h":  {
+                                "status":  "documented",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\CMapInfo.h",
+                                "documentation":  "classes\\mapping\\CMapInfo.md"
+                            },
+    "spells\\ViewSpellInt.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\ViewSpellInt.h",
+                                   "documentation":  "classes\\spells\\ViewSpellInt.md"
+                               },
+    "bonuses\\IBonusBearer.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\bonuses\\IBonusBearer.h",
+                                    "documentation":  "classes\\bonuses\\IBonusBearer.md"
+                                },
+    "mapping\\MapFormatJson.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\MapFormatJson.h",
+                                     "documentation":  "classes\\mapping\\MapFormatJson.md"
+                                 },
+    "CAndroidVMHelper.h":  {
+                               "status":  "missing",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\CAndroidVMHelper.h",
+                               "documentation":  null
+                           },
+    "mapObjectConstructors\\MarketInstanceConstructor.h":  {
+                                                               "status":  "missing",
+                                                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\MarketInstanceConstructor.h",
+                                                               "documentation":  null
+                                                           },
+    "mapObjects\\CGPandoraBox.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\CGPandoraBox.h",
+                                       "documentation":  "classes\\mapObjects\\CGPandoraBox.md"
+                                   },
+    "rmg\\modificators\\ObjectManager.h":  {
+                                               "status":  "missing",
+                                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\ObjectManager.h",
+                                               "documentation":  null
+                                           },
+    "spells\\ExternalCaster.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\ExternalCaster.h",
+                                     "documentation":  "classes\\spells\\ExternalCaster.md"
+                                 },
+    "RoadHandler.h":  {
+                          "status":  "missing",
+                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\RoadHandler.h",
+                          "documentation":  null
+                      },
+    "entities\\building\\CBuilding.h":  {
+                                            "status":  "documented",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\building\\CBuilding.h",
+                                            "documentation":  "classes\\entities\\building\\CBuilding.md"
+                                        },
+    "rmg\\modificators\\RiverPlacer.h":  {
+                                             "status":  "missing",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\RiverPlacer.h",
+                                             "documentation":  null
+                                         },
+    "logging\\VisualLogger.h":  {
+                                    "status":  "missing",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\logging\\VisualLogger.h",
+                                    "documentation":  null
+                                },
+    "spells\\adventure\\DimensionDoorEffect.h":  {
+                                                     "status":  "documented",
+                                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\adventure\\DimensionDoorEffect.h",
+                                                     "documentation":  "classes\\spells\\adventure\\DimensionDoorEffect.md"
+                                                 },
+    "mapObjects\\FlaggableMapObject.h":  {
+                                             "status":  "documented",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\FlaggableMapObject.h",
+                                             "documentation":  "classes\\mapObjects\\FlaggableMapObject.md"
+                                         },
+    "rmg\\modificators\\ObstaclePlacer.h":  {
+                                                "status":  "missing",
+                                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\ObstaclePlacer.h",
+                                                "documentation":  null
+                                            },
+    "mapping\\MapFormatSettings.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\MapFormatSettings.h",
+                                         "documentation":  "classes\\mapping\\MapFormatSettings.md"
+                                     },
+    "mapping\\CCastleEvent.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\CCastleEvent.h",
+                                    "documentation":  "classes\\mapping\\CCastleEvent.md"
+                                },
+    "modding\\ContentTypeHandler.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\modding\\ContentTypeHandler.h",
+                                          "documentation":  "classes\\modding\\ContentTypeHandler.md"
+                                      },
+    "spells\\effects\\Dispel.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Dispel.h",
+                                      "documentation":  "classes\\spells\\effects\\Dispel.md"
+                                  },
+    "gameState\\QuestInfo.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\QuestInfo.h",
+                                   "documentation":  "classes\\gameState\\QuestInfo.md"
+                               },
+    "rmg\\CRmgTemplateStorage.h":  {
+                                       "status":  "missing",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\CRmgTemplateStorage.h",
+                                       "documentation":  null
+                                   },
+    "filesystem\\CInputStream.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CInputStream.h",
+                                       "documentation":  "classes\\filesystem\\CInputStream.md"
+                                   },
+    "mapping\\CMapEvent.h":  {
+                                 "status":  "documented",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\CMapEvent.h",
+                                 "documentation":  "classes\\mapping\\CMapEvent.md"
+                             },
+    "bonuses\\Bonus.h":  {
+                             "status":  "documented",
+                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\bonuses\\Bonus.h",
+                             "documentation":  "classes\\bonuses\\Bonus.md"
+                         },
+    "RiverHandler.h":  {
+                           "status":  "missing",
+                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\RiverHandler.h",
+                           "documentation":  null
+                       },
+    "spells\\effects\\Clone.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Clone.h",
+                                     "documentation":  "classes\\spells\\effects\\Clone.md"
+                                 },
+    "IHandlerBase.h":  {
+                           "status":  "documented",
+                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\IHandlerBase.h",
+                           "documentation":  "classes\\IHandlerBase.md"
+                       },
+    "mapObjects\\TownBuildingInstance.h":  {
+                                               "status":  "documented",
+                                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\TownBuildingInstance.h",
+                                               "documentation":  "classes\\mapObjects\\TownBuildingInstance.md"
+                                           },
+    "serializer\\GameConnectionID.h":  {
+                                           "status":  "missing",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\GameConnectionID.h",
+                                           "documentation":  null
+                                       },
+    "mapObjects\\IMarket.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\IMarket.h",
+                                  "documentation":  "classes\\mapObjects\\IMarket.md"
+                              },
+    "GameSettings.h":  {
+                           "status":  "missing",
+                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\GameSettings.h",
+                           "documentation":  null
+                       },
+    "mapping\\MapEditUtils.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\MapEditUtils.h",
+                                    "documentation":  "classes\\mapping\\MapEditUtils.md"
+                                },
+    "ConditionalWait.h":  {
+                              "status":  "missing",
+                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\ConditionalWait.h",
+                              "documentation":  null
+                          },
+    "rewardable\\Interface.h":  {
+                                    "status":  "missing",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\rewardable\\Interface.h",
+                                    "documentation":  null
+                                },
+    "spells\\effects\\Obstacle.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Obstacle.h",
+                                        "documentation":  "classes\\spells\\effects\\Obstacle.md"
+                                    },
+    "filesystem\\CMemoryBuffer.h":  {
+                                        "status":  "missing",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CMemoryBuffer.h",
+                                        "documentation":  null
+                                    },
+    "texts\\TextOperations.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\texts\\TextOperations.h",
+                                    "documentation":  "classes\\texts\\TextOperations.md"
+                                },
+    "callback\\MapInfoCallback.h":  {
+                                        "status":  "missing",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\MapInfoCallback.h",
+                                        "documentation":  null
+                                    },
+    "CConfigHandler.h":  {
+                             "status":  "missing",
+                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\CConfigHandler.h",
+                             "documentation":  null
+                         },
+    "filesystem\\CFileInputStream.h":  {
+                                           "status":  "missing",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CFileInputStream.h",
+                                           "documentation":  null
+                                       },
+    "CRandomGenerator.h":  {
+                               "status":  "missing",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\CRandomGenerator.h",
+                               "documentation":  null
+                           },
+    "pathfinder\\PathfinderUtil.h":  {
+                                         "status":  "missing",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\pathfinder\\PathfinderUtil.h",
+                                         "documentation":  null
+                                     },
+    "rmg\\PenroseTiling.h":  {
+                                 "status":  "missing",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\PenroseTiling.h",
+                                 "documentation":  null
+                             },
+    "mapObjects\\army\\CArmedInstance.h":  {
+                                               "status":  "documented",
+                                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\army\\CArmedInstance.h",
+                                               "documentation":  "classes\\mapObjects\\army\\CArmedInstance.md"
+                                           },
+    "GameLibrary.h":  {
+                          "status":  "missing",
+                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\GameLibrary.h",
+                          "documentation":  null
+                      },
+    "CStopWatch.h":  {
+                         "status":  "missing",
+                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\CStopWatch.h",
+                         "documentation":  null
+                     },
+    "serializer\\Serializeable.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\Serializeable.h",
+                                        "documentation":  "classes\\serializer\\Serializeable.md"
+                                    },
+    "mapObjects\\CGTownInstance.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\CGTownInstance.h",
+                                         "documentation":  "classes\\mapObjects\\CGTownInstance.md"
+                                     },
+    "spells\\AbilityCaster.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\AbilityCaster.h",
+                                    "documentation":  "classes\\spells\\AbilityCaster.md"
+                                },
+    "filesystem\\AdapterLoaders.h":  {
+                                         "status":  "missing",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\AdapterLoaders.h",
+                                         "documentation":  null
+                                     },
+    "texts\\Languages.h":  {
+                               "status":  "documented",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\texts\\Languages.h",
+                               "documentation":  "classes\\texts\\Languages.md"
+                           },
+    "entities\\artifact\\EArtifactClass.h":  {
+                                                 "status":  "documented",
+                                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\artifact\\EArtifactClass.h",
+                                                 "documentation":  "classes\\entities\\artifact\\EArtifactClass.md"
+                                             },
+    "mapObjectConstructors\\HillFortInstanceConstructor.h":  {
+                                                                 "status":  "missing",
+                                                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\HillFortInstanceConstructor.h",
+                                                                 "documentation":  null
+                                                             },
+    "rmg\\modificators\\MinePlacer.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\MinePlacer.h",
+                                            "documentation":  null
+                                        },
+    "pathfinder\\PathfindingRules.h":  {
+                                           "status":  "missing",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\pathfinder\\PathfindingRules.h",
+                                           "documentation":  null
+                                       },
+    "TurnTimerInfo.h":  {
+                            "status":  "missing",
+                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\TurnTimerInfo.h",
+                            "documentation":  null
+                        },
+    "spells\\BonusCaster.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\BonusCaster.h",
+                                  "documentation":  "classes\\spells\\BonusCaster.md"
+                              },
+    "json\\JsonParser.h":  {
+                               "status":  "missing",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\json\\JsonParser.h",
+                               "documentation":  null
+                           },
+    "serializer\\CMemorySerializer.h":  {
+                                            "status":  "documented",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\CMemorySerializer.h",
+                                            "documentation":  "classes\\serializer\\CMemorySerializer.md"
+                                        },
+    "mapObjects\\CGMarket.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\CGMarket.h",
+                                   "documentation":  "classes\\mapObjects\\CGMarket.md"
+                               },
+    "mapObjects\\CGResource.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\CGResource.h",
+                                     "documentation":  "classes\\mapObjects\\CGResource.md"
+                                 },
+    "bonuses\\Limiters.h":  {
+                                "status":  "documented",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\bonuses\\Limiters.h",
+                                "documentation":  "classes\\bonuses\\Limiters.md"
+                            },
+    "rmg\\ObjectInfo.h":  {
+                              "status":  "missing",
+                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\ObjectInfo.h",
+                              "documentation":  null
+                          },
+    "json\\JsonFormatException.h":  {
+                                        "status":  "missing",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\json\\JsonFormatException.h",
+                                        "documentation":  null
+                                    },
+    "serializer\\RegisterTypes.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\RegisterTypes.h",
+                                        "documentation":  "classes\\serializer\\RegisterTypes.md"
+                                    },
+    "callback\\EditorCallback.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\EditorCallback.h",
+                                       "documentation":  "classes\\callback\\EditorCallback.md"
+                                   },
+    "battle\\BattleStateInfoForRetreat.h":  {
+                                                "status":  "documented",
+                                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\BattleStateInfoForRetreat.h",
+                                                "documentation":  "classes\\battle\\BattleStateInfoForRetreat.md"
+                                            },
+    "rmg\\modificators\\TownPlacer.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\TownPlacer.h",
+                                            "documentation":  null
+                                        },
+    "mapping\\MapFormatH3M.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\MapFormatH3M.h",
+                                    "documentation":  "classes\\mapping\\MapFormatH3M.md"
+                                },
+    "rmg\\Functions.h":  {
+                             "status":  "missing",
+                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\Functions.h",
+                             "documentation":  null
+                         },
+    "logging\\CBasicLogConfigurator.h":  {
+                                             "status":  "missing",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\logging\\CBasicLogConfigurator.h",
+                                             "documentation":  null
+                                         },
+    "rmg\\modificators\\RockPlacer.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\RockPlacer.h",
+                                            "documentation":  null
+                                        },
+    "mapping\\MapIdentifiersH3M.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\MapIdentifiersH3M.h",
+                                         "documentation":  "classes\\mapping\\MapIdentifiersH3M.md"
+                                     },
+    "CStack.h":  {
+                     "status":  "missing",
+                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\CStack.h",
+                     "documentation":  null
+                 },
+    "filesystem\\CArchiveLoader.h":  {
+                                         "status":  "missing",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CArchiveLoader.h",
+                                         "documentation":  null
+                                     },
+    "callback\\IGameInfoCallback.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\IGameInfoCallback.h",
+                                          "documentation":  "classes\\callback\\IGameInfoCallback.md"
+                                      },
+    "rmg\\modificators\\QuestArtifactPlacer.h":  {
+                                                     "status":  "missing",
+                                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\QuestArtifactPlacer.h",
+                                                     "documentation":  null
+                                                 },
+    "json\\JsonValidator.h":  {
+                                  "status":  "missing",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\json\\JsonValidator.h",
+                                  "documentation":  null
+                              },
+    "filesystem\\CZipLoader.h":  {
+                                     "status":  "missing",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\filesystem\\CZipLoader.h",
+                                     "documentation":  null
+                                 },
+    "battle\\SiegeInfo.h":  {
+                                "status":  "documented",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\SiegeInfo.h",
+                                "documentation":  "classes\\battle\\SiegeInfo.md"
+                            },
+    "pathfinder\\PathfinderOptions.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\pathfinder\\PathfinderOptions.h",
+                                            "documentation":  null
+                                        },
+    "entities\\faction\\CTown.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\faction\\CTown.h",
+                                       "documentation":  "classes\\entities\\faction\\CTown.md"
+                                   },
+    "spells\\Problem.h":  {
+                              "status":  "documented",
+                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\Problem.h",
+                              "documentation":  "classes\\spells\\Problem.md"
+                          },
+    "battle\\BattleProxy.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\BattleProxy.h",
+                                  "documentation":  "classes\\battle\\BattleProxy.md"
+                              },
+    "callback\\IGameEventsReceiver.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\IGameEventsReceiver.h",
+                                            "documentation":  null
+                                        },
+    "entities\\ResourceTypeHandler.h":  {
+                                            "status":  "documented",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\ResourceTypeHandler.h",
+                                            "documentation":  "classes\\entities\\ResourceTypeHandler.md"
+                                        },
+    "rmg\\TileInfo.h":  {
+                            "status":  "missing",
+                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\TileInfo.h",
+                            "documentation":  null
+                        },
+    "rmg\\modificators\\ConnectionsPlacer.h":  {
+                                                   "status":  "missing",
+                                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\ConnectionsPlacer.h",
+                                                   "documentation":  null
+                                               },
+    "callback\\CBattleCallback.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\CBattleCallback.h",
+                                        "documentation":  "classes\\callback\\CBattleCallback.md"
+                                    },
+    "mapping\\CMap.h":  {
+                            "status":  "documented",
+                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapping\\CMap.h",
+                            "documentation":  "classes\\mapping\\CMap.md"
+                        },
+    "spells\\effects\\Moat.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Moat.h",
+                                    "documentation":  "classes\\spells\\effects\\Moat.md"
+                                },
+    "battle\\BattleUnitTurnReason.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\BattleUnitTurnReason.h",
+                                           "documentation":  "classes\\battle\\BattleUnitTurnReason.md"
+                                       },
+    "ResourceSet.h":  {
+                          "status":  "missing",
+                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\ResourceSet.h",
+                          "documentation":  null
+                      },
+    "rmg\\ObjectConfig.h":  {
+                                "status":  "missing",
+                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\ObjectConfig.h",
+                                "documentation":  null
+                            },
+    "mapObjectConstructors\\DwellingInstanceConstructor.h":  {
+                                                                 "status":  "missing",
+                                                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\DwellingInstanceConstructor.h",
+                                                                 "documentation":  null
+                                                             },
+    "callback\\IGameEventCallback.h":  {
+                                           "status":  "missing",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\IGameEventCallback.h",
+                                           "documentation":  null
+                                       },
+    "serializer\\SerializerReflection.h":  {
+                                               "status":  "missing",
+                                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\SerializerReflection.h",
+                                               "documentation":  null
+                                           },
+    "entities\\hero\\EHeroGender.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\hero\\EHeroGender.h",
+                                          "documentation":  "classes\\entities\\hero\\EHeroGender.md"
+                                      },
+    "events\\PlayerGotTurn.h":  {
+                                    "status":  "missing",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\events\\PlayerGotTurn.h",
+                                    "documentation":  null
+                                },
+    "constants\\IdentifierBase.h":  {
+                                        "status":  "missing",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\constants\\IdentifierBase.h",
+                                        "documentation":  null
+                                    },
+    "FunctionList.h":  {
+                           "status":  "missing",
+                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\FunctionList.h",
+                           "documentation":  null
+                       },
+    "TerrainHandler.h":  {
+                             "status":  "missing",
+                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\TerrainHandler.h",
+                             "documentation":  null
+                         },
+    "CSoundBase.h":  {
+                         "status":  "missing",
+                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\CSoundBase.h",
+                         "documentation":  null
+                     },
+    "mapObjectConstructors\\CDefaultObjectTypeHandler.h":  {
+                                                               "status":  "missing",
+                                                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\CDefaultObjectTypeHandler.h",
+                                                               "documentation":  null
+                                                           },
+    "modding\\ModDescription.h":  {
+                                      "status":  "documented",
+                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\modding\\ModDescription.h",
+                                      "documentation":  "classes\\modding\\ModDescription.md"
+                                  },
+    "texts\\TextIdentifier.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\texts\\TextIdentifier.h",
+                                    "documentation":  "classes\\texts\\TextIdentifier.md"
+                                },
+    "battle\\BattleSide.h":  {
+                                 "status":  "documented",
+                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\BattleSide.h",
+                                 "documentation":  "classes\\battle\\BattleSide.md"
+                             },
+    "rmg\\modificators\\Modificator.h":  {
+                                             "status":  "missing",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\Modificator.h",
+                                             "documentation":  null
+                                         },
+    "StartInfo.h":  {
+                        "status":  "documented",
+                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\StartInfo.h",
+                        "documentation":  "classes\\StartInfo.md"
+                    },
+    "Point.h":  {
+                    "status":  "missing",
+                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\Point.h",
+                    "documentation":  null
+                },
+    "entities\\hero\\CHeroClass.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\hero\\CHeroClass.h",
+                                         "documentation":  "classes\\entities\\hero\\CHeroClass.md"
+                                     },
+    "callback\\CGlobalAI.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\CGlobalAI.h",
+                                  "documentation":  "classes\\callback\\CGlobalAI.md"
+                              },
+    "ObstacleHandler.h":  {
+                              "status":  "missing",
+                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\ObstacleHandler.h",
+                              "documentation":  null
+                          },
+    "rmg\\modificators\\RockFiller.h":  {
+                                            "status":  "missing",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\RockFiller.h",
+                                            "documentation":  null
+                                        },
+    "mapObjects\\army\\CCreatureSet.h":  {
+                                             "status":  "documented",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\army\\CCreatureSet.h",
+                                             "documentation":  "classes\\mapObjects\\army\\CCreatureSet.md"
+                                         },
+    "constants\\StringConstants.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\constants\\StringConstants.h",
+                                         "documentation":  "classes\\constants\\StringConstants.md"
+                                     },
+    "callback\\IGameRandomizer.h":  {
+                                        "status":  "missing",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\IGameRandomizer.h",
+                                        "documentation":  null
+                                    },
+    "rmg\\modificators\\PrisonHeroPlacer.h":  {
+                                                  "status":  "missing",
+                                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\PrisonHeroPlacer.h",
+                                                  "documentation":  null
+                                              },
+    "battle\\ReachabilityInfo.h":  {
+                                       "status":  "documented",
+                                       "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\ReachabilityInfo.h",
+                                       "documentation":  "classes\\battle\\ReachabilityInfo.md"
+                                   },
+    "callback\\IBattleCallback.h":  {
+                                        "status":  "missing",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\IBattleCallback.h",
+                                        "documentation":  null
+                                    },
+    "entities\\artifact\\ArtifactUtils.h":  {
+                                                "status":  "documented",
+                                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\artifact\\ArtifactUtils.h",
+                                                "documentation":  "classes\\entities\\artifact\\ArtifactUtils.md"
+                                            },
+    "battle\\Destination.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\Destination.h",
+                                  "documentation":  "classes\\battle\\Destination.md"
+                              },
+    "battle\\BattleHexArray.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\BattleHexArray.h",
+                                     "documentation":  "classes\\battle\\BattleHexArray.md"
+                                 },
+    "rmg\\CMapGenOptions.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\CMapGenOptions.h",
+                                  "documentation":  "classes\\rmg\\CMapGenOptions.md"
+                              },
+    "callback\\CCallback.h":  {
+                                  "status":  "documented",
+                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\callback\\CCallback.h",
+                                  "documentation":  "classes\\callback\\CCallback.md"
+                              },
+    "bonuses\\BonusCustomTypes.h":  {
+                                        "status":  "documented",
+                                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\bonuses\\BonusCustomTypes.h",
+                                        "documentation":  "classes\\bonuses\\BonusCustomTypes.md"
+                                    },
+    "entities\\hero\\CHeroHandler.h":  {
+                                           "status":  "documented",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\entities\\hero\\CHeroHandler.h",
+                                           "documentation":  "classes\\entities\\hero\\CHeroHandler.md"
+                                       },
+    "bonuses\\BonusSelector.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\bonuses\\BonusSelector.h",
+                                     "documentation":  "classes\\bonuses\\BonusSelector.md"
+                                 },
+    "spells\\effects\\LocationEffect.h":  {
+                                              "status":  "documented",
+                                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\LocationEffect.h",
+                                              "documentation":  "classes\\spells\\effects\\LocationEffect.md"
+                                          },
+    "mapObjects\\CGHeroInstance.h":  {
+                                         "status":  "documented",
+                                         "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\CGHeroInstance.h",
+                                         "documentation":  "classes\\mapObjects\\CGHeroInstance.md"
+                                     },
+    "spells\\effects\\Heal.h":  {
+                                    "status":  "documented",
+                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Heal.h",
+                                    "documentation":  "classes\\spells\\effects\\Heal.md"
+                                },
+    "gameState\\CGameStateCampaign.h":  {
+                                            "status":  "documented",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\gameState\\CGameStateCampaign.h",
+                                            "documentation":  "classes\\gameState\\CGameStateCampaign.md"
+                                        },
+    "rmg\\modificators\\WaterRoutes.h":  {
+                                             "status":  "missing",
+                                             "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\WaterRoutes.h",
+                                             "documentation":  null
+                                         },
+    "rmg\\modificators\\ObjectDistributor.h":  {
+                                                   "status":  "missing",
+                                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\ObjectDistributor.h",
+                                                   "documentation":  null
+                                               },
+    "mapObjectConstructors\\CObjectClassesHandler.h":  {
+                                                           "status":  "missing",
+                                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjectConstructors\\CObjectClassesHandler.h",
+                                                           "documentation":  null
+                                                       },
+    "rmg\\Zone.h":  {
+                        "status":  "documented",
+                        "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\Zone.h",
+                        "documentation":  "classes\\rmg\\Zone.md"
+                    },
+    "rmg\\modificators\\TreasurePlacer.h":  {
+                                                "status":  "missing",
+                                                "source":  "E:\\develop\\heroes\\vcmi\\lib\\rmg\\modificators\\TreasurePlacer.h",
+                                                "documentation":  null
+                                            },
+    "mapObjects\\army\\CSimpleArmy.h":  {
+                                            "status":  "documented",
+                                            "source":  "E:\\develop\\heroes\\vcmi\\lib\\mapObjects\\army\\CSimpleArmy.h",
+                                            "documentation":  "classes\\mapObjects\\army\\CSimpleArmy.md"
+                                        },
+    "battle\\BattleAction.h":  {
+                                   "status":  "documented",
+                                   "source":  "E:\\develop\\heroes\\vcmi\\lib\\battle\\BattleAction.h",
+                                   "documentation":  "classes\\battle\\BattleAction.md"
+                               },
+    "serializer\\JsonSerializeFormat.h":  {
+                                              "status":  "documented",
+                                              "source":  "E:\\develop\\heroes\\vcmi\\lib\\serializer\\JsonSerializeFormat.h",
+                                              "documentation":  "classes\\serializer\\JsonSerializeFormat.md"
+                                          },
+    "ExceptionsCommon.h":  {
+                               "status":  "missing",
+                               "source":  "E:\\develop\\heroes\\vcmi\\lib\\ExceptionsCommon.h",
+                               "documentation":  null
+                           },
+    "constants\\VariantIdentifier.h":  {
+                                           "status":  "missing",
+                                           "source":  "E:\\develop\\heroes\\vcmi\\lib\\constants\\VariantIdentifier.h",
+                                           "documentation":  null
+                                       },
+    "spells\\effects\\UnitEffect.h":  {
+                                          "status":  "documented",
+                                          "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\UnitEffect.h",
+                                          "documentation":  "classes\\spells\\effects\\UnitEffect.md"
+                                      },
+    "spells\\adventure\\AdventureSpellEffect.h":  {
+                                                      "status":  "documented",
+                                                      "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\adventure\\AdventureSpellEffect.h",
+                                                      "documentation":  "classes\\spells\\adventure\\AdventureSpellEffect.md"
+                                                  },
+    "spells\\adventure\\RemoveObjectEffect.h":  {
+                                                    "status":  "documented",
+                                                    "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\adventure\\RemoveObjectEffect.h",
+                                                    "documentation":  "classes\\spells\\adventure\\RemoveObjectEffect.md"
+                                                },
+    "spells\\effects\\Timed.h":  {
+                                     "status":  "documented",
+                                     "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\effects\\Timed.h",
+                                     "documentation":  "classes\\spells\\effects\\Timed.md"
+                                 },
+    "spells\\adventure\\ViewWorldEffect.h":  {
+                                                 "status":  "documented",
+                                                 "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\adventure\\ViewWorldEffect.h",
+                                                 "documentation":  "classes\\spells\\adventure\\ViewWorldEffect.md"
+                                             },
+    "spells\\adventure\\SummonBoatEffect.h":  {
+                                                  "status":  "documented",
+                                                  "source":  "E:\\develop\\heroes\\vcmi\\lib\\spells\\adventure\\SummonBoatEffect.h",
+                                                  "documentation":  "classes\\spells\\adventure\\SummonBoatEffect.md"
+                                              }
 }
