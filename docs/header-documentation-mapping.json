@@ -1,0 +1,1272 @@
+﻿{
+    "mappings":  [
+                     {
+                         "baseName":  "BattleSpellMechanics",
+                         "header":  "spells\\BattleSpellMechanics.h",
+                         "documentation":  "classes\\spells\\BattleSpellMechanics.md"
+                     },
+                     {
+                         "baseName":  "Damage",
+                         "header":  "spells\\effects\\Damage.h",
+                         "documentation":  "classes\\spells\\effects\\Damage.md"
+                     },
+                     {
+                         "baseName":  "CQuest",
+                         "header":  "mapObjects\\CQuest.h",
+                         "documentation":  "classes\\mapObjects\\CQuest.md"
+                     },
+                     {
+                         "baseName":  "CArtifact",
+                         "header":  "entities\\artifact\\CArtifact.h",
+                         "documentation":  [
+                                               "classes\\entities\\CArtifact.md",
+                                               "classes\\entities\\artifact\\CArtifact.md"
+                                           ]
+                     },
+                     {
+                         "baseName":  "JsonTreeSerializer",
+                         "header":  "serializer\\JsonTreeSerializer.h",
+                         "documentation":  "classes\\serializer\\JsonTreeSerializer.md"
+                     },
+                     {
+                         "baseName":  "QuestInfo",
+                         "header":  "gameState\\QuestInfo.h",
+                         "documentation":  "classes\\gameState\\QuestInfo.md"
+                     },
+                     {
+                         "baseName":  "CModVersion",
+                         "header":  "modding\\CModVersion.h",
+                         "documentation":  "classes\\modding\\CModVersion.md"
+                     },
+                     {
+                         "baseName":  "IUnitInfo",
+                         "header":  "battle\\IUnitInfo.h",
+                         "documentation":  "classes\\battle\\IUnitInfo.md"
+                     },
+                     {
+                         "baseName":  "CCallback",
+                         "header":  "callback\\CCallback.h",
+                         "documentation":  "classes\\callback\\CCallback.md"
+                     },
+                     {
+                         "baseName":  "DemonSummon",
+                         "header":  "spells\\effects\\DemonSummon.h",
+                         "documentation":  "classes\\spells\\effects\\DemonSummon.md"
+                     },
+                     {
+                         "baseName":  "CCastleEvent",
+                         "header":  "mapping\\CCastleEvent.h",
+                         "documentation":  "classes\\mapping\\CCastleEvent.md"
+                     },
+                     {
+                         "baseName":  "CBattleCallback",
+                         "header":  "callback\\CBattleCallback.h",
+                         "documentation":  "classes\\callback\\CBattleCallback.md"
+                     },
+                     {
+                         "baseName":  "AbilityCaster",
+                         "header":  "spells\\AbilityCaster.h",
+                         "documentation":  "classes\\spells\\AbilityCaster.md"
+                     },
+                     {
+                         "baseName":  "Problem",
+                         "header":  "spells\\Problem.h",
+                         "documentation":  "classes\\spells\\Problem.md"
+                     },
+                     {
+                         "baseName":  "GameCallbackHolder",
+                         "header":  "callback\\GameCallbackHolder.h",
+                         "documentation":  "classes\\callback\\GameCallbackHolder.md"
+                     },
+                     {
+                         "baseName":  "Heal",
+                         "header":  "spells\\effects\\Heal.h",
+                         "documentation":  "classes\\spells\\effects\\Heal.md"
+                     },
+                     {
+                         "baseName":  "CGameStateCampaign",
+                         "header":  "gameState\\CGameStateCampaign.h",
+                         "documentation":  "classes\\gameState\\CGameStateCampaign.md"
+                     },
+                     {
+                         "baseName":  "NetworkConnection",
+                         "header":  "network\\NetworkConnection.h",
+                         "documentation":  "classes\\network\\NetworkConnection.md"
+                     },
+                     {
+                         "baseName":  "FlaggableMapObject",
+                         "header":  "mapObjects\\FlaggableMapObject.h",
+                         "documentation":  "classes\\mapObjects\\FlaggableMapObject.md"
+                     },
+                     {
+                         "baseName":  "Teleport",
+                         "header":  "spells\\effects\\Teleport.h",
+                         "documentation":  "classes\\spells\\effects\\Teleport.md"
+                     },
+                     {
+                         "baseName":  "MetaString",
+                         "header":  "texts\\MetaString.h",
+                         "documentation":  "classes\\texts\\MetaString.md"
+                     },
+                     {
+                         "baseName":  "CHeroClass",
+                         "header":  "entities\\hero\\CHeroClass.h",
+                         "documentation":  "classes\\entities\\hero\\CHeroClass.md"
+                     },
+                     {
+                         "baseName":  "CUnitState",
+                         "header":  "battle\\CUnitState.h",
+                         "documentation":  "classes\\battle\\CUnitState.md"
+                     },
+                     {
+                         "baseName":  "HighScore",
+                         "header":  "gameState\\HighScore.h",
+                         "documentation":  "classes\\gameState\\HighScore.md"
+                     },
+                     {
+                         "baseName":  "Filesystem",
+                         "header":  "filesystem\\Filesystem.h",
+                         "documentation":  "classes\\filesystem\\Filesystem.md"
+                     },
+                     {
+                         "baseName":  "ReachabilityInfo",
+                         "header":  "battle\\ReachabilityInfo.h",
+                         "documentation":  "classes\\battle\\ReachabilityInfo.md"
+                     },
+                     {
+                         "baseName":  "IObjectInterface",
+                         "header":  "mapObjects\\IObjectInterface.h",
+                         "documentation":  "classes\\mapObjects\\IObjectInterface.md"
+                     },
+                     {
+                         "baseName":  "CSpellHandler",
+                         "header":  "spells\\CSpellHandler.h",
+                         "documentation":  "classes\\spells\\CSpellHandler.md"
+                     },
+                     {
+                         "baseName":  "MapFormatH3M",
+                         "header":  "mapping\\MapFormatH3M.h",
+                         "documentation":  "classes\\mapping\\MapFormatH3M.md"
+                     },
+                     {
+                         "baseName":  "ModUtility",
+                         "header":  "modding\\ModUtility.h",
+                         "documentation":  "classes\\modding\\ModUtility.md"
+                     },
+                     {
+                         "baseName":  "MapFormatJson",
+                         "header":  "mapping\\MapFormatJson.h",
+                         "documentation":  "classes\\mapping\\MapFormatJson.md"
+                     },
+                     {
+                         "baseName":  "CLogger",
+                         "header":  "logging\\CLogger.h",
+                         "documentation":  "classes\\logging\\CLogger.md"
+                     },
+                     {
+                         "baseName":  "CMapInfo",
+                         "header":  "mapping\\CMapInfo.h",
+                         "documentation":  "classes\\mapping\\CMapInfo.md"
+                     },
+                     {
+                         "baseName":  "BonusSelector",
+                         "header":  "bonuses\\BonusSelector.h",
+                         "documentation":  "classes\\bonuses\\BonusSelector.md"
+                     },
+                     {
+                         "baseName":  "Summon",
+                         "header":  "spells\\effects\\Summon.h",
+                         "documentation":  "classes\\spells\\effects\\Summon.md"
+                     },
+                     {
+                         "baseName":  "JsonSerializeFormat",
+                         "header":  "serializer\\JsonSerializeFormat.h",
+                         "documentation":  "classes\\serializer\\JsonSerializeFormat.md"
+                     },
+                     {
+                         "baseName":  "CHeroHandler",
+                         "header":  "entities\\hero\\CHeroHandler.h",
+                         "documentation":  "classes\\entities\\hero\\CHeroHandler.md"
+                     },
+                     {
+                         "baseName":  "AdventureSpellMechanics",
+                         "header":  "spells\\adventure\\AdventureSpellMechanics.h",
+                         "documentation":  "classes\\spells\\adventure\\AdventureSpellMechanics.md"
+                     },
+                     {
+                         "baseName":  "IOwnableObject",
+                         "header":  "mapObjects\\IOwnableObject.h",
+                         "documentation":  "classes\\mapObjects\\IOwnableObject.md"
+                     },
+                     {
+                         "baseName":  "Languages",
+                         "header":  "texts\\Languages.h",
+                         "documentation":  "classes\\texts\\Languages.md"
+                     },
+                     {
+                         "baseName":  "CCreatureSet",
+                         "header":  "mapObjects\\army\\CCreatureSet.h",
+                         "documentation":  "classes\\mapObjects\\army\\CCreatureSet.md"
+                     },
+                     {
+                         "baseName":  "DimensionDoorEffect",
+                         "header":  "spells\\adventure\\DimensionDoorEffect.h",
+                         "documentation":  "classes\\spells\\adventure\\DimensionDoorEffect.md"
+                     },
+                     {
+                         "baseName":  "Registry",
+                         "header":  "spells\\effects\\Registry.h",
+                         "documentation":  "classes\\spells\\effects\\Registry.md"
+                     },
+                     {
+                         "baseName":  "CPathfinder",
+                         "header":  "pathfinder\\CPathfinder.h",
+                         "documentation":  "classes\\pathfinder\\CPathfinder.md"
+                     },
+                     {
+                         "baseName":  "RumorState",
+                         "header":  "gameState\\RumorState.h",
+                         "documentation":  "classes\\gameState\\RumorState.md"
+                     },
+                     {
+                         "baseName":  "ModVerificationInfo",
+                         "header":  "modding\\ModVerificationInfo.h",
+                         "documentation":  "classes\\modding\\ModVerificationInfo.md"
+                     },
+                     {
+                         "baseName":  "CArtifactSet",
+                         "header":  "entities\\artifact\\CArtifactSet.h",
+                         "documentation":  "classes\\entities\\artifact\\CArtifactSet.md"
+                     },
+                     {
+                         "baseName":  "CGPathNode",
+                         "header":  "pathfinder\\CGPathNode.h",
+                         "documentation":  "classes\\pathfinder\\CGPathNode.md"
+                     },
+                     {
+                         "baseName":  "Obstacle",
+                         "header":  "spells\\effects\\Obstacle.h",
+                         "documentation":  "classes\\spells\\effects\\Obstacle.md"
+                     },
+                     {
+                         "baseName":  "CPlayerSpecificInfoCallback",
+                         "header":  "callback\\CPlayerSpecificInfoCallback.h",
+                         "documentation":  "classes\\callback\\CPlayerSpecificInfoCallback.md"
+                     },
+                     {
+                         "baseName":  "CHero",
+                         "header":  "entities\\hero\\CHero.h",
+                         "documentation":  [
+                                               "classes\\entities\\CHero.md",
+                                               "classes\\entities\\hero\\CHero.md"
+                                           ]
+                     },
+                     {
+                         "baseName":  "BattleUnitTurnReason",
+                         "header":  "battle\\BattleUnitTurnReason.h",
+                         "documentation":  "classes\\battle\\BattleUnitTurnReason.md"
+                     },
+                     {
+                         "baseName":  "MapReaderH3M",
+                         "header":  "mapping\\MapReaderH3M.h",
+                         "documentation":  "classes\\mapping\\MapReaderH3M.md"
+                     },
+                     {
+                         "baseName":  "MapFeaturesH3M",
+                         "header":  "mapping\\MapFeaturesH3M.h",
+                         "documentation":  "classes\\mapping\\MapFeaturesH3M.md"
+                     },
+                     {
+                         "baseName":  "IBonusBearer",
+                         "header":  "bonuses\\IBonusBearer.h",
+                         "documentation":  "classes\\bonuses\\IBonusBearer.md"
+                     },
+                     {
+                         "baseName":  "CMapOperation",
+                         "header":  "mapping\\CMapOperation.h",
+                         "documentation":  "classes\\mapping\\CMapOperation.md"
+                     },
+                     {
+                         "baseName":  "CMapService",
+                         "header":  "mapping\\CMapService.h",
+                         "documentation":  "classes\\mapping\\CMapService.md"
+                     },
+                     {
+                         "baseName":  "MapObjects",
+                         "header":  "mapObjects\\MapObjects.h",
+                         "documentation":  "classes\\mapObjects\\MapObjects.md"
+                     },
+                     {
+                         "baseName":  "CGeneralTextHandler",
+                         "header":  "texts\\CGeneralTextHandler.h",
+                         "documentation":  "classes\\texts\\CGeneralTextHandler.md"
+                     },
+                     {
+                         "baseName":  "CStackBasicDescriptor",
+                         "header":  "mapObjects\\army\\CStackBasicDescriptor.h",
+                         "documentation":  "classes\\mapObjects\\army\\CStackBasicDescriptor.md"
+                     },
+                     {
+                         "baseName":  "CSimpleArmy",
+                         "header":  "mapObjects\\army\\CSimpleArmy.h",
+                         "documentation":  "classes\\mapObjects\\army\\CSimpleArmy.md"
+                     },
+                     {
+                         "baseName":  "CArtHandler",
+                         "header":  "entities\\artifact\\CArtHandler.h",
+                         "documentation":  "classes\\entities\\artifact\\CArtHandler.md"
+                     },
+                     {
+                         "baseName":  "Limiters",
+                         "header":  "bonuses\\Limiters.h",
+                         "documentation":  "classes\\bonuses\\Limiters.md"
+                     },
+                     {
+                         "baseName":  "CBattleInfoCallback",
+                         "header":  "battle\\CBattleInfoCallback.h",
+                         "documentation":  "classes\\battle\\CBattleInfoCallback.md"
+                     },
+                     {
+                         "baseName":  "IBattleInfoCallback",
+                         "header":  "battle\\IBattleInfoCallback.h",
+                         "documentation":  "classes\\battle\\IBattleInfoCallback.md"
+                     },
+                     {
+                         "baseName":  "BonusCustomTypes",
+                         "header":  "bonuses\\BonusCustomTypes.h",
+                         "documentation":  "classes\\bonuses\\BonusCustomTypes.md"
+                     },
+                     {
+                         "baseName":  "IGameSettings",
+                         "header":  "IGameSettings.h",
+                         "documentation":  "classes\\IGameSettings.md"
+                     },
+                     {
+                         "baseName":  "Serializeable",
+                         "header":  "serializer\\Serializeable.h",
+                         "documentation":  "classes\\serializer\\Serializeable.md"
+                     },
+                     {
+                         "baseName":  "BattleHexArray",
+                         "header":  "battle\\BattleHexArray.h",
+                         "documentation":  "classes\\battle\\BattleHexArray.md"
+                     },
+                     {
+                         "baseName":  "JsonSerializer",
+                         "header":  "serializer\\JsonSerializer.h",
+                         "documentation":  "classes\\serializer\\JsonSerializer.md"
+                     },
+                     {
+                         "baseName":  "Propagators",
+                         "header":  "bonuses\\Propagators.h",
+                         "documentation":  "classes\\bonuses\\Propagators.md"
+                     },
+                     {
+                         "baseName":  "CGlobalAI",
+                         "header":  "callback\\CGlobalAI.h",
+                         "documentation":  "classes\\callback\\CGlobalAI.md"
+                     },
+                     {
+                         "baseName":  "SpellSchoolHandler",
+                         "header":  "spells\\SpellSchoolHandler.h",
+                         "documentation":  "classes\\spells\\SpellSchoolHandler.md"
+                     },
+                     {
+                         "baseName":  "CGPandoraBox",
+                         "header":  "mapObjects\\CGPandoraBox.h",
+                         "documentation":  "classes\\mapObjects\\CGPandoraBox.md"
+                     },
+                     {
+                         "baseName":  "Zone",
+                         "header":  "rmg\\Zone.h",
+                         "documentation":  "classes\\rmg\\Zone.md"
+                     },
+                     {
+                         "baseName":  "Destination",
+                         "header":  "battle\\Destination.h",
+                         "documentation":  "classes\\battle\\Destination.md"
+                     },
+                     {
+                         "baseName":  "TargetCondition",
+                         "header":  "spells\\TargetCondition.h",
+                         "documentation":  "classes\\spells\\TargetCondition.md"
+                     },
+                     {
+                         "baseName":  "MapIdentifiersH3M",
+                         "header":  "mapping\\MapIdentifiersH3M.h",
+                         "documentation":  "classes\\mapping\\MapIdentifiersH3M.md"
+                     },
+                     {
+                         "baseName":  "CGHeroInstance",
+                         "header":  "mapObjects\\CGHeroInstance.h",
+                         "documentation":  "classes\\mapObjects\\CGHeroInstance.md"
+                     },
+                     {
+                         "baseName":  "BattleProxy",
+                         "header":  "battle\\BattleProxy.h",
+                         "documentation":  "classes\\battle\\BattleProxy.md"
+                     },
+                     {
+                         "baseName":  "PossiblePlayerBattleAction",
+                         "header":  "battle\\PossiblePlayerBattleAction.h",
+                         "documentation":  "classes\\battle\\PossiblePlayerBattleAction.md"
+                     },
+                     {
+                         "baseName":  "CMapGenerator",
+                         "header":  "rmg\\CMapGenerator.h",
+                         "documentation":  "classes\\rmg\\CMapGenerator.md"
+                     },
+                     {
+                         "baseName":  "BonusEnum",
+                         "header":  "bonuses\\BonusEnum.h",
+                         "documentation":  "classes\\bonuses\\BonusEnum.md"
+                     },
+                     {
+                         "baseName":  "CBuilding",
+                         "header":  "entities\\building\\CBuilding.h",
+                         "documentation":  "classes\\entities\\building\\CBuilding.md"
+                     },
+                     {
+                         "baseName":  "CTownHandler",
+                         "header":  "entities\\faction\\CTownHandler.h",
+                         "documentation":  "classes\\entities\\faction\\CTownHandler.md"
+                     },
+                     {
+                         "baseName":  "BattleAttackInfo",
+                         "header":  "battle\\BattleAttackInfo.h",
+                         "documentation":  "classes\\battle\\BattleAttackInfo.md"
+                     },
+                     {
+                         "baseName":  "BonusCache",
+                         "header":  "bonuses\\BonusCache.h",
+                         "documentation":  "classes\\bonuses\\BonusCache.md"
+                     },
+                     {
+                         "baseName":  "EffectsFwd",
+                         "header":  "spells\\effects\\EffectsFwd.h",
+                         "documentation":  "classes\\spells\\effects\\EffectsFwd.md"
+                     },
+                     {
+                         "baseName":  "CDrawRoadsOperation",
+                         "header":  "mapping\\CDrawRoadsOperation.h",
+                         "documentation":  "classes\\mapping\\CDrawRoadsOperation.md"
+                     },
+                     {
+                         "baseName":  "MapFormatSettings",
+                         "header":  "mapping\\MapFormatSettings.h",
+                         "documentation":  "classes\\mapping\\MapFormatSettings.md"
+                     },
+                     {
+                         "baseName":  "CRmgTemplate",
+                         "header":  "rmg\\CRmgTemplate.h",
+                         "documentation":  [
+                                               "classes\\rmg\\CRmgTemplate.md",
+                                               "client\\rmg\\CRmgTemplate.md"
+                                           ]
+                     },
+                     {
+                         "baseName":  "Bonus",
+                         "header":  "bonuses\\Bonus.h",
+                         "documentation":  "classes\\bonuses\\Bonus.md"
+                     },
+                     {
+                         "baseName":  "CMapGenOptions",
+                         "header":  "rmg\\CMapGenOptions.h",
+                         "documentation":  "classes\\rmg\\CMapGenOptions.md"
+                     },
+                     {
+                         "baseName":  "DamageCalculator",
+                         "header":  "battle\\DamageCalculator.h",
+                         "documentation":  "classes\\battle\\DamageCalculator.md"
+                     },
+                     {
+                         "baseName":  "AccessibilityInfo",
+                         "header":  "battle\\AccessibilityInfo.h",
+                         "documentation":  "classes\\battle\\AccessibilityInfo.md"
+                     },
+                     {
+                         "baseName":  "TownFortifications",
+                         "header":  "entities\\building\\TownFortifications.h",
+                         "documentation":  "classes\\entities\\building\\TownFortifications.md"
+                     },
+                     {
+                         "baseName":  "ArtifactUtils",
+                         "header":  "entities\\artifact\\ArtifactUtils.h",
+                         "documentation":  "classes\\entities\\artifact\\ArtifactUtils.md"
+                     },
+                     {
+                         "baseName":  "CBattleGameInterface",
+                         "header":  "callback\\CBattleGameInterface.h",
+                         "documentation":  "classes\\callback\\CBattleGameInterface.md"
+                     },
+                     {
+                         "baseName":  "CArmedInstance",
+                         "header":  "mapObjects\\army\\CArmedInstance.h",
+                         "documentation":  "classes\\mapObjects\\army\\CArmedInstance.md"
+                     },
+                     {
+                         "baseName":  "JsonDeserializer",
+                         "header":  "serializer\\JsonDeserializer.h",
+                         "documentation":  "classes\\serializer\\JsonDeserializer.md"
+                     },
+                     {
+                         "baseName":  "Effect",
+                         "header":  "spells\\effects\\Effect.h",
+                         "documentation":  "classes\\spells\\effects\\Effect.md"
+                     },
+                     {
+                         "baseName":  "CGameState",
+                         "header":  "gameState\\CGameState.h",
+                         "documentation":  "classes\\gameState\\CGameState.md"
+                     },
+                     {
+                         "baseName":  "CPlayerState",
+                         "header":  "CPlayerState.h",
+                         "documentation":  [
+                                               "classes\\CPlayerState.md",
+                                               "classes\\gameState\\CPlayerState.md"
+                                           ]
+                     },
+                     {
+                         "baseName":  "CObstacleInstance",
+                         "header":  "battle\\CObstacleInstance.h",
+                         "documentation":  "classes\\battle\\CObstacleInstance.md"
+                     },
+                     {
+                         "baseName":  "CRewardableObject",
+                         "header":  "mapObjects\\CRewardableObject.h",
+                         "documentation":  "classes\\mapObjects\\CRewardableObject.md"
+                     },
+                     {
+                         "baseName":  "IHandlerBase",
+                         "header":  "IHandlerBase.h",
+                         "documentation":  "classes\\IHandlerBase.md"
+                     },
+                     {
+                         "baseName":  "SThievesGuildInfo",
+                         "header":  "gameState\\SThievesGuildInfo.h",
+                         "documentation":  "classes\\gameState\\SThievesGuildInfo.md"
+                     },
+                     {
+                         "baseName":  "CPlayerBattleCallback",
+                         "header":  "battle\\CPlayerBattleCallback.h",
+                         "documentation":  "classes\\battle\\CPlayerBattleCallback.md"
+                     },
+                     {
+                         "baseName":  "InfoAboutArmy",
+                         "header":  "gameState\\InfoAboutArmy.h",
+                         "documentation":  "classes\\gameState\\InfoAboutArmy.md"
+                     },
+                     {
+                         "baseName":  "ISpellMechanics",
+                         "header":  "spells\\ISpellMechanics.h",
+                         "documentation":  "classes\\spells\\ISpellMechanics.md"
+                     },
+                     {
+                         "baseName":  "EHeroGender",
+                         "header":  "entities\\hero\\EHeroGender.h",
+                         "documentation":  "classes\\entities\\hero\\EHeroGender.md"
+                     },
+                     {
+                         "baseName":  "CMapEvent",
+                         "header":  "mapping\\CMapEvent.h",
+                         "documentation":  "classes\\mapping\\CMapEvent.md"
+                     },
+                     {
+                         "baseName":  "BattleLayout",
+                         "header":  "battle\\BattleLayout.h",
+                         "documentation":  "classes\\battle\\BattleLayout.md"
+                     },
+                     {
+                         "baseName":  "CAdventureAI",
+                         "header":  "callback\\CAdventureAI.h",
+                         "documentation":  "classes\\callback\\CAdventureAI.md"
+                     },
+                     {
+                         "baseName":  "IGameInfoCallback",
+                         "header":  "callback\\IGameInfoCallback.h",
+                         "documentation":  [
+                                               "classes\\callback\\IGameInfoCallback.md",
+                                               "classes\\gameState\\IGameInfoCallback.md"
+                                           ]
+                     },
+                     {
+                         "baseName":  "CMapHeader",
+                         "header":  "mapping\\CMapHeader.h",
+                         "documentation":  "classes\\mapping\\CMapHeader.md"
+                     },
+                     {
+                         "baseName":  "RmgArea",
+                         "header":  "rmg\\RmgArea.h",
+                         "documentation":  "classes\\rmg\\RmgArea.md"
+                     },
+                     {
+                         "baseName":  "CGameInterface",
+                         "header":  "callback\\CGameInterface.h",
+                         "documentation":  "classes\\callback\\CGameInterface.md"
+                     },
+                     {
+                         "baseName":  "TextIdentifier",
+                         "header":  "texts\\TextIdentifier.h",
+                         "documentation":  "classes\\texts\\TextIdentifier.md"
+                     },
+                     {
+                         "baseName":  "ObstacleProxy",
+                         "header":  "mapping\\ObstacleProxy.h",
+                         "documentation":  "classes\\mapping\\ObstacleProxy.md"
+                     },
+                     {
+                         "baseName":  "CTown",
+                         "header":  "entities\\faction\\CTown.h",
+                         "documentation":  [
+                                               "classes\\entities\\CTown.md",
+                                               "classes\\entities\\faction\\CTown.md"
+                                           ]
+                     },
+                     {
+                         "baseName":  "StartInfo",
+                         "header":  "StartInfo.h",
+                         "documentation":  "classes\\StartInfo.md"
+                     },
+                     {
+                         "baseName":  "NumericConstants",
+                         "header":  "constants\\NumericConstants.h",
+                         "documentation":  "classes\\constants\\NumericConstants.md"
+                     },
+                     {
+                         "baseName":  "CModHandler",
+                         "header":  "modding\\CModHandler.h",
+                         "documentation":  "classes\\modding\\CModHandler.md"
+                     },
+                     {
+                         "baseName":  "CMemorySerializer",
+                         "header":  "serializer\\CMemorySerializer.h",
+                         "documentation":  "classes\\serializer\\CMemorySerializer.md"
+                     },
+                     {
+                         "baseName":  "ObjectTemplate",
+                         "header":  "mapObjects\\ObjectTemplate.h",
+                         "documentation":  "classes\\mapObjects\\ObjectTemplate.md"
+                     },
+                     {
+                         "baseName":  "ExternalCaster",
+                         "header":  "spells\\ExternalCaster.h",
+                         "documentation":  "classes\\spells\\ExternalCaster.md"
+                     },
+                     {
+                         "baseName":  "BonusCaster",
+                         "header":  "spells\\BonusCaster.h",
+                         "documentation":  "classes\\spells\\BonusCaster.md"
+                     },
+                     {
+                         "baseName":  "NetworkHandler",
+                         "header":  "network\\NetworkHandler.h",
+                         "documentation":  "classes\\network\\NetworkHandler.md"
+                     },
+                     {
+                         "baseName":  "IMarket",
+                         "header":  "mapObjects\\IMarket.h",
+                         "documentation":  "classes\\mapObjects\\IMarket.md"
+                     },
+                     {
+                         "baseName":  "CMapEditManager",
+                         "header":  "mapping\\CMapEditManager.h",
+                         "documentation":  "classes\\mapping\\CMapEditManager.md"
+                     },
+                     {
+                         "baseName":  "LocationEffect",
+                         "header":  "spells\\effects\\LocationEffect.h",
+                         "documentation":  "classes\\spells\\effects\\LocationEffect.md"
+                     },
+                     {
+                         "baseName":  "TextOperations",
+                         "header":  "texts\\TextOperations.h",
+                         "documentation":  "classes\\texts\\TextOperations.md"
+                     },
+                     {
+                         "baseName":  "EditorCallback",
+                         "header":  "callback\\EditorCallback.h",
+                         "documentation":  "classes\\callback\\EditorCallback.md"
+                     },
+                     {
+                         "baseName":  "CGResource",
+                         "header":  "mapObjects\\CGResource.h",
+                         "documentation":  "classes\\mapObjects\\CGResource.md"
+                     },
+                     {
+                         "baseName":  "CInputStream",
+                         "header":  "filesystem\\CInputStream.h",
+                         "documentation":  "classes\\filesystem\\CInputStream.md"
+                     },
+                     {
+                         "baseName":  "CArtifactInstance",
+                         "header":  "entities\\artifact\\CArtifactInstance.h",
+                         "documentation":  [
+                                               "classes\\entities\\CArtifactInstance.md",
+                                               "classes\\entities\\artifact\\CArtifactInstance.md"
+                                           ]
+                     },
+                     {
+                         "baseName":  "CBattleInfoEssentials",
+                         "header":  "battle\\CBattleInfoEssentials.h",
+                         "documentation":  "classes\\battle\\CBattleInfoEssentials.md"
+                     },
+                     {
+                         "baseName":  "SiegeInfo",
+                         "header":  "battle\\SiegeInfo.h",
+                         "documentation":  "classes\\battle\\SiegeInfo.md"
+                     },
+                     {
+                         "baseName":  "BattleAction",
+                         "header":  "battle\\BattleAction.h",
+                         "documentation":  "classes\\battle\\BattleAction.md"
+                     },
+                     {
+                         "baseName":  "ObstacleCasterProxy",
+                         "header":  "spells\\ObstacleCasterProxy.h",
+                         "documentation":  "classes\\spells\\ObstacleCasterProxy.md"
+                     },
+                     {
+                         "baseName":  "ProxyCaster",
+                         "header":  "spells\\ProxyCaster.h",
+                         "documentation":  "classes\\spells\\ProxyCaster.md"
+                     },
+                     {
+                         "baseName":  "Updaters",
+                         "header":  "bonuses\\Updaters.h",
+                         "documentation":  "classes\\bonuses\\Updaters.md"
+                     },
+                     {
+                         "baseName":  "StringConstants",
+                         "header":  "constants\\StringConstants.h",
+                         "documentation":  "classes\\constants\\StringConstants.md"
+                     },
+                     {
+                         "baseName":  "Sacrifice",
+                         "header":  "spells\\effects\\Sacrifice.h",
+                         "documentation":  "classes\\spells\\effects\\Sacrifice.md"
+                     },
+                     {
+                         "baseName":  "CGameInfoCallback",
+                         "header":  "callback\\CGameInfoCallback.h",
+                         "documentation":  "classes\\callback\\CGameInfoCallback.md"
+                     },
+                     {
+                         "baseName":  "CFaction",
+                         "header":  "entities\\faction\\CFaction.h",
+                         "documentation":  [
+                                               "classes\\entities\\CFaction.md",
+                                               "classes\\entities\\faction\\CFaction.md"
+                                           ]
+                     },
+                     {
+                         "baseName":  "Dispel",
+                         "header":  "spells\\effects\\Dispel.h",
+                         "documentation":  "classes\\spells\\effects\\Dispel.md"
+                     },
+                     {
+                         "baseName":  "BattleInfo",
+                         "header":  "battle\\BattleInfo.h",
+                         "documentation":  "classes\\battle\\BattleInfo.md"
+                     },
+                     {
+                         "baseName":  "IBattleState",
+                         "header":  "battle\\IBattleState.h",
+                         "documentation":  "classes\\battle\\IBattleState.md"
+                     },
+                     {
+                         "baseName":  "ESerializationVersion",
+                         "header":  "serializer\\ESerializationVersion.h",
+                         "documentation":  "classes\\serializer\\ESerializationVersion.md"
+                     },
+                     {
+                         "baseName":  "CGTownInstance",
+                         "header":  "mapObjects\\CGTownInstance.h",
+                         "documentation":  "classes\\mapObjects\\CGTownInstance.md"
+                     },
+                     {
+                         "baseName":  "MapFormat",
+                         "header":  "mapping\\MapFormat.h",
+                         "documentation":  [
+                                               "classes\\mapping\\MapFormat.md",
+                                               "client\\mapping\\MapFormat.md"
+                                           ]
+                     },
+                     {
+                         "baseName":  "CStackInstance",
+                         "header":  "mapObjects\\army\\CStackInstance.h",
+                         "documentation":  [
+                                               "classes\\battle\\CStackInstance.md",
+                                               "classes\\mapObjects\\army\\CStackInstance.md"
+                                           ]
+                     },
+                     {
+                         "baseName":  "ISimpleResourceLoader",
+                         "header":  "filesystem\\ISimpleResourceLoader.h",
+                         "documentation":  "classes\\filesystem\\ISimpleResourceLoader.md"
+                     },
+                     {
+                         "baseName":  "Unit",
+                         "header":  "battle\\Unit.h",
+                         "documentation":  "classes\\battle\\Unit.md"
+                     },
+                     {
+                         "baseName":  "CLegacyConfigParser",
+                         "header":  "texts\\CLegacyConfigParser.h",
+                         "documentation":  "classes\\texts\\CLegacyConfigParser.md"
+                     },
+                     {
+                         "baseName":  "ViewSpellInt",
+                         "header":  "spells\\ViewSpellInt.h",
+                         "documentation":  "classes\\spells\\ViewSpellInt.md"
+                     },
+                     {
+                         "baseName":  "CHeroClassHandler",
+                         "header":  "entities\\hero\\CHeroClassHandler.h",
+                         "documentation":  "classes\\entities\\hero\\CHeroClassHandler.md"
+                     },
+                     {
+                         "baseName":  "Catapult",
+                         "header":  "spells\\effects\\Catapult.h",
+                         "documentation":  "classes\\spells\\effects\\Catapult.md"
+                     },
+                     {
+                         "baseName":  "CArtifactFittingSet",
+                         "header":  "entities\\artifact\\CArtifactFittingSet.h",
+                         "documentation":  "classes\\entities\\artifact\\CArtifactFittingSet.md"
+                     },
+                     {
+                         "baseName":  "BattleStateInfoForRetreat",
+                         "header":  "battle\\BattleStateInfoForRetreat.h",
+                         "documentation":  "classes\\battle\\BattleStateInfoForRetreat.md"
+                     },
+                     {
+                         "baseName":  "RegisterTypes",
+                         "header":  "serializer\\RegisterTypes.h",
+                         "documentation":  "classes\\serializer\\RegisterTypes.md"
+                     },
+                     {
+                         "baseName":  "EArtifactClass",
+                         "header":  "entities\\artifact\\EArtifactClass.h",
+                         "documentation":  "classes\\entities\\artifact\\EArtifactClass.md"
+                     },
+                     {
+                         "baseName":  "ArtSlotInfo",
+                         "header":  "entities\\artifact\\ArtSlotInfo.h",
+                         "documentation":  "classes\\entities\\artifact\\ArtSlotInfo.md"
+                     },
+                     {
+                         "baseName":  "NetworkInterface",
+                         "header":  "network\\NetworkInterface.h",
+                         "documentation":  "classes\\network\\NetworkInterface.md"
+                     },
+                     {
+                         "baseName":  "CDynLibHandler",
+                         "header":  "callback\\CDynLibHandler.h",
+                         "documentation":  "classes\\callback\\CDynLibHandler.md"
+                     },
+                     {
+                         "baseName":  "CGDwelling",
+                         "header":  "mapObjects\\CGDwelling.h",
+                         "documentation":  "classes\\mapObjects\\CGDwelling.md"
+                     },
+                     {
+                         "baseName":  "ObstacleSetHandler",
+                         "header":  "mapObjects\\ObstacleSetHandler.h",
+                         "documentation":  "classes\\mapObjects\\ObstacleSetHandler.md"
+                     },
+                     {
+                         "baseName":  "GameStatistics",
+                         "header":  "gameState\\GameStatistics.h",
+                         "documentation":  "classes\\gameState\\GameStatistics.md"
+                     },
+                     {
+                         "baseName":  "SideInBattle",
+                         "header":  "battle\\SideInBattle.h",
+                         "documentation":  "classes\\battle\\SideInBattle.md"
+                     },
+                     {
+                         "baseName":  "CGMarket",
+                         "header":  "mapObjects\\CGMarket.h",
+                         "documentation":  "classes\\mapObjects\\CGMarket.md"
+                     },
+                     {
+                         "baseName":  "CZonePlacer",
+                         "header":  "rmg\\CZonePlacer.h",
+                         "documentation":  "classes\\rmg\\CZonePlacer.md"
+                     },
+                     {
+                         "baseName":  "CGObjectInstance",
+                         "header":  "mapObjects\\CGObjectInstance.h",
+                         "documentation":  "classes\\mapObjects\\CGObjectInstance.md"
+                     },
+                     {
+                         "baseName":  "Effects",
+                         "header":  "spells\\effects\\Effects.h",
+                         "documentation":  "classes\\spells\\effects\\Effects.md"
+                     },
+                     {
+                         "baseName":  "RmgObject",
+                         "header":  "rmg\\RmgObject.h",
+                         "documentation":  "classes\\rmg\\RmgObject.md"
+                     },
+                     {
+                         "baseName":  "JsonNode",
+                         "header":  "json\\JsonNode.h",
+                         "documentation":  "classes\\json\\JsonNode.md"
+                     },
+                     {
+                         "baseName":  "ResourceTypeHandler",
+                         "header":  "entities\\ResourceTypeHandler.h",
+                         "documentation":  "classes\\entities\\ResourceTypeHandler.md"
+                     },
+                     {
+                         "baseName":  "TownBuildingInstance",
+                         "header":  "mapObjects\\TownBuildingInstance.h",
+                         "documentation":  "classes\\mapObjects\\TownBuildingInstance.md"
+                     },
+                     {
+                         "baseName":  "CGCreature",
+                         "header":  "mapObjects\\CGCreature.h",
+                         "documentation":  "classes\\mapObjects\\CGCreature.md"
+                     },
+                     {
+                         "baseName":  "MiscObjects",
+                         "header":  "mapObjects\\MiscObjects.h",
+                         "documentation":  "classes\\mapObjects\\MiscObjects.md"
+                     },
+                     {
+                         "baseName":  "BonusList",
+                         "header":  "bonuses\\BonusList.h",
+                         "documentation":  "classes\\bonuses\\BonusList.md"
+                     },
+                     {
+                         "baseName":  "ArtBearer",
+                         "header":  "entities\\artifact\\ArtBearer.h",
+                         "documentation":  "classes\\entities\\artifact\\ArtBearer.md"
+                     },
+                     {
+                         "baseName":  "CBonusSystemNode",
+                         "header":  "bonuses\\CBonusSystemNode.h",
+                         "documentation":  "classes\\bonuses\\CBonusSystemNode.md"
+                     },
+                     {
+                         "baseName":  "BattleSide",
+                         "header":  "battle\\BattleSide.h",
+                         "documentation":  "classes\\battle\\BattleSide.md"
+                     },
+                     {
+                         "baseName":  "CSerializer",
+                         "header":  "serializer\\CSerializer.h",
+                         "documentation":  "classes\\serializer\\CSerializer.md"
+                     },
+                     {
+                         "baseName":  "CNonConstInfoCallback",
+                         "header":  "callback\\CNonConstInfoCallback.h",
+                         "documentation":  "classes\\callback\\CNonConstInfoCallback.md"
+                     },
+                     {
+                         "baseName":  "ContentTypeHandler",
+                         "header":  "modding\\ContentTypeHandler.h",
+                         "documentation":  "classes\\modding\\ContentTypeHandler.md"
+                     },
+                     {
+                         "baseName":  "Clone",
+                         "header":  "spells\\effects\\Clone.h",
+                         "documentation":  "classes\\spells\\effects\\Clone.md"
+                     },
+                     {
+                         "baseName":  "RemoveObstacle",
+                         "header":  "spells\\effects\\RemoveObstacle.h",
+                         "documentation":  "classes\\spells\\effects\\RemoveObstacle.md"
+                     },
+                     {
+                         "baseName":  "CMap",
+                         "header":  "mapping\\CMap.h",
+                         "documentation":  "classes\\mapping\\CMap.md"
+                     },
+                     {
+                         "baseName":  "BinarySerializer",
+                         "header":  "serializer\\BinarySerializer.h",
+                         "documentation":  "classes\\serializer\\BinarySerializer.md"
+                     },
+                     {
+                         "baseName":  "ModManager",
+                         "header":  "modding\\ModManager.h",
+                         "documentation":  "classes\\modding\\ModManager.md"
+                     },
+                     {
+                         "baseName":  "TurnInfo",
+                         "header":  "pathfinder\\TurnInfo.h",
+                         "documentation":  "classes\\pathfinder\\TurnInfo.md"
+                     },
+                     {
+                         "baseName":  "COutputStream",
+                         "header":  "filesystem\\COutputStream.h",
+                         "documentation":  "classes\\filesystem\\COutputStream.md"
+                     },
+                     {
+                         "baseName":  "ModDescription",
+                         "header":  "modding\\ModDescription.h",
+                         "documentation":  "classes\\modding\\ModDescription.md"
+                     },
+                     {
+                         "baseName":  "TerrainTile",
+                         "header":  "mapping\\TerrainTile.h",
+                         "documentation":  [
+                                               "classes\\gameState\\TerrainTile.md",
+                                               "classes\\mapping\\TerrainTile.md",
+                                               "client\\mapping\\TerrainTile.md"
+                                           ]
+                     },
+                     {
+                         "baseName":  "BattleHex",
+                         "header":  "battle\\BattleHex.h",
+                         "documentation":  "classes\\battle\\BattleHex.md"
+                     },
+                     {
+                         "baseName":  "TavernHeroesPool",
+                         "header":  "gameState\\TavernHeroesPool.h",
+                         "documentation":  "classes\\gameState\\TavernHeroesPool.md"
+                     },
+                     {
+                         "baseName":  "Enumerations",
+                         "header":  "constants\\Enumerations.h",
+                         "documentation":  "classes\\constants\\Enumerations.md"
+                     },
+                     {
+                         "baseName":  "TextLocalizationContainer",
+                         "header":  "texts\\TextLocalizationContainer.h",
+                         "documentation":  "classes\\texts\\TextLocalizationContainer.md"
+                     },
+                     {
+                         "baseName":  "CCommanderInstance",
+                         "header":  "mapObjects\\army\\CCommanderInstance.h",
+                         "documentation":  "classes\\mapObjects\\army\\CCommanderInstance.md"
+                     },
+                     {
+                         "baseName":  "NetworkServer",
+                         "header":  "network\\NetworkServer.h",
+                         "documentation":  "classes\\network\\NetworkServer.md"
+                     },
+                     {
+                         "baseName":  "TownPortalEffect",
+                         "header":  "spells\\adventure\\TownPortalEffect.h",
+                         "documentation":  "classes\\spells\\adventure\\TownPortalEffect.md"
+                     },
+                     {
+                         "baseName":  "CTypeList",
+                         "header":  "serializer\\CTypeList.h",
+                         "documentation":  "classes\\serializer\\CTypeList.md"
+                     },
+                     {
+                         "baseName":  "UpgradeInfo",
+                         "header":  "gameState\\UpgradeInfo.h",
+                         "documentation":  "classes\\gameState\\UpgradeInfo.md"
+                     },
+                     {
+                         "baseName":  "MapEditUtils",
+                         "header":  "mapping\\MapEditUtils.h",
+                         "documentation":  "classes\\mapping\\MapEditUtils.md"
+                     },
+                     {
+                         "baseName":  "Moat",
+                         "header":  "spells\\effects\\Moat.h",
+                         "documentation":  "classes\\spells\\effects\\Moat.md"
+                     },
+                     {
+                         "baseName":  "AutocombatPreferences",
+                         "header":  "battle\\AutocombatPreferences.h",
+                         "documentation":  "classes\\battle\\AutocombatPreferences.md"
+                     }
+                 ],
+    "missingHeaders":  183,
+    "generatedAt":  "2026-01-17 17:58:11",
+    "missingDocumentation":  [
+                                 "AsyncRunner.h",
+                                 "BattleFieldHandler.h",
+                                 "CAndroidVMHelper.h",
+                                 "CBonusTypeHandler.h",
+                                 "CConfigHandler.h",
+                                 "CConsoleHandler.h",
+                                 "CCreatureHandler.h",
+                                 "Color.h",
+                                 "ConditionalWait.h",
+                                 "CRandomGenerator.h",
+                                 "CScriptingModule.h",
+                                 "CSkillHandler.h",
+                                 "CSoundBase.h",
+                                 "CStack.h",
+                                 "CStopWatch.h",
+                                 "CThreadHelper.h",
+                                 "ExceptionsCommon.h",
+                                 "ExtraOptionsInfo.h",
+                                 "FunctionList.h",
+                                 "GameConstants.h",
+                                 "GameLibrary.h",
+                                 "GameSettings.h",
+                                 "IBonusTypeHandler.h",
+                                 "int3.h",
+                                 "LoadProgress.h",
+                                 "LogicalExpression.h",
+                                 "ObstacleHandler.h",
+                                 "Point.h",
+                                 "Rect.h",
+                                 "ResourceSet.h",
+                                 "RiverHandler.h",
+                                 "RoadHandler.h",
+                                 "ScopeGuard.h",
+                                 "ScriptHandler.h",
+                                 "StdInc.h",
+                                 "TerrainHandler.h",
+                                 "TurnTimerInfo.h",
+                                 "UnlockGuard.h",
+                                 "VCMIDirs.h",
+                                 "vcmi_endian.h",
+                                 "callback\\GameRandomizer.h",
+                                 "callback\\IBattleCallback.h",
+                                 "callback\\IBattleEventsReceiver.h",
+                                 "callback\\IClient.h",
+                                 "callback\\IGameActionCallback.h",
+                                 "callback\\IGameEventCallback.h",
+                                 "callback\\IGameEventsReceiver.h",
+                                 "callback\\IGameRandomizer.h",
+                                 "callback\\MapInfoCallback.h",
+                                 "campaign\\CampaignBonus.h",
+                                 "campaign\\CampaignConstants.h",
+                                 "campaign\\CampaignHandler.h",
+                                 "campaign\\CampaignRegions.h",
+                                 "campaign\\CampaignRegionsHandler.h",
+                                 "campaign\\CampaignScenarioPrologEpilog.h",
+                                 "campaign\\CampaignState.h",
+                                 "constants\\EntityIdentifiers.h",
+                                 "constants\\IdentifierBase.h",
+                                 "constants\\VariantIdentifier.h",
+                                 "events\\ApplyDamage.h",
+                                 "events\\GameResumed.h",
+                                 "events\\ObjectVisitEnded.h",
+                                 "events\\ObjectVisitStarted.h",
+                                 "events\\PlayerGotTurn.h",
+                                 "events\\TurnStarted.h",
+                                 "filesystem\\AdapterLoaders.h",
+                                 "filesystem\\CArchiveLoader.h",
+                                 "filesystem\\CBinaryReader.h",
+                                 "filesystem\\CCompressedStream.h",
+                                 "filesystem\\CFileInputStream.h",
+                                 "filesystem\\CFilesystemLoader.h",
+                                 "filesystem\\CInputOutputStream.h",
+                                 "filesystem\\CMemoryBuffer.h",
+                                 "filesystem\\CMemoryStream.h",
+                                 "filesystem\\CStream.h",
+                                 "filesystem\\CZipLoader.h",
+                                 "filesystem\\CZipSaver.h",
+                                 "filesystem\\FileInfo.h",
+                                 "filesystem\\MinizipExtensions.h",
+                                 "filesystem\\ResourcePath.h",
+                                 "gameState\\EVictoryLossCheckResult.h",
+                                 "gameState\\GameStatePackVisitor.h",
+                                 "gameState\\TavernSlot.h",
+                                 "json\\JsonBonus.h",
+                                 "json\\JsonFormatException.h",
+                                 "json\\JsonParser.h",
+                                 "json\\JsonRandom.h",
+                                 "json\\JsonUtils.h",
+                                 "json\\JsonValidator.h",
+                                 "json\\JsonWriter.h",
+                                 "logging\\CBasicLogConfigurator.h",
+                                 "logging\\VisualLogger.h",
+                                 "mapObjectConstructors\\AObjectTypeHandler.h",
+                                 "mapObjectConstructors\\CDefaultObjectTypeHandler.h",
+                                 "mapObjectConstructors\\CObjectClassesHandler.h",
+                                 "mapObjectConstructors\\CommonConstructors.h",
+                                 "mapObjectConstructors\\CRewardableConstructor.h",
+                                 "mapObjectConstructors\\DwellingInstanceConstructor.h",
+                                 "mapObjectConstructors\\FlaggableInstanceConstructor.h",
+                                 "mapObjectConstructors\\HillFortInstanceConstructor.h",
+                                 "mapObjectConstructors\\IObjectInfo.h",
+                                 "mapObjectConstructors\\MarketInstanceConstructor.h",
+                                 "mapObjectConstructors\\RandomMapInfo.h",
+                                 "mapObjectConstructors\\ShipyardInstanceConstructor.h",
+                                 "mapObjectConstructors\\SObjectSounds.h",
+                                 "mapObjects\\CompoundMapObjectID.h",
+                                 "modding\\ActiveModsInSaveList.h",
+                                 "modding\\IdentifierStorage.h",
+                                 "modding\\ModIncompatibility.h",
+                                 "modding\\ModScope.h",
+                                 "network\\NetworkDefines.h",
+                                 "networkPacks\\ArtifactLocation.h",
+                                 "networkPacks\\BattleChanges.h",
+                                 "networkPacks\\Component.h",
+                                 "networkPacks\\EInfoWindowMode.h",
+                                 "networkPacks\\EntityChanges.h",
+                                 "networkPacks\\EOpenWindowMode.h",
+                                 "networkPacks\\NetPacksBase.h",
+                                 "networkPacks\\NetPackVisitor.h",
+                                 "networkPacks\\ObjProperty.h",
+                                 "networkPacks\\PacksForClient.h",
+                                 "networkPacks\\PacksForClientBattle.h",
+                                 "networkPacks\\PacksForLobby.h",
+                                 "networkPacks\\PacksForServer.h",
+                                 "networkPacks\\SaveLocalState.h",
+                                 "networkPacks\\SetRewardableConfiguration.h",
+                                 "networkPacks\\SetStackEffect.h",
+                                 "networkPacks\\StackLocation.h",
+                                 "networkPacks\\TradeItem.h",
+                                 "pathfinder\\INodeStorage.h",
+                                 "pathfinder\\NodeStorage.h",
+                                 "pathfinder\\PathfinderCache.h",
+                                 "pathfinder\\PathfinderOptions.h",
+                                 "pathfinder\\PathfinderUtil.h",
+                                 "pathfinder\\PathfindingRules.h",
+                                 "rewardable\\Configuration.h",
+                                 "rewardable\\Info.h",
+                                 "rewardable\\Interface.h",
+                                 "rewardable\\Limiter.h",
+                                 "rewardable\\Reward.h",
+                                 "rmg\\CRmgTemplateStorage.h",
+                                 "rmg\\CRoadRandomizer.h",
+                                 "rmg\\float3.h",
+                                 "rmg\\Functions.h",
+                                 "rmg\\MapProxy.h",
+                                 "rmg\\ObjectConfig.h",
+                                 "rmg\\ObjectInfo.h",
+                                 "rmg\\PenroseTiling.h",
+                                 "rmg\\RmgMap.h",
+                                 "rmg\\RmgPath.h",
+                                 "rmg\\TileInfo.h",
+                                 "rmg\\modificators\\ConnectionsPlacer.h",
+                                 "rmg\\modificators\\MinePlacer.h",
+                                 "rmg\\modificators\\Modificator.h",
+                                 "rmg\\modificators\\ObjectDistributor.h",
+                                 "rmg\\modificators\\ObjectManager.h",
+                                 "rmg\\modificators\\ObstaclePlacer.h",
+                                 "rmg\\modificators\\PrisonHeroPlacer.h",
+                                 "rmg\\modificators\\QuestArtifactPlacer.h",
+                                 "rmg\\modificators\\RiverPlacer.h",
+                                 "rmg\\modificators\\RoadPlacer.h",
+                                 "rmg\\modificators\\RockFiller.h",
+                                 "rmg\\modificators\\RockPlacer.h",
+                                 "rmg\\modificators\\TerrainPainter.h",
+                                 "rmg\\modificators\\TownPlacer.h",
+                                 "rmg\\modificators\\TreasurePlacer.h",
+                                 "rmg\\modificators\\WaterAdopter.h",
+                                 "rmg\\modificators\\WaterProxy.h",
+                                 "rmg\\modificators\\WaterRoutes.h",
+                                 "serializer\\BinaryDeserializer.h",
+                                 "serializer\\CLoadFile.h",
+                                 "serializer\\CSaveFile.h",
+                                 "serializer\\GameConnection.h",
+                                 "serializer\\GameConnectionID.h",
+                                 "serializer\\JsonUpdater.h",
+                                 "serializer\\PlayerConnectionID.h",
+                                 "serializer\\SerializerReflection.h",
+                                 "spells\\adventure\\AdventureSpellEffect.h",
+                                 "spells\\adventure\\RemoveObjectEffect.h",
+                                 "spells\\adventure\\SummonBoatEffect.h",
+                                 "spells\\adventure\\ViewWorldEffect.h",
+                                 "spells\\effects\\Timed.h",
+                                 "spells\\effects\\UnitEffect.h"
+                             ],
+    "documentedHeaders":  209,
+    "totalHeaders":  392
+}

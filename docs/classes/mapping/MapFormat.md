@@ -2,59 +2,123 @@
 
 ## 概述
 
-`MapFormat` 枚举定义了VCMI支持的各种地图格式类型。这些格式对应于《英雄无敌3》系列游戏的不同版本和扩展，以及VCMI自定义格式。
+`MapFormat.h` 定义了 VCMI 支持的地图格式枚举。这个枚举用于标识不同版本的 Heroes 3 地图文件格式，以及 VCMI 自己的原生格式。
 
 ## 枚举定义
 
-### EMapFormat
 ```cpp
 enum class EMapFormat : uint8_t
-{
-	INVALID = 0,    // 无效格式
-	ROE   = 0x0e,   // 14 - Restoration of Erathia (英雄无敌3原版)
-	AB    = 0x15,   // 21 - Armageddon's Blade (剑刃风暴)
-	SOD   = 0x1c,   // 28 - Shadow of Death (死亡阴影)
-	CHR   = 0x1d,   // 29 - Chronicles (英雄无敌3完整版)
-	HOTA  = 0x20,   // 32 - Horn of the Abyss (深渊号角)
-	WOG   = 0x33,   // 51 - Wake of Gods (众神苏醒，WOG扩展)
-	VCMI  = 0x64    // 100 - VCMI自定义格式
-};
 ```
 
-## 格式说明
+## 枚举值
 
-### 经典H3格式
-- **ROE**: 英雄无敌3原版格式
-- **AB**: 剑刃风暴扩展格式  
-- **SOD**: 死亡阴影扩展格式
-- **CHR**: 英雄无敌3完整版格式
+### INVALID
+```cpp
+INVALID = 0
+```
+无效格式，用于错误处理。
 
-### 扩展格式
-- **HOTA**: 深渊号角扩展格式
-- **WOG**: 众神苏醒扩展格式（非官方）
+### ROE (Restoration of Erathia)
+```cpp
+ROE = 0x0e  // 14 (十进制)
+```
+征服者版本的地图格式。Heroes 3 的基础版本。
 
-### VCMI格式
-- **VCMI**: VCMI引擎自定义的地图格式，支持更多功能
+### AB (Armageddon's Blade)
+```cpp
+AB = 0x15   // 21 (十进制)
+```
+地下城与城堡版本的地图格式。第一个扩展包。
 
-### 特殊值
-- **INVALID**: 无效或未识别的格式
+### SOD (Shadow of Death)
+```cpp
+SOD = 0x1c  // 28 (十进制)
+```
+阴影之城版本的地图格式。完整的游戏版本。
 
-## 用途
+### CHR (Chronicles)
+```cpp
+CHR = 0x1d  // 29 (十进制)
+```
+地下城英雄版本的地图格式。地下城英雄扩展包。
 
-这个枚举主要用于：
+### HOTA (Horn of the Abyss)
+```cpp
+HOTA = 0x20  // 32 (十进制)
+```
+深渊号角版本的地图格式。非官方扩展包。
 
-1. **地图加载**: 识别地图文件的格式类型
-2. **格式兼容性**: 检查地图格式的兼容性
-3. **功能支持**: 根据格式启用/禁用特定功能
-4. **版本检测**: 确定地图的游戏版本
+### WOG (Wake of Gods)
+```cpp
+WOG = 0x33   // 51 (十进制)
+```
+众神苏醒版本的地图格式。另一个非官方扩展包。
 
-## 设计意图
+### VCMI
+```cpp
+VCMI = 0x64  // 100 (十进制)
+```
+VCMI 原生地图格式。用于 VCMI 特定的增强功能。
 
-MapFormat枚举的设计目标：
+## 版本历史
 
-1. **格式识别**: 唯一标识不同的地图格式
-2. **向后兼容**: 支持所有经典H3格式
-3. **扩展支持**: 为新格式预留空间
-4. **类型安全**: 使用强类型枚举防止错误
+### 官方版本
+- **ROE**: Heroes 3 基础游戏
+- **AB**: 第一个扩展包，增加了地下城和城堡派系
+- **SOD**: 完整版，包含所有官方内容
 
-这个枚举是VCMI地图系统的基本组件，确保了与各种H3地图格式的兼容性。
+### 非官方扩展
+- **CHR**: 地下城英雄 - 专注于地下城派系的扩展
+- **HOTA**: 深渊号角 - 流行的非官方扩展，增加了新派系和游戏机制
+- **WOG**: 众神苏醒 - 另一个非官方扩展
+
+### VCMI 原生
+- **VCMI**: VCMI 专用的格式，支持额外的游戏特性和改进
+
+## 格式检测
+
+地图格式通常通过文件头部的魔数 (magic number) 来识别：
+
+- ROE: 0x0e (14)
+- AB: 0x15 (21)
+- SOD: 0x1c (28)
+- CHR: 0x1d (29)
+- HOTA: 0x20 (32)
+- WOG: 0x33 (51)
+- VCMI: 0x64 (100)
+
+## 使用场景
+
+`EMapFormat` 枚举用于：
+
+1. **地图加载**: 根据格式选择合适的加载器
+2. **兼容性检查**: 验证地图元素在目标版本中的可用性
+3. **格式转换**: 在不同版本之间转换地图
+4. **功能限制**: 根据版本限制某些游戏特性
+
+## 使用示例
+
+```cpp
+// 检查地图格式
+EMapFormat format = detectMapFormat(fileData);
+switch (format) {
+    case EMapFormat::ROE:
+        // 处理ROE格式地图
+        break;
+    case EMapFormat::SOD:
+        // 处理SOD格式地图
+        break;
+    case EMapFormat::VCMI:
+        // 处理VCMI原生格式地图
+        break;
+    default:
+        // 无效或不支持的格式
+        break;
+}
+```
+
+## 相关类
+
+- `MapFeaturesH3M`: 地图格式特性定义
+- `CMapLoader`: 地图加载器类
+- `CMapService`: 地图服务类

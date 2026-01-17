@@ -1,337 +1,504 @@
-# VCMI 客户端库待转换文件列表
+# VCMI 库文档转换待办列表
 
-此文件记录了从 `/vcmi-client/lib` 目录中需要生成文档的头文件列表。已存在文档的文件已被排除。
+## 概述
 
-## 转换规则
-- 检查 `/vcmi-client/lib` 目录下的所有 `.h` 和 `.hpp` 文件
-- 排除已存在于 `/docs/classes` 目录中的文档
-- 按模块分类记录待转换文件
-- 转换完成后更新此列表
+此列表包含以下内容：
+1. 在 `vcmi/lib` 目录中存在但在 `vcmi-assets/docs` 中没有对应文档的头文件
+2. 在 `vcmi-assets/docs` 中存在但没有对应 `vcmi/lib` 中头文件的文档文件
 
-## 待转换文件列表
+## 统计信息
+- 总 .h 文件数：392
+- 有对应文档的 .h 文件数：209
+- 缺失文档的 .h 文件数：183
+- 有对应 .h 文件的 .md 文件数：209
+- 没有对应 .h 文件的 .md 文件数：150
 
-### 战斗 (Battle)
-- AutocombatPreferences.h [✓] 2026-01-17 06:50
-- BattleHex.h [✓] 2026-01-17 06:52
-- BattleHexArray.h [✓] 2026-01-17 06:55
-- BattleLayout.h [✓] 2026-01-17 06:57
-- BattleProxy.h [✓] 2026-01-17 07:00
-- BattleStateInfoForRetreat.h [✓] 2026-01-17 07:02
-- BattleUnitTurnReason.h [✓] 2026-01-17 07:04
-- CBattleInfoEssentials.h [✓] 2026-01-17 07:07
-- CObstacleInstance.h [✓] 2026-01-17 07:10
-- CPlayerBattleCallback.h [✓] 2026-01-17 07:13
-- Destination.h [✓] 2026-01-17 07:15
-- IBattleInfoCallback.h [✓] 2026-01-17 07:18
-- IBattleState.h [✓] 2026-01-17 07:20
-- IUnitInfo.h [✓] 2026-01-17 07:23
-- PossiblePlayerBattleAction.h [✓] 2026-01-17 07:26
-- ReachabilityInfo.h [✓] 2026-01-17 07:29
-- SiegeInfo.h [✓] 2026-01-17 07:32
-- SideInBattle.h [✓] 2026-01-17 07:35
+## 缺失的文档文件 (.h 文件)
 
-### 奖励系统 (Bonuses)
-- BonusCache.h [✓] 2026-01-17 07:38
-- BonusCustomTypes.h [✓] 2026-01-17 07:42
-- BonusEnum.h [✓] 2026-01-17 07:47
-- BonusList.h
-- BonusSelector.h [✓] 2026-01-17 07:51
-- Limiters.h
-- Propagators.h
-- Updaters.h
+- [ ] AsyncRunner.h
+- [ ] BattleFieldHandler.h
+- [ ] callback\GameRandomizer.h
+- [ ] callback\IBattleCallback.h
+- [ ] callback\IBattleEventsReceiver.h
+- [ ] callback\IClient.h
+- [ ] callback\IGameActionCallback.h
+- [ ] callback\IGameEventCallback.h
+- [ ] callback\IGameEventsReceiver.h
+- [ ] callback\IGameRandomizer.h
+- [ ] callback\MapInfoCallback.h
+- [ ] campaign\CampaignBonus.h
+- [ ] campaign\CampaignConstants.h
+- [ ] campaign\CampaignHandler.h
+- [ ] campaign\CampaignRegions.h
+- [ ] campaign\CampaignRegionsHandler.h
+- [ ] campaign\CampaignScenarioPrologEpilog.h
+- [ ] campaign\CampaignState.h
+- [ ] CAndroidVMHelper.h
+- [ ] CBonusTypeHandler.h
+- [ ] CConfigHandler.h
+- [ ] CConsoleHandler.h
+- [ ] CCreatureHandler.h
+- [ ] Color.h
+- [ ] ConditionalWait.h
+- [ ] constants\EntityIdentifiers.h
+- [ ] constants\IdentifierBase.h
+- [ ] constants\VariantIdentifier.h
+- [ ] CRandomGenerator.h
+- [ ] CScriptingModule.h
+- [ ] CSkillHandler.h
+- [ ] CSoundBase.h
+- [ ] CStack.h
+- [ ] CStopWatch.h
+- [ ] CThreadHelper.h
+- [ ] events\ApplyDamage.h
+- [ ] events\GameResumed.h
+- [ ] events\ObjectVisitEnded.h
+- [ ] events\ObjectVisitStarted.h
+- [ ] events\PlayerGotTurn.h
+- [ ] events\TurnStarted.h
+- [ ] ExceptionsCommon.h
+- [ ] ExtraOptionsInfo.h
+- [ ] filesystem\AdapterLoaders.h
+- [ ] filesystem\CArchiveLoader.h
+- [ ] filesystem\CBinaryReader.h
+- [ ] filesystem\CCompressedStream.h
+- [ ] filesystem\CFileInputStream.h
+- [ ] filesystem\CFilesystemLoader.h
+- [ ] filesystem\CInputOutputStream.h
+- [ ] filesystem\CMemoryBuffer.h
+- [ ] filesystem\CMemoryStream.h
+- [ ] filesystem\CStream.h
+- [ ] filesystem\CZipLoader.h
+- [ ] filesystem\CZipSaver.h
+- [ ] filesystem\FileInfo.h
+- [ ] filesystem\MinizipExtensions.h
+- [ ] filesystem\ResourcePath.h
+- [ ] FunctionList.h
+- [ ] GameConstants.h
+- [ ] GameLibrary.h
+- [ ] GameSettings.h
+- [ ] gameState\EVictoryLossCheckResult.h
+- [ ] gameState\GameStatePackVisitor.h
+- [ ] gameState\TavernSlot.h
+- [ ] IBonusTypeHandler.h
+- [ ] int3.h
+- [ ] json\JsonBonus.h
+- [ ] json\JsonFormatException.h
+- [ ] json\JsonParser.h
+- [ ] json\JsonRandom.h
+- [ ] json\JsonUtils.h
+- [ ] json\JsonValidator.h
+- [ ] json\JsonWriter.h
+- [ ] LoadProgress.h
+- [ ] logging\CBasicLogConfigurator.h
+- [ ] logging\VisualLogger.h
+- [ ] LogicalExpression.h
+- [ ] mapObjectConstructors\AObjectTypeHandler.h
+- [ ] mapObjectConstructors\CDefaultObjectTypeHandler.h
+- [ ] mapObjectConstructors\CObjectClassesHandler.h
+- [ ] mapObjectConstructors\CommonConstructors.h
+- [ ] mapObjectConstructors\CRewardableConstructor.h
+- [ ] mapObjectConstructors\DwellingInstanceConstructor.h
+- [ ] mapObjectConstructors\FlaggableInstanceConstructor.h
+- [ ] mapObjectConstructors\HillFortInstanceConstructor.h
+- [ ] mapObjectConstructors\IObjectInfo.h
+- [ ] mapObjectConstructors\MarketInstanceConstructor.h
+- [ ] mapObjectConstructors\RandomMapInfo.h
+- [ ] mapObjectConstructors\ShipyardInstanceConstructor.h
+- [ ] mapObjectConstructors\SObjectSounds.h
+- [ ] mapObjects\CompoundMapObjectID.h
+- [ ] modding\ActiveModsInSaveList.h
+- [ ] modding\IdentifierStorage.h
+- [ ] modding\ModIncompatibility.h
+- [ ] modding\ModScope.h
+- [ ] network\NetworkDefines.h
+- [ ] networkPacks\ArtifactLocation.h
+- [ ] networkPacks\BattleChanges.h
+- [ ] networkPacks\Component.h
+- [ ] networkPacks\EInfoWindowMode.h
+- [ ] networkPacks\EntityChanges.h
+- [ ] networkPacks\EOpenWindowMode.h
+- [ ] networkPacks\NetPacksBase.h
+- [ ] networkPacks\NetPackVisitor.h
+- [ ] networkPacks\ObjProperty.h
+- [ ] networkPacks\PacksForClient.h
+- [ ] networkPacks\PacksForClientBattle.h
+- [ ] networkPacks\PacksForLobby.h
+- [ ] networkPacks\PacksForServer.h
+- [ ] networkPacks\SaveLocalState.h
+- [ ] networkPacks\SetRewardableConfiguration.h
+- [ ] networkPacks\SetStackEffect.h
+- [ ] networkPacks\StackLocation.h
+- [ ] networkPacks\TradeItem.h
+- [ ] ObstacleHandler.h
+- [ ] pathfinder\INodeStorage.h
+- [ ] pathfinder\NodeStorage.h
+- [ ] pathfinder\PathfinderCache.h
+- [ ] pathfinder\PathfinderOptions.h
+- [ ] pathfinder\PathfinderUtil.h
+- [ ] pathfinder\PathfindingRules.h
+- [ ] Point.h
+- [ ] Rect.h
+- [ ] ResourceSet.h
+- [ ] rewardable\Configuration.h
+- [ ] rewardable\Info.h
+- [ ] rewardable\Interface.h
+- [ ] rewardable\Limiter.h
+- [ ] rewardable\Reward.h
+- [ ] RiverHandler.h
+- [ ] rmg\CRmgTemplateStorage.h
+- [ ] rmg\CRoadRandomizer.h
+- [ ] rmg\float3.h
+- [ ] rmg\Functions.h
+- [ ] rmg\MapProxy.h
+- [ ] rmg\modificators\ConnectionsPlacer.h
+- [ ] rmg\modificators\MinePlacer.h
+- [ ] rmg\modificators\Modificator.h
+- [ ] rmg\modificators\ObjectDistributor.h
+- [ ] rmg\modificators\ObjectManager.h
+- [ ] rmg\modificators\ObstaclePlacer.h
+- [ ] rmg\modificators\PrisonHeroPlacer.h
+- [ ] rmg\modificators\QuestArtifactPlacer.h
+- [ ] rmg\modificators\RiverPlacer.h
+- [ ] rmg\modificators\RoadPlacer.h
+- [ ] rmg\modificators\RockFiller.h
+- [ ] rmg\modificators\RockPlacer.h
+- [ ] rmg\modificators\TerrainPainter.h
+- [ ] rmg\modificators\TownPlacer.h
+- [ ] rmg\modificators\TreasurePlacer.h
+- [ ] rmg\modificators\WaterAdopter.h
+- [ ] rmg\modificators\WaterProxy.h
+- [ ] rmg\modificators\WaterRoutes.h
+- [ ] rmg\ObjectConfig.h
+- [ ] rmg\ObjectInfo.h
+- [ ] rmg\PenroseTiling.h
+- [ ] rmg\RmgMap.h
+- [ ] rmg\RmgPath.h
+- [ ] rmg\TileInfo.h
+- [ ] RoadHandler.h
+- [ ] ScopeGuard.h
+- [ ] ScriptHandler.h
+- [ ] serializer\BinaryDeserializer.h
+- [ ] serializer\CLoadFile.h
+- [ ] serializer\CSaveFile.h
+- [ ] serializer\GameConnection.h
+- [ ] serializer\GameConnectionID.h
+- [ ] serializer\JsonUpdater.h
+- [ ] serializer\PlayerConnectionID.h
+- [ ] serializer\SerializerReflection.h
+- [ ] spells\adventure\AdventureSpellEffect.h
+- [ ] spells\adventure\RemoveObjectEffect.h
+- [ ] spells\adventure\SummonBoatEffect.h
+- [ ] spells\adventure\ViewWorldEffect.h
+- [ ] spells\effects\Timed.h
+- [ ] spells\effects\UnitEffect.h
+- [ ] StdInc.h
+- [ ] TerrainHandler.h
+- [ ] TurnTimerInfo.h
+- [ ] UnlockGuard.h
+- [ ] vcmi_endian.h
+- [ ] VCMIDirs.h
 
-### 回调 (Callback)
-- CAdventureAI.h [✓] 2026-01-17 09:00
-- CBattleCallback.h [✓] 2026-01-17 09:05
-- CBattleGameInterface.h [✓] 2026-01-17 09:10
-- CCallback.h [✓] 2026-01-17 09:15
-- CDynLibHandler.h [✓] 2026-01-17 09:20
-- CGameInterface.h [✓] 2026-01-17 09:25
-- CGlobalAI.h [✓] 2026-01-17 09:30
-- CNonConstInfoCallback.h [✓] 2026-01-17 09:35
-- CPlayerSpecificInfoCallback.h [✓] 2026-01-17 09:40
-- CShipyard.h
-- CShipyardManager.h
-- EditorCallback.h
-- GameCallbackHolder.h
-- IGameInfoCallback.h
-- ILocalStateCallback.h
-- IShipyard.h
+## 没有对应源文件的文档文件 (.md 文件)
 
-### 常量 (Constants)
-- Enumerations.h [✓] 2026-01-17 10:00
-- NumericConstants.h [✓] 2026-01-17 10:05
-- StringConstants.h [✓] 2026-01-17 10:10
-- IdentifierBase.h
-- VariantIdentifier.h
+- [ ] classes\artifacts\Artifact.md
+- [ ] classes\artifacts\CChargedArtifact.md
+- [ ] classes\artifacts\CCombinedArtifact.md
+- [ ] classes\artifacts\CGrowingArtifact.md
+- [ ] classes\artifacts\CScrollArtifact.md
+- [ ] classes\battle\AttackableTiles.md
+- [ ] classes\battle\BattleClientInterfaceData.md
+- [ ] classes\battle\BattleHexEDir.md
+- [ ] classes\battle\CCasts.md
+- [ ] classes\battle\CHealth.md
+- [ ] classes\battle\CRetaliations.md
+- [ ] classes\battle\CShots.md
+- [ ] classes\battle\DamageEstimation.md
+- [ ] classes\battle\ESpellCastProblem.md
+- [ ] classes\battle\EWallPart.md
+- [ ] classes\battle\ForcedAction.md
+- [ ] classes\bonuses\BonusStacking.md
+- [ ] classes\bonuses\BonusType.md
+- [ ] classes\bonuses\BonusValueType.md
+- [ ] classes\bonuses\CPropagatorNodeType.md
+- [ ] classes\bonuses\CSelector.md
+- [ ] classes\bonuses\IConstBonusProvider.md
+- [ ] classes\bonuses\ILimiter.md
+- [ ] classes\bonuses\IPropagator.md
+- [ ] classes\bonuses\IUpdater.md
+- [ ] classes\CGameHandler.md
+- [ ] classes\creatures\Creature.md
+- [ ] classes\entities\ACreature.md
+- [ ] classes\entities\AFactionMember.md
+- [ ] classes\entities\Artifact.md
+- [ ] classes\entities\ArtifactService.md
+- [ ] classes\entities\CCreature.md
+- [ ] classes\entities\Creature.md
+- [ ] classes\entities\CreatureEntity.md
+- [ ] classes\entities\CreatureService.md
+- [ ] classes\entities\Entity.md
+- [ ] classes\entities\EntityService.md
+- [ ] classes\entities\EntityServiceT.md
+- [ ] classes\entities\EntityT.md
+- [ ] classes\entities\EntityWithBonuses.md
+- [ ] classes\entities\HeroType.md
+- [ ] classes\entities\HeroTypeService.md
+- [ ] classes\entities\IConstBonusProvider.md
+- [ ] classes\environment\Environment.md
+- [ ] classes\events\Event.md
+- [ ] classes\events\EventBus.md
+- [ ] classes\events\EventSubscription.md
+- [ ] classes\events\SubscriptionRegistry.md
+- [ ] classes\factions\AFactionMember.md
+- [ ] classes\factions\Faction.md
+- [ ] classes\factions\INativeTerrainProvider.md
+- [ ] classes\heroes\HeroClass.md
+- [ ] classes\herotypes\HeroType.md
+- [ ] classes\identifiers\EActionType.md
+- [ ] classes\identifiers\Metatype.md
+- [ ] classes\json\JsonParsingSettings.md
+- [ ] classes\json\JsonType.md
+- [ ] classes\logging\CColorMapping.md
+- [ ] classes\logging\CLogConsoleTarget.md
+- [ ] classes\logging\CLogFileTarget.md
+- [ ] classes\logging\CLogFormatter.md
+- [ ] classes\logging\CLoggerDomain.md
+- [ ] classes\logging\CLogManager.md
+- [ ] classes\logging\EConsoleTextColor.md
+- [ ] classes\logging\ELogLevel.md
+- [ ] classes\logging\ILogTarget.md
+- [ ] classes\logging\LogRecord.md
+- [ ] classes\network\IInternalConnection.md
+- [ ] classes\network\INetworkClient.md
+- [ ] classes\network\INetworkClientListener.md
+- [ ] classes\network\INetworkConnection.md
+- [ ] classes\network\INetworkConnectionListener.md
+- [ ] classes\network\INetworkHandler.md
+- [ ] classes\network\INetworkServer.md
+- [ ] classes\network\INetworkServerListener.md
+- [ ] classes\network\INetworkTimerListener.md
+- [ ] classes\network\InternalConnection.md
+- [ ] classes\network\NetworkAcceptor.md
+- [ ] classes\network\NetworkBuffer.md
+- [ ] classes\network\NetworkContext.md
+- [ ] classes\network\NetworkSocket.md
+- [ ] classes\network\NetworkTimer.md
+- [ ] classes\networkPacks\BattleStart.md
+- [ ] classes\networkPacks\CPack.md
+- [ ] classes\networkPacks\CPackForClient.md
+- [ ] classes\networkPacks\CPackForLobby.md
+- [ ] classes\networkPacks\CPackForServer.md
+- [ ] classes\networkPacks\EndTurn.md
+- [ ] classes\networkPacks\ICPackVisitor.md
+- [ ] classes\networkPacks\LobbyClientConnected.md
+- [ ] classes\networkPacks\PackageApplied.md
+- [ ] classes\networkPacks\Query.md
+- [ ] classes\pathfinder\PathfinderConfig.md
+- [ ] classes\players\Player.md
+- [ ] classes\resources\ResourceType.md
+- [ ] classes\rmg\CTownHints.md
+- [ ] classes\rmg\CTownInfo.md
+- [ ] classes\rmg\CTreasureInfo.md
+- [ ] classes\rmg\EConnectionType.md
+- [ ] classes\rmg\ERoadOption.md
+- [ ] classes\rmg\ETemplateZoneType.md
+- [ ] classes\rmg\EZoneLevel.md
+- [ ] classes\rmg\TRmgTemplateZoneId.md
+- [ ] classes\rmg\ZoneConnection.md
+- [ ] classes\rmg\ZoneOptions.md
+- [ ] classes\scripting\Context.md
+- [ ] classes\scripting\Pool.md
+- [ ] classes\scripting\Script.md
+- [ ] classes\scripting\Service.md
+- [ ] classes\server\CGameHandler.md
+- [ ] classes\server\CVCMIServer.md
+- [ ] classes\server\GlobalLobbyProcessor.md
+- [ ] classes\server\IGameServer.md
+- [ ] classes\server\ServerCallback.md
+- [ ] classes\server\ServerSpellCastEnvironment.md
+- [ ] classes\server\TurnTimerHandler.md
+- [ ] classes\services\Services.md
+- [ ] classes\skills\CSkill.md
+- [ ] classes\skills\Skill.md
+- [ ] classes\spells\AdventureSpellCastParameters.md
+- [ ] classes\spells\AdventureSpellRangedEffect.md
+- [ ] classes\spells\AnimationInfo.md
+- [ ] classes\spells\AnimationItem.md
+- [ ] classes\spells\BaseMechanics.md
+- [ ] classes\spells\BattleCast.md
+- [ ] classes\spells\Caster.md
+- [ ] classes\spells\CSpell.md
+- [ ] classes\spells\ESpellCastResult.md
+- [ ] classes\spells\IAdventureSpellEffect.md
+- [ ] classes\spells\IAdventureSpellMechanics.md
+- [ ] classes\spells\IBattleCast.md
+- [ ] classes\spells\LevelInfo.md
+- [ ] classes\spells\Mechanics.md
+- [ ] classes\spells\Mode.md
+- [ ] classes\spells\ProjectileInfo.md
+- [ ] classes\spells\SpellCastEnvironment.md
+- [ ] classes\spells\SpellEffectValUptr.md
+- [ ] classes\spells\SpellSchool.md
+- [ ] classes\spells\TargetAggregator.md
+- [ ] classes\spells\TargetApplier.md
+- [ ] classes\spells\TargetCalculator.md
+- [ ] classes\spells\TargetCombiner.md
+- [ ] classes\spells\TargetFilter.md
+- [ ] classes\spells\TargetInfo.md
+- [ ] classes\spells\TargetMerger.md
+- [ ] classes\spells\TargetSelector.md
+- [ ] classes\spells\TargetSplitter.md
+- [ ] classes\spells\TargetTransformer.md
+- [ ] classes\spells\TargetValidator.md
+- [ ] classes\spells\VerticalPosition.md
 
-### 实体 (Entities)
-- CArtifact.h [✓] 2026-01-17 10:30
-- CArtifactInstance.h [✓] 2026-01-17 10:35
-- CArtifactSet.h [✓] 2026-01-17 10:40
-- ArtSlotInfo.h [✓] 2026-01-17 10:45
-- CBuilding.h [✓] 2026-01-17 10:50
-- CFaction.h [✓] 2026-01-17 10:55
-- CHero.h [✓] 2026-01-17 11:00
-- CHeroClass.h
-- CHeroHandler.h
-- EHeroGender.h
-- CSpell.h
-- CSpellHandler.h
-- CStackInstance.h
-- Entity.h
-- EntityIdentifiers.h
-- EntityImplementation.h
-- IdentifierStorage.h
-- IConstBonusProvider.h
-- IHandlerBase.h
-
-### 事件 (Events)
-- CEventBus.h
-- Event.h
-- EventBus.h
-- Events.h
-- IEventDispatcher.h
-- IEventSink.h
-- Subscriber.h
-
-### 文件系统 (Filesystem)
-- CInputStream.h
-- COutputStream.h
-- CZipLoader.h
-- CVCMZFileReader.h
-- Filesystem.h
-- ISimpleResourceLoader.h
-- JsonUtils.h
-- Loaders.h
-- MemoryReadWriteStream.h
-- ReadableFileStream.h
-- Resource.h
-- ResourceID.h
-- ResourcePath.h
-- StandardPathProvider.h
-- ZipArchive.h
-
-### 游戏状态 (Game State)
-- CGameState.h
-- CPlayerState.h
-- IGameStateCallback.h
-- ILocalStateCallback.h
-- IObjectConstructionManager.h
-
-### JSON
-- JsonDocument.h
-- JsonEmitter.h
-- JsonForwardDeclaration.h
-- JsonNode.h
-- JsonParser.h
-- JsonUtils.h
-
-### 日志 (Logging)
-- ILogger.h
-- Logger.h
-
-### 地图对象 (Map Objects)
-- CGObjectInstance.h
-- CGTownInstance.h
-- CArmedInstance.h
-- CObstacleInstance.h
-- CGDwelling.h
-- CGShipyard.h
-- CGMarket.h
-- CGSignBottle.h
-- CGWitchhut.h
-- CGMagicWell.h
-- CGSirens.h
-- CGOracle.h
-- CGJail.h
-- CGEvent.h
-- CGGrail.h
-- CGMagi.h
-- CGMonolith.h
-- CGSubterraneanGate.h
-- CGWhirlpool.h
-- CGShip.h
-- CGCreature.h
-- CGArtifact.h
-- CGResource.h
-- CGMine.h
-- CGTeleport.h
-- CGSawmill.h
-- CGAbandonedMine.h
-- CGDaemonSummon.h
-- CGQuestGuard.h
-- CGSeerHut.h
-- CGHeroes.h
-- CGTownBuilding.h
-- CGNotImplementedYet.h
-- MapObjects.h
-- MiscObjects.h
-- ObjectTemplate.h
-- ObstacleSetHandler.h
-- TownBuildingInstance.h
-
-### 模组 (Modding)
-- ActiveModsInSaveList.h
-- IdentifierStorage.h
-- ModIncompatibility.h
-- ModScope.h
-
-### 网络 (Network)
-- NetworkInterface.h [✓] 2026-01-17 11:30
-- NetworkHandler.h [✓] 2026-01-17 11:35
-- NetworkConnection.h [✓] 2026-01-17 11:40
-- NetworkServer.h [✓] 2026-01-17 11:45
-- NetworkDefines.h
-
-### 网络包 (Network Packs)
-- ArtifactLocation.h
-- BattleChanges.h
-- Component.h
-- EInfoWindowMode.h
-- EntityChanges.h
-- EOpenWindowMode.h
-- NetPacksBase.h
-- NetPackVisitor.h
-- ObjProperty.h
-- PacksForClient.h
-- PacksForClientBattle.h
-- PacksForLobby.h
-- PacksForServer.h
-- SaveLocalState.h
-- SetRewardableConfiguration.h
-- SetStackEffect.h
-- StackLocation.h
-- TradeItem.h
-
-### 寻路 (Pathfinder)
-- INodeStorage.h
-- NodeStorage.h
-- PathfinderCache.h
-- PathfinderOptions.h
-- PathfinderUtil.h
-- PathfindingRules.h
-
-### RMG (Random Map Generator)
-- modificators/ConnectionsPlacer.h
-- modificators/MinePlacer.h
-- modificators/Modificator.h
-- modificators/ObjectDistributor.h
-- modificators/ObjectManager.h
-- modificators/ObstaclePlacer.h
-- modificators/PrisonHeroPlacer.h
-- modificators/QuestArtifactPlacer.h
-- modificators/RiverPlacer.h
-- modificators/RoadPlacer.h
-- modificators/RockFiller.h
-- modificators/RockPlacer.h
-- modificators/TerrainPainter.h
-- modificators/TownPlacer.h
-- modificators/TreasurePlacer.h
-- modificators/WaterAdopter.h
-- modificators/WaterProxy.h
-- modificators/WaterRoutes.h
-- CMapGenerator.h
-- CMapGenOptions.h
-- CRmgTemplateStorage.h
-- CRoadRandomizer.h
-- CZonePlacer.h
-- float3.h
-- Functions.h
-- MapProxy.h
-- ObjectConfig.h
-- ObjectInfo.h
-- PenroseTiling.h
-- RmgArea.h
-- RmgMap.h
-- RmgObject.h
-- RmgPath.h
-- TileInfo.h
-- Zone.h
-
-### 序列化 (Serializer)
-- BinaryDeserializer.h
-- CLoadFile.h
-- CSaveFile.h
-- GameConnection.h
-- GameConnectionID.h
-- JsonDeserializer.h
-- JsonSerializeFormat.h
-- JsonSerializer.h
-- JsonTreeSerializer.h
-- JsonUpdater.h
-- PlayerConnectionID.h
-- SerializerReflection.h
-
-### 法术 (Spells)
-- adventure/AdventureSpellEffect.h
-- adventure/AdventureSpellMechanics.h
-- adventure/DimensionDoorEffect.h
-- adventure/RemoveObjectEffect.h
-- adventure/SummonBoatEffect.h
-- adventure/TownPortalEffect.h
-- adventure/ViewWorldEffect.h
-- effects/Catapult.h [✓] 2026-01-17 19:00
-- effects/Clone.h [✓] 2026-01-17 18:40
-- effects/Damage.h [✓] 2026-01-17 18:00
-- effects/DemonSummon.h [✓] 2026-01-17 19:10
-- effects/Dispel.h [✓] 2026-01-17 18:50
-- effects/Effect.h [✓] 2026-01-17 17:50
-- effects/Effects.h [✓] 2026-01-17 20:20
-- effects/EffectsFwd.h [✓] 2026-01-17 20:20
-- effects/Heal.h [✓] 2026-01-17 18:10
-- effects/LocationEffect.h [✓] 2026-01-17 19:20
-- effects/Moat.h [✓] 2026-01-17 19:30
-- effects/Obstacle.h [✓] 2026-01-17 19:40
-- effects/Registry.h [✓] 2026-01-17 20:10
-- effects/RemoveObstacle.h [✓] 2026-01-17 19:50
-- effects/Sacrifice.h [✓] 2026-01-17 20:00
-- effects/Summon.h [✓] 2026-01-17 18:20
-- effects/Teleport.h [✓] 2026-01-17 18:30
-- effects/Timed.h
-- effects/UnitEffect.h
-- AbilityCaster.h
-- BattleSpellMechanics.h
-- BonusCaster.h
-- ExternalCaster.h
-- ObstacleCasterProxy.h
-- Problem.h
-- ProxyCaster.h
-- SpellSchoolHandler.h
-- TargetCondition.h
-- ViewSpellInt.h
-
-### 文本 (Texts)
-- CGeneralTextHandler.h
-- CLegacyConfigParser.h
-- Languages.h
-- MetaString.h
-- TextIdentifier.h
-- TextLocalizationContainer.h
-- TextOperations.h
-
-### 地图 (Mapping)
-- mapping/CCastleEvent.h [✓] 2026-01-17 20:30
-- mapping/CDrawRoadsOperation.h [✓] 2026-01-17 20:30
-- mapping/CMapEditManager.h [✓] 2026-01-17 20:30
-- mapping/CMapEvent.h [✓] 2026-01-17 20:30
-- mapping/CMapInfo.h [✓] 2026-01-17 20:30
-- mapping/CMapOperation.h [✓] 2026-01-17 20:30
-- mapping/CMapService.h [✓] 2026-01-17 20:30
-- mapping/MapEditUtils.h [✓] 2026-01-17 20:30
-- mapping/MapFeaturesH3M.h [✓] 2026-01-17 20:30
-- mapping/MapFormat.h [✓] 2026-01-17 20:30
-- mapping/MapFormatH3M.h
-- mapping/MapFormatJson.h
-- mapping/MapFormatSettings.h
-- mapping/MapIdentifiersH3M.h
-- mapping/MapReaderH3M.h
-- mapping/ObstacleProxy.h
-- mapping/TerrainTile.h [✓] 2026-01-17 20:45
-
-## 转换状态
-- 总文件数: 345
-- 已完成: 0
-- 剩余: 345
-
-上次更新时间: 2026-01-17 06:45
+- [ ] classes\artifacts\Artifact.md
+- [ ] classes\artifacts\CChargedArtifact.md
+- [ ] classes\artifacts\CCombinedArtifact.md
+- [ ] classes\artifacts\CGrowingArtifact.md
+- [ ] classes\artifacts\CScrollArtifact.md
+- [ ] classes\battle\AttackableTiles.md
+- [ ] classes\battle\BattleClientInterfaceData.md
+- [ ] classes\battle\BattleHexEDir.md
+- [ ] classes\battle\CCasts.md
+- [ ] classes\battle\CHealth.md
+- [ ] classes\battle\CRetaliations.md
+- [ ] classes\battle\CShots.md
+- [ ] classes\battle\DamageEstimation.md
+- [ ] classes\battle\ESpellCastProblem.md
+- [ ] classes\battle\EWallPart.md
+- [ ] classes\battle\ForcedAction.md
+- [ ] classes\bonuses\BonusStacking.md
+- [ ] classes\bonuses\BonusType.md
+- [ ] classes\bonuses\BonusValueType.md
+- [ ] classes\bonuses\CPropagatorNodeType.md
+- [ ] classes\bonuses\CSelector.md
+- [ ] classes\bonuses\IConstBonusProvider.md
+- [ ] classes\bonuses\ILimiter.md
+- [ ] classes\bonuses\IPropagator.md
+- [ ] classes\bonuses\IUpdater.md
+- [ ] classes\CGameHandler.md
+- [ ] classes\creatures\Creature.md
+- [ ] classes\entities\ACreature.md
+- [ ] classes\entities\AFactionMember.md
+- [ ] classes\entities\Artifact.md
+- [ ] classes\entities\ArtifactService.md
+- [ ] classes\entities\CCreature.md
+- [ ] classes\entities\Creature.md
+- [ ] classes\entities\CreatureEntity.md
+- [ ] classes\entities\CreatureService.md
+- [ ] classes\entities\Entity.md
+- [ ] classes\entities\EntityService.md
+- [ ] classes\entities\EntityServiceT.md
+- [ ] classes\entities\EntityT.md
+- [ ] classes\entities\EntityWithBonuses.md
+- [ ] classes\entities\HeroType.md
+- [ ] classes\entities\HeroTypeService.md
+- [ ] classes\entities\IConstBonusProvider.md
+- [ ] classes\environment\Environment.md
+- [ ] classes\events\Event.md
+- [ ] classes\events\EventBus.md
+- [ ] classes\events\EventSubscription.md
+- [ ] classes\events\SubscriptionRegistry.md
+- [ ] classes\factions\AFactionMember.md
+- [ ] classes\factions\Faction.md
+- [ ] classes\factions\INativeTerrainProvider.md
+- [ ] classes\heroes\HeroClass.md
+- [ ] classes\herotypes\HeroType.md
+- [ ] classes\identifiers\EActionType.md
+- [ ] classes\identifiers\Metatype.md
+- [ ] classes\json\JsonParsingSettings.md
+- [ ] classes\json\JsonType.md
+- [ ] classes\logging\CColorMapping.md
+- [ ] classes\logging\CLogConsoleTarget.md
+- [ ] classes\logging\CLogFileTarget.md
+- [ ] classes\logging\CLogFormatter.md
+- [ ] classes\logging\CLoggerDomain.md
+- [ ] classes\logging\CLogManager.md
+- [ ] classes\logging\EConsoleTextColor.md
+- [ ] classes\logging\ELogLevel.md
+- [ ] classes\logging\ILogTarget.md
+- [ ] classes\logging\LogRecord.md
+- [ ] classes\network\IInternalConnection.md
+- [ ] classes\network\INetworkClient.md
+- [ ] classes\network\INetworkClientListener.md
+- [ ] classes\network\INetworkConnection.md
+- [ ] classes\network\INetworkConnectionListener.md
+- [ ] classes\network\INetworkHandler.md
+- [ ] classes\network\INetworkServer.md
+- [ ] classes\network\INetworkServerListener.md
+- [ ] classes\network\INetworkTimerListener.md
+- [ ] classes\network\InternalConnection.md
+- [ ] classes\network\NetworkAcceptor.md
+- [ ] classes\network\NetworkBuffer.md
+- [ ] classes\network\NetworkContext.md
+- [ ] classes\network\NetworkSocket.md
+- [ ] classes\network\NetworkTimer.md
+- [ ] classes\networkPacks\BattleStart.md
+- [ ] classes\networkPacks\CPack.md
+- [ ] classes\networkPacks\CPackForClient.md
+- [ ] classes\networkPacks\CPackForLobby.md
+- [ ] classes\networkPacks\CPackForServer.md
+- [ ] classes\networkPacks\EndTurn.md
+- [ ] classes\networkPacks\ICPackVisitor.md
+- [ ] classes\networkPacks\LobbyClientConnected.md
+- [ ] classes\networkPacks\PackageApplied.md
+- [ ] classes\networkPacks\Query.md
+- [ ] classes\pathfinder\PathfinderConfig.md
+- [ ] classes\players\Player.md
+- [ ] classes\resources\ResourceType.md
+- [ ] classes\rmg\CTownHints.md
+- [ ] classes\rmg\CTownInfo.md
+- [ ] classes\rmg\CTreasureInfo.md
+- [ ] classes\rmg\EConnectionType.md
+- [ ] classes\rmg\ERoadOption.md
+- [ ] classes\rmg\ETemplateZoneType.md
+- [ ] classes\rmg\EZoneLevel.md
+- [ ] classes\rmg\TRmgTemplateZoneId.md
+- [ ] classes\rmg\ZoneConnection.md
+- [ ] classes\rmg\ZoneOptions.md
+- [ ] classes\scripting\Context.md
+- [ ] classes\scripting\Pool.md
+- [ ] classes\scripting\Script.md
+- [ ] classes\scripting\Service.md
+- [ ] classes\server\CGameHandler.md
+- [ ] classes\server\CVCMIServer.md
+- [ ] classes\server\GlobalLobbyProcessor.md
+- [ ] classes\server\IGameServer.md
+- [ ] classes\server\ServerCallback.md
+- [ ] classes\server\ServerSpellCastEnvironment.md
+- [ ] classes\server\TurnTimerHandler.md
+- [ ] classes\services\Services.md
+- [ ] classes\skills\CSkill.md
+- [ ] classes\skills\Skill.md
+- [ ] classes\spells\AdventureSpellCastParameters.md
+- [ ] classes\spells\AdventureSpellRangedEffect.md
+- [ ] classes\spells\AnimationInfo.md
+- [ ] classes\spells\AnimationItem.md
+- [ ] classes\spells\BaseMechanics.md
+- [ ] classes\spells\BattleCast.md
+- [ ] classes\spells\Caster.md
+- [ ] classes\spells\CSpell.md
+- [ ] classes\spells\ESpellCastResult.md
+- [ ] classes\spells\IAdventureSpellEffect.md
+- [ ] classes\spells\IAdventureSpellMechanics.md
+- [ ] classes\spells\IBattleCast.md
+- [ ] classes\spells\LevelInfo.md
+- [ ] classes\spells\Mechanics.md
+- [ ] classes\spells\Mode.md
+- [ ] classes\spells\ProjectileInfo.md
+- [ ] classes\spells\SpellCastEnvironment.md
+- [ ] classes\spells\SpellEffectValUptr.md
+- [ ] classes\spells\SpellSchool.md
+- [ ] classes\spells\TargetAggregator.md
+- [ ] classes\spells\TargetApplier.md
+- [ ] classes\spells\TargetCalculator.md
+- [ ] classes\spells\TargetCombiner.md
+- [ ] classes\spells\TargetFilter.md
+- [ ] classes\spells\TargetInfo.md
+- [ ] classes\spells\TargetMerger.md
+- [ ] classes\spells\TargetSelector.md
+- [ ] classes\spells\TargetSplitter.md
+- [ ] classes\spells\TargetTransformer.md
+- [ ] classes\spells\TargetValidator.md
+- [ ] classes\spells\VerticalPosition.md

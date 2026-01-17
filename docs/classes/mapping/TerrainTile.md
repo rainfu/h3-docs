@@ -2,172 +2,277 @@
 
 ## 概述
 
-`TerrainTile` 结构体表示VCMI中地图上的单个地形瓦片，包含地形类型、河流、道路、可访问对象和阻挡对象等信息。它是地图系统的核心组件，定义了地图瓦片的视觉表示、通行性和交互逻辑。
+`TerrainTile` 结构体是 VCMI 地图系统中地形块的核心数据结构。它描述了地图上单个坐标位置的地形信息，包括地形类型、河流、道路、可访问对象、阻塞对象等。每个地形块都包含了完整的视觉和逻辑信息。
 
-## 核心属性
+## 结构体定义
 
-### 地形信息
 ```cpp
-TerrainId terrainType;     // 地形类型ID
-RiverId riverType;         // 河流类型ID
-RoadId roadType;           // 道路类型ID
-```
-
-### 视觉表示
-```cpp
-ui8 terView;               // 地形视觉变体
-ui8 riverDir;              // 河流方向
-ui8 roadDir;               // 道路方向
-ui8 extTileFlags;          // 扩展瓦片标志 (旋转、沿海、顺风等)
-```
-
-### 对象列表
-```cpp
-std::vector<ObjectInstanceID> visitableObjects;  // 可访问对象ID列表
-std::vector<ObjectInstanceID> blockingObjects;   // 阻挡对象ID列表
+struct DLL_LINKAGE TerrainTile
 ```
 
 ## 构造函数
 
-### TerrainTile
 ```cpp
 TerrainTile();
 ```
-- **功能**: 创建地形瓦片，默认初始化为空地形
+默认构造函数，初始化为空的地形块。
 
-## 地形通行性检查
+## 地形可进入性检查
 
-### entrableTerrain
+### entrableTerrain (无参数)
 ```cpp
-bool entrableTerrain() const;
-bool entrableTerrain(const TerrainTile * from) const;
-bool entrableTerrain(bool allowLand, bool allowSea) const;
+inline bool entrableTerrain() const;
 ```
-- **功能**: 检查地形是否可进入
-- **参数**:
-  - `from`: 来源瓦片（用于检查地形类型兼容性）
-  - `allowLand/allowSea`: 是否允许陆地/海洋通行
-- **返回值**: true表示可进入
+检查地形是否可进入（允许陆地和水域）。
+
+### entrableTerrain (来源地形)
+```cpp
+inline bool entrableTerrain(const TerrainTile * from) const;
+```
+检查从指定地形块是否可以进入此地形。
+
+### entrableTerrain (允许类型)
+```cpp
+inline bool entrableTerrain(bool allowLand, bool allowSea) const;
+```
+检查地形是否可进入，指定是否允许陆地和水域。
+
+## 状态检查方法
 
 ### isClear
 ```cpp
 bool isClear(const TerrainTile * from = nullptr) const;
 ```
-- **功能**: 检查瓦片是否清空（无阻挡对象且地形可通行）
-- **参数**: `from` - 来源瓦片
-- **返回值**: true表示瓦片清空
-
-## 对象访问
+检查地形块是否清空（无阻塞对象且地形可进入）。
 
 ### topVisitableObj
 ```cpp
 ObjectInstanceID topVisitableObj(bool excludeTop = false) const;
 ```
-- **功能**: 获取顶部可访问对象的ID
-- **参数**: `excludeTop` - 是否排除顶部对象
-- **返回值**: 对象ID或-1（无对象）
+获取顶部可访问对象的ID。
 
-## 地形类型检查
+**参数：**
+- `excludeTop`: 是否排除顶层对象
 
-### isWater / isLand
+**返回值：** 对象实例ID，如果没有可访问对象返回 -1
+
+### isWater
 ```cpp
-bool isWater() const;
-bool isLand() const;
+inline bool isWater() const;
 ```
-- **功能**: 检查瓦片是否为水域或陆地
-- **返回值**: true表示是相应类型
+检查是否为水域地形。
 
-### hasRiver / hasRoad
+### isLand
 ```cpp
-bool hasRiver() const;
-bool hasRoad() const;
+inline bool isLand() const;
 ```
-- **功能**: 检查瓦片是否有河流或道路
-- **返回值**: true表示有相应地貌
-
-## 特殊效果
-
-### hasFavorableWinds
-```cpp
-bool hasFavorableWinds() const;
-```
-- **功能**: 检查瓦片是否有顺风效果
-- **返回值**: true表示有顺风效果
+检查是否为陆地地形。
 
 ### getDiggingStatus
 ```cpp
 EDiggingStatus getDiggingStatus(bool excludeTop = true) const;
 ```
-- **功能**: 获取挖掘状态
-- **参数**: `excludeTop` - 是否排除顶部对象
-- **返回值**: 挖掘状态枚举
+获取挖掘状态。
 
-## 访问状态
-
-### visitable / blocked
+### hasFavorableWinds
 ```cpp
-bool visitable() const;
-bool blocked() const;
+inline bool hasFavorableWinds() const;
 ```
-- **功能**: 检查瓦片是否有可访问对象或阻挡对象
-- **返回值**: true表示有相应类型的对象
+检查是否有顺风效果。
 
-## 类型访问器
-
-### getTerrain / getRiver / getRoad
+### visitable
 ```cpp
-const TerrainType * getTerrain() const;
-const RiverType * getRiver() const;
-const RoadType * getRoad() const;
+inline bool visitable() const;
 ```
-- **功能**: 获取地形/河流/道路类型的实体对象
-- **返回值**: 相应类型的指针
+检查是否有可访问对象。
 
-### getTerrainID / getRiverID / getRoadID
+### blocked
 ```cpp
-TerrainId getTerrainID() const;
-RiverId getRiverID() const;
-RoadId getRoadID() const;
+inline bool blocked() const;
 ```
-- **功能**: 获取地形/河流/道路的ID
-- **返回值**: 相应类型的ID
+检查是否有阻塞对象。
 
-## 序列化
+## 类型访问方法
+
+### getTerrain
+```cpp
+inline const TerrainType * getTerrain() const;
+```
+获取地形类型对象。
+
+### getRiver
+```cpp
+inline const RiverType * getRiver() const;
+```
+获取河流类型对象。
+
+### getRoad
+```cpp
+inline const RoadType * getRoad() const;
+```
+获取道路类型对象。
+
+### getTerrainID
+```cpp
+inline TerrainId getTerrainID() const;
+```
+获取地形ID。
+
+### getRiverID
+```cpp
+inline RiverId getRiverID() const;
+```
+获取河流ID。
+
+### getRoadID
+```cpp
+inline RoadId getRoadID() const;
+```
+获取道路ID。
+
+### hasRiver
+```cpp
+inline bool hasRiver() const;
+```
+检查是否有河流。
+
+### hasRoad
+```cpp
+inline bool hasRoad() const;
+```
+检查是否有道路。
+
+## 成员变量
+
+### 基本类型
+```cpp
+TerrainId terrainType;  // 地形类型ID
+RiverId riverType;      // 河流类型ID
+RoadId roadType;        // 道路类型ID
+```
+
+### 视觉表示
+```cpp
+ui8 terView;     // 地形视图索引
+ui8 riverDir;    // 河流方向
+ui8 roadDir;     // 道路方向
+```
+
+### 扩展标志
+```cpp
+ui8 extTileFlags; // 扩展地形标志
+```
+**标志位含义：**
+- **位 0-1**: 地形图形旋转
+- **位 2-3**: 河流图形旋转
+- **位 4-5**: 道路图形旋转
+- **位 6**: 海岸线标志（允许登陆或阻挡移动）
+- **位 7**: 顺风效果
+
+### 对象列表
+```cpp
+std::vector<ObjectInstanceID> visitableObjects;  // 可访问对象ID列表
+std::vector<ObjectInstanceID> blockingObjects;   // 阻塞对象ID列表
+```
+
+## 序列化方法
 
 ### serialize
 ```cpp
-template<typename Handler> void serialize(Handler &h)
+template<typename Handler>
+void serialize(Handler & h)
 ```
-- **功能**: 处理地形瓦片的二进制序列化
-- **参数**: `h` - 序列化处理器
+模板序列化方法。
 
-## 扩展标志位
+**序列化内容：**
+- `terrainType`, `terView`
+- `riverType`, `riverDir`
+- `roadType`, `roadDir`
+- `extTileFlags`
+- `visitableObjects`, `blockingObjects`
 
-`extTileFlags` 的位标志定义：
+**版本兼容性：**
+- 新版本：直接序列化对象ID向量
+- 旧版本：序列化对象指针，然后转换为ID
 
-- **Bits 0-1**: 地形图形旋转
-- **Bits 2-3**: 河流图形旋转  
-- **Bits 4-5**: 道路图形旋转
-- **Bit 6**: 沿海瓦片（允许登陆或阻挡水上移动）
-- **Bit 7**: 顺风效果
+## 工作原理
 
-## 设计意图
+### 地形块状态
+每个地形块维护三种主要状态：
 
-TerrainTile的设计目标：
+1. **地形类型**: 决定基本属性（水域/陆地、可通行性）
+2. **视觉表示**: 视图索引和旋转方向
+3. **对象占用**: 可访问对象和阻塞对象列表
 
-1. **地形表示**: 完整描述地图瓦片的地形特征
-2. **通行性计算**: 支持复杂的通行性检查逻辑
-3. **对象管理**: 管理瓦片上的可访问和阻挡对象
-4. **视觉渲染**: 提供渲染所需的视觉信息
-5. **序列化支持**: 完整的保存和加载功能
-6. **性能优化**: 内联函数提供高效的访问
+### 可进入性逻辑
+```cpp
+// 基本可进入性
+bool canEnter = tile.entrableTerrain(); // 允许任何类型
 
-## 依赖关系
+// 从特定地形进入
+bool canEnterFrom = tile.entrableTerrain(fromTile);
 
-- **TerrainType**: 地形类型定义
-- **RiverType**: 河流类型定义  
-- **RoadType**: 道路类型定义
-- **CGObjectInstance**: 地图对象实例
-- **ObjectInstanceID**: 对象实例标识符
+// 指定类型限制
+bool canEnterLand = tile.entrableTerrain(true, false); // 仅陆地
+```
 
-这个结构体是VCMI地图系统的核心，定义了游戏世界的基本地形单元。
+### 对象管理
+- **可访问对象**: 英雄可以交互的对象（如宝物、城镇入口）
+- **阻塞对象**: 阻挡移动的对象（如山脉、森林）
+- **层级**: 对象有层级关系，`topVisitableObj()` 返回最顶层的可访问对象
+
+### 视觉系统
+- **地形视图**: 决定地形的视觉外观
+- **旋转**: 支持4个方向的旋转
+- **扩展标志**: 提供额外的视觉和逻辑属性
+
+## 使用示例
+
+```cpp
+// 检查地形可进入性
+if (tile.entrableTerrain()) {
+    // 可以移动到此地形
+}
+
+// 获取顶部可访问对象
+ObjectInstanceID topObj = tile.topVisitableObj();
+if (topObj != ObjectInstanceID::NONE) {
+    // 有可访问对象
+}
+
+// 检查是否有阻塞
+if (tile.blocked()) {
+    // 此地形被阻塞
+}
+
+// 获取地形类型信息
+const TerrainType* terrain = tile.getTerrain();
+if (terrain->isWater()) {
+    // 水域地形
+}
+```
+
+## 序列化示例
+
+```cpp
+// 保存地形块
+TerrainTile tile;
+tile.terrainType = TerrainId::GRASS;
+tile.terView = 0;
+// ... 设置其他属性
+
+JsonSerializer serializer(output);
+tile.serialize(serializer);
+
+// 加载地形块
+JsonDeserializer deserializer(input);
+tile.serialize(deserializer);
+```
+
+## 相关类
+
+- `TerrainType`: 地形类型定义
+- `RiverType`: 河流类型定义
+- `RoadType`: 道路类型定义
+- `CGObjectInstance`: 地图对象实例
+- `ObjectInstanceID`: 对象实例ID类型
