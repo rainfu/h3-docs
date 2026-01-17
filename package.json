@@ -8,10 +8,12 @@
     "extract-client": "ts-node extract-client.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "convert": "node ai-convert.js"
   },
   "dependencies": {
     "@types/pcx-js": "^1.1.0",
+    "openai": "^6.16.0",
     "pcx-js": "^1.1.1",
     "sharp": "^0.32.6"
   },

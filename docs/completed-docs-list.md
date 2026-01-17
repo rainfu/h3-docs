@@ -160,6 +160,25 @@
 - CSimpleArmy
 - CStackInstance
 
+### 地图 (Mapping)
+- CCastleEvent
+- CDrawRoadsOperation
+- CMapEditManager
+- CMapEvent
+- CMapInfo
+- CMapOperation
+- CMapService
+- MapEditUtils
+- MapFeaturesH3M
+- MapFormat
+- MapFormatH3M
+- MapFormatJson
+- MapFormatSettings
+- MapIdentifiersH3M
+- MapReaderH3M
+- ObstacleProxy
+- TerrainTile
+
 ### 游戏状态 (Game State)
 - CGameState
 - IGameInfoCallback

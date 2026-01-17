@@ -310,6 +310,25 @@
 - TextLocalizationContainer.h
 - TextOperations.h
 
+### 地图 (Mapping)
+- mapping/CCastleEvent.h [✓] 2026-01-17 20:30
+- mapping/CDrawRoadsOperation.h [✓] 2026-01-17 20:30
+- mapping/CMapEditManager.h [✓] 2026-01-17 20:30
+- mapping/CMapEvent.h [✓] 2026-01-17 20:30
+- mapping/CMapInfo.h [✓] 2026-01-17 20:30
+- mapping/CMapOperation.h [✓] 2026-01-17 20:30
+- mapping/CMapService.h [✓] 2026-01-17 20:30
+- mapping/MapEditUtils.h [✓] 2026-01-17 20:30
+- mapping/MapFeaturesH3M.h [✓] 2026-01-17 20:30
+- mapping/MapFormat.h [✓] 2026-01-17 20:30
+- mapping/MapFormatH3M.h
+- mapping/MapFormatJson.h
+- mapping/MapFormatSettings.h
+- mapping/MapIdentifiersH3M.h
+- mapping/MapReaderH3M.h
+- mapping/ObstacleProxy.h
+- mapping/TerrainTile.h [✓] 2026-01-17 20:45
+
 ## 转换状态
 - 总文件数: 345
 - 已完成: 0
