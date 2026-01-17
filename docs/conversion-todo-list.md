@@ -1,135 +1,24 @@
-﻿# VCMI 搴撴枃妗ｈ浆鎹㈠緟鍔炲垪琛?
+# VCMI 库文档转换待办列表
 
-## 姒傝堪
+## 概述
 
-姝ゅ垪琛ㄥ寘鍚互涓嬪唴瀹癸細
-1. 鍦?`vcmi/lib` 鐩綍涓瓨鍦ㄤ絾鍦?`vcmi-assets/docs` 涓病鏈夊搴旀枃妗ｇ殑澶存枃浠?
-2. 鍦?`vcmi-assets/docs` 涓瓨鍦ㄤ絾娌℃湁瀵瑰簲 `vcmi/lib` 涓ご鏂囦欢鐨勬枃妗ｆ枃浠?
+此列表包含以下内容：
+1. 在`vcmi/lib` 目录中存在但在`vcmi-assets/docs` 中没有对应文档的头文件
+2. 在`vcmi-assets/docs` 中存在但没有对应 `vcmi/lib` 中头文件的文档文件
 
-## 缁熻淇℃伅
-- 鎬?.h 鏂囦欢鏁帮細392
-- 鏈夊搴旀枃妗ｇ殑 .h 鏂囦欢鏁帮細154
-- 缂哄け鏂囨。鐨?.h 鏂囦欢鏁帮細6
-- 鏈夊搴?.h 鏂囦欢鐨?.md 鏂囦欢鏁帮細125
+## 统计信息
+- 总.h 文件数：392
+- 有对应文档的 .h 文件数：141
+- 缺失文档的.h 文件数：23
+- 有对应.h 文件的.md 文件数：125
 
-## 缂哄け鐨勬枃妗ｆ枃浠?(.h 鏂囦欢)
+## 缺失的文档文件(.h 文件)
 
-- [ ] lib/AsyncRunner.h
-- [ ] lib/BattleFieldHandler.h
-- [ ] lib/callback\GameRandomizer.h
-- [ ] lib/callback\IBattleCallback.h
-- [ ] lib/callback\IBattleEventsReceiver.h
-- [ ] lib/callback\IClient.h
-- [ ] lib/callback\IGameActionCallback.h
-- [ ] lib/callback\IGameEventCallback.h
-- [ ] lib/callback\IGameEventsReceiver.h
-- [ ] lib/callback\IGameRandomizer.h
-- [ ] lib/callback\MapInfoCallback.h
-- [ ] lib/campaign\CampaignBonus.h
-- [ ] lib/campaign\CampaignConstants.h
-- [ ] lib/campaign\CampaignHandler.h
-- [ ] lib/campaign\CampaignRegions.h
-- [ ] lib/campaign\CampaignRegionsHandler.h
-- [ ] lib/campaign\CampaignScenarioPrologEpilog.h
-- [ ] lib/campaign\CampaignState.h
-- [ ] lib/CAndroidVMHelper.h
-- [ ] lib/CBonusTypeHandler.h
-- [ ] lib/CConfigHandler.h
-- [ ] lib/CConsoleHandler.h
-- [ ] lib/CCreatureHandler.h
-- [ ] lib/Color.h
-- [ ] lib/ConditionalWait.h
-- [ ] lib/constants\EntityIdentifiers.h
-- [ ] lib/constants\IdentifierBase.h
-- [ ] lib/constants\VariantIdentifier.h
-- [ ] lib/CRandomGenerator.h
-- [ ] lib/CScriptingModule.h
-- [ ] lib/CSkillHandler.h
-- [ ] lib/CSoundBase.h
-- [ ] lib/CStack.h
-- [ ] lib/CStopWatch.h
-- [ ] lib/CThreadHelper.h
-- [ ] lib/events\ApplyDamage.h
-- [ ] lib/events\GameResumed.h
-- [ ] lib/events\ObjectVisitEnded.h
-- [ ] lib/events\ObjectVisitStarted.h
-- [ ] lib/events\PlayerGotTurn.h
-- [ ] lib/events\TurnStarted.h
-- [ ] lib/ExceptionsCommon.h
-- [ ] lib/ExtraOptionsInfo.h
-- [ ] lib/filesystem\AdapterLoaders.h
-- [ ] lib/filesystem\CArchiveLoader.h
-- [ ] lib/filesystem\CBinaryReader.h
-- [ ] lib/filesystem\CCompressedStream.h
-- [ ] lib/filesystem\CFileInputStream.h
-- [ ] lib/filesystem\CFilesystemLoader.h
-- [ ] lib/filesystem\CInputOutputStream.h
-- [ ] lib/filesystem\CMemoryBuffer.h
-- [ ] lib/filesystem\CMemoryStream.h
-- [ ] lib/filesystem\CStream.h
-- [ ] lib/filesystem\CZipLoader.h
-- [ ] lib/filesystem\CZipSaver.h
-- [ ] lib/filesystem\FileInfo.h
-- [ ] lib/filesystem\MinizipExtensions.h
-- [ ] lib/filesystem\ResourcePath.h
-- [ ] lib/FunctionList.h
-- [ ] lib/GameConstants.h
-- [ ] lib/GameLibrary.h
-- [ ] lib/GameSettings.h
 - [ ] lib/gameState\EVictoryLossCheckResult.h
 - [ ] lib/gameState\GameStatePackVisitor.h
 - [ ] lib/gameState\TavernSlot.h
-- [ ] lib/IBonusTypeHandler.h
-- [ ] lib/int3.h
-- [ ] lib/json\JsonBonus.h
-- [ ] lib/json\JsonFormatException.h
-- [ ] lib/json\JsonParser.h
-- [ ] lib/json\JsonRandom.h
-- [ ] lib/json\JsonUtils.h
-- [ ] lib/json\JsonValidator.h
-- [ ] lib/json\JsonWriter.h
-- [ ] lib/LoadProgress.h
-- [ ] lib/logging\CBasicLogConfigurator.h
-- [ ] lib/logging\VisualLogger.h
-- [ ] lib/LogicalExpression.h
-- [ ] lib/mapObjectConstructors\AObjectTypeHandler.h
-- [ ] lib/mapObjectConstructors\CDefaultObjectTypeHandler.h
-- [ ] lib/mapObjectConstructors\CObjectClassesHandler.h
-- [ ] lib/mapObjectConstructors\CommonConstructors.h
-- [ ] lib/mapObjectConstructors\CRewardableConstructor.h
-- [ ] lib/mapObjectConstructors\DwellingInstanceConstructor.h
-- [ ] lib/mapObjectConstructors\FlaggableInstanceConstructor.h
-- [ ] lib/mapObjectConstructors\HillFortInstanceConstructor.h
-- [ ] lib/mapObjectConstructors\IObjectInfo.h
-- [ ] lib/mapObjectConstructors\MarketInstanceConstructor.h
-- [ ] lib/mapObjectConstructors\RandomMapInfo.h
-- [ ] lib/mapObjectConstructors\ShipyardInstanceConstructor.h
-- [ ] lib/mapObjectConstructors\SObjectSounds.h
-- [ ] lib/mapObjects\CompoundMapObjectID.h
-- [ ] lib/ObstacleHandler.h
-- [ ] lib/pathfinder\INodeStorage.h
-- [ ] lib/pathfinder\NodeStorage.h
-- [ ] lib/pathfinder\PathfinderCache.h
-- [ ] lib/pathfinder\PathfinderOptions.h
-- [ ] lib/pathfinder\PathfinderUtil.h
-- [ ] lib/pathfinder\PathfindingRules.h
-- [ ] lib/Point.h
-- [ ] lib/Rect.h
-- [ ] lib/ResourceSet.h
-- [ ] lib/rewardable\Configuration.h
-- [ ] lib/rewardable\Info.h
-- [ ] lib/rewardable\Interface.h
-- [ ] lib/rewardable\Limiter.h
-- [ ] lib/rewardable\Reward.h
-- [ ] lib/RiverHandler.h
-- [ ] lib/rmg\CRmgTemplateStorage.h
-- [ ] lib/rmg\CRoadRandomizer.h
-- [ ] lib/rmg\float3.h
-- [ ] lib/rmg\Functions.h
-- [ ] lib/rmg\MapProxy.h
 - [ ] lib/rmg\modificators\ConnectionsPlacer.h
 - [ ] lib/rmg\modificators\MinePlacer.h
-- [ ] lib/rmg\modificators\Modificator.h
 - [ ] lib/rmg\modificators\ObjectDistributor.h
 - [ ] lib/rmg\modificators\ObjectManager.h
 - [ ] lib/rmg\modificators\ObstaclePlacer.h
@@ -145,37 +34,8 @@
 - [ ] lib/rmg\modificators\WaterAdopter.h
 - [ ] lib/rmg\modificators\WaterProxy.h
 - [ ] lib/rmg\modificators\WaterRoutes.h
-- [ ] lib/rmg\ObjectConfig.h
-- [ ] lib/rmg\ObjectInfo.h
-- [ ] lib/rmg\PenroseTiling.h
-- [ ] lib/rmg\RmgMap.h
-- [ ] lib/rmg\RmgPath.h
-- [ ] lib/rmg\TileInfo.h
-- [ ] lib/RoadHandler.h
-- [ ] lib/ScopeGuard.h
-- [ ] lib/ScriptHandler.h
-- [ ] lib/serializer\BinaryDeserializer.h
-- [ ] lib/serializer\CLoadFile.h
-- [ ] lib/serializer\CSaveFile.h
-- [ ] lib/serializer\GameConnection.h
-- [ ] lib/serializer\GameConnectionID.h
-- [ ] lib/serializer\JsonUpdater.h
-- [ ] lib/serializer\PlayerConnectionID.h
-- [ ] lib/serializer\SerializerReflection.h
-- [x] lib/spells\\adventure\\AdventureSpellEffect.h
-- [x] lib/spells\\adventure\\RemoveObjectEffect.h
-- [x] lib/spells\\adventure\\SummonBoatEffect.h
-- [x] lib/spells\\adventure\\ViewWorldEffect.h
-- [x] lib/spells\\effects\\Timed.h
-- [x] lib/spells\\effects\\UnitEffect.h
-- [ ] lib/StdInc.h
-- [ ] lib/TerrainHandler.h
-- [ ] lib/TurnTimerInfo.h
-- [ ] lib/UnlockGuard.h
-- [ ] lib/vcmi_endian.h
-- [ ] lib/VCMIDirs.h
 
-## 娌℃湁瀵瑰簲婧愭枃浠剁殑鏂囨。鏂囦欢 (.md 鏂囦欢)
+## 没有对应源文件的文档文件 (.md 文件)
 
 - [ ] classes\artifacts\Artifact.md
 - [ ] classes\artifacts\CChargedArtifact.md
