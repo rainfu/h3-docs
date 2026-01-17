@@ -259,6 +259,8 @@
 - RemoveObstacle
 - Sacrifice
 - Registry
+- Effects
+- EffectsFwd
 
 ### 随机地图生成 (RMG)
 - CRmgTemplate

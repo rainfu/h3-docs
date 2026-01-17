@@ -277,8 +277,8 @@
 - effects/DemonSummon.h [✓] 2026-01-17 19:10
 - effects/Dispel.h [✓] 2026-01-17 18:50
 - effects/Effect.h [✓] 2026-01-17 17:50
-- effects/Effects.h
-- effects/EffectsFwd.h
+- effects/Effects.h [✓] 2026-01-17 20:20
+- effects/EffectsFwd.h [✓] 2026-01-17 20:20
 - effects/Heal.h [✓] 2026-01-17 18:10
 - effects/LocationEffect.h [✓] 2026-01-17 19:20
 - effects/Moat.h [✓] 2026-01-17 19:30
